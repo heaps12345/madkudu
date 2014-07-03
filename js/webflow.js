@@ -2678,7 +2678,7 @@ Webflow.define('tabs', function ($, _) {
  * Webflow: Interactions: Init
  */
 Webflow.require('ix').init([
-  {"slug":"displat-none","name":"Displat None","value":{"style":{"display":"none"},"triggers":[]}},
+  {"slug":"display-none","name":"Display None","value":{"style":{"display":"none"},"triggers":[]}},
   {"slug":"show-nav","name":"Show Nav","value":{"style":{},"triggers":[{"type":"scroll","selector":".scroll-header","stepsA":[{"transition":"transform 500ms ease 0ms","x":"0px","y":"-80px"},{"display":"none"}],"stepsB":[{"display":"block","transition":"transform 500ms ease 0ms","x":"0px","y":"0px"}]}]}},
   {"slug":"hide-footer","name":"Hide Footer","value":{"style":{"display":"none","x":"0px","y":"400px"},"triggers":[]}},
   {"slug":"show-footer","name":"Show Footer","value":{"style":{},"triggers":[{"type":"click","selector":".footer","stepsA":[{"display":"block"},{"transition":"transform 500ms ease-in-out-back 0ms","x":"0px","y":"0px"}],"stepsB":[]}]}},

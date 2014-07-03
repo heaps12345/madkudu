@@ -125,7 +125,7 @@ p {
 .header {
   position: relative;
   height: 90px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   background-color: transparent;
 }
 .header-contact {
@@ -1094,7 +1094,7 @@ p {
   color: rgba(255, 255, 255, 0.61);
   font-size: 18px;
 }
-html.w-mod-js *[data-ix="displat-none"] {
+html.w-mod-js *[data-ix="display-none"] {
   display: none;
 }
 html.w-mod-js *[data-ix="hide-footer"] {
