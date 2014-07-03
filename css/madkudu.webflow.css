@@ -157,7 +157,7 @@ p {
   left: 0px;
   top: 0px;
   right: 0px;
-  display: none;
+  display: block;
   overflow-x: hidden;
   overflow-y: hidden;
   width: 100%;
