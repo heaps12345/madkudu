@@ -394,10 +394,10 @@ p {
 .funfacts-section {
   padding-top: 100px;
   padding-bottom: 150px;
-  background-image: url('../images/banner.jpg');
-  background-position: 50% 50%;
-  background-size: cover;
-  background-attachment: fixed;
+  background-image: url('../images/Kudu%20head.jpg');
+  background-position: 63% 15%;
+  background-size: auto;
+  background-attachment: scroll;
 }
 .skills-row {
   padding-top: 80px;
