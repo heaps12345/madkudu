@@ -82,6 +82,7 @@ p {
   margin-top: 28px;
 }
 .button.wh {
+  margin-bottom: 15px;
   border-color: white;
   color: white;
 }
@@ -157,7 +158,7 @@ p {
   left: 0px;
   top: 0px;
   right: 0px;
-  display: block;
+  display: none;
   overflow-x: hidden;
   overflow-y: hidden;
   width: 100%;
@@ -394,7 +395,7 @@ p {
 .funfacts-section {
   padding-top: 100px;
   padding-bottom: 150px;
-  background-image: url('../images/Kudu%20head.jpg');
+  background-image: url('../images/Kudu head.jpg');
   background-position: 63% 15%;
   background-size: auto;
   background-attachment: scroll;
@@ -1093,6 +1094,16 @@ p {
   margin-bottom: 20px;
   color: rgba(255, 255, 255, 0.61);
   font-size: 18px;
+}
+.newsletter {
+  margin-top: -80px;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+.mc-name {
+  margin-right: 48px;
+  margin-left: 48px;
+  padding-left: 0px;
 }
 html.w-mod-js *[data-ix="display-none"] {
   display: none;

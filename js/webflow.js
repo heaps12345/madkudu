@@ -2181,6 +2181,519 @@ Webflow.define('slider', function ($, _) {
 });
 /**
  * ----------------------------------------------------------------------
+ * Webflow: Lightbox component
+ */
+var lightbox = (function (window, document, $, tram, undefined) {
+  'use strict';
+
+  var isArray = Array.isArray;
+  var namespace = 'w-lightbox';
+  var prefix = namespace + '-';
+  var prefixRegex = /(^|\s+)/g;
+  var matchMedia = window.matchMedia || function (media) {
+    // IE9 polyfill
+    return {
+      matches: window.styleMedia.matchMedium(media)
+    };
+  };
+  var pixelRatio = window.devicePixelRatio || 1;
+  var breakpoint = '(min-width: 1025px)';
+  
+  // Array of objects describing items to be displayed.
+  var items = [];
+  
+  // Index of the currently displayed item.
+  var currentIndex;
+
+  // Object holding references to jQuery wrapped nodes.
+  var $refs;
+  
+  // Instance of Spinner
+  var spinner;
+
+  function lightbox(thing) {
+    items = isArray(thing) ? thing : [thing];
+    
+    if (!$refs) {
+      lightbox.build();
+    }
+
+    if (items.length > 1) {
+      $refs.items = $refs.empty;
+
+      items.forEach(function (item) {
+        var $thumbnail = dom('thumbnail');
+        var $item = dom('item').append($thumbnail);
+        
+        $refs.items = $refs.items.add($item);
+        
+        loadImage(item.url, function ($image) {
+          if ($image.prop('width') > $image.prop('height')) {
+            addClass($image, 'wide');
+          }
+          else {
+            addClass($image, 'tall');
+          }
+          $thumbnail.append(addClass($image, 'thumbnail-image'));
+        });
+      });
+
+      $refs.strip.empty().append($refs.items);
+      addClass($refs.content, 'group');
+    }
+    
+    tram(
+      // Focus the lightbox to receive keyboard events.
+      removeClass($refs.lightbox, 'hide').focus()
+    )
+      .add('opacity .3s')
+      .start({opacity: 1});
+
+    // Prevent <html> and <body> from scrolling while lightbox is active.
+    addClass($refs.parents, 'noscroll');
+    
+    return lightbox.show(0);
+  }
+
+  /**
+   * Creates the DOM structure required by the lightbox.
+   */
+  lightbox.build = function () {
+    // In case `build` is called more than once.
+    lightbox.destroy();
+
+    $refs = {
+      parents: $([document.documentElement, document.body]),
+      // Empty jQuery object can be used to build new ones using `.add`.
+      empty: $()
+    };
+    
+    $refs.arrowLeft = dom('control left inactive');
+    $refs.arrowRight = dom('control right inactive');
+    $refs.close = dom('control close');
+    $refs.controls = $refs.empty.add($refs.arrowLeft).add($refs.arrowRight).add($refs.close);
+
+    $refs.spinner = dom('spinner');
+    $refs.strip = dom('strip');
+    
+    spinner = new Spinner($refs.spinner, prefixed('hide'));
+    
+    $refs.content = dom('content')
+      .append($refs.spinner, $refs.controls);
+
+    $refs.container = dom('container')
+      .append($refs.content, $refs.strip);
+    
+    $refs.lightbox = dom('backdrop hide')
+      .append($refs.container);
+    
+      // We are delegating events for performance reasons and also
+      // to not have to reattach handlers when images change.
+      $refs.strip.on('tap', selector('item'), itemTapHandler);
+      $refs.content
+        .on('swipe', swipeHandler)
+        .on('tap', selector('left'), lightbox.prev)
+        .on('tap', selector('right'), lightbox.next)
+        .on('tap', selector('close'), closeTapHandler)
+        .on('tap', selector('image, caption'), toggleControlsOr(lightbox.next));
+      $refs.container.on(
+        'tap', selector('view, strip'), toggleControlsOr(lightbox.hide)
+      )
+        // Prevent images from being dragged around.
+        .on('dragstart', selector('img'), preventDefault);
+      $refs.lightbox
+        .on('keydown', keyHandler)
+        // While visible, prevent lightbox from loosing focus to other nodes.
+        // IE looses focus without letting us know.
+        .on('focusin', focusThis)
+        // Unfortunately setTimeout is needed because of a 14 year old
+        // Firefox bug (https://bugzilla.mozilla.org/show_bug.cgi?id=53579#c4).
+        .on('blur', function () {
+          setTimeout(focusThis.bind(this), 0);
+        });
+
+    // The `tabindex` attribute is needed to enable non-input elements
+    // to receive keyboard events.
+    $('body').append($refs.lightbox.prop('tabIndex', 0));
+    
+    return lightbox;
+  };
+
+  /**
+   * Dispose of DOM nodes created by the lightbox.
+   */
+  lightbox.destroy = function () {
+    if (!$refs) {
+      return;
+    }
+    
+    // Event handlers are also removed.
+    $refs.lightbox.remove();
+    $refs = undefined;
+  };
+  
+  /**
+   * Show a specific item.
+   */
+  lightbox.show = function (index) {
+    // Bail if we are already showing this item.
+    if (index === currentIndex) {
+      return;
+    }
+
+    var item = items[index];
+    var previousIndex = currentIndex;
+    currentIndex = index;
+    spinner.show();
+    loadImage(item.url, function ($image) {
+      // Make sure this is the last item requested to be shown since
+      // images can finish loading in a different order than they were
+      // requested in.
+      if (index != currentIndex) {
+        return;
+      }
+      
+      var $figure = dom('figure', 'figure').append(addClass($image, 'image'));
+      var $frame = dom('frame').append($figure);
+      var $newView = dom('view').append($frame);
+      
+      if (item.caption) {
+        $figure.append(dom('caption', 'figcaption').text(item.caption));
+      }
+            
+      spinner.hide();
+      
+      toggleClass($refs.arrowLeft, 'inactive', index <= 0);
+      toggleClass($refs.arrowRight, 'inactive', index >= items.length - 1);
+      
+      $refs.spinner.before($newView);
+      
+      if ($refs.view) {
+        tram($refs.view)
+          .add('opacity .3s')
+          .start({opacity: 0})
+          .then(remover($refs.view));
+
+        tram($newView)
+          .add('opacity .3s')
+          .add('transform .3s')
+          .set({opacity: 0, x: index > previousIndex ? '80px' : '-80px'})
+          .start({opacity: 1, x: 0});
+      }
+
+      $refs.view = $newView;
+
+      if ($refs.items) {
+        // Mark proper thumbnail as active
+        addClass(removeClass($refs.items, 'active').eq(index), 'active');
+      }
+    });
+    
+    return lightbox;
+  };
+
+  /**
+   * Hides the lightbox.
+   */
+  lightbox.hide = function () {
+    tram($refs.lightbox)
+      .add('opacity .3s')
+      .start({opacity: 0})
+      .then(hideLightbox);
+    
+    return lightbox;
+  };
+  
+  lightbox.prev = function () {
+    if (currentIndex > 0) {
+      lightbox.show(currentIndex - 1);
+    }
+  };
+  
+  lightbox.next = function () {
+    if (currentIndex < items.length - 1) {
+      lightbox.show(currentIndex + 1);
+    }
+  };
+
+  function toggleControlsOr(callback) {
+    return function (event) {
+      // We only care about events triggered directly on the bound selectors.
+      if (this != event.target) {
+        return;
+      }
+
+      event.stopPropagation();
+      event.preventDefault();
+
+      if (matchMedia(breakpoint).matches) {
+        callback();
+      }
+      else {
+        toggleClass($refs.controls, 'visible');
+      }
+    };
+  }
+  
+  var itemTapHandler = function() {
+    var index = $(this).index();
+    lightbox.show(index);
+  };
+
+  var swipeHandler = function (event, data) {
+    // Prevent scrolling.
+    event.preventDefault();
+
+    if (data.direction == 'left') {
+      lightbox.next();
+    }
+    else if (data.direction == 'right') {
+      lightbox.prev();
+    }
+  };
+
+  var closeTapHandler = function (event) {
+    // Prevents click events from firing.
+    event.preventDefault();
+    lightbox.hide();
+  };
+
+  var focusThis = function () {
+    this.focus();
+  };
+
+  function preventDefault(event) {    
+    event.preventDefault();
+  }
+  
+  function keyHandler(event) {
+    var keyCode = event.keyCode;
+    
+    // [esc]
+    if (keyCode == 27) {
+      lightbox.hide();
+    }
+    
+    // [◀]
+    else if (keyCode == 37) {
+      lightbox.prev();
+    }
+    
+    // [▶]
+    else if (keyCode == 39) {
+      lightbox.next();
+    }
+  }
+
+  function hideLightbox() {
+    removeClass($refs.parents, 'noscroll');
+    addClass($refs.lightbox, 'hide');
+    $refs.strip.empty();
+    $refs.view.remove();
+
+    // Reset some stuff
+    removeClass($refs.content, 'group');
+    removeClass($refs.controls, 'visible');
+    addClass($refs.arrowLeft, 'inactive');
+    addClass($refs.arrowRight, 'inactive');
+
+    currentIndex = $refs.view = undefined;
+  }
+  
+  function loadImage(url, callback) {
+    var $image = dom('img', 'img');
+    
+    $image.one('load', function () {
+      callback($image);
+    });
+    
+    // Start loading image.
+    $image.attr('src', url);
+    
+    return $image;
+  }
+
+  function remover($element) {
+    return function () {
+      $element.remove();
+    };
+  }
+  
+  /**
+   * Spinner
+   */
+  function Spinner($spinner, className, delay) {
+    this.$element = $spinner;
+    this.className = className;
+    this.delay = delay || 200;    
+    this.hide();
+  }
+  
+  Spinner.prototype.show = function () {
+    var spinner = this;
+    
+    // Bail if we are already showing the spinner.
+    if (spinner.timeoutId) {
+      return;
+    }
+
+    spinner.timeoutId = setTimeout(function () {
+      spinner.$element.removeClass(spinner.className);
+      delete spinner.timeoutId;
+    }, spinner.delay);
+  };
+  
+  Spinner.prototype.hide = function () {
+    var spinner = this;
+    if (spinner.timeoutId) {
+      clearTimeout(spinner.timeoutId);
+      delete spinner.timeoutId;
+      return;
+    }
+
+    spinner.$element.addClass(spinner.className);
+  };
+  
+  function prefixed(string, isSelector) {
+    return string.replace(prefixRegex, (isSelector ? ' .' : ' ') + prefix);
+  }
+  
+  function selector(string) {
+    return prefixed(string, true);
+  }
+
+  /**
+   * jQuery.addClass with auto-prefixing
+   * @param  {jQuery} Element to add class to
+   * @param  {string} Class name that will be prefixed and added to element
+   * @return {jQuery}
+   */
+  function addClass($element, className) {
+    return $element.addClass(prefixed(className));
+  }
+
+  /**
+   * jQuery.removeClass with auto-prefixing
+   * @param  {jQuery} Element to remove class from
+   * @param  {string} Class name that will be prefixed and removed from element
+   * @return {jQuery}
+   */
+  function removeClass($element, className) {
+    return $element.removeClass(prefixed(className));
+  }
+
+  /**
+   * jQuery.toggleClass with auto-prefixing
+   * @param  {jQuery}  Element where class will be toggled
+   * @param  {string}  Class name that will be prefixed and toggled
+   * @param  {boolean} Optional boolean that determines if class will be added or removed
+   * @return {jQuery}
+   */
+  function toggleClass($element, className, shouldAdd) {
+    return $element.toggleClass(prefixed(className), shouldAdd);
+  }
+
+  /**
+   * Create a new DOM element wrapped in a jQuery object,
+   * decorated with our custom methods.
+   * @param  {string} className
+   * @param  {string} [tag]
+   * @return {jQuery}
+   */
+  function dom(className, tag) {
+    return addClass($(document.createElement(tag || 'div')), className);
+  }
+
+  function isObject(value) {
+    return typeof value == 'object' && null != value && !isArray(value);
+  }
+
+  return lightbox;
+})(window, document, jQuery, window.tram);
+
+Webflow.define('lightbox', function ($, _) {
+  'use strict';
+
+  var api = {};
+  var $doc = $(document);
+  var $body;
+  var $lightboxes;
+  var designer;
+  var inApp = Webflow.env();
+  var namespace = '.w-lightbox';
+
+  // -----------------------------------
+  // Module methods
+
+  api.ready = api.design = api.preview = init;
+
+  // -----------------------------------
+  // Private methods
+
+  function init() {
+    designer = inApp && Webflow.env('design');
+    $body = $(document.body);
+
+    // Reset Lightbox
+    lightbox.destroy();
+
+    // Find all instances on the page
+    $lightboxes = $doc.find(namespace);
+    $lightboxes.each(build);
+  }
+
+  function build(i, el) {
+    var $el = $(el);
+
+    // Store state in data
+    var data = $.data(el, namespace);
+    if (!data) data = $.data(el, namespace, {el: $el, images: []});
+
+    // Remove old events
+    data.el.off(namespace);
+
+    // Set config from json script tag
+    configure(data);
+
+    // Add events based on mode
+    if (designer) {
+      data.el.on('setting' + namespace, configure.bind(null, data));
+    }
+    else {
+      data.el
+        .on('tap' + namespace, tapHandler(data))
+        // Prevent page scrolling to top when clicking on lightbox triggers.
+        .on('click' + namespace, function (e) { e.preventDefault(); });
+    }
+  }
+
+  function configure(data) {
+    var json = data.el.children('.w-json').html();
+    
+    if (!json) {
+      data.images = [];
+      return;
+    }
+    
+    try {
+      data.images = JSON.parse(json).images;
+    }
+    catch (e) {
+      console.error('Malformed lightbox JSON configuration.', e.message);
+    }
+  }
+
+  function tapHandler(data) {
+    return function () {
+      data.images.length && lightbox(data.images);
+    };
+  }
+
+  // Export module
+  return api;
+});
+/**
+ * ----------------------------------------------------------------------
  * Webflow: Navbar component
  */
 Webflow.define('navbar', function ($, _) {
