@@ -371,6 +371,7 @@ p {
   text-align: center;
 }
 .option-section {
+  display: none;
   padding-top: 0px;
   padding-bottom: 100px;
   background-color: white;
@@ -401,6 +402,7 @@ p {
   background-attachment: scroll;
 }
 .skills-row {
+  display: none;
   padding-top: 80px;
 }
 .skills-column {
@@ -1075,6 +1077,9 @@ p {
 .mascot {
   position: relative;
   top: 2px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
   text-align: center;
 }
 .text-slider {
@@ -1104,6 +1109,19 @@ p {
   margin-right: 48px;
   margin-left: 48px;
   padding-left: 0px;
+}
+.top-div {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #428bc7;
+  color: rgba(255, 255, 255, 0.81);
+}
+.mc-wrapper {
+  margin-top: 45px;
+  padding-top: 0px;
+}
+.field-label {
+  text-decoration: none;
 }
 html.w-mod-js *[data-ix="display-none"] {
   display: none;
