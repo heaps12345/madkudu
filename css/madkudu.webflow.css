@@ -148,8 +148,8 @@ p {
 }
 .section {
   position: relative;
-  padding-top: 100px;
-  padding-bottom: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   border-top: 1px solid white;
   background-color: #f2f2f2;
 }
@@ -162,6 +162,7 @@ p {
   overflow-x: hidden;
   overflow-y: hidden;
   width: 100%;
+  height: 90px;
   background-color: white;
   opacity: 0.97;
 }
@@ -188,6 +189,10 @@ p {
   border-bottom-style: solid;
   border-bottom-width: 2px;
 }
+.nav-menu-scroll {
+  display: block;
+  margin-top: 10px;
+}
 .banner {
   background-color: #428bc7;
 }
@@ -204,7 +209,7 @@ p {
   height: 100px;
   margin-right: auto;
   margin-left: auto;
-  padding-top: 24px;
+  padding-top: 0px;
   border: 2px solid #428bc7;
   border-radius: 60px;
 }
@@ -371,9 +376,9 @@ p {
   text-align: center;
 }
 .option-section {
-  display: none;
+  display: block;
   padding-top: 0px;
-  padding-bottom: 100px;
+  padding-bottom: 0px;
   background-color: white;
 }
 .column-wrapper {
@@ -479,6 +484,10 @@ p {
   background-repeat: repeat;
   background-attachment: scroll;
 }
+.brand-logo.w--current {
+  float: left;
+  clear: none;
+}
 .branging-logo {
   position: relative;
   padding-top: 20px;
@@ -496,8 +505,8 @@ p {
 }
 .social {
   width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   border-right: 1px solid #3c4752;
   background-color: #333c45;
   -webkit-transition: all 300ms ease;
@@ -755,7 +764,7 @@ p {
 }
 .name-staff {
   margin-top: 20px;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
   color: #428bc7;
   font-size: 17px;
   font-weight: 600;
@@ -763,7 +772,7 @@ p {
   text-transform: uppercase;
 }
 .team-work {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   color: #999;
   font-weight: 400;
 }
@@ -783,7 +792,7 @@ p {
   opacity: 1;
 }
 .social_block {
-  margin-top: 15px;
+  margin-top: 0px;
 }
 .section-help {
   padding-top: 100px;
@@ -1122,6 +1131,44 @@ p {
 }
 .field-label {
   text-decoration: none;
+}
+.integration-logo {
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 0px;
+}
+.horn-text {
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+  text-align: center;
+}
+.email-team {
+  text-decoration: none;
+}
+.bios {
+  text-align: left;
+  list-style-type: disc;
+}
+.bio-list {
+  padding-left: 0px;
+  text-align: center;
+  list-style-type: none;
+}
+.team-header {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  text-align: center;
+  list-style-type: none;
+}
+.team-block {
+  margin-top: 20px;
+}
+.team-item {
+  direction: ltr;
+  text-align: center;
+  text-transform: none;
+  list-style-type: none;
 }
 html.w-mod-js *[data-ix="display-none"] {
   display: none;
