@@ -2249,8 +2249,8 @@ var lightbox = (function (window, document, $, tram, undefined) {
       .add('opacity .3s')
       .start({opacity: 1});
 
-    // Prevent <html> and <body> from scrolling while lightbox is active.
-    addClass($refs.parents, 'noscroll');
+    // Prevent document from scrolling while lightbox is active.
+    addClass($refs.html, 'noscroll');
     
     return lightbox.show(0);
   }
@@ -2263,7 +2263,7 @@ var lightbox = (function (window, document, $, tram, undefined) {
     lightbox.destroy();
 
     $refs = {
-      parents: $([document.documentElement, document.body]),
+      html: $(document.documentElement),
       // Empty jQuery object can be used to build new ones using `.add`.
       empty: $()
     };
@@ -2435,8 +2435,10 @@ var lightbox = (function (window, document, $, tram, undefined) {
     };
   }
   
-  var itemTapHandler = function() {
+  var itemTapHandler = function(event) {
     var index = $(this).index();
+
+    event.preventDefault();
     lightbox.show(index);
   };
 
@@ -2486,7 +2488,7 @@ var lightbox = (function (window, document, $, tram, undefined) {
   }
 
   function hideLightbox() {
-    removeClass($refs.parents, 'noscroll');
+    removeClass($refs.html, 'noscroll');
     addClass($refs.lightbox, 'hide');
     $refs.strip.empty();
     $refs.view.remove();
@@ -2607,6 +2609,48 @@ var lightbox = (function (window, document, $, tram, undefined) {
   function isObject(value) {
     return typeof value == 'object' && null != value && !isArray(value);
   }
+
+  // Work out dimensions manually for iOS, because of buggy support for VH.
+  (function () {
+    if (!/(iPhone|iPod|iPad).+AppleWebKit/i.test(window.navigator.userAgent)) {
+      return;
+    }
+
+    var styleNode = document.createElement('style');
+    document.head.appendChild(styleNode);
+    window.addEventListener('orientationchange', refresh, true);
+
+    function refresh() {
+      var vh = window.innerHeight;
+      var content =
+        '.w-lightbox-content, .w-lightbox-view, .w-lightbox-view:before {' +
+          'height:' + vh + 'px' +
+        '}' +
+        '.w-lightbox-group, .w-lightbox-group .w-lightbox-view, .w-lightbox-group .w-lightbox-view:before {' +
+          'height:' + (0.86 * vh) + 'px' +
+        '}' +
+        '.w-lightbox-image {' +
+          'max-height:' + vh + 'px' +
+        '}' +
+        '.w-lightbox-group .w-lightbox-image {' +
+          'max-height:' + (0.86 * vh) + 'px' +
+        '}' +
+        '.w-lightbox-strip {' +
+          'padding: 0 ' + (0.01 * vh) + 'px' +
+        '}' +
+        '.w-lightbox-item {' +
+          'width:' + (0.1 * vh) + 'px;' +
+          'padding:' + (0.02 * vh) + 'px ' + (0.01 * vh) + 'px' +
+        '}' +
+        '.w-lightbox-thumbnail {' +
+          'height:' + (0.1 * vh) + 'px' +
+        '}';
+
+      styleNode.textContent = content;
+    }
+
+    refresh();
+  })();
 
   return lightbox;
 })(window, document, jQuery, window.tram);

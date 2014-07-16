@@ -126,7 +126,7 @@ p {
 .header {
   position: relative;
   height: 90px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
   background-color: transparent;
 }
 .header-contact {
@@ -148,6 +148,7 @@ p {
 }
 .section {
   position: relative;
+  display: none;
   padding-top: 20px;
   padding-bottom: 20px;
   border-top: 1px solid white;
@@ -365,6 +366,7 @@ p {
 .hero-div {
   position: relative;
   z-index: 10;
+  display: none;
   padding-top: 60px;
   padding-bottom: 60px;
   background-color: #428bc7;
@@ -376,7 +378,7 @@ p {
   text-align: center;
 }
 .option-section {
-  display: block;
+  display: none;
   padding-top: 0px;
   padding-bottom: 0px;
   background-color: white;
@@ -1105,6 +1107,7 @@ p {
   text-transform: uppercase;
 }
 .medium-text {
+  display: none;
   margin-bottom: 20px;
   color: rgba(255, 255, 255, 0.61);
   font-size: 18px;

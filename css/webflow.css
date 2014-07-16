@@ -1121,6 +1121,9 @@ textarea.w-select {
   margin: 0;
   /* 1 */
 }
+.w-lightbox-group .w-lightbox-figure {
+  cursor: pointer;
+}
 /**
  * IE adds image dimensions as width and height attributes on the IMG tag,
  * but we need both width and height to be set to auto to enable scaling.
@@ -1191,7 +1194,7 @@ textarea.w-select {
  * 1. All IE versions add extra space at the bottom without this.
  */
 .w-lightbox-strip {
-  padding: 0 1vw;
+  padding: 0 1vh;
   line-height: 0;
   /* 1 */
   white-space: nowrap;
@@ -1208,7 +1211,7 @@ textarea.w-select {
 .w-lightbox-item {
   display: inline-block;
   width: 10vh;
-  padding: 2vh 1vw;
+  padding: 2vh 1vh;
   box-sizing: content-box;
   /* 1 */
   cursor: pointer;
