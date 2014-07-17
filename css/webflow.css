@@ -1161,7 +1161,6 @@ textarea.w-select {
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
-  visibility: hidden;
   opacity: 0;
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -1169,14 +1168,14 @@ textarea.w-select {
 .w-lightbox-left {
   bottom: 0;
   left: 0;
-  /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 24 40"><g transform="rotate(45)"><path d="m0 0h5v23h23v5h-28z" opacity=".4"/><path d="m1 1h3v23h23v3h-26z" fill="#fff"/></g></svg> */
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0yMCAwIDI0IDQwIj48ZyB0cmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxwYXRoIGQ9Im0wIDBoNXYyM2gyM3Y1aC0yOHoiIG9wYWNpdHk9Ii40Ii8+PHBhdGggZD0ibTEgMWgzdjIzaDIzdjNoLTI2eiIgZmlsbD0iI2ZmZiIvPjwvZz48L3N2Zz4=");
+  /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 0 24 40" width="24" height="40"><g transform="rotate(45)"><path d="m0 0h5v23h23v5h-28z" opacity=".4"/><path d="m1 1h3v23h23v3h-26z" fill="#fff"/></g></svg> */
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0yMCAwIDI0IDQwIiB3aWR0aD0iMjQiIGhlaWdodD0iNDAiPjxnIHRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHBhdGggZD0ibTAgMGg1djIzaDIzdjVoLTI4eiIgb3BhY2l0eT0iLjQiLz48cGF0aCBkPSJtMSAxaDN2MjNoMjN2M2gtMjZ6IiBmaWxsPSIjZmZmIi8+PC9nPjwvc3ZnPg==");
 }
 .w-lightbox-right {
   right: 0;
   bottom: 0;
-  /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 0 24 40"><g transform="rotate(45)"><path d="m0-0h28v28h-5v-23h-23z" opacity=".4"/><path d="m1 1h26v26h-3v-23h-23z" fill="#fff"/></g></svg> */
-  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii00IDAgMjQgNDAiPjxnIHRyYW5zZm9ybT0icm90YXRlKDQ1KSI+PHBhdGggZD0ibTAtMGgyOHYyOGgtNXYtMjNoLTIzeiIgb3BhY2l0eT0iLjQiLz48cGF0aCBkPSJtMSAxaDI2djI2aC0zdi0yM2gtMjN6IiBmaWxsPSIjZmZmIi8+PC9nPjwvc3ZnPg==");
+  /* <svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 0 24 40" width="24" height="40"><g transform="rotate(45)"><path d="m0-0h28v28h-5v-23h-23z" opacity=".4"/><path d="m1 1h26v26h-3v-23h-23z" fill="#fff"/></g></svg> */
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii00IDAgMjQgNDAiIHdpZHRoPSIyNCIgaGVpZ2h0PSI0MCI+PGcgdHJhbnNmb3JtPSJyb3RhdGUoNDUpIj48cGF0aCBkPSJtMC0waDI4djI4aC01di0yM2gtMjN6IiBvcGFjaXR5PSIuNCIvPjxwYXRoIGQ9Im0xIDFoMjZ2MjZoLTN2LTIzaC0yM3oiIGZpbGw9IiNmZmYiLz48L2c+PC9zdmc+");
 }
 /*
  * Without specifying the with and height inside the SVG, all versions of IE render the icon too small.
@@ -1219,7 +1218,7 @@ textarea.w-select {
   /* 2 */
 }
 .w-lightbox-active {
-  opacity: .2;
+  opacity: .3;
 }
 .w-lightbox-thumbnail {
   position: relative;
@@ -1284,7 +1283,6 @@ textarea.w-select {
   display: none;
 }
 .w-lightbox-visible {
-  visibility: visible;
   opacity: 1;
 }
 .w-lightbox-noscroll {
@@ -1312,10 +1310,6 @@ textarea.w-select {
   .w-lightbox-group .w-lightbox-image {
     max-height: 84vh;
   }
-  .w-lightbox-control {
-    visibility: visible;
-    opacity: 1;
-  }
   .w-lightbox-left,
   .w-lightbox-right {
     opacity: .5;
@@ -1323,9 +1317,7 @@ textarea.w-select {
   .w-lightbox-close {
     opacity: .8;
   }
-  .w-lightbox-close:hover,
-  .w-lightbox-left:hover,
-  .w-lightbox-right:hover {
+  .w-lightbox-control:hover {
     opacity: 1;
   }
 }

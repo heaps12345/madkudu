@@ -2292,9 +2292,9 @@ var lightbox = (function (window, document, $, tram, undefined) {
       $refs.strip.on('tap', selector('item'), itemTapHandler);
       $refs.content
         .on('swipe', swipeHandler)
-        .on('tap', selector('left'), lightbox.prev)
-        .on('tap', selector('right'), lightbox.next)
-        .on('tap', selector('close'), closeTapHandler)
+        .on('tap', selector('left'), preventDefaultAnd(lightbox.prev))
+        .on('tap', selector('right'), preventDefaultAnd(lightbox.next))
+        .on('tap', selector('close'), preventDefaultAnd(lightbox.hide))
         .on('tap', selector('image, caption'), toggleControlsOr(lightbox.next));
       $refs.container.on(
         'tap', selector('view, strip'), toggleControlsOr(lightbox.hide)
@@ -2434,7 +2434,7 @@ var lightbox = (function (window, document, $, tram, undefined) {
       }
     };
   }
-  
+
   var itemTapHandler = function(event) {
     var index = $(this).index();
 
@@ -2454,11 +2454,13 @@ var lightbox = (function (window, document, $, tram, undefined) {
     }
   };
 
-  var closeTapHandler = function (event) {
-    // Prevents click events from firing.
-    event.preventDefault();
-    lightbox.hide();
-  };
+  function preventDefaultAnd(action) {
+    return function (event) {
+      // Prevents click events and zooming.
+      event.preventDefault();
+      action();
+    };
+  }
 
   var focusThis = function () {
     this.focus();
@@ -2491,7 +2493,7 @@ var lightbox = (function (window, document, $, tram, undefined) {
     removeClass($refs.html, 'noscroll');
     addClass($refs.lightbox, 'hide');
     $refs.strip.empty();
-    $refs.view.remove();
+    $refs.view && $refs.view.remove();
 
     // Reset some stuff
     removeClass($refs.content, 'group');
@@ -2610,9 +2612,14 @@ var lightbox = (function (window, document, $, tram, undefined) {
     return typeof value == 'object' && null != value && !isArray(value);
   }
 
-  // Work out dimensions manually for iOS, because of buggy support for VH.
+  // Compute some dimensions manually for iOS, because of buggy support for VH.
+  // Also, Android built-in browser does not support viewport units.
   (function () {
-    if (!/(iPhone|iPod|iPad).+AppleWebKit/i.test(window.navigator.userAgent)) {
+    var ua = window.navigator.userAgent;
+    var iOS = /(iPhone|iPod|iPad).+AppleWebKit/i.test(ua);
+    var android = ua.indexOf('Android ') > -1 && ua.indexOf('Chrome') == -1;
+
+    if (!iOS && !android) {
       return;
     }
 
@@ -2622,14 +2629,19 @@ var lightbox = (function (window, document, $, tram, undefined) {
 
     function refresh() {
       var vh = window.innerHeight;
+      var vw = window.innerWidth;
       var content =
         '.w-lightbox-content, .w-lightbox-view, .w-lightbox-view:before {' +
           'height:' + vh + 'px' +
+        '}' +
+        '.w-lightbox-view {' +
+          'width:' + vw + 'px' +
         '}' +
         '.w-lightbox-group, .w-lightbox-group .w-lightbox-view, .w-lightbox-group .w-lightbox-view:before {' +
           'height:' + (0.86 * vh) + 'px' +
         '}' +
         '.w-lightbox-image {' +
+          'max-width:' + vw + 'px;' +
           'max-height:' + vh + 'px' +
         '}' +
         '.w-lightbox-group .w-lightbox-image {' +
