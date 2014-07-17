@@ -126,7 +126,7 @@ p {
 .header {
   position: relative;
   height: 90px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
   background-color: transparent;
 }
 .header-contact {
@@ -401,6 +401,7 @@ p {
   margin-top: 50px;
 }
 .funfacts-section {
+  display: none;
   padding-top: 100px;
   padding-bottom: 150px;
   background-image: url('../images/Kudu head.jpg');
@@ -732,7 +733,7 @@ p {
 }
 .section-page {
   position: relative;
-  padding-top: 100px;
+  padding-top: 60px;
   padding-bottom: 80px;
   background-color: white;
 }
