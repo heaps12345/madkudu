@@ -864,7 +864,15 @@ Webflow.define('touch', function ($, _) {
   'use strict';
 
   var api = {};
+  var fallback = !document.addEventListener;
+
+  // Fallback to click events in old IE
+  if (fallback) {
+    $.event.special.tap = { bindType: 'click', delegateType: 'click' };
+  }
+
   api.init = function (el) {
+    if (fallback) return null;
     el = typeof el === 'string' ? $(el).get(0) : el;
     return el ? new Touch(el) : null;
   };
