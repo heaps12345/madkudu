@@ -539,7 +539,7 @@ p {
   right: 0px;
   bottom: 0px;
   z-index: 50;
-  display: none;
+  display: block;
   padding-top: 10px;
   padding-bottom: 30px;
   background-color: rgba(51, 60, 69, 0.99);
