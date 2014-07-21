@@ -57,6 +57,7 @@ h6 {
 p {
   display: inline-block;
   margin-bottom: 5px;
+  font-family: Raleway, sans-serif;
 }
 .button {
   display: inline-block;
@@ -98,6 +99,7 @@ p {
 .nav-menu {
   margin-top: 30px;
   float: none;
+  font-family: Ubuntu, Helvetica, sans-serif;
 }
 .nav-link {
   margin-left: 30px;
@@ -117,6 +119,7 @@ p {
 }
 .nav-link.w--current {
   border-bottom: 2px solid white;
+  font-family: Raleway, sans-serif;
   color: white;
 }
 .navigation-container {
@@ -193,6 +196,7 @@ p {
 .nav-menu-scroll {
   display: block;
   margin-top: 10px;
+  font-family: Ubuntu, Helvetica, sans-serif;
 }
 .banner {
   background-color: #428bc7;
@@ -600,7 +604,7 @@ p {
 .h3_footer {
   margin-top: 10px;
   margin-bottom: 23px;
-  font-family: Raleway, sans-serif;
+  font-family: Ubuntu, Helvetica, sans-serif;
   color: white;
   font-weight: 500;
   letter-spacing: 1px;
@@ -769,6 +773,7 @@ p {
 .name-staff {
   margin-top: 20px;
   margin-bottom: 0px;
+  font-family: Ubuntu, Helvetica, sans-serif;
   color: #428bc7;
   font-size: 17px;
   font-weight: 600;
@@ -1101,6 +1106,7 @@ p {
 }
 .big-text {
   margin-bottom: 8px;
+  font-family: Ubuntu, Helvetica, sans-serif;
   color: white;
   font-size: 34px;
   line-height: 46px;
@@ -1135,6 +1141,7 @@ p {
   padding-top: 0px;
 }
 .field-label {
+  font-weight: 600;
   text-decoration: none;
 }
 .integration-logo {
@@ -1177,6 +1184,9 @@ p {
 }
 .company-address {
   display: inline-block;
+}
+.mailchimp-form {
+  font-weight: 400;
 }
 html.w-mod-js *[data-ix="display-none"] {
   display: none;
