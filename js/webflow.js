@@ -2812,6 +2812,7 @@ Webflow.define('navbar', function ($, _) {
     if (!data) data = $.data(el, namespace, { open: false, el: $el, config: {} });
     data.menu = $el.find('.w-nav-menu');
     data.links = data.menu.find('.w-nav-link');
+    data.dropdowns = data.menu.find('.w-dropdown');
     data.button = $el.find('.w-nav-button');
     data.container = $el.find('.w-container');
     data.outside = outside(data);
@@ -2879,19 +2880,14 @@ Webflow.define('navbar', function ($, _) {
   function handler(data) {
     return function (evt, options) {
       options = options || {};
-
-      // Designer settings
-      if (designer && evt.type == 'setting') {
-        var winWidth = $win.width();
-        configure(data);
-        options.open === true && open(data, true);
-        options.open === false && close(data, true);
-        // Reopen if media query changed after setting
-        data.open && _.defer(function () {
-          if (winWidth != $win.width()) reopen(data);
-        });
-        return;
-      }
+      var winWidth = $win.width();
+      configure(data);
+      options.open === true && open(data, true);
+      options.open === false && close(data, true);
+      // Reopen if media query changed after setting
+      data.open && _.defer(function () {
+        if (winWidth != $win.width()) reopen(data);
+      });
     };
   }
 
@@ -2927,6 +2923,9 @@ Webflow.define('navbar', function ($, _) {
   }
 
   function outside(data) {
+    // Unbind previous tap handler if it exists
+    if (data.outside) $doc.off('tap' + namespace, data.outside);
+
     // Close menu when tapped outside
     return _.debounce(function (evt) {
       if (!data.open) return;
@@ -2943,23 +2942,28 @@ Webflow.define('navbar', function ($, _) {
     var collapsed = data.collapsed = data.button.css('display') != 'none';
     // Close menu if button is no longer visible (and not in designer)
     if (data.open && !collapsed && !designer) close(data, true);
-    // Set max-width of links to match container
-    data.container.length && data.links.each(maxLink(data));
+    // Set max-width of links + dropdowns to match container
+    if (data.container.length) {
+      var updateEachMax = updateMax(data);
+      data.links.each(updateEachMax);
+      data.dropdowns.each(updateEachMax);
+    }
     // If currently open and in overlay mode, update height to match body
     if (data.open && /^over/.test(data.config.animation)) {
-      setBodyHeight(data);
-      setMenuHeight(data);
+      updateDocHeight(data);
+      updateMenuHeight(data);
     }
   }
 
   var maxWidth = 'max-width';
-  function maxLink(data) {
-    // Set max-width of each link (unless it has an upstream value)
+  function updateMax(data) {
+    // Set max-width of each element to match container
     var containMax = data.container.css(maxWidth);
     if (containMax == 'none') containMax = '';
     return function (i, link) {
       link = $(link);
       link.css(maxWidth, '');
+      // Don't set the max-width if an upstream value exists
       if (link.css(maxWidth) == 'none') link.css(maxWidth, containMax);
     };
   }
@@ -2974,7 +2978,7 @@ Webflow.define('navbar', function ($, _) {
     var animation = config.animation;
     if (animation == 'none' || !tram.support.transform) immediate = true;
     var animOver = /^over/.test(animation);
-    var bodyHeight = setBodyHeight(data);
+    var bodyHeight = updateDocHeight(data);
     var menuHeight = data.menu.outerHeight(true);
     var menuWidth = data.menu.outerWidth(true);
     var navHeight = data.el.height();
@@ -2985,7 +2989,9 @@ Webflow.define('navbar', function ($, _) {
     if (!designer) $doc.on('tap' + namespace, data.outside);
 
     // Update menu height for Over state
-    if (animOver) setMenuHeight(data);
+    if (animOver) {
+      bodyHeight = updateMenuHeight(data);
+    }
 
     // No transition for immediate
     if (immediate) return;
@@ -2994,9 +3000,7 @@ Webflow.define('navbar', function ($, _) {
 
     // Add menu to overlay
     if (data.overlay) {
-      data.overlay.show()
-        .append(data.menu)
-        .height(menuHeight);
+      data.overlay.show().append(data.menu);
     }
 
     // Over left/right
@@ -3015,15 +3019,17 @@ Webflow.define('navbar', function ($, _) {
       .set({ y: -offsetY }).start({ y: 0 });
   }
 
-  function setBodyHeight(data) {
+  function updateDocHeight(data) {
     return data.bodyHeight = data.config.docHeight ? $doc.height() : $body.height();
   }
 
-  function setMenuHeight(data) {
-    var bodyHeight = data.bodyHeight;
+  function updateMenuHeight(data) {
+    var newMenuHeight = data.bodyHeight;
     var navFixed = data.el.css('position') == 'fixed';
-    if (!navFixed) bodyHeight -= data.el.offset().top;
-    data.menu.height(bodyHeight);
+    if (!navFixed) newMenuHeight -= data.el.offset().top;
+    data.menu.height(newMenuHeight);
+    data.overlay && data.overlay.height(newMenuHeight);
+    return newMenuHeight;
   }
 
   function close(data, immediate) {
@@ -3073,6 +3079,170 @@ Webflow.define('navbar', function ($, _) {
         data.menu.appendTo(data.parent);
         data.overlay.attr('style', '').hide();
       }
+
+      // Trigger event so other components can hook in (dropdown)
+      data.el.triggerHandler('w-close');
+    }
+  }
+
+  // Export module
+  return api;
+});
+/**
+ * ----------------------------------------------------------------------
+ * Webflow: Dropdown component
+ */
+Webflow.define('dropdown', function ($, _) {
+  'use strict';
+
+  var api = {};
+  var tram = window.tram;
+  var $doc = $(document);
+  var $dropdowns;
+  var designer;
+  var inApp = Webflow.env();
+  var namespace = '.w-dropdown';
+  var dropdownOpen = 'w--dropdown-open';
+
+  // -----------------------------------
+  // Module methods
+
+  api.ready = api.design = api.preview = init;
+
+  // -----------------------------------
+  // Private methods
+
+  function init() {
+    designer = inApp && Webflow.env('design');
+
+    // Find all instances on the page
+    $dropdowns = $doc.find(namespace);
+    $dropdowns.each(build);
+  }
+
+  function build(i, el) {
+    var $el = $(el);
+
+    // Store state in data
+    var data = $.data(el, namespace);
+    if (!data) data = $.data(el, namespace, { open: false, el: $el, config: {} });
+    data.list = $el.find('.w-dropdown-list');
+    data.toggle = $el.find('.w-dropdown-toggle');
+    data.links = data.list.find('.w-dropdown-link');
+    data.outside = outside(data);
+
+    // Remove old events
+    $el.off(namespace);
+    data.toggle.off(namespace);
+
+    // Set config from data attributes
+    configure(data);
+
+    if (data.nav) {
+      data.nav.off(namespace);
+    }
+    data.nav = $el.closest('.w-nav');
+    data.nav.on('w-close' + namespace, close.bind(null, data));
+
+    // Add events based on mode
+    if (designer) {
+      $el.on('setting' + namespace, handler(data));
+    } else {
+      data.toggle.on('click' + namespace, toggle(data));
+    }
+  }
+
+  function configure(data) {
+    var config = {};
+
+    var easing = data.el.attr('data-easing') || 'ease';
+    var easing2 = data.el.attr('data-easing2') || 'ease';
+
+    var duration = data.el.attr('data-duration');
+    duration = duration != null ? +duration : 400;
+
+    config.immediate = duration < 1;
+    config.open = 'height ' + duration + 'ms ' + easing;
+    config.close = 'height ' + duration + 'ms ' + easing2;
+
+    // Store config in data
+    data.config = config;
+  }
+
+  function handler(data) {
+    return function (evt, options) {
+      options = options || {};
+      configure(data);
+      options.open === true && open(data, true);
+      options.open === false && close(data, true);
+    };
+  }
+
+  function outside(data) {
+    // Unbind previous tap handler if it exists
+    if (data.outside) $doc.off('tap' + namespace, data.outside);
+
+    // Close menu when tapped outside
+    return _.debounce(function (evt) {
+      if (!data.open) return;
+      var dropdown = $(evt.target).closest(namespace);
+      if (!data.el.is(dropdown)) {
+        close(data);
+      }
+    });
+  }
+
+  function toggle(data) {
+    return _.debounce(function (evt) {
+      data.open ? close(data) : open(data);
+    });
+  }
+
+  function open(data, immediate) {
+    if (data.open) return;
+    data.open = true;
+    data.el.addClass(dropdownOpen);
+    var config = data.config;
+
+    // Listen for tap outside events
+    if (!designer) $doc.on('tap' + namespace, data.outside);
+
+    // No transition for immediate
+    if (config.immediate || immediate) {
+      tram(data.list).set({ height: 'auto' });
+      return;
+    }
+
+    // Wait for CSS display, then transition height
+    tram(data.list)
+      .add(config.open)
+      .set({ height: 0 })
+      .wait(1)
+      .then({ height: 'auto' });
+  }
+
+  function close(data, immediate) {
+    data.open = false;
+    var config = data.config;
+
+    // Stop listening for tap outside events
+    $doc.off('tap' + namespace, data.outside);
+
+    // Stop transition and reset for immediate
+    if (config.immediate || immediate) {
+      tram(data.list).stop();
+      complete();
+      return;
+    }
+
+    // Transition height closed
+    tram(data.list)
+      .add(config.close)
+      .start({ height: 0 })
+      .then(complete);
+
+    function complete() {
+      data.el.removeClass(dropdownOpen);
     }
   }
 

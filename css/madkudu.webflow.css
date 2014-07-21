@@ -539,7 +539,7 @@ p {
   right: 0px;
   bottom: 0px;
   z-index: 50;
-  display: block;
+  display: none;
   padding-top: 10px;
   padding-bottom: 30px;
   background-color: rgba(51, 60, 69, 0.99);
@@ -729,6 +729,7 @@ p {
   color: white;
 }
 .contact {
+  display: inline-block;
   color: #bdbdbd;
 }
 .section-page {
@@ -1173,6 +1174,9 @@ p {
   text-align: center;
   text-transform: none;
   list-style-type: none;
+}
+.company-address {
+  display: inline-block;
 }
 html.w-mod-js *[data-ix="display-none"] {
   display: none;
