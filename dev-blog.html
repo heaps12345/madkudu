@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Tue Jul 22 2014 02:06:12 GMT+0000 (UTC) -->
+<!-- Last Published: Tue Jul 22 2014 21:45:03 GMT+0000 (UTC) -->
 <html data-wf-site="53b4e216a97d650b7f647aba">
 <head>
   <meta charset="utf-8">
-  <title>Services</title>
+  <title>Blog</title>
   <meta name="description" content="MadKudu is a marketing cloud automation platform. It connects your favorite marketing applications (email, e-commerce) together and make them smarter.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="Webflow">
@@ -22,41 +22,11 @@
   <script type="text/javascript" src="js/modernizr.js"></script>
   <link rel="shortcut icon" type="image/x-icon" href="images/madkudu_ico.png">
   <link rel="apple-touch-icon" href="images/madkudu_square_2_256.png">
-  <!--Begin Mixpanel-->
-  <script type="text/javascript">
-    (function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
-    	for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="https://cdn.mxpnl.com/libs/mixpanel-2.2.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
-    	mixpanel.init("bba364b1e340c1e0f62357fb558ff21a");
-  </script>
-  <!--End Mixpanel-->
-  <script>
-    dataLayer = [
-        {
-        'event': 'Marketing website'
-        }
-    ];
-  </script>
+  <script type="text/javascript" src="script.js"></script>
   <!-- Google Tag Manager -->
   <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MNF2ST" height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MNF2ST');
-  </script>
-  <!-- End Google Tag Manager -->
-  <script>
-    function analyticsTrackForm() {
-    var elem = document.getElementById('mc-email');
-    dataLayer.push({
-      'event': 'Newsletter sign-up',
-      'user_email': elem.value
-    });
-    }
-  </script>
 </head>
 <body>
   <div class="w-nav w-hidden-medium w-hidden-small w-hidden-tiny scroll-header" data-collapse="medium" data-animation="default" data-duration="400" data-contain="1" data-ix="display-none">
@@ -84,35 +54,19 @@
         </nav>
       </div>
     </div>
-    <div class="sub-text" data-ix="fade-heaging-7">We design awesome things.</div>
-    <div class="w-container container-about">
-      <h1 data-ix="fade-heaging-6"><span class="white">what we love to do</span></h1>
-    </div>
+    <div class="w-container container-about"></div>
   </div>
   <div class="section-services white_2">
-    <div class="w-container">
-      <div class="w-row row">
-        <div class="w-col w-col-4 w-clearfix column-wrapper">
-          <img src="images/features1.png" width="40" alt="536acdd76a36e2cf280bb5de_features1.png">
-          <h4><span class="uppercas">pixel perfect design</span></h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius.</p>
-        </div>
-        <div class="w-col w-col-4 w-clearfix column-wrapper">
-          <img src="images/features2.png" width="40" alt="536acd1136d5a7ce28abe2ec_features2.png">
-          <h4><span class="uppercas">retina ready</span></h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius.</p>
-        </div>
-        <div class="w-col w-col-4 w-clearfix column-wrapper">
-          <img src="images/features3.png" width="40" alt="536accc2cb7a89465a83bc67_features3.png">
-          <h4><span class="uppercas">clean modern code</span></h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius.</p>
-        </div>
+    <div class="w-container blog-post">
+      <div>
+        <h1 class="blog-title">Heading</h1>
       </div>
+      <p class="blog-meta">2014/07/21 |&nbsp;By Paul Cothenet&nbsp;</p>
+      <p class="blog-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius.</p>
       <div class="w-row">
-        <div class="w-col w-col-4 w-clearfix column-wrapper">
+        <div class="w-col w-col-4 column-wrapper">
           <img src="images/features5.png" width="40" alt="536ace8664c13f3060a21ce6_features5.png">
           <h4><span class="uppercas">Responsive design</span></h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius.</p>
         </div>
         <div class="w-col w-col-4 w-clearfix column-wrapper">
           <img src="images/features4.png" width="40" alt="536ace4c36d5a7ce28abe2f1_features4.png">
@@ -124,80 +78,6 @@
           <h4><span class="uppercas">Completely Customizable</span></h4>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius.</p>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="section-services">
-    <div class="w-container">
-      <div class="w-row">
-        <div class="w-col w-col-5 column_features">
-          <h1><span class="uppercas">GREAT INTERACTIONS</span></h1>
-          <div class="line left"></div>
-          <p>Dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.</p><a class="button" href="https://webflow.com/templates/Fly" target="_blank">give it a try!</a>
-        </div>
-        <div class="w-col w-col-7">
-          <img src="images/laptop2.jpg" width="821" alt="53737020dcbd8f9d5f72ede4_laptop2.jpg" data-ix="scroll-from-right">
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="section-services">
-    <div class="w-container">
-      <div class="w-row">
-        <div class="w-col w-col-7">
-          <img class="column_features" src="images/laptop1.jpg" width="891" alt="53736eb3dcbd8f9d5f72edca_laptop1.jpg" data-ix="scroll-from-right-2">
-        </div>
-        <div class="w-col w-col-5">
-          <h1><span class="uppercas">powerful composer</span></h1>
-          <div class="line left"></div>
-          <p>Sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla.</p><a class="button" href="https://webflow.com/templates/Fly" target="_blank">buy it now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="section-services">
-    <div class="w-container">
-      <div class="w-row">
-        <div class="w-col w-col-5 column_features">
-          <h1><span class="uppercas">symbols ready</span></h1>
-          <div class="line left"></div>
-          <p>Consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.</p><a class="button" href="#">what u are waiting for</a>
-        </div>
-        <div class="w-col w-col-7">
-          <img src="images/laptop3.jpg" width="786" alt="537372058645090817383646_laptop3.jpg" data-ix="scale-on-scroll">
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="cliets-section">
-    <div class="w-container">
-      <h1 class="uppercas">what they say</h1>
-      <div class="line"></div>
-      <div class="w-slider clients-slider" data-animation="slide" data-duration="500" data-infinite="1" data-easing="ease-in-out-back">
-        <div class="w-slider-mask">
-          <div class="w-slide slide_1_testimonials">
-            <div class="clients-photo"></div>
-            <div class="clients-text">Cras nec magna lacus. Aenean quis posuere magna. Sed luctus sapien mauris, vel egestas purus vestibulum convallis. Aenean gravida metus.</div>
-            <h5><font color="#428bc7"><span style="font-weight: 300; text-transform: uppercase;">witney doe</span></font></h5>
-          </div>
-          <div class="w-slide slide_1_testimonials">
-            <div class="clients-photo _2"></div>
-            <div class="clients-text">Mauris condimentum velit diam, at eleifend lorem accumsan eu. Quisque ligula nunc, dapibus in nisi non, posuere tincidunt odio. Vivamus vel neque erat.</div>
-            <h5><font color="#428bc7"><span style="font-weight: 300; text-transform: uppercase;">brad doe</span></font></h5>
-          </div>
-          <div class="w-slide slide_1_testimonials">
-            <div class="clients-photo _3"></div>
-            <div class="clients-text">Lorem ispum quis posuere magna. Sed luctus sapien mauris, vel egestas purus vestibulum convallis. Aenean gravida metus imperdiet</div>
-            <h5><font color="#428bc7"><span style="font-weight: 300; text-transform: uppercase;">gloria doe</span></font></h5>
-          </div>
-        </div>
-        <div class="w-slider-arrow-left vertical-clients">
-          <div class="w-icon-slider-left arrow-clients"></div>
-        </div>
-        <div class="w-slider-arrow-right vertical-clients">
-          <div class="w-icon-slider-right arrow-clients"></div>
-        </div>
-        <div class="w-slider-nav w-round hide-dots"></div>
       </div>
     </div>
   </div>

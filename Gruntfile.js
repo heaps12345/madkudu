@@ -33,8 +33,9 @@ module.exports = function(grunt) {
         src: '/Users/pcothenet/Git/madkudu-webflow',
         dest: '/public_html/',
         exclusions: ['**/.gitignore','**/.git/**','**/.grunt/**','**/node_modules/**',
-        '/Users/pcothenet/Git/madkudu-webflow/**/.DS_Store', '**/Thumbs.db','**/.ftppass'],
-        keep: ['/public_html/blog/**',],
+        '/**/.DS_Store', '**/Thumbs.db','**/.ftppass',
+        '**/dev-*'],
+        keep: ['/public_html/blog/**','/public_html/blog/*'],
         simple: true
       }
     },

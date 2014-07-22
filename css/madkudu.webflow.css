@@ -55,7 +55,7 @@ h6 {
   font-weight: 700;
 }
 p {
-  display: inline-block;
+  display: block;
   margin-bottom: 5px;
   font-family: Raleway, sans-serif;
 }
