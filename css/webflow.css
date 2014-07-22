@@ -1251,6 +1251,15 @@ textarea.w-select {
   white-space: nowrap;
   overflow: hidden;
 }
+.w-lightbox-embed {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 .w-lightbox-control {
   position: absolute;
   top: 0;

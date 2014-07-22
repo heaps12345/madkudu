@@ -3,7 +3,26 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
     // Task configuration.
+    unzip: {
+      catalog: {
+        src: 'madkudu.webflow.zip',
+        dest: './new_version/'
+      }
+    },
+    copy: {
+      main: {
+        files: [
+        {
+          expand: true, 
+          cwd: './new_version/',
+          src: '**', 
+          dest: '.'
+        }
+        ]
+      }
+    },
     ftpush: {
       build: {
         auth: {
@@ -18,13 +37,22 @@ module.exports = function(grunt) {
         keep: ['/public_html/blog/**',],
         simple: true
       }
+    },
+    clean: {
+      build: {
+        src: ['new_version/','madkudu.webflow.zip']
+      }
     }
   });
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-ftpush');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-zip');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
   // Default task.
   grunt.registerTask('default', ['ftpush']);
+  grunt.registerTask('push', ['unzip','copy:main','clean','ftpush']);
 
 };

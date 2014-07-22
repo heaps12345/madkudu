@@ -2353,7 +2353,11 @@ var lightbox = (function (window, document, $, tram, undefined) {
     var previousIndex = currentIndex;
     currentIndex = index;
     spinner.show();
-    loadImage(item.url, function ($image) {
+
+    // For videos, load an empty SVG with the video dimensions to preserve
+    // the video’s aspect ratio while being responsive.
+    var url = item.html && svgDataUri(item.width, item.height) || item.url;
+    loadImage(url, function ($image) {
       // Make sure this is the last item requested to be shown since
       // images can finish loading in a different order than they were
       // requested in.
@@ -2364,6 +2368,10 @@ var lightbox = (function (window, document, $, tram, undefined) {
       var $figure = dom('figure', 'figure').append(addClass($image, 'image'));
       var $frame = dom('frame').append($figure);
       var $newView = dom('view').append($frame);
+
+      if (item.html) {
+        $figure.append(addClass($(item.html), 'embed'));
+      }
       
       if (item.caption) {
         $figure.append(dom('caption', 'figcaption').text(item.caption));
@@ -2620,6 +2628,11 @@ var lightbox = (function (window, document, $, tram, undefined) {
     return typeof value == 'object' && null != value && !isArray(value);
   }
 
+  function svgDataUri(width, height) {
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="' + width + '" height="' + height + '"/>';
+    return 'data:image/svg+xml;charset=utf-8,' + encodeURI(svg);
+  }
+
   // Compute some dimensions manually for iOS, because of buggy support for VH.
   // Also, Android built-in browser does not support viewport units.
   (function () {
@@ -2711,7 +2724,12 @@ Webflow.define('lightbox', function ($, _) {
 
     // Store state in data
     var data = $.data(el, namespace);
-    if (!data) data = $.data(el, namespace, {el: $el, images: []});
+    if (!data) data = $.data(el, namespace, {
+      el: $el,
+      mode: 'images',
+      images: [],
+      embed: ''
+    });
 
     // Remove old events
     data.el.off(namespace);
@@ -2733,14 +2751,22 @@ Webflow.define('lightbox', function ($, _) {
 
   function configure(data) {
     var json = data.el.children('.w-json').html();
-    
+
     if (!json) {
       data.images = [];
       return;
     }
     
     try {
-      data.images = JSON.parse(json).images;
+      json = JSON.parse(json);
+      data.mode = json.mode;
+
+      if (json.mode == 'video') {
+        data.embed = json.embed;
+      }
+      else {
+        data.images = json.images;
+      }
     }
     catch (e) {
       console.error('Malformed lightbox JSON configuration.', e.message);
@@ -2749,7 +2775,11 @@ Webflow.define('lightbox', function ($, _) {
 
   function tapHandler(data) {
     return function () {
-      data.images.length && lightbox(data.images);
+      if (data.mode == 'video') {
+        data.embed && lightbox(data.embed);
+      } else {
+        data.images.length && lightbox(data.images);
+      }
     };
   }
 
