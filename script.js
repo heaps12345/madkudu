@@ -19,11 +19,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MNF2ST');
 <!-- End Google Tag Manager -->
 
-// Function to track the MailChimp form in Mixpanel
-function analyticsTrackForm() {
-var elem = document.getElementById('mc-email');
-dataLayer.push({
-  'event': 'Newsletter sign-up',
-  'user_email': elem.value
+$('form.mc_embed_signup').submit(function(){
+	var elem = document.getElementById('mc-email');
+	dataLayer.push({
+		'event': 'Newsletter sign-up',
+		'user_email': elem.value
+	});
+	alert('Email submitted to MailChimp!');
 });
-}
