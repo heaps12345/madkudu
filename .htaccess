@@ -1,5 +1,10 @@
 DirectoryIndex index.html index.php index.htm parking-page.html
 
+# Redirect http://madkudu.com to http://www.madkudu.com
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^madkudu.com
+RewriteRule (.*) http://www.madkudu.com/$1 [R=301,L]
+
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On

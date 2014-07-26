@@ -23,9 +23,9 @@ $(function() {
 	$('#wf-form-mc-embedded-subscribe-form').on('submit', function(e){
 		e.preventDefault();
 		var val = $("#mc-email").val();
-    	dataLayer.push({
-		'event': 'Newsletter sign-up',
-		'user_email': val
-	});
+		dataLayer.push({
+			'event': 'Newsletter sign-up',
+			'user_email': val
+		});
 	});
 });
