@@ -162,7 +162,7 @@ p {
   left: 0px;
   top: 0px;
   right: 0px;
-  display: block;
+  display: none;
   overflow-x: hidden;
   overflow-y: hidden;
   width: 100%;

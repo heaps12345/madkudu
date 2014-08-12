@@ -2399,7 +2399,7 @@ var lightbox = (function (window, document, $, tram, undefined) {
         .on('dragstart', selector('img'), preventDefault);
       $refs.lightbox
         .on('keydown', keyHandler)
-        // IE looses focus to inner nodes without letting us know.
+        // IE loses focus to inner nodes without letting us know.
         .on('focusin', focusThis);
 
     // The `tabindex` attribute is needed to enable non-input elements
