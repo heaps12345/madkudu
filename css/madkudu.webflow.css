@@ -1,5 +1,5 @@
 body {
-  font-family: Raleway, sans-serif;
+  font-family: Merriweather, serif;
   color: #818181;
   font-size: 14px;
   line-height: 26px;
@@ -25,6 +25,7 @@ h2 {
 h3 {
   margin-top: 20px;
   margin-bottom: 10px;
+  font-family: Ubuntu, Helvetica, sans-serif;
   color: #585858;
   font-size: 18px;
   line-height: 30px;
@@ -33,6 +34,7 @@ h3 {
 h4 {
   margin-top: 20px;
   margin-bottom: 10px;
+  font-family: Ubuntu, Helvetica, sans-serif;
   color: #585858;
   font-size: 16px;
   line-height: 24px;
@@ -41,6 +43,7 @@ h4 {
 h5 {
   margin-top: 10px;
   margin-bottom: 10px;
+  font-family: Merriweather, serif;
   color: #585858;
   font-size: 14px;
   line-height: 20px;
@@ -57,7 +60,7 @@ h6 {
 p {
   display: block;
   margin-bottom: 5px;
-  font-family: Raleway, sans-serif;
+  font-family: Merriweather, serif;
 }
 .button {
   display: inline-block;
@@ -69,6 +72,7 @@ p {
   -webkit-transition: all 500ms ease;
   -o-transition: all 500ms ease;
   transition: all 500ms ease;
+  font-family: Ubuntu, Helvetica, sans-serif;
   color: #428bc7;
   font-weight: 600;
   text-align: center;
@@ -90,6 +94,9 @@ p {
 .button.wh:hover {
   background-color: white;
   color: #428bc7;
+}
+.button.try-it {
+  font-family: Ubuntu, Helvetica, sans-serif;
 }
 .brand-logo {
   margin-top: 20px;
@@ -136,6 +143,7 @@ p {
   margin-top: 30px;
   margin-right: 25px;
   float: right;
+  font-family: Ubuntu, Helvetica, sans-serif;
   text-align: left;
 }
 .header-text {
@@ -227,7 +235,7 @@ p {
 }
 .center-div {
   display: block;
-  margin-top: 30px;
+  margin-top: 20px;
   padding-bottom: 30px;
   font-weight: 400;
   text-align: center;
@@ -347,6 +355,7 @@ p {
   padding-top: 25px;
 }
 .uppercas {
+  font-family: Ubuntu, Helvetica, sans-serif;
   font-weight: 500;
   text-align: center;
   text-transform: uppercase;
@@ -382,13 +391,21 @@ p {
   text-align: center;
 }
 .option-section {
-  display: none;
+  display: block;
   padding-top: 0px;
   padding-bottom: 0px;
   background-color: white;
 }
 .column-wrapper {
   padding: 30px 20px 20px;
+  box-shadow: none;
+}
+.column-wrapper:hover {
+  box-shadow: none;
+}
+.column-wrapper.recipe-wrapper {
+  padding-right: 10px;
+  padding-left: 10px;
   box-shadow: none;
 }
 .shadow {
@@ -473,6 +490,7 @@ p {
 .clients-text {
   position: relative;
   margin-top: 20px;
+  font-family: Merriweather, serif;
   color: #919191;
   font-size: 18px;
   line-height: 32px;
@@ -553,6 +571,7 @@ p {
 }
 .social_footer {
   margin-top: 15px;
+  text-align: left;
 }
 .circle_footer {
   width: 34px;
@@ -581,6 +600,7 @@ p {
   display: inline-block;
   margin-left: 10px;
   padding-top: 8px;
+  font-family: Ubuntu, Helvetica, sans-serif;
   color: #adadad;
   font-size: 13px;
 }
@@ -620,6 +640,7 @@ p {
   border-bottom-color: #818181;
   border-left-style: none;
   background-color: transparent;
+  font-family: Merriweather, serif;
   color: white;
   font-size: 13px;
 }
@@ -636,6 +657,7 @@ p {
   border-bottom-color: #818181;
   border-left-style: none;
   background-color: transparent;
+  font-family: Merriweather, serif;
   color: white;
   font-size: 13px;
 }
@@ -653,6 +675,7 @@ p {
   -webkit-transition: all 500ms ease;
   -o-transition: all 500ms ease;
   transition: all 500ms ease;
+  font-family: Ubuntu, Helvetica, sans-serif;
   color: #818181;
   font-size: 13px;
   font-weight: 600;
@@ -702,17 +725,20 @@ p {
   bottom: -21px;
   margin-right: 15px;
   float: right;
+  font-family: Ubuntu, Helvetica, sans-serif;
 }
 .sub-header {
   position: relative;
   z-index: 1;
-  padding-bottom: 60px;
+  display: block;
+  padding-bottom: 0px;
   background-color: #428bc7;
 }
 .info {
   position: relative;
   display: block;
   margin-bottom: 10px;
+  font-family: Ubuntu, Helvetica, sans-serif;
 }
 .info.address {
   margin-bottom: 0px;
@@ -751,6 +777,7 @@ p {
   text-align: center;
 }
 .white {
+  font-family: Ubuntu, Helvetica, sans-serif;
   color: white;
   font-weight: 500;
   letter-spacing: 2px;
@@ -759,6 +786,7 @@ p {
   font-size: 35px;
 }
 .sub-text {
+  font-family: Ubuntu, Helvetica, sans-serif;
   color: rgba(255, 255, 255, 0.61);
   font-size: 18px;
   font-weight: 200;
@@ -782,6 +810,7 @@ p {
 }
 .team-work {
   margin-bottom: 5px;
+  font-family: Ubuntu, Helvetica, sans-serif;
   color: #999;
   font-weight: 400;
 }
@@ -952,6 +981,7 @@ p {
   border-bottom: 1px solid #e6e6e6;
 }
 .catergory-text {
+  font-family: Merriweather, serif;
   color: #adadad;
 }
 .pricing-section {
@@ -1012,6 +1042,7 @@ p {
   -ms-transform: rotate(46deg);
   -o-transform: rotate(46deg);
   transform: rotate(46deg);
+  font-family: Merriweather, serif;
   color: #8c630b;
   font-size: 11px;
   font-weight: 700;
@@ -1073,6 +1104,7 @@ p {
 }
 ._404-text {
   margin-bottom: 67px;
+  font-family: Ubuntu, Helvetica, sans-serif;
   color: #428bc7;
   font-size: 140px;
   font-weight: 600;
@@ -1133,7 +1165,6 @@ p {
 .top-div {
   padding-top: 60px;
   padding-bottom: 60px;
-  background-color: #428bc7;
   color: rgba(255, 255, 255, 0.81);
 }
 .mc-wrapper {
@@ -1170,6 +1201,7 @@ p {
 .team-header {
   margin-top: 10px;
   margin-bottom: 0px;
+  font-size: 18px;
   text-align: center;
   list-style-type: none;
 }
@@ -1178,6 +1210,7 @@ p {
 }
 .team-item {
   direction: ltr;
+  font-family: Merriweather, serif;
   text-align: center;
   text-transform: none;
   list-style-type: none;
@@ -1186,7 +1219,61 @@ p {
   display: inline-block;
 }
 .mailchimp-form {
+  display: none;
   font-weight: 400;
+}
+.learn-more {
+  color: #428bc7;
+  text-decoration: underline;
+}
+.recipe-teaser {
+  padding: 10px;
+  text-align: left;
+}
+.recipe-teaser:hover {
+  padding: 10px;
+  background-color: transparent;
+}
+.teaser-link {
+  color: #428bc7;
+  font-weight: 600;
+  text-align: right;
+  text-decoration: none;
+}
+.button-inverse {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 8px 18px;
+  border: 2px solid white;
+  border-radius: 5px;
+  -webkit-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+  font-family: Raleway, sans-serif;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+.button-inverse:hover {
+  border-color: white;
+  background-color: white;
+  color: #428bc7;
+  font-weight: 600;
+}
+.button-inverse.try-it {
+  font-family: Ubuntu, Helvetica, sans-serif;
+}
+.section-header {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-family: Ubuntu, Helvetica, sans-serif;
+  color: #818181;
+  letter-spacing: 2px;
+}
+.link-footer {
+  font-family: Ubuntu, Helvetica, sans-serif;
+  color: #818181;
+  text-decoration: none;
 }
 html.w-mod-js *[data-ix="display-none"] {
   display: none;
