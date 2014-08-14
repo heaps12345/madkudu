@@ -9,8 +9,8 @@ document.write('\
 	</div>\
 	<div class="w-container navigation-container">\
 		<nav class="w-nav-menu nav-menu" role="navigation">\
-		<a class="w-nav-link nav-link" href="index.html">Home</a>\
-		<a class="w-nav-link nav-link" href="/blog">Blog</a>\
+		<a class="w-nav-link nav-link" href="http://www.madkudu.com">Home</a>\
+		<a class="w-nav-link nav-link" href="http://www.madkudu.com/blog">Blog</a>\
 		</nav>\
 	</div>\
 </div>\
