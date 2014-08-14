@@ -775,7 +775,7 @@ p {
   z-index: 2;
 }
 .container-about {
-  padding-top: 60px;
+  padding-top: 15px;
   text-align: center;
 }
 .white {
@@ -1143,7 +1143,7 @@ p {
   margin-bottom: 20px;
   font-family: Ubuntu, Helvetica, sans-serif;
   color: white;
-  font-size: 52px;
+  font-size: 48px;
   line-height: 56px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -1264,6 +1264,7 @@ p {
   font-weight: 600;
 }
 .button-inverse.try-it {
+  margin-top: 20px;
   font-family: Ubuntu, Helvetica, sans-serif;
 }
 .section-header {
@@ -1283,7 +1284,14 @@ p {
   display: none;
 }
 .big-subtitle {
+  margin-top: 5px;
+  padding-top: 0px;
   font-size: 16px;
+}
+.credits {
+  margin-right: 20px;
+  margin-bottom: 40px;
+  margin-left: 20px;
 }
 html.w-mod-js *[data-ix="display-none"] {
   display: none;
