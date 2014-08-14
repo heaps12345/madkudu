@@ -39,6 +39,7 @@ h4 {
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
+  text-transform: uppercase;
 }
 h5 {
   margin-top: 10px;
@@ -114,20 +115,21 @@ p {
   -webkit-transition: all 200ms ease;
   -o-transition: all 200ms ease;
   transition: all 200ms ease;
-  color: white;
+  color: black;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 .nav-link:hover {
-  border-bottom: 2px solid white;
-  color: white;
+  border-bottom: 2px solid #428bc7;
+  color: #428bc7;
 }
 .nav-link.w--current {
-  border-bottom: 2px solid white;
+  border-bottom-width: 2px;
+  border-bottom-color: #428bc7;
   font-family: Ubuntu, Helvetica, sans-serif;
-  color: white;
+  color: #428bc7;
 }
 .navigation-container {
   display: block;
@@ -137,7 +139,7 @@ p {
   position: relative;
   height: 90px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  background-color: transparent;
+  background-color: white;
 }
 .header-contact {
   margin-top: 30px;
@@ -150,7 +152,7 @@ p {
   position: relative;
   margin-left: 8px;
   float: right;
-  color: white;
+  color: black;
   font-size: 13px;
 }
 .header-ico {
@@ -394,7 +396,7 @@ p {
   display: block;
   padding-top: 0px;
   padding-bottom: 0px;
-  background-color: white;
+  background-color: #f2f2f2;
 }
 .column-wrapper {
   padding: 30px 20px 20px;
@@ -760,13 +762,13 @@ p {
 }
 .contact {
   display: inline-block;
-  color: #bdbdbd;
+  color: #999;
 }
 .section-page {
   position: relative;
   padding-top: 60px;
   padding-bottom: 80px;
-  background-color: white;
+  background-color: #f2f2f2;
 }
 .section-work {
   position: relative;
@@ -819,6 +821,7 @@ p {
   height: 35px;
   margin-right: 10px;
   padding-top: 2px;
+  border: 1px solid #999;
   border-radius: 60px;
   background-color: #f2f2f2;
   opacity: 0.7;
@@ -1137,14 +1140,14 @@ p {
   padding-top: 40px;
 }
 .big-text {
-  margin-bottom: 8px;
+  margin-bottom: 20px;
   font-family: Ubuntu, Helvetica, sans-serif;
   color: white;
-  font-size: 34px;
-  line-height: 46px;
-  font-weight: 400;
+  font-size: 52px;
+  line-height: 56px;
+  font-weight: 700;
   letter-spacing: 1px;
-  text-transform: uppercase;
+  text-transform: none;
 }
 .medium-text {
   display: none;
@@ -1237,7 +1240,7 @@ p {
 .teaser-link {
   color: #428bc7;
   font-weight: 600;
-  text-align: right;
+  text-align: left;
   text-decoration: none;
 }
 .button-inverse {
@@ -1269,11 +1272,18 @@ p {
   font-family: Ubuntu, Helvetica, sans-serif;
   color: #818181;
   letter-spacing: 2px;
+  text-transform: uppercase;
 }
 .link-footer {
   font-family: Ubuntu, Helvetica, sans-serif;
   color: #818181;
   text-decoration: none;
+}
+.snippet-logo {
+  display: none;
+}
+.big-subtitle {
+  font-size: 16px;
 }
 html.w-mod-js *[data-ix="display-none"] {
   display: none;

@@ -8,17 +8,47 @@
 
 <url>
   <loc>http://www.madkudu.com/</loc>
-  <lastmod>2014-07-22T23:44:19+00:00</lastmod>
-  <changefreq>daily</changefreq>
+  <lastmod>2014-08-13T23:56:55+00:00</lastmod>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>http://www.madkudu.com/index.html</loc>
-  <lastmod>2014-07-22T23:44:19+00:00</lastmod>
-  <changefreq>daily</changefreq>
+  <lastmod>2014-08-13T23:56:55+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.madkudu.com/pricing.html</loc>
+  <lastmod>2014-08-13T23:56:56+00:00</lastmod>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>http://www.madkudu.com/team.html</loc>
-  <lastmod>2014-07-22T23:15:36+00:00</lastmod>
-  <changefreq>daily</changefreq>
+  <lastmod>2014-08-13T23:56:56+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.madkudu.com/blog/</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.madkudu.com/credits.html</loc>
+  <lastmod>2014-08-13T23:56:55+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.madkudu.com/blog/lorem-ipsum/</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.madkudu.com/blog/2014/07/</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.madkudu.com/blog/author/paul/</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.madkudu.com/blog/hello-world/</loc>
+  <changefreq>weekly</changefreq>
 </url>
 </urlset>

@@ -13,18 +13,24 @@ module.exports = function(grunt) {
     },
     copy: {
       main: {
-        files: [
-        {
+        files: [{
           expand: true, 
           cwd: './new_version/',
           src: '**', 
           dest: '.'
-        }
-        ]
+        }]
+      },
+      css: {
+        files: [{
+          expand: true, 
+          cwd: './css/',
+          src: '**', 
+          dest: './blog/wp-content/themes/webflow/css/'
+        }]
       }
     },
     ftpush: {
-      build: {
+      site: {
         auth: {
           host: 'server40.web-hosting.com',
           port: 21,
@@ -32,8 +38,8 @@ module.exports = function(grunt) {
         },
         src: '/Users/pcothenet/Git/madkudu-webflow',
         dest: '/public_html/',
-        exclusions: ['**/.gitignore','**/.git/**','**/.grunt/**','**/node_modules/**',
-        '/**/.DS_Store', '**/Thumbs.db','**/.ftppass',
+        exclusions: ['**/blog/**','**/.gitignore','**/.git/**','**/.grunt/**','**/node_modules/**',
+        '**/.DS_Store', '**/Thumbs.db','**/.ftppass',
         '**/dev-*'],
         keep: ['/public_html/blog/**','/public_html/blog/*'],
         simple: true
@@ -46,6 +52,24 @@ module.exports = function(grunt) {
     }
   });
 
+
+    /*
+    // Task configuration.
+    ftpush: {
+      build: {
+        auth: {
+          host: 'server40.web-hosting.com',
+          port: 21,
+          authKey: 'ftpkey'
+        },
+        src: '/Users/pcothenet/Git/madkudu-wordpress/wp-content',
+        dest: '/public_html/blog/wp-content',
+        simple: true
+      }
+    }
+  });
+*/
+
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-ftpush');
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -54,6 +78,6 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask('default', ['ftpush']);
-  grunt.registerTask('push', ['unzip','copy:main','clean','ftpush']);
+  grunt.registerTask('push', ['unzip','copy:main','clean','ftpush:site']);
 
 };

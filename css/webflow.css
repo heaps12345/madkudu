@@ -1632,3 +1632,23 @@ textarea.w-select {
     transform: rotate(360deg);
   }
 }
+.w-dyn-loading {
+  display: block;
+  padding: 10px;
+}
+.w-dyn-items {
+  display: none;
+}
+.w-dyn-items.visible {
+  display: block;
+}
+.w-dyn-empty {
+  display: none;
+  padding: 10px;
+  background-color: #dddddd;
+}
+.w-dyn-error {
+  display: none;
+  padding: 10px;
+  background-color: #ffdede;
+}
