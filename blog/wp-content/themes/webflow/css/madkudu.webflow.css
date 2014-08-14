@@ -119,6 +119,7 @@ p {
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 1px;
+  text-decoration: none;
   text-transform: uppercase;
 }
 .nav-link:hover {
