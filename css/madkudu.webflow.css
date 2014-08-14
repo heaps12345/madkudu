@@ -130,6 +130,7 @@ p {
   border-bottom-color: #428bc7;
   font-family: Ubuntu, Helvetica, sans-serif;
   color: #428bc7;
+  text-transform: uppercase;
 }
 .navigation-container {
   display: block;
