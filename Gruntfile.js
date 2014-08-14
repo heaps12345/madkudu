@@ -43,6 +43,17 @@ module.exports = function(grunt) {
         '**/dev-*'],
         keep: ['/public_html/blog/**','/public_html/blog/*'],
         simple: true
+      },
+      blog: {
+        auth: {
+          host: 'server40.web-hosting.com',
+          port: 21,
+          authKey: 'ftpkey'
+        },
+        src: './blog/wp-content/themes/webflow',
+        dest: '/public_html/blog/wp-content/themes/webflow',
+        exclusions: ['**/.gitignore','**/.git/**','**/.DS_Store', '**/Thumbs.db','**/.ftppass','**/dev-*'],
+        simple: true
       }
     },
     clean: {
@@ -56,16 +67,7 @@ module.exports = function(grunt) {
     /*
     // Task configuration.
     ftpush: {
-      build: {
-        auth: {
-          host: 'server40.web-hosting.com',
-          port: 21,
-          authKey: 'ftpkey'
-        },
-        src: '/Users/pcothenet/Git/madkudu-wordpress/wp-content',
-        dest: '/public_html/blog/wp-content',
-        simple: true
-      }
+
     }
   });
 */
@@ -78,6 +80,7 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask('default', ['ftpush']);
-  grunt.registerTask('push', ['unzip','copy:main','clean','ftpush:site']);
+  grunt.registerTask('push-site', ['unzip','copy:main','clean','ftpush:site']);
+  grunt.registerTask('push-blog', ['copy:css','ftpush:blog']);
 
 };
