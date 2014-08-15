@@ -99,6 +99,12 @@ p {
 .button.try-it {
   font-family: Ubuntu, Helvetica, sans-serif;
 }
+.button.button-small {
+  margin-top: 25px;
+  margin-right: 10px;
+  padding: 5px;
+  font-size: 13px;
+}
 .brand-logo {
   margin-top: 20px;
   margin-left: 25px;
@@ -133,6 +139,9 @@ p {
   color: #428bc7;
   text-transform: uppercase;
 }
+.nav-link.nav-link-login {
+  display: none;
+}
 .navigation-container {
   display: block;
   text-align: center;
@@ -163,7 +172,7 @@ p {
 }
 .section {
   position: relative;
-  display: none;
+  display: block;
   padding-top: 20px;
   padding-bottom: 20px;
   border-top: 1px solid white;
@@ -1295,6 +1304,10 @@ p {
   margin-bottom: 40px;
   margin-left: 20px;
 }
+.login-section {
+  margin-right: 15px;
+  float: right;
+}
 html.w-mod-js *[data-ix="display-none"] {
   display: none;
 }
@@ -1448,6 +1461,9 @@ html.w-mod-js.w-mod-no-ios *[data-ix="scroll-from-right-2"] {
   p {
     font-size: 13px;
   }
+  .button.button-small.button-login {
+    display: none;
+  }
   .nav-menu {
     position: absolute;
     z-index: 3;
@@ -1466,6 +1482,9 @@ html.w-mod-js.w-mod-no-ios *[data-ix="scroll-from-right-2"] {
   .nav-link.w--current {
     border-bottom-style: none;
     background-color: #428bc7;
+  }
+  .nav-link.nav-link-login {
+    display: block;
   }
   .header-contact {
     display: none;
@@ -1493,6 +1512,13 @@ html.w-mod-js.w-mod-no-ios *[data-ix="scroll-from-right-2"] {
   }
   .medium-text {
     font-size: 15px;
+  }
+  .nav-button {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    color: black;
   }
 }
 @media (max-width: 767px) {
@@ -1560,10 +1586,23 @@ html.w-mod-js.w-mod-no-ios *[data-ix="scroll-from-right-2"] {
     padding-top: 0px;
     text-align: center;
   }
+  .nav-button {
+    padding-top: 10px;
+    padding-bottom: 8px;
+  }
 }
 @media (max-width: 479px) {
   h5 {
     font-size: 15px;
+  }
+  .button.button-small.button-login {
+    display: none;
+  }
+  .nav-link {
+    display: block;
+  }
+  .nav-link.nav-link-login {
+    display: block;
   }
   .work-hover {
     top: 30%;
@@ -1598,6 +1637,9 @@ html.w-mod-js.w-mod-no-ios *[data-ix="scroll-from-right-2"] {
   }
   .big-text {
     font-size: 22px;
+  }
+  .top-div {
+    display: block;
   }
 }
 
