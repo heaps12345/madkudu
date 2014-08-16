@@ -149,7 +149,7 @@ p {
 .header {
   position: relative;
   height: 90px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
   background-color: white;
 }
 .header-contact {
@@ -796,6 +796,8 @@ p {
   letter-spacing: 2px;
 }
 .white.number {
+  display: block;
+  margin-top: -15px;
   font-size: 35px;
 }
 .sub-text {
@@ -1041,6 +1043,8 @@ p {
   letter-spacing: -1px;
 }
 .month {
+  display: block;
+  margin-top: -5px;
   color: rgba(255, 255, 255, 0.65);
   font-size: 15px;
   text-transform: none;
@@ -1048,6 +1052,7 @@ p {
 .ribbon {
   position: absolute;
   right: 0px;
+  display: none;
   margin-top: 6px;
   margin-right: -45px;
   padding: 7px 50px;
@@ -1062,6 +1067,7 @@ p {
   font-weight: 700;
 }
 .pricing-section-2 {
+  display: none;
   padding-top: 80px;
   padding-bottom: 80px;
   border-top: 1px solid #ebebeb;
