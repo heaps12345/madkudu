@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://www.madkudu.com/</loc>
+  <lastmod>2014-08-16T00:22:50+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.madkudu.com/index.html</loc>
+  <lastmod>2014-08-16T00:22:50+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.madkudu.com/pricing.html</loc>
+  <lastmod>2014-08-16T00:22:50+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.madkudu.com/team.html</loc>
+  <lastmod>2014-08-16T00:22:51+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.madkudu.com/blog/</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://www.madkudu.com/credits.html</loc>
+  <lastmod>2014-08-16T00:22:50+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://try.madkudu.com/email-segment-by-income-mailchimp/</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://try.madkudu.com/</loc>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://try.madkudu.com/email-segment-by-weather-mailchimp/</loc>
+  <changefreq>weekly</changefreq>
+</url>
+</urlset>

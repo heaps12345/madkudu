@@ -156,7 +156,7 @@ p {
 .header {
   position: relative;
   height: 90px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
   background-color: white;
 }
 .header-contact {
@@ -1321,6 +1321,9 @@ p {
 .login-section {
   margin-right: 15px;
   float: right;
+}
+.pricing-contact {
+  color: #8c8c8c;
 }
 html.w-mod-js *[data-ix="display-none"] {
   display: none;
