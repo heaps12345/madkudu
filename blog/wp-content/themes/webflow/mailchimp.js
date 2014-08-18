@@ -8,7 +8,7 @@ document.write('\
 \
 		<input class="w-input" id="mc-email" type="email" placeholder="Enter your email address" name="email" data-name="EMAIL" required="required">\
 \
-		<input class="w-button" type="submit" value="Subscribe" data-wait="Please wait...">\
+		<input class="button" type="submit" value="Subscribe" data-wait="Please wait...">\
 	</form>\
 \
 	<div class="w-form-done">\

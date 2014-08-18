@@ -105,13 +105,19 @@ p {
   padding: 5px;
   font-size: 13px;
 }
+.button.button-small.button-login {
+  padding-right: 18px;
+  padding-left: 18px;
+}
 .brand-logo {
   margin-top: 20px;
   margin-left: 25px;
   float: left;
 }
 .nav-menu {
+  width: auto;
   margin-top: 30px;
+  margin-right: 0px;
   float: none;
   font-family: Ubuntu, Helvetica, sans-serif;
 }
@@ -144,6 +150,7 @@ p {
 }
 .navigation-container {
   display: block;
+  max-width: 600px;
   text-align: center;
 }
 .header {
@@ -580,6 +587,7 @@ p {
   background-color: rgba(51, 60, 69, 0.99);
 }
 .footer_logo {
+  display: block;
   margin-bottom: 15px;
 }
 .social_footer {
@@ -1313,6 +1321,9 @@ p {
 .login-section {
   margin-right: 15px;
   float: right;
+}
+.pricing-contact {
+  color: #8c8c8c;
 }
 html.w-mod-js *[data-ix="display-none"] {
   display: none;
