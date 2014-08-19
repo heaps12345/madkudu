@@ -1,4 +1,4 @@
-<div id="player"></div>
+<iframe id="player" width="480" height="360" src="//www.youtube.com/embed/7hndSOE3h9U" frameborder="0" allowfullscreen></iframe>
 
 <script>
   // 2. This code loads the IFrame Player API code asynchronously.
@@ -16,6 +16,10 @@
       height: '360',
       width: '480',
       videoId: '7hndSOE3h9U',
+      playerVars: {
+            rel: 0 ,
+            modestbranding: 1
+      },
       events: {
         'onReady': onPlayerReady,
         'onStateChange': onPlayerStateChange
