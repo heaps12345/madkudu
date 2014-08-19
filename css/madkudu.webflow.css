@@ -85,7 +85,12 @@ p {
   color: white;
 }
 .button.price {
-  margin-top: 28px;
+  position: static;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin-top: 10px;
 }
 .button.wh {
   margin-bottom: 15px;
@@ -156,7 +161,7 @@ p {
 .header {
   position: relative;
   height: 90px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   background-color: white;
 }
 .header-contact {
@@ -1009,7 +1014,7 @@ p {
   color: #adadad;
 }
 .pricing-section {
-  padding-top: 80px;
+  padding-top: 30px;
   padding-bottom: 100px;
   border-top: 1px solid white;
   background-color: #f2f2f2;
@@ -1018,10 +1023,10 @@ p {
   position: relative;
   overflow-x: hidden;
   overflow-y: hidden;
-  padding-bottom: 30px;
+  padding-bottom: 0px;
   border: 1px solid #e6e6e6;
   border-radius: 7px;
-  background-color: rgba(255, 255, 255, 0.52);
+  background-color: white;
   text-align: center;
 }
 .pricing_price {
@@ -1326,7 +1331,17 @@ p {
   color: #8c8c8c;
 }
 .mixpanel-badge {
-  margin-top: 21px;
+  margin-top: 19px;
+}
+.pricing-try {
+  position: static;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: block;
+  margin-top: 30px;
+  text-align: center;
 }
 html.w-mod-js *[data-ix="display-none"] {
   display: none;
