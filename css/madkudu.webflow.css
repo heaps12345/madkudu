@@ -156,7 +156,7 @@ p {
 .header {
   position: relative;
   height: 90px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
   background-color: white;
 }
 .header-contact {
@@ -1324,6 +1324,9 @@ p {
 }
 .pricing-contact {
   color: #8c8c8c;
+}
+.mixpanel-badge {
+  margin-top: 21px;
 }
 html.w-mod-js *[data-ix="display-none"] {
   display: none;
