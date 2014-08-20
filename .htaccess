@@ -5,6 +5,9 @@ RewriteEngine On
 RewriteCond %{HTTP_HOST} ^madkudu.com
 RewriteRule (.*) http://www.madkudu.com/$1 [R=301,L]
 
+# Redirect http://www.madkudu.com/index.html to http://www.madkudu.com
+RewriteRule ^index\.html$ http://www.madkudu.com/ [L,R=301]
+
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
