@@ -19,12 +19,6 @@ $(function() {
 		  email: val
 		});
 
-		/*
-		dataLayer.push({
-			'event': 'Newsletter sign-up',
-			'user_email': val
-		});
-		*/
 	});
 
 	/*
