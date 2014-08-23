@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Wed Aug 20 2014 15:00:16 GMT+0000 (UTC) -->
+<!-- Last Published: Sat Aug 23 2014 01:22:08 GMT+0000 (UTC) -->
 <html data-wf-site="53b4e216a97d650b7f647aba" data-wf-page="53f2970e3435cd84095707a9">
 <head>
   <meta charset="utf-8">
@@ -61,13 +61,13 @@
       <a class="w-nav-brand brand-logo" href="index.html">
         <img src="images/madkudu_rectangle.png" alt="MadKudu">
       </a>
-      <div class="w-clearfix login-section"><a class="button button-small button-login" href="https://app.madkudu.com/login/">Log In</a><a class="button button-small button-login" href="https://app.madkudu.com/signup/">Sign Up Free</a>
+      <div class="w-clearfix login-section"><a class="button button-small button-login" href="https://app.madkudu.com/login/">Log In</a><a class="button button-small button-login button-signup" href="https://app.madkudu.com/signup/">Sign Up Free</a>
         <div class="w-nav-button nav-button">
           <div class="w-icon-nav-menu"></div>
         </div>
       </div>
       <div class="w-container navigation-container">
-        <nav class="w-nav-menu nav-menu" role="navigation"><a class="w-nav-link nav-link" href="index.html">BENEFITS</a><a class="w-nav-link nav-link" href="pricing.html">Pricing</a><a class="w-nav-link nav-link" href="team.html">Team</a><a class="w-nav-link nav-link" href="#" data-ix="show-footer">Contact</a><a class="w-nav-link nav-link"
+        <nav class="w-nav-menu nav-menu" role="navigation"><a class="w-nav-link nav-link" href="index.html">Benefits</a><a class="w-nav-link nav-link" href="pricing.html">Pricing</a><a class="w-nav-link nav-link" href="team.html">Team</a><a class="w-nav-link nav-link" href="#" data-ix="show-footer">Contact</a><a class="w-nav-link nav-link"
           href="/blog">Blog</a><a class="w-nav-link nav-link nav-link-login" href="/blog">LOG IN</a><a class="w-nav-link nav-link nav-link-login" href="/blog">SIGN UP</a>
         </nav>
       </div>
@@ -76,26 +76,38 @@
       <h1 data-ix="fade-heaging-6"><span class="white">PRIVACY&nbsp;POLICY</span></h1>
     </div>
   </div>
-  <div class="credits">
+  <div class="mc-wrapper">
     <div class="w-container row">
-      <div class="w-embed credits-paragraph">
-        <p><strong>Snow</strong> designed by <a href="http://www.thenounproject.com/DmitryBaranovskiy">Dmitry Baranovskiy</a> from the <a href="http://www.thenounproject.com">Noun Project</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a> /
-          Color altered from original</p>
-        <p>
-          <strong>Lightning Bolt</strong> designed by <a href="http://www.thenounproject.com/JoeMortell">Joe Mortell</a> from the <a href="http://www.thenounproject.com">Noun Project</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>
-        </p>
-        <p>
-          <strong>Identification Badge</strong> designed by <a href="http://www.thenounproject.com/michela.tannoia">Michela Tannoia</a> from the <a href="http://www.thenounproject.com">Noun Project</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>
-        </p>
-        <p>
-          <strong>Gender</strong> designed by <a href="http://www.thenounproject.com/MisterPixel">Mister Pixel</a> from the <a href="http://www.thenounproject.com">Noun Project</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>
-        </p>
-        <p>
-          <strong><a href="http://thinkdesignblog.com/120-handdrawn-vector-arrows.htm">Hand-drawn Vector Arrows</a></strong> by <a href="http://thinkdesignblog.com/">thinkdesign</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>
-        </p>
-        <p>
-          <strong><a href="http://subtlepatterns.com/maze-white/">Maze White</a></strong> by <a href="http://www.peax-webdesign.com/">Peax</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>
-        </p>
+      <div class="w-form">
+        <form id="email-form" name="email-form" data-name="Email Form" action="//madkudu.us8.list-manage.com/subscribe/post?u=50d10dbb43453c101e00a5f6f&amp;amp;amp;id=2562f30397&quot;">
+          <div class="w-embed"></div>
+          <label for="email">Email Address:</label>
+          <input class="w-input" id="email" type="email" placeholder="Enter your email address" name="email" data-name="Email" required="required">
+          <input class="w-button button" type="submit" value="Submit" data-wait="Please wait...">
+        </form>
+        <div class="w-form-done">
+          <p>Thank you! Your submission has been received!</p>
+        </div>
+        <div class="w-form-fail">
+          <p>Oops! Something went wrong while submitting the form :(</p>
+        </div>
+      </div>
+      <div>
+        <div class="w-embed">
+          <div id="mc_embed_signup">
+            <form action="//madkudu.us8.list-manage.com/subscribe/post?u=50d10dbb43453c101e00a5f6f&amp;id=2562f30397" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+              <label for="mce-EMAIL">Subscribe to our mailing list</label>
+              <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="">
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;">
+                <input type="text" name="b_50d10dbb43453c101e00a5f6f_2562f30397" tabindex="-1" value="">
+              </div>
+              <div class="clear">
+                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </div>

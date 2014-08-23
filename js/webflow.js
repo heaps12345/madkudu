@@ -1599,6 +1599,12 @@ Webflow.define('scroll', function($) {
       // Ignore links being used by jQuery mobile
       if (window.$.mobile && $(e.currentTarget).hasClass('ui-link')) return;
 
+      // Ignore empty # links
+      if (this.getAttribute('href') === '#') {
+        e.preventDefault();
+        return;
+      }
+
       var hash = this.hash ? this.hash.substring(1) : null;
       if (hash) {
         findEl(hash, e);
@@ -1759,6 +1765,9 @@ Webflow.define('links', function($, _) {
       $section.length && anchors.push({ link: $link, sec: $section, active: false });
       return;
     }
+
+    // Ignore empty # links
+    if (href === '#') return;
 
     // Determine whether the link should be selected
     var match = (link.href === location.href) || (href === slug) || (indexPage.test(href) && dirList.test(slug));
@@ -3102,8 +3111,8 @@ Webflow.define('navbar', function($, _) {
 
       // Close when navigating to an in-page anchor
       if (href && href.indexOf('#') === 0 && data.open) {
-        // Avoid empty hash links
-        if (href.length === 1) evt.preventDefault();
+       // Trigger click before tap closes menu
+        link.trigger('click');
         close(data);
       }
     };
