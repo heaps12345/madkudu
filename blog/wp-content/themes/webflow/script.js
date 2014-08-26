@@ -4,32 +4,22 @@ window.analytics.load("tcuowrwxhc");
 window.analytics.page('Blog');
 // End Segment
 
-$(function() {
+$(document).ready(function() {
+	$('.header').css('margin-top', $('.sumome-smartbar-popup').height() + 'px');
+
 	$('#mc-embedded-subscribe-form').on('submit', function(e){
-		//e.preventDefault();
 		var val = $("#mce-EMAIL").val();
 		
 		analytics.track('Newsletter sign-up', {
-  		email: val
+			location: 'Sidebar',
+			email: val
 		});
 
 		analytics.alias(val);
 
 		analytics.identify(val, {
-		  email: val
-		});
-
-	});
-
-	/*
-	$('#mc-embedded-subscribe-popup').on('submit', function(e){
-		//e.preventDefault();
-		console.log("Submit")
-		var val = $("#mce-EMAIL-popup").val();
-		dataLayer.push({
-			'event': 'Newsletter sign-up',
-			'user_email': val
+			email: val
 		});
 	});
-	*/
+
 });

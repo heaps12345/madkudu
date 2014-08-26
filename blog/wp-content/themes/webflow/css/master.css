@@ -1,4 +1,5 @@
 body {
+	position: relative;
 	font-family: 'Ubuntu', sans-serif;
 }
 
@@ -30,6 +31,12 @@ ul {
 }
 
 .post {
+	background-color: white;
+	padding: 15px;
+	margin-top: 30px;
+}
+
+.page {
 	background-color: white;
 	padding: 15px;
 	margin-top: 30px;
@@ -118,7 +125,7 @@ ul {
     background-color: #333c45;
 }
 
-/* MailChimp sign-up */
+/* MailChimp sidebar */
 
 .mc-wrapper {
     margin-top: 30px;
@@ -127,18 +134,20 @@ ul {
     background-color: white;
 }
 
-.field-label {
-    margin-bottom: 20px;
-}
-
-#mc-embedded-subscribe {
-    margin-bottom: 0px;
-    margin-top: 0px;
-    padding: 5px 18px;
+#sidebar-label {
+	font-size: 16px;
+	color: #999;
+	margin-bottom: 5px;
 }
 
 #mc-embedded-subscribe-form {
     margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+#mc-embedded-subscribe-form > h3 {
+    margin-top: 0px;
+    margin-bottom: 20px;
 }
 
 #mce-EMAIL {
@@ -157,6 +166,14 @@ ul {
 	border-radius: 0px;
 }
 
+/* MailChimp scrollbox */
+
+.mc-popup {
+    padding: 15px;
+    margin: 0px 5px 0px 5px;
+    /*background-color: white;*/
+}
+
 #mce-EMAIL-popup {
 	display: block;
 	width: 100%;
@@ -173,12 +190,87 @@ ul {
 	border-radius: 0px;
 }
 
-#subscribe-label {
-	font-size: 16px;
+#popup-label {
+	font-size: 15px;
 	color: #555;
-	margin-bottom: 5px;
+	margin-top: 20px;
+	margin-bottom: 0px;
 }
 
-#mc_embed_signup_popup {
+#mc-embedded-subscribe-popup {
 	font-family: 'Ubuntu', sans-serif;
+	margin-bottom: 0px;
+}
+
+#popup-title > p {
+	font-family: 'Ubuntu', sans-serif;
+	color: #555;
+	font-size: 20px;
+}
+
+#popup-title > p:first-child {
+	margin-top: 0px;
+}
+
+#popup-title > p:last-child {
+	margin-bottom: 30px;
+}
+
+.popup-button {
+	background-color: white;
+	font-size: 14px;
+}
+
+
+/* MailChimp topbar */
+
+.mc-topbar {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+
+#mce-EMAIL-topbar {
+	display: inline-block;
+	width: auto;
+	height: 38px;
+	padding: 8px 12px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	font-size: 14px;
+	line-height: 1.428571429;
+	color: #555555;
+	vertical-align: middle;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+	border-radius: 0px;
+}
+
+#mc-embedded-subscribe-topbar {
+	font-family: 'Ubuntu', sans-serif;
+	margin-bottom: 0px;
+}
+
+#topbar-title {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 1px 1px 1px 1px;
+	margin-right: 15px;
+}
+
+#topbar-title > p {
+	display: inline-block;
+	font-family: 'Ubuntu', sans-serif;
+	color: #555;
+	font-size: 15px;
+	margin-bottom: 0px;
+}
+
+.topbar-button {
+	background-color: white;
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: 0px;
+	padding: 4px 10px 4px 10px;
+	font-size: 14px;
 }

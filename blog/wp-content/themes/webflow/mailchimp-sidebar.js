@@ -10,3 +10,4 @@ document.write('\
 	</form>\
 </div>\
 ');
+

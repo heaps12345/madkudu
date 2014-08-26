@@ -1527,6 +1527,7 @@ html.w-mod-js.w-mod-no-ios *[data-ix="scroll-from-right-2"] {
     max-width: 100%;
     margin-left: 0px;
     padding: 20px;
+    color: white;
   }
   .nav-link:hover {
     border-bottom-style: none;
@@ -1538,6 +1539,9 @@ html.w-mod-js.w-mod-no-ios *[data-ix="scroll-from-right-2"] {
   }
   .nav-link.nav-link-login {
     display: block;
+  }
+  .nav-link.nav-link-mobile {
+    color: white;
   }
   .header-contact {
     display: none;
