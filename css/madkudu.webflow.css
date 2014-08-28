@@ -169,7 +169,7 @@ p {
 .header {
   position: relative;
   height: 90px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   background-color: white;
 }
 .header-contact {
@@ -1169,6 +1169,8 @@ p {
   position: relative;
   top: 2px;
   display: block;
+  height: 150px;
+  margin-top: 75px;
   margin-right: auto;
   margin-left: auto;
   text-align: center;
@@ -1381,6 +1383,47 @@ p {
   font-size: 14px;
   text-align: center;
   text-decoration: underline;
+}
+.bolts {
+  position: absolute;
+  height: 350px;
+  margin-top: -20px;
+  margin-left: 53px;
+}
+.connection-slider {
+  background-color: transparent;
+}
+.mascot-rectangle {
+  width: 300px;
+  margin-top: 119px;
+  margin-left: 80px;
+}
+.mascot-larger {
+  height: 200px;
+  margin-top: 50px;
+  margin-left: 130px;
+}
+.mascot-getresponse {
+  width: 300px;
+  margin-top: 100px;
+  margin-left: 78px;
+}
+.mascot-hubspot {
+  width: 250px;
+  margin-top: 110px;
+  margin-left: 100px;
+}
+.mascot-marketo {
+  height: 120px;
+  margin-top: 95px;
+  margin-left: 115px;
+}
+.connection-nav {
+  display: none;
+  margin-top: 0px;
+}
+.connection-container {
+  margin-top: 10px;
 }
 html.w-mod-js *[data-ix="display-none"] {
   display: none;
