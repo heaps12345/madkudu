@@ -169,7 +169,7 @@ p {
 .header {
   position: relative;
   height: 90px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
   background-color: white;
 }
 .header-contact {
@@ -1183,7 +1183,7 @@ p {
   margin-bottom: 30px;
   font-family: Ubuntu, Helvetica, sans-serif;
   color: white;
-  font-size: 46px;
+  font-size: 52px;
   line-height: 56px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -1393,30 +1393,36 @@ p {
 .connection-slider {
   background-color: transparent;
 }
+.connection-slide {
+  text-align: center;
+}
 .mascot-rectangle {
   width: 300px;
-  margin-top: 119px;
-  margin-left: 80px;
+  margin-top: 120px;
+  margin-bottom: auto;
+  margin-left: 0px;
 }
 .mascot-larger {
   height: 200px;
   margin-top: 50px;
-  margin-left: 130px;
+  margin-left: 0px;
 }
 .mascot-getresponse {
   width: 300px;
   margin-top: 100px;
-  margin-left: 78px;
+  margin-left: 0px;
 }
 .mascot-hubspot {
   width: 250px;
   margin-top: 110px;
-  margin-left: 100px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .mascot-marketo {
   height: 120px;
   margin-top: 95px;
-  margin-left: 115px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .connection-nav {
   display: none;
@@ -1625,6 +1631,10 @@ html.w-mod-js.w-mod-no-ios *[data-ix="scroll-from-right-2"] {
   .container-404 {
     z-index: 0;
   }
+  .mascot {
+    height: 120px;
+    margin-top: 85px;
+  }
   .text-slider {
     top: 0px;
   }
@@ -1640,6 +1650,26 @@ html.w-mod-js.w-mod-no-ios *[data-ix="scroll-from-right-2"] {
     padding-top: 7px;
     padding-bottom: 7px;
     color: black;
+  }
+  .bolts {
+    width: 250px;
+  }
+  .mascot-rectangle {
+    width: 200px;
+    margin-top: 128px;
+  }
+  .mascot-getresponse {
+    width: 200px;
+    margin-top: 115px;
+  }
+  .mascot-hubspot {
+    width: 200px;
+    margin-top: 120px;
+  }
+  .mascot-marketo {
+    height: 100px;
+    margin-top: 100px;
+    margin-left: auto;
   }
 }
 @media (max-width: 767px) {
@@ -1711,6 +1741,15 @@ html.w-mod-js.w-mod-no-ios *[data-ix="scroll-from-right-2"] {
     padding-top: 10px;
     padding-bottom: 8px;
   }
+  .bolts {
+    display: none;
+  }
+  .connection-slide {
+    text-align: center;
+  }
+  .mascot-larger {
+    text-align: left;
+  }
 }
 @media (max-width: 479px) {
   h5 {
@@ -1761,6 +1800,31 @@ html.w-mod-js.w-mod-no-ios *[data-ix="scroll-from-right-2"] {
   }
   .top-div {
     display: block;
+  }
+  .button-inverse.try-it {
+    text-align: left;
+  }
+  .bolts {
+    display: none;
+  }
+  .mascot-rectangle {
+    width: 150px;
+    margin-top: 135px;
+  }
+  .mascot-larger {
+    width: 150px;
+    height: 150px;
+    margin-top: 75px;
+  }
+  .mascot-getresponse {
+    width: 150px;
+    margin-top: 125px;
+  }
+  .mascot-hubspot {
+    width: 150px;
+  }
+  .mascot-marketo {
+    width: 150px;
   }
 }
 
