@@ -3179,6 +3179,7 @@ Webflow.define('navbar', function($, _) {
     var navbarEl = data.el[0];
     resize(0, navbarEl);
     ix.intro(0, navbarEl);
+    Webflow.redraw.up();
 
     // Listen for tap outside events
     if (!designer) $doc.on('tap' + namespace, data.outside);
@@ -3382,6 +3383,7 @@ Webflow.define('dropdown', function($, _) {
     data.list.addClass(stateOpen);
     data.toggle.addClass(stateOpen);
     ix.intro(0, data.el[0]);
+    Webflow.redraw.up();
 
     // Listen for tap outside events
     if (!designer) $doc.on('tap' + namespace, data.outside);

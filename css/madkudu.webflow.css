@@ -1639,7 +1639,7 @@ html.w-mod-js.w-mod-no-ios *[data-ix="scroll-from-right-2"] {
     top: 0px;
   }
   .big-text {
-    font-size: 25px;
+    font-size: 36px;
   }
   .medium-text {
     font-size: 15px;
@@ -1736,6 +1736,9 @@ html.w-mod-js.w-mod-no-ios *[data-ix="scroll-from-right-2"] {
     margin-bottom: 18px;
     padding-top: 0px;
     text-align: center;
+  }
+  .big-text {
+    margin-left: 10px;
   }
   .nav-button {
     padding-top: 10px;
