@@ -61,7 +61,7 @@ h6 {
 p {
   display: block;
   margin-bottom: 5px;
-  font-family: Merriweather, serif;
+  font-family:'Open Sans', sans-serif;
 }
 .button {
   display: inline-block;
@@ -102,6 +102,8 @@ p {
   color: #428bc7;
 }
 .button.try-it {
+  display: inline-block;
+  margin-top: 0px;
   font-family: Ubuntu, Helvetica, sans-serif;
 }
 .button.button-small {
@@ -111,6 +113,7 @@ p {
   font-size: 13px;
 }
 .button.button-small.button-login {
+  display: none;
   padding-right: 18px;
   padding-left: 18px;
 }
@@ -169,7 +172,7 @@ p {
 .header {
   position: relative;
   height: 90px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
   background-color: white;
 }
 .header-contact {
@@ -674,7 +677,7 @@ p {
   border-bottom-color: #818181;
   border-left-style: none;
   background-color: transparent;
-  font-family: Merriweather, serif;
+  font-family:'Open Sans', sans-serif;
   color: white;
   font-size: 13px;
 }
@@ -757,6 +760,7 @@ p {
 .close-text {
   position: relative;
   bottom: -21px;
+  display: none;
   margin-right: 15px;
   float: right;
   font-family: Ubuntu, Helvetica, sans-serif;
@@ -794,6 +798,7 @@ p {
 }
 .contact {
   display: inline-block;
+  font-family:'Open Sans', sans-serif;
   color: #999;
 }
 .section-page {
@@ -846,7 +851,7 @@ p {
 }
 .team-work {
   margin-bottom: 5px;
-  font-family: Ubuntu, Helvetica, sans-serif;
+  font-family:'Open Sans', sans-serif;
   color: #999;
   font-weight: 400;
 }
@@ -1007,6 +1012,7 @@ p {
 .project {
   margin-top: 0px;
   margin-bottom: 15px;
+  font-family: Ubuntu, Helvetica, sans-serif;
   color: #585858;
   font-weight: 600;
   letter-spacing: 1px;
@@ -1018,7 +1024,7 @@ p {
   border-bottom: 1px solid #e6e6e6;
 }
 .catergory-text {
-  font-family: Merriweather, serif;
+  font-family:'Open Sans', sans-serif;
   color: #adadad;
 }
 .pricing-section {
@@ -1180,7 +1186,7 @@ p {
   padding-top: 40px;
 }
 .big-text {
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   font-family: Ubuntu, Helvetica, sans-serif;
   color: white;
   font-size: 52px;
@@ -1253,7 +1259,7 @@ p {
 }
 .team-item {
   direction: ltr;
-  font-family: Merriweather, serif;
+  font-family:'Open Sans', sans-serif;
   text-align: center;
   text-transform: none;
   list-style-type: none;
@@ -1343,6 +1349,9 @@ p {
   margin-bottom: 40px;
   margin-left: 20px;
 }
+.credits-paragraph {
+  font-family:'Open Sans', sans-serif;
+}
 .login-section {
   margin-right: 15px;
   float: right;
@@ -1430,6 +1439,51 @@ p {
 }
 .connection-container {
   margin-top: 10px;
+}
+.benefits-container {
+  margin-top: 30px;
+}
+.benefits-text {
+  margin-bottom: 30px;
+  font-family:'Open Sans', sans-serif;
+  color: black;
+  font-size: 20px;
+  line-height: 32px;
+}
+.signup-field {
+  display: inline-block;
+  width: 300px;
+  margin-top: 0px;
+  margin-right: 15px;
+  margin-bottom: 0px;
+  font-family:'Open Sans', sans-serif;
+  font-size: 20px;
+}
+.signup-block {
+  margin-top: 15px;
+  border: 0px solid black;
+}
+.signup-form {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  background-color: transparent;
+}
+.signup-section {
+  background-color: #428bc7;
+}
+.signup-text {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 28px;
+  line-height: 34px;
+}
+.signup-success {
+  background-color: transparent;
+}
+.signup-error {
+  margin-top: 10px;
+  background-color: rgba(255, 0, 0, 0.70);
 }
 html.w-mod-js *[data-ix="display-none"] {
   display: none;
