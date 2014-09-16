@@ -90,7 +90,7 @@ Webflow.init = function() {
   var userAgent = navigator.userAgent.toLowerCase();
   var appVersion = navigator.appVersion.toLowerCase();
   api.env.touch = ('ontouchstart' in window) || window.DocumentTouch && document instanceof window.DocumentTouch;
-  var chrome = api.env.chrome = (window.chrome || /chrome/.test(userAgent)) && parseInt(appVersion.match(/chrome\/(\d+)\./)[1], 10);
+  var chrome = api.env.chrome = /chrome/.test(userAgent) && /Google/.test(navigator.vendor) && parseInt(appVersion.match(/chrome\/(\d+)\./)[1], 10);
   var ios = api.env.ios = Modernizr && Modernizr.ios;
   api.env.safari = /safari/.test(userAgent) && !chrome && !ios;
 
