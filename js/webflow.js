@@ -2224,11 +2224,14 @@ Webflow.define('slider', function($, _) {
     var offset = 0;
     var anchor = 0;
     var width = 0;
+    var maskWidth = data.maskWidth;
+    var threshold = maskWidth - data.config.edge;
+    if (threshold < 0) threshold = 0;
     data.anchors = [{ els: [], x: 0, width: 0 }];
     data.slides.each(function(i, el) {
-      if (anchor - offset > data.maskWidth - data.config.edge) {
+      if (anchor - offset > threshold) {
         pages++;
-        offset += data.maskWidth;
+        offset += maskWidth;
         // Store page anchor for transition
         data.anchors[pages-1] = { els: [], x: anchor, width: 0 };
       }
