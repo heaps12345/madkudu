@@ -110,6 +110,7 @@ p {
   margin-top: 0px;
 }
 .button.button-inverse.signup-header {
+  display: none;
   margin-top: 20px;
   margin-left: 20px;
 }
@@ -185,7 +186,7 @@ p {
 .header {
   position: relative;
   height: 90px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   background-color: white;
 }
 .header-contact {
@@ -1199,6 +1200,7 @@ p {
   padding-top: 40px;
 }
 .big-text {
+  margin-top: 50px;
   margin-bottom: 0px;
   font-family: Ubuntu, Helvetica, sans-serif;
   color: white;
@@ -1353,6 +1355,7 @@ p {
   display: none;
 }
 .big-subtitle {
+  display: none;
   margin-top: 5px;
   padding-top: 0px;
   color: white;
@@ -1455,6 +1458,9 @@ p {
 .connection-container {
   margin-top: 10px;
 }
+.benefits-section {
+  display: none;
+}
 .benefits-container {
   margin-top: 30px;
 }
@@ -1514,6 +1520,7 @@ p {
   margin-bottom: 20px;
 }
 .what-section {
+  display: none;
   margin-top: 20px;
   margin-bottom: 0px;
   padding-bottom: 40px;
@@ -1523,6 +1530,7 @@ p {
   margin-top: 20px;
 }
 .how-section {
+  display: none;
   margin-bottom: 30px;
 }
 .icon-what {
