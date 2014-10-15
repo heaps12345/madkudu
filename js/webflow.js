@@ -84,6 +84,7 @@ Webflow.init = function() {
     if (mode == 'design') return inApp && designFlag;
     if (mode == 'preview') return inApp && !designFlag;
     if (mode == 'slug') return inApp && window.__wf_slug;
+    if (mode == 'editor') return window.WebflowEditor;
   };
 
   // Feature detects + browser sniffs  ಠ_ಠ
@@ -178,13 +179,38 @@ Webflow.init = function() {
     api.resize.up();
   };
 
+  /**
+   * Webflow.load() - Add a window load handler that will run even if load event has already happened
+   * @param  {function} handler
+   */
+  var deferLoad;
+  api.load = function(handler) {
+    deferLoad.then(handler);
+  };
+
+  function bindLoad() {
+    // Reject any previous deferred (to support destroy)
+    if (deferLoad) {
+      deferLoad.reject();
+      $win.off('load', deferLoad.resolve);
+    }
+    // Create deferred and bind window load event
+    deferLoad = new $.Deferred();
+    $win.on('load', deferLoad.resolve);
+  }
+
   // Webflow.destroy() - Trigger a cleanup event for all modules
   api.destroy = function() {
     $win.triggerHandler('__wf_destroy');
+    // If load event has not yet fired, replace the deferred
+    if (deferLoad.state() == 'pending') bindLoad();
   };
 
   // Listen for domready
   $(api.ready);
+
+  // Listen for window.onload and resolve deferred
+  bindLoad();
 
   /*!
    * Webflow._ (aka) Underscore.js 1.6.0 (custom build)
@@ -485,6 +511,7 @@ Webflow.define('ix', function($, _) {
   var loads = [];
   var readys = [];
   var unique = 0;
+  var destroyed;
   var store;
 
   // Component types and proxy selectors
@@ -499,22 +526,35 @@ Webflow.define('ix', function($, _) {
   // Module methods
 
   api.init = function(list) {
-    setTimeout(function() { init(list); }, 1);
+    setTimeout(function() { configure(list); }, 1);
   };
 
   api.preview = function() {
     designer = false;
-    setTimeout(function() { init(window.__wf_ix); }, 1);
+    setTimeout(function() { configure(window.__wf_ix); }, 1);
   };
 
   api.design = function() {
     designer = true;
+    api.destroy();
+  };
+
+  api.destroy = function() {
+    destroyed = true;
     $subs.each(teardown);
     Webflow.scroll.off(scroll);
     asyncEvents();
     anchors = [];
     loads = [];
     readys = [];
+  };
+
+  api.ready = function() {
+    // Ready should only be used after destroy, as a way to re-init
+    if (config && destroyed) {
+      destroyed = false;
+      init();
+    }
   };
 
   api.run = run;
@@ -524,7 +564,7 @@ Webflow.define('ix', function($, _) {
   // -----------------------------------
   // Private methods
 
-  function init(list) {
+  function configure(list) {
     if (!list) return;
     store = {};
 
@@ -534,6 +574,11 @@ Webflow.define('ix', function($, _) {
       config[item.slug] = item.value;
     });
 
+    // Init ix after config
+    init();
+  }
+
+  function init() {
     // Build each element's interaction keying from data attribute
     var els = $('[data-ix]');
     if (!els.length) return;
@@ -547,10 +592,10 @@ Webflow.define('ix', function($, _) {
     }
 
     // Handle loads or readys if they exist
-    if (loads.length) $win.on('load', runLoads);
+    if (loads.length) Webflow.load(runLoads);
     if (readys.length) setTimeout(runReadys, 1);
 
-    // Init module events
+    // Trigger queued events, must happen after init
     initEvents();
   }
 
