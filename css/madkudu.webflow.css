@@ -796,7 +796,7 @@ p {
   z-index: 1;
 }
 .big-text {
-  margin-top: 40px;
+  margin-top: 50px;
   margin-bottom: 40px;
   font-family:'Open Sans', sans-serif;
   color: white;
@@ -924,11 +924,12 @@ p {
   background-color: #428bc7;
 }
 .signup-text {
-  margin-top: 15px;
+  margin-top: 5px;
   margin-bottom: auto;
   color: white;
   font-size: 22px;
   line-height: 34px;
+  text-align: center;
 }
 .signup-success {
   padding-top: 0px;
@@ -936,13 +937,12 @@ p {
   background-color: transparent;
 }
 .signup-error {
-  margin-top: 10px;
+  margin-top: 0px;
+  padding-bottom: 10px;
   background-color: rgba(255, 0, 0, 0.70);
 }
 .hero {
   position: relative;
-  height: 100%;
-  min-height: 100%;
   margin-top: 0px;
   background-color: #428bc7;
 }
@@ -968,6 +968,9 @@ p {
   padding-bottom: 20px;
   background-color: rgba(51, 60, 69, 0.99);
 }
+.footer_wrapper.bottom {
+  position: absolute;
+}
 .html_embed {
   position: absolute;
   left: 0px;
@@ -981,8 +984,6 @@ p {
 }
 .wrapper {
   position: relative;
-  height: 100%;
-  min-height: 100%;
 }
 .footer-column-links {
   text-align: center;
