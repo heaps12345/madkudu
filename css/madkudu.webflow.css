@@ -1,9 +1,10 @@
 body {
   overflow-x: visible;
   overflow-y: visible;
-  min-height: 500px;
+  height: 100%;
+  min-height: 100%;
   margin-bottom: 0px;
-  background-color: #428bc7;
+  background-color: white;
   font-family: Merriweather, serif;
   color: #818181;
   font-size: 14px;
@@ -910,8 +911,9 @@ p {
 }
 .signup-field {
   display: block;
-  width: 220px;
+  width: 250px;
   margin: 0px auto 20px;
+  border-radius: 5px;
   font-family:'Open Sans', sans-serif;
   font-size: 16px;
   text-align: center;
@@ -943,8 +945,9 @@ p {
 }
 .hero {
   position: relative;
+  min-height: 400px;
   margin-top: 0px;
-  background-color: #428bc7;
+  background-color: transparent;
 }
 .subtitle-columns {
   margin-top: 20px;
@@ -959,11 +962,10 @@ p {
   text-align: center;
 }
 .footer_wrapper {
-  position: absolute;
+  position: static;
   left: 0px;
   right: 0px;
   bottom: 0px;
-  margin-top: 0px;
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: rgba(51, 60, 69, 0.99);
@@ -984,12 +986,31 @@ p {
 }
 .wrapper {
   position: relative;
+  display: block;
+  height: 70%;
+  background-color: #428bc7;
 }
 .footer-column-links {
   text-align: center;
 }
 .footer-column-contact {
+  position: static;
   text-align: center;
+}
+.content-wrapper {
+  position: relative;
+  padding-bottom: 0px;
+}
+.footer {
+  position: static;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: transparent;
 }
 html.w-mod-js *[data-ix="display-none"] {
   display: none;
