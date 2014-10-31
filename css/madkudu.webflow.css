@@ -104,7 +104,7 @@ p {
   margin-top: 18px;
 }
 .button.button-inverse.signup-bottom {
-  margin-top: 20px;
+  margin-top: 0px;
 }
 .button.button-inverse.signup-header {
   display: none;
@@ -797,8 +797,8 @@ p {
   z-index: 1;
 }
 .big-text {
-  margin-top: 50px;
-  margin-bottom: 40px;
+  margin-top: 70px;
+  margin-bottom: 50px;
   font-family:'Open Sans', sans-serif;
   color: white;
   font-size: 45px;
@@ -1166,7 +1166,7 @@ html.w-mod-js.w-mod-no-ios *[data-ix="scroll-from-right-2"] {
     font-size: 13px;
   }
   .button.button-inverse.signup-bottom {
-    margin-top: 20px;
+    margin-top: 0px;
   }
   .button.button-small.button-login {
     display: none;
