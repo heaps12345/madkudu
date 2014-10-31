@@ -104,6 +104,8 @@ p {
   margin-top: 18px;
 }
 .button.button-inverse.signup-bottom {
+  width: 300px;
+  height: 48px;
   margin-top: 0px;
 }
 .button.button-inverse.signup-header {
@@ -185,7 +187,7 @@ p {
   position: static;
   display: block;
   height: 90px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
   background-color: white;
 }
 .scroll-header {
@@ -548,7 +550,7 @@ p {
 .info {
   position: relative;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   font-family: Ubuntu, Helvetica, sans-serif;
 }
 .info.address {
@@ -865,6 +867,7 @@ p {
 }
 .link-footer {
   display: block;
+  padding-bottom: 5px;
   font-family: Ubuntu, Helvetica, sans-serif;
   color: #818181;
   text-decoration: none;
@@ -911,7 +914,8 @@ p {
 }
 .signup-field {
   display: block;
-  width: 250px;
+  width: 300px;
+  height: 48px;
   margin: 0px auto 20px;
   border-radius: 5px;
   font-family:'Open Sans', sans-serif;
@@ -968,6 +972,7 @@ p {
   bottom: 0px;
   padding-top: 20px;
   padding-bottom: 20px;
+  float: none;
   background-color: rgba(51, 60, 69, 0.99);
 }
 .footer_wrapper.bottom {
@@ -987,7 +992,7 @@ p {
 .wrapper {
   position: relative;
   display: block;
-  height: 70%;
+  height: 73%;
   background-color: #428bc7;
 }
 .footer-column-links {
