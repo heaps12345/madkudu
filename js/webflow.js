@@ -17,6 +17,7 @@ Webflow.init = function() {
   var primary = [];
   var secondary = this.w || [];
   var $win = $(window);
+  var $doc = $(document);
   var _ = api._ = underscore();
   var domready = false;
   var tram = window.tram;
@@ -90,10 +91,26 @@ Webflow.init = function() {
   // Feature detects + browser sniffs  ಠ_ಠ
   var userAgent = navigator.userAgent.toLowerCase();
   var appVersion = navigator.appVersion.toLowerCase();
-  api.env.touch = ('ontouchstart' in window) || window.DocumentTouch && document instanceof window.DocumentTouch;
+  var touch = api.env.touch = ('ontouchstart' in window) || window.DocumentTouch && document instanceof window.DocumentTouch;
   var chrome = api.env.chrome = /chrome/.test(userAgent) && /Google/.test(navigator.vendor) && parseInt(appVersion.match(/chrome\/(\d+)\./)[1], 10);
   var ios = api.env.ios = Modernizr && Modernizr.ios;
   api.env.safari = /safari/.test(userAgent) && !chrome && !ios;
+
+  // Maintain current touch target to prevent late clicks on touch devices
+  var touchTarget;
+  // Listen for both events to support touch/mouse hybrid devices
+  touch && $doc.on('touchstart mousedown', function(evt) {
+    touchTarget = evt.target;
+  });
+
+  /**
+   * Webflow.validClick() - validate click target against current touch target
+   * @param  {HTMLElement} clickTarget  Element being clicked
+   * @return {Boolean}  True if click target is valid (always true on non-touch)
+   */
+  api.validClick = touch ? function(clickTarget) {
+    return clickTarget === touchTarget || $.contains(clickTarget, touchTarget);
+  } : function() { return true; };
 
   /**
    * Webflow.resize, Webflow.scroll - throttled event proxies
@@ -510,9 +527,7 @@ Webflow.define('ix', function($, _) {
   var anchors = [];
   var loads = [];
   var readys = [];
-  var unique = 0;
   var destroyed;
-  var store;
 
   // Component types and proxy selectors
   var components = {
@@ -566,7 +581,6 @@ Webflow.define('ix', function($, _) {
 
   function configure(list) {
     if (!list) return;
-    store = {};
 
     // Map all interactions to a hash using slug as key.
     config = {};
@@ -606,13 +620,13 @@ Webflow.define('ix', function($, _) {
     if (!ix) return;
     var triggers = ix.triggers;
     if (!triggers) return;
-    var state = store[id] || (store[id] = {});
 
     // Set initial styles, unless we detect an iOS device + any non-iOS triggers
     var setStyles = !(ios && _.any(triggers, isNonIOS));
     if (setStyles) api.style($el, ix.style);
 
     _.each(triggers, function(trigger) {
+      var state = {};
       var type = trigger.type;
       var stepsB = trigger.stepsB && trigger.stepsB.length;
 
@@ -625,16 +639,15 @@ Webflow.define('ix', function($, _) {
       }
 
       if (type == 'click') {
-        var stateKey = 'click:' + unique++;
-        if (trigger.descend) stateKey += ':descend';
-        if (trigger.siblings) stateKey += ':siblings';
-        if (trigger.selector) stateKey += ':' + trigger.selector;
-
         $el.on('click' + namespace, function(evt) {
+          // Avoid late clicks on touch devices
+          if (!Webflow.validClick(evt.currentTarget)) return;
+
+          // Prevent default on empty hash urls
           if ($el.attr('href') === '#') evt.preventDefault();
 
-          run(trigger, $el, { group: state[stateKey] ? 'B' : 'A' });
-          if (stepsB) state[stateKey] = !state[stateKey];
+          run(trigger, $el, { group: state.clicked ? 'B' : 'A' });
+          if (stepsB) state.clicked = !state.clicked;
         });
         $subs = $subs.add($el);
         return;
@@ -1095,6 +1108,11 @@ Webflow.define('forms', function($, _) {
   'use strict';
 
   var api = {};
+
+  var FORM_API_HOST = 'https://webflow.com';
+  var FORM_SUBMIT_HOST = 'https://webflow.com';
+  var FORM_OLDIE_HOST = 'http://formdata.webflow.com';
+
   var $doc = $(document);
   var $forms;
   var loc = window.location;
@@ -1256,11 +1274,11 @@ Webflow.define('forms', function($, _) {
     // Read site ID
     // NOTE: If this site is exported, the HTML tag must retain the data-wf-site attribute for forms to work
     if (!siteId) { afterSubmit(data); return; }
-    var url = 'https://webflow.com/api/v1/form/' + siteId;
+    var url = FORM_API_HOST + '/api/v1/form/' + siteId;
 
     // Work around same-protocol IE XDR limitation - without this IE9 and below forms won't submit
-    if (retro && url.indexOf('https://webflow.com') >= 0) {
-      url = url.replace('https://webflow.com/', 'http://formdata.webflow.com/');
+    if (retro && url.indexOf(FORM_SUBMIT_HOST) >= 0) {
+      url = url.replace(FORM_SUBMIT_HOST, FORM_OLDIE_HOST);
     }
 
     $.ajax({
@@ -2096,6 +2114,7 @@ Webflow.define('slider', function($, _) {
 
       // Swipe event
       if (evt.type == 'swipe') {
+        if (Webflow.env('editor')) return;
         if (options.direction == 'left') return next(data)();
         if (options.direction == 'right') return previous(data)();
         return;
@@ -3074,7 +3093,7 @@ Webflow.define('navbar', function($, _) {
     } else {
       addOverlay(data);
       data.button.on('tap' + namespace, toggle(data));
-      data.menu.on('tap' + namespace, 'a', navigate(data));
+      data.menu.on('click' + namespace, 'a', navigate(data));
     }
 
     // Trigger initial resize
@@ -3135,11 +3154,6 @@ Webflow.define('navbar', function($, _) {
     };
   }
 
-  function closeEach(i, el) {
-    var data = $.data(el, namespace);
-    data.open && close(data);
-  }
-
   function reopen(data) {
     if (!data.open) return;
     close(data, true);
@@ -3147,6 +3161,7 @@ Webflow.define('navbar', function($, _) {
   }
 
   function toggle(data) {
+    // Debounce toggle to wait for accurate open state
     return _.debounce(function(evt) {
       data.open ? close(data) : open(data);
     });
@@ -3157,10 +3172,14 @@ Webflow.define('navbar', function($, _) {
       var link = $(this);
       var href = link.attr('href');
 
+      // Avoid late clicks on touch devices
+      if (!Webflow.validClick(evt.currentTarget)) {
+        evt.preventDefault();
+        return;
+      }
+
       // Close when navigating to an in-page anchor
       if (href && href.indexOf('#') === 0 && data.open) {
-       // Trigger click before tap closes menu
-        link.trigger('click');
         close(data);
       }
     };
@@ -3170,7 +3189,7 @@ Webflow.define('navbar', function($, _) {
     // Unbind previous tap handler if it exists
     if (data.outside) $doc.off('tap' + namespace, data.outside);
 
-    // Close menu when tapped outside
+    // Close menu when tapped outside, debounced to wait for state
     return _.debounce(function(evt) {
       if (!data.open) return;
       var menu = $(evt.target).closest('.w-nav-menu');
@@ -3661,6 +3680,70 @@ Webflow.define('tabs', function($, _) {
         .start({ opacity: 1 });
     }
   }
+
+  // Export module
+  return api;
+});
+/**
+ * ----------------------------------------------------------------------
+ * Webflow: Brand pages on the subdomain
+ */
+Webflow.define('branding', function($, _) {
+  'use strict';
+
+  var api = {};
+  var $html = $('html');
+  var $body = $('body');
+  var location = window.location;
+  var inApp = Webflow.env();
+
+  // -----------------------------------
+  // Module methods
+
+  api.ready = function() {
+    var doBranding = $html.attr("data-wf-status") && location.href.match(/webflow.com|webflowtest.com/);
+
+    if (doBranding) {
+      var $branding = $('<div></div>');
+      var $link = $('<a></a>');
+      $link.attr('href', 'http://webflow.com');
+
+      $branding.css({
+        position: 'fixed',
+        bottom: 0,
+        right: 0,
+        borderTop: '5px solid #2b3239',
+        borderLeft: '5px solid #2b3239',
+        borderTopLeftRadius: '5px',
+        backgroundColor: '#2b3239',
+        padding: '5px 5px 5px 10px',
+        fontFamily: 'Arial',
+        fontSize: '10px',
+        textTransform: 'uppercase'
+
+      });
+
+      $link.css({
+        color: '#AAADB0',
+        textDecoration: 'none'
+      });
+      
+      var $webflowLogo = $('<img>');
+      $webflowLogo.attr('src', 'https://daks2k3a4ib2z.cloudfront.net/54153e6a3d25f2755b1f14ed/5445a4b1944ecdaa4df86d3e_subdomain-brand.svg');
+      $webflowLogo.css({
+        opacity: 0.9,
+        width: '55px',
+        verticalAlign: 'middle',
+        paddingLeft: '4px',
+        paddingBottom: '3px'
+      });
+
+      $branding.text('Built with');
+      $branding.append($webflowLogo);
+      $link.append($branding);
+      $body.append($link);
+    }
+  };
 
   // Export module
   return api;

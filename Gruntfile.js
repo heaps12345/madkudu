@@ -89,7 +89,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-zip');
 
 	// Default task.
-	grunt.registerTask('default', ['ftpush']);
-	grunt.registerTask('push-site', ['unzip','copy:main','clean','gitcommit:site','gitpush:site','ftpush:site']);
+	grunt.registerTask('default', ['push-site']);
+	grunt.registerTask('commit-site', ['unzip','copy:main','clean','gitcommit:site','gitpush:site']);
+	grunt.registerTask('push-site', ['commit-site','ftpush:site']);
 	grunt.registerTask('push-blog', ['copy:css','ftpush:blog']);
 };
