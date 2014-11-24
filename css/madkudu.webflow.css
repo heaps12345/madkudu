@@ -193,7 +193,7 @@ p {
   position: static;
   display: block;
   height: 90px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
   background-color: white;
 }
 .scroll-header {
@@ -968,7 +968,7 @@ p {
 .wrapper {
   position: relative;
   display: block;
-  background-color: #428bc7;
+  background-color: #4284c7;
 }
 .footer-column-links {
   text-align: center;
@@ -1047,6 +1047,7 @@ p {
   line-height: 28px;
 }
 .row-feature {
+  display: none;
   margin-bottom: 10px;
 }
 html.w-mod-js *[data-ix="display-none"] {
