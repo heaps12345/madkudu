@@ -5,29 +5,46 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		// Task configuration.
-		unzip: {
-			catalog: {
-				src: 'madkudu.webflow.zip',
-				dest: './new_version/'
+		autoprefixer: {
+			dest: {
+				src: ['css/*.css']
+			}
+		},
+		clean: {
+			build: {
+				src: ['new_version/','madkudu.webflow.zip']
 			}
 		},
 		copy: {
 			main: {
 				files: [{
-					expand: true, 
+					expand: true,
 					cwd: './new_version/',
-					src: '**', 
+					src: '**',
 					dest: '.'
 				}]
 			},
 			css: {
 				files: [{
-					expand: true, 
+					expand: true,
 					cwd: './css/',
-					src: '**', 
+					src: '**',
 					dest: './blog/wp-content/themes/webflow/css/'
 				}]
-			}
+			},
+			vendor: {
+				files: [
+				{
+					expand: true, cwd: 'bower_components/bootstrap/dist/js',
+					src: ['bootstrap.min.js'], dest: 'js'
+				},
+				{
+					expand: true, cwd: 'bower_components/jquery/dist/',
+					src: ['jquery.min.js'], dest: 'js'
+				}
+				]
+			},
+
 		},
 		ftpush: {
 			site: {
@@ -56,11 +73,6 @@ module.exports = function(grunt) {
 				simple: true
 			}
 		},
-		clean: {
-			build: {
-				src: ['new_version/','madkudu.webflow.zip']
-			}
-		},
 		gitcommit: {
 			site: {
 				options: {
@@ -76,20 +88,57 @@ module.exports = function(grunt) {
 				options: {
 					remote: 'origin',
 					branch: 'master'
+				}
 			}
-		}
-	},
-});
+		},
+		jade: [{
+			expand: true,
+			cwd: 'jade/pages/',
+			src: ['*.jade'],
+			dest: '.',
+			ext: '.html'
+		}],
+		less: {
+			options: {
+				compress: true
+			},
+			layouts: {
+				files: [
+				{
+					'css/index.min.css': 'less/index.less'
+				}
+				]
+			}
+		},
+		unzip: {
+			catalog: {
+				src: 'madkudu.webflow.zip',
+				dest: './new_version/'
+			}
+		},
+		watch: {
+			client: {
+				files: ['less/**/*.less','jade/**/*.jade'],
+				tasks: ['build']
+			}
+		},
+	});
 
 	// These plugins provide necessary tasks.
+	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-jade');
+	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-ftpush');
 	grunt.loadNpmTasks('grunt-git');
+	grunt.loadNpmTasks('grunt-newer');
 	grunt.loadNpmTasks('grunt-zip');
 
 	// Default task.
-	grunt.registerTask('default', ['push-site']);
+	grunt.registerTask('default', ['watch']);
+	grunt.registerTask('build', ['copy:vendor','less','jade','autoprefixer']);
 	grunt.registerTask('commit-site', ['unzip','copy:main','clean','gitcommit:site','gitpush:site']);
 	grunt.registerTask('push-site', ['commit-site','ftpush:site']);
 	grunt.registerTask('push-blog', ['copy:css','ftpush:blog']);
