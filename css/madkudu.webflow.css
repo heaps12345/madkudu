@@ -31,7 +31,7 @@ h2 {
   font-size: 22px;
   line-height: 36px;
   font-weight: 700;
-  text-align: center;
+  text-align: left;
 }
 h3 {
   margin-top: 20px;
@@ -1000,11 +1000,13 @@ p {
   padding-bottom: 30px;
   background-color: #a1d0ff;
   color: #616161;
+  text-align: left;
 }
 .paragraph-white {
   color: white;
 }
 .page-subtitle {
+  display: none;
   color: #eee;
   font-weight: 600;
 }
@@ -1038,7 +1040,10 @@ p {
   line-height: 28px;
 }
 .paragraph-center {
-  text-align: center;
+  text-align: left;
+}
+.paragraph-center.paragraph-last {
+  margin-top: 40px;
 }
 .block-features {
   margin-top: 30px;
@@ -1049,6 +1054,9 @@ p {
 .row-feature {
   display: none;
   margin-bottom: 10px;
+}
+.subtitle-benefits {
+  text-align: left;
 }
 html.w-mod-js *[data-ix="display-none"] {
   display: none;
