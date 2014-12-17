@@ -1,0 +1,157 @@
+
+
+.wrapper {
+	position: relative;
+	display: block;
+	background-color: @background-color;
+}
+
+.home-title {
+	color: white;
+	font-size: 45px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	line-height: 53px;
+	margin-bottom: 20px;
+	margin-top: 40px;
+	text-align: center;
+	text-transform: none;
+}
+
+@media (max-width: 991px) {
+	.home-title {
+		font-size: 36px;
+	}
+}
+
+@media (max-width: 767px) {
+	.home-title {
+		margin-left: 10px;
+		font-size: 32px;
+	}
+}
+
+@media (max-width: 479px) {
+	.home-title {
+		font-size: 32px;
+		line-height: 30px;
+	}
+}
+
+.home-subtitle {
+	display: none;
+	color: #eee;
+	font-weight: 600;
+}
+
+.hero-screenshot {
+	border-radius: 4px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	text-align: center;
+	width: 70%;
+	z-index: 2;
+}
+
+.section-explainer {
+	background-color: white;
+	margin-top: -70px;
+	padding-top: 100px;
+	padding-bottom: 50px;
+}
+.section-signup {
+	background-color: white;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+}
+.section-benefits {
+	padding-bottom: 30px;
+	background-color: @light-blue;
+	color: #616161;
+	text-align: left;
+}
+
+.block-landing {
+	font-size: 18px;
+	line-height: 28px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 60%;
+
+	p {
+		margin-top: 20px
+	}
+}
+
+@media (max-width: 991px) {
+	.block-landing {
+		width: 80%;
+	}
+}
+
+.heading-section {
+	color: #585858;
+}
+
+.list-benefits {
+	padding-left: 20px;
+
+	li {
+		margin-bottom: 5px;
+		line-height: 28px;
+	}
+}
+
+.signup-form {
+	margin: 0 0 15px;
+}
+
+.signup-field {
+	margin: 0px auto 20px;
+	width: 300px;
+	height: 48px;
+	font-size: 16px;
+	text-align: center;
+}
+
+.button {
+	background-color: transparent;
+	border: 2px solid #428bc7;
+	border-color: @medium-blue;
+	border-radius: 5px;
+	color: @medium-blue;
+	display: inline-block;
+	font-weight: 600;
+	margin-top: 15px;
+	padding: 8px 18px;
+	transition: all 500ms ease;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.button-signup {
+	width: 300px;
+	height: 48px;
+	margin-top: 0px;
+	margin-bottom: 8px;
+
+	&:hover {
+		background-color: @medium-blue;
+		color: white;
+	}
+}
+
+.form-success {
+	display: none;
+	background-color: transparent;
+}
+
+.form-fail {
+	background-color: #ffdede;
+	color: rgba(255, 0, 0, 0.70);
+	display: none;
+}

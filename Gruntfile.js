@@ -40,7 +40,7 @@ module.exports = function(grunt) {
 				},
 				{
 					expand: true, cwd: 'bower_components/jquery/dist/',
-					src: ['jquery.min.js'], dest: 'js'
+					src: ['jquery.min.js','jquery.min.map'], dest: 'js'
 				}
 				]
 			},
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
 				},
 				src: '/Users/pcothenet/Git/madkudu-webflow',
 				dest: '/public_html/',
-				exclusions: ['**/blog/**','**/.gitignore','**/.git/**','**/.grunt/**','**/node_modules/**',
+				exclusions: ['**/blog/**','**/.gitignore','**/.git/**','**/.grunt/**','**/node_modules/**','**/bower_components/**',
 				'**/.DS_Store', '**/Thumbs.db','**/.ftppass',
 				'**/dev-*'],
 				keep: ['/public_html/blog/**','/public_html/blog/*'],
