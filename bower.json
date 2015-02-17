@@ -1,0 +1,25 @@
+{
+  "name": "madkudu-website",
+  "version": "0.3.0",
+  "authors": [
+    "Paul Cothenet <pcothenet@gmail.com>"
+  ],
+  "description": "public website",
+  "main": "index.html",
+  "keywords": [
+    "madkudu"
+  ],
+  "license": "Private",
+  "homepage": "http://www.madkudu.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2"
+  }
+}

@@ -33,14 +33,12 @@ module.exports = function(grunt) {
 				}]
 			},
 			vendor: {
+				// Only had files that need to be compiled (e.g. bootstrap css)
+				// For precompiled stuff (jquery), use cdnjs instead
 				files: [
 				{
 					expand: true, cwd: 'bower_components/bootstrap/dist/js',
 					src: ['bootstrap.min.js'], dest: 'js'
-				},
-				{
-					expand: true, cwd: 'bower_components/jquery/dist/',
-					src: ['jquery.min.js','jquery.min.map'], dest: 'js'
 				}
 				]
 			},
@@ -80,21 +78,6 @@ module.exports = function(grunt) {
 				},
 				files: {
 					src: ['*.html','css/**','images/**']
-				}
-			}
-		},
-		gitfetch: {
-			site: {
-				options: {
-					all: true
-				}
-			}
-		},
-		gitpush: {
-			site: {
-				options: {
-					remote: 'origin',
-					branch: 'master'
 				}
 			}
 		},
@@ -144,7 +127,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-zip');
 
 	// Default task.
-	grunt.registerTask('default', ['watch']);
+	grunt.registerTask('default', ['build', 'watch']);
 	grunt.registerTask('build', ['copy:vendor','less','jade','autoprefixer']);
 	grunt.registerTask('unpack', ['unzip','copy:main','clean']);
 	grunt.registerTask('commit', ['gitcommit:site','gitpush:site']);
