@@ -53,7 +53,7 @@ module.exports = function(grunt) {
 					port: 21,
 					authKey: 'ftpkey'
 				},
-				src: '/Users/pcothenet/Git/madkudu-webflow',
+				src: '.',
 				dest: '/public_html/',
 				exclusions: ['**/blog/**','**/.gitignore','**/.git/**','**/.grunt/**','**/node_modules/**','**/bower_components/**',
 				'**/.DS_Store', '**/Thumbs.db','**/.ftppass',
