@@ -83,6 +83,13 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		gitfetch: {
+			site: {
+				options: {
+					all: true
+				}
+			}
+		},
 		gitpush: {
 			site: {
 				options: {
@@ -139,7 +146,8 @@ module.exports = function(grunt) {
 	// Default task.
 	grunt.registerTask('default', ['watch']);
 	grunt.registerTask('build', ['copy:vendor','less','jade','autoprefixer']);
-	grunt.registerTask('commit-site', ['unzip','copy:main','clean','gitcommit:site','gitpush:site']);
-	grunt.registerTask('push-site', ['commit-site','ftpush:site']);
+	grunt.registerTask('unpack', ['unzip','copy:main','clean']);
+	grunt.registerTask('commit', ['gitcommit:site','gitpush:site']);
+	grunt.registerTask('push-site', ['ftpush:site']);
 	grunt.registerTask('push-blog', ['copy:css','ftpush:blog']);
 };

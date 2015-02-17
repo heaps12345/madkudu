@@ -14,5 +14,8 @@
     "grunt-git": "^0.2.14",
     "grunt-newer": "^0.8.0",
     "grunt-zip": "^0.15.0"
+  },
+  "dependencies": {
+    "grunt-cli": "^0.1.13"
   }
 }
