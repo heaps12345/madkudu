@@ -8,7 +8,7 @@ block neck
 block body
 
 	style.
-		.block-text p {
+		 p {
 			font-size: 18px;
 			line-height: 28px;
 		}
@@ -28,34 +28,35 @@ block body
 				h2.home-subtitle Madkudu analyzes your customer interactions and <br>let you know when a customer needs help.
 				img.hero-screenshot(src='images/Accounts.png' width='80%' alt='MadKudu account dashboard')
 
-		.section-explainer#section-explainer
+		.section--standard#section-explainer
 			.container
 				.row
 					.col-md-1
 					.col-md-10.text-center
 						h2.heading-section Results come from the right action at the right time.
 					.col-md-1
-				.row.block-text
+				.row
 					.col-md-1
-					.col-md-5
-						p There is a short window in the life of a customer where churn can be avoided. It is between the time an account starts to run into difficulties and the time it is almost impossible to change the situation.
+					.col-md-5.column__text
+						p There is a short window in the life of a customer where churn can be avoided.
+						p It is between the time an account starts to run into difficulties and the time it is almost impossible to change the situation.
 						p Caught at the right time, there is still a big chance to keep this customer if you reach out and offer to help.
-					.col-md-5
-						img(src='images/engagement_curve.png' width='100%')
+					.col-md-5.column__image
+						img(src='images/engagement_curve.png')
 					.col-md-1
 
 			.container(style='margin-top: 25px;')
 				.block-landing
 					h2.heading-section What if you could know which customers need attention right now?
-				.row.block-text
+				.row
 					.col-md-1
-					.col-md-5
-						img(src='images/customer_signal.png' width='100%')
-					.col-md-5
+					.col-md-5.column__image
+						img(src='images/customer_signal.png')
+					.col-md-5.column__text
 						p Your customers would love it, retention would increase, and no more of those rescue missions that takes a huge amount of time...
 					.col-md-1
 
-		.section-explainer#section-benefits(style='background-color: #DCEDFF;')
+		.section--standard#section-benefits(style='background-color: #DCEDFF;')
 			.container
 				.row
 					.col-md-1
@@ -64,47 +65,35 @@ block body
 					.col-md-1
 
 
-			.container(style='margin-top: 25px;')
-				.row.block-text
+			.container
+				.row.benefits__row
 					.col-md-1
-					.col-md-10
-						h2 Connect
-					.col-md-1
-				.row.block-text
-					.col-md-1
-					.col-md-5
+					.col-md-5.column__text
+						h2.benefits__subtitle Connect
 						p Consolidate your customer data all in one place by turning on a few switches.
 						p See the activity of an entire account or drill down to the user level.
-					.col-md-5
+					.col-md-5.column__image
 						img(src='images/feature_integrations.png' width='100%')
 					.col-md-1
 
-			.container(style='margin-top: 25px;')
-				.row.block-text
+			.container
+				.row.benefits__row
 					.col-md-1
-					.col-md-10
-						h2 Detect
-					.col-md-1
-				.row.block-text
-					.col-md-1
-					.col-md-5
+					.col-md-5.column__image
 						img(src='images/feature_detect.png' width='100%')
-					.col-md-5
+					.col-md-5.column__text
+						h2.benefits__subtitle Detect
 						p Let our data science do the work. Don't let anything fall through the cracks.
 					.col-md-1
 
-			.container(style='margin-top: 25px;')
-				.row.block-text
+			.container
+				.row.benefits__row
 					.col-md-1
-					.col-md-10
-						h2 Act
-					.col-md-1
-				.row.block-text
-					.col-md-1
-					.col-md-5
+					.col-md-5.column__text
+						h2.benefits__subtitle Act
 						p Get notified when something important is happening with one of your accounts and requires action.
-						p Access your customer intelligence in the applications you already use (CRM, Help Desk,..)
-					.col-md-5
+						p Access your customer intelligence in the applications you already use (CRM, Help desk...)
+					.col-md-5.column__image
 						img(src='images/feature_notify.png' width='100%')
 					.col-md-1
 
@@ -122,7 +111,7 @@ block body
 				margin-right: 20px;
 			}
 
-		.section-explainer#section-why-madkudu
+		.section--standard#section-why-madkudu
 			.container
 				.row
 					.col-md-1
@@ -130,19 +119,22 @@ block body
 						h2.heading-section What's unique about MadKudu?
 					.col-md-1
 				.col-centered
-					.row.block-text
+					.row
 						.column-thirty-three.text-center
 							.column-inside
 								h2 Ready now
-								p MadKudu's data platform connects to your existing apps and automatically set itself up without requiring a custom implementation.
+								p MadKudu's data platform connects to your existing apps and automatically sets itself up.
+								p No need for a time-consuming custom implementation.
 						.column-thirty-three.text-center
 							.column-inside
 								h2 Simple
-								p MadKudu is simple to use and does not require a long training. Data science detects events that you want to know about. No need to setup and maintain complex workflow logics.
+								p MadKudu is simple to use and does not require a long training.
+								p Data science detects events that you need to know about.
 						.column-thirty-three.text-center
 							.column-inside
 								h2 ROI
-								p Don't overpay for unnecessary custom work. Our pricing is simple and transparent. We don't lock you in with a contract. We believe instead on proving our value day-in day-out.
+								p Don't overpay for unnecessary custom work.
+								p Our pricing is simple and transparent and don't lock you in with a contract.
 
 		.section-signup(style='background-color: #DCEDFF;')
 			.container

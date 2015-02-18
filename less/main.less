@@ -1,4 +1,25 @@
+// New
 
+.column__text {
+	margin-top: 20px;
+}
+
+.column__image {
+	img {
+		width: 100%;
+	}
+}
+
+.benefits__row {
+	margin-top: 40px;
+}
+
+.benefits__subtitle {
+	color: #333;
+	margin-bottom: 20px;
+}
+
+// Old
 
 .wrapper {
 	background-color: @background-color;
@@ -8,8 +29,8 @@
 
 .home-title {
 	color: white;
-	font-size: 45px;
-	font-weight: 400;
+	font-size: 3em;
+	//font-weight: 400;
 	letter-spacing: 1px;
 	line-height: 53px;
 	margin-bottom: 20px;
@@ -56,12 +77,13 @@
 	z-index: 2;
 }
 
-.section-explainer {
+.section--standard {
 	background-color: white;
 	margin-top: 0px;
 	padding-top: 22px;
 	padding-bottom: 50px;
 }
+
 .section-signup {
 	background-color: white;
 	padding-top: 20px;
@@ -118,6 +140,8 @@
 	text-align: center;
 }
 
+/** @todo: refactor this button */
+
 .button {
 	background-color: transparent;
 	border: 2px solid #428bc7;
@@ -144,6 +168,13 @@
 		background-color: @medium-blue;
 		color: white;
 	}
+}
+
+.button-signup--nav {
+	height: 30px;
+	width: 200px;
+	padding: 0 0;
+	margin: 8px 0;
 }
 
 .form-success {
