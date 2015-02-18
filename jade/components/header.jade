@@ -1,4 +1,54 @@
-header
-	a.brand-logo(href='index.html')
-		img(src='images/madkudu_rectangle.png' alt='MadKudu')
+header(style='height: 40px;')
 
+	script.
+		$(document).ready(function (){
+
+
+			var update_class_nav_bar = function(click_selector) {
+				$('#mki_what').removeClass('nav-element-active');
+				$('#mki_how').removeClass('nav-element-active');
+				$('#mki_why').removeClass('nav-element-active');
+				$(click_selector).addClass('nav-element-active');
+			};
+
+			var activate = function(click_selector, goto_selector, dont_format) {
+				$(click_selector).click(function() {
+					if (!dont_format) {
+						update_class_nav_bar(click_selector);
+					}
+					$('html, body').animate({
+						scrollTop: $(goto_selector).offset().top-20
+					}, 1500);
+				});		
+			};
+
+			activate('#mki_what', '#section-explainer');
+			activate('#mki_how', '#section-benefits');
+			activate('#mki_why', '#section-why-madkudu');
+			activate('#send_me_invite', '#section-why-madkudu', true);
+
+		});
+
+	style.
+		.nav-element-active {
+			font-weight: bold;
+			 text-decoration: underline;
+		}
+
+	nav.navbar.navbar-default.navbar-fixed-top(style='margin-bottom: 0px; padding-top: 8px;')
+		.container-fluid
+			.navbar-header
+				a.navbar-brand(href='/')
+					img(src='images/madkudu_rectangle.png' alt='MadKudu' style='height: 37px; margin-top: -10px;')
+
+			.collapse.navbar-collapse
+				ul.nav.navbar-nav
+					li
+						a#mki_what What is it?
+					li
+						a#mki_how How does it work?
+					li
+						a#mki_why Why MadKudu?
+				ul.nav.navbar-nav.navbar-right
+					li 
+						button#send_me_invite.btn.btn-success(style='margin-top: 5px;') Send me an invite!
