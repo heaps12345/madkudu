@@ -1,54 +1,21 @@
-header(style='height: 40px;')
+header
 
-	script.
-		$(document).ready(function (){
+	script(type='text/javascript' src='js/header.js')
 
-
-			var update_class_nav_bar = function(click_selector) {
-				$('#mki_what').removeClass('nav-element-active');
-				$('#mki_how').removeClass('nav-element-active');
-				$('#mki_why').removeClass('nav-element-active');
-				$(click_selector).addClass('nav-element-active');
-			};
-
-			var activate = function(click_selector, goto_selector, dont_format) {
-				$(click_selector).click(function() {
-					if (!dont_format) {
-						update_class_nav_bar(click_selector);
-					}
-					$('html, body').animate({
-						scrollTop: $(goto_selector).offset().top-20
-					}, 1500);
-				});		
-			};
-
-			activate('#mki_what', '#section-explainer');
-			activate('#mki_how', '#section-benefits');
-			activate('#mki_why', '#section-why-madkudu');
-			activate('#send_me_invite', '#section-why-madkudu', true);
-
-		});
-
-	style.
-		.nav-element-active {
-			font-weight: bold;
-			 text-decoration: underline;
-		}
-
-	nav.navbar.navbar-default.navbar-fixed-top(style='margin-bottom: 0px; padding-top: 8px;')
+	nav.navbar.navbar-fixed-top.navbar--madkudu.navbar-default
 		.container-fluid
 			.navbar-header
-				a.navbar-brand(href='/')
-					img(src='images/madkudu_rectangle.png' alt='MadKudu' style='height: 37px; margin-top: -10px;')
+				a.navbar-brand.navbar-brand--madkudu(href='/')
+					img.navbar-brand__logo(src='images/madkudu_rectangle.png' alt='MadKudu')
 
 			.collapse.navbar-collapse
-				ul.nav.navbar-nav
+				ul.nav.navbar-nav.navbar-nav--madkudu
+					li#navbar_what
+						a.nav__link What is it?
+					li#navbar_how
+						a.nav__link How does it work?
+					li#navbar_why
+						a.nav__link Why MadKudu?
+				ul.header-button--right
 					li
-						a#mki_what What is it?
-					li
-						a#mki_how How does it work?
-					li
-						a#mki_why Why MadKudu?
-				ul.nav.navbar-nav.navbar-right
-					li 
-						button#send_me_invite.btn.btn-success(style='margin-top: 5px;') Send me an invite!
+						a.btn.btn-success#navbar_invite Send me an invite!
