@@ -2,6 +2,10 @@
 
 $(document).ready(function (){
 
+	'use strict';
+
+	$('.navbar-nav--madkudu').show();
+
 	var update_class_nav_bar = function(click_selector) {
 		$('#navbar_what').removeClass('active');
 		$('#navbar_how').removeClass('active');
@@ -15,7 +19,7 @@ $(document).ready(function (){
 				update_class_nav_bar(click_selector);
 			}
 			$('html, body').animate({
-				scrollTop: $(goto_selector).offset().top-20
+				scrollTop: $(goto_selector).offset().top - 20
 			}, 1500);
 		});
 	};
