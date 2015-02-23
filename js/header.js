@@ -28,7 +28,7 @@ $(document).ready(function (){
 		activate('#navbar_what', '#section-explainer');
 		activate('#navbar_how', '#section-benefits');
 		activate('#navbar_why', '#section-why-madkudu');
-		activate('#navbar_invite', '.section-signup', true);
+		activate('#navbar_invite', '#section-signup', true);
 	}
 
 });
