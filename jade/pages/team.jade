@@ -1,0 +1,61 @@
+extends ../components/skeleton.jade
+
+block neck
+	title MadKudu | Team
+
+	script analytics.page('Team')
+
+block body
+
+	.team__wrapper
+		.container
+			.row
+				.col-sm-6.team-column
+					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
+						img(class="team__image" src="images/horn_1.png" width="250" alt="Kudu horn" itemprop="photo")
+						.team__name(itemprop="name") Sam Levan
+						.team__work(itemprop="title") Chief Yes Officer
+						.team__social
+							a.team__social--link(href="https://www.linkedin.com/pub/anselme-levan/1/958/119")
+								img(src="images/linkedin_footer.svg" target="_blank" width="15" alt="Sam Levan LinkedIn")
+							a.team__social--link(href="https://twitter.com/anselmelevan")
+								img(src="images/twitter_footer.svg" target="_blank" width="15" alt="Sam Levan Twitter")
+						a.team__email(href="mailto:sam@madkudu.com?subject=Tell%20me%20more%20about%20MadKudu!" target="_blank") sam@madkudu.com
+						h4.team__header Loves
+						ul.team__list
+							li Customer Success
+							li Great products
+							li Flamenco
+						h4.team__header Fears
+						ul.team__list
+							li Untapped potential
+							li Fear
+						h4.team__header Previous Lives
+						ul.team__list
+							li VP Product at AgilOne
+							li Director of Client Success at AgilOne
+							li Data Scientist
+				.col-sm-6.team-column
+					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
+						img(class="team__image" src="images/horn_2.png" width="250" alt="Kudu horn" itemprop="photo")
+						.team__name(itemprop="name") Paul Cothenet
+						.team__work(itemprop="title") Chief No Officer
+						.team__social
+							a.team__social--link(href="https://www.linkedin.com/in/paulcothenet/en")
+								img(src="images/linkedin_footer.svg" target="_blank" width="15" alt="Paul Cothenet LinkedIn")
+							a.team__social--link(href="https://twitter.com/paulcothenet")
+								img(src="images/twitter_footer.svg" target="_blank" width="15" alt="Paul Cothenet Twitter")
+						a.team__email(href="mailto:paul@madkudu.com?subject=Tell%20me%20more%20about%20MadKudu!" target="_blank") paul@madkudu.com
+						h4.team__header Loves
+						ul.team__list
+							li Data
+							li Mountains
+							li Coffee
+						h4.team__header Fears
+						ul.team__list
+							li Sam's kids
+							li Shitty dashboards
+						h4.team__header Previous Lives
+						ul.team__list
+							li Product Manager & Data Plumber at AgilOne
+							li Nuclear Engineer

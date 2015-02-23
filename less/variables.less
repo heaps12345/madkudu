@@ -13,4 +13,22 @@
 
 // Fonts
 
-@font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+@text-font: 'Open Sans', 'Helvetica Neue', sans-serif;
+@header-font: Ubuntu, Helvetica, sans-serif;
+
+// Container size:
+
+// Small screen / tablet
+@container-tablet:             (720px + @grid-gutter-width);
+//** For `@screen-sm-min` and up.
+@container-sm:                 @container-tablet;
+
+// Medium screen / desktop
+@container-desktop:            (940px + @grid-gutter-width);
+//** For `@screen-md-min` and up.
+@container-md:                 @container-desktop;
+
+// Large screen / wide desktop
+@container-large-desktop:      (940px + @grid-gutter-width);
+//** For `@screen-lg-min` and up.
+@container-lg:                 @container-large-desktop;
