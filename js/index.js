@@ -1,4 +1,4 @@
-/* globals $, document, analytics */
+/* globals $, document, analytics, _kmq */
 
 $(document).ready( function(){
 	analytics.page('Home');
@@ -8,15 +8,16 @@ $(document).ready( function(){
 			console.log(err);
 		}
 		console.log(this);
-		var val = $("#mc-EMAIL").val();
+		var user_email = $('#mc-EMAIL').val();
 		analytics.track('Wait list', {
 			location: 'Homepage',
-			email: val
+			email: user_email
 		});
-		analytics.alias(val);
-		analytics.identify(val, {
-			email: val
+		analytics.alias(user_email);
+		analytics.identify(user_email, {
+			email: user_email
 		});
+		_kmq.push(['identify', user_email ]);
 	});
 });
 
