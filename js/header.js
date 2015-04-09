@@ -25,4 +25,17 @@ $(document).ready(function (){
 		}
 	});
 
+	$(window).scroll(function() {
+		var height = $(window).scrollTop();
+		if(height  > 500) {
+		// do something
+			$('a.button.button-signup--nav').show();
+		}
+		else {
+		// do something
+			$('a.button.button-signup--nav').hide();
+		}
+	});
+
+
 });
