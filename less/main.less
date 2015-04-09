@@ -1,13 +1,26 @@
 // New
 
 .column__text {
-	margin-top: 20px;
+	// margin-top: 20px;
 }
 
 .column__image {
 	img {
-		width: 100%;
+		// 	width: 100%;
+		height: 250px;
 	}
+}
+
+.image_what {
+  // margin-left: 25px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.meet_madkudu_image {
+	margin-top: 27px;
+	width: 374px;
 }
 
 .benefits__row {
@@ -44,7 +57,7 @@ section {
 }
 
 .section--signup {
-	background-color: #DCEDFF;
+	background-color: @medium-blue;
 	padding-top: 20px;
 	padding-bottom: 20px;
 	text-align: center;
@@ -130,6 +143,11 @@ section {
 
 .heading-section {
 	color: #585858;
+	margin-bottom: 20px;
+}
+
+.heading-section-margin-top {
+  margin-top: 45px;
 }
 
 .list-benefits {
@@ -158,9 +176,11 @@ section {
 .button {
 	background-color: transparent;
 	border: 2px solid #428bc7;
-	border-color: @medium-blue;
+	border-color: white;
+	// border-color: @medium-blue;
 	border-radius: 5px;
-	color: @medium-blue;
+	color: white;
+	// color: @medium-blue;
 	display: inline-block;
 	font-weight: 600;
 	margin-top: 15px;
@@ -187,7 +207,10 @@ section {
 	height: 30px;
 	width: 200px;
 	padding: 0 0;
-	margin: 8px 0;
+	margin: 10px 0;
+	border: 2px solid @medium-blue;
+	border-color: @medium-blue;
+	color: @medium-blue;
 }
 
 .form-success {
