@@ -7,7 +7,7 @@ var segment = {
 
 var segment_key;
 if (window.location.hostname === 'madkudu-website.dev') {
-	segment_key = 'U2gPGmLgd9q3xq8iSYcwSpCV48glOaMl';
+	segment_key = segment.dev;
 } else {
 	segment_key = segment.prod;
 }

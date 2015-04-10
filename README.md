@@ -23,3 +23,7 @@ Every push to the master branch automatically deploys the new site to namecheap.
 
 If you want to push without deploying (to save your work remotely), use a branch and do a pull request when ready.
 
+# Blog
+
+Go to [http://www.madkudu.com/blog/wp-admin](http://www.madkudu.com/blog/wp-admin)
+
