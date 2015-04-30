@@ -5,9 +5,9 @@ $(document).ready(function (){
 
 	var scroll_offset = 20;
 
-	if (window.location.pathname === '/') {
+	// if (window.location.pathname === '/') {
 		$('.navbar-nav--madkudu').show();
-	}
+	// }
 
 	$('body').scrollspy({ target:'.navbar--madkudu', offset: scroll_offset});
 
@@ -25,17 +25,25 @@ $(document).ready(function (){
 		}
 	});
 
-	$(window).scroll(function() {
-		var height = $(window).scrollTop();
-		if(height  > 500) {
-		// do something
-			$('a.button.button-signup--nav').show();
-		}
-		else {
-		// do something
-			$('a.button.button-signup--nav').hide();
-		}
-	});
+
+	if (window.location.pathname !== '/') {
+		$('#navbar_what a').attr('href', '/');
+		$('a.button.button-signup--nav').show();
+	}
+	else {
+		$(window).scroll(function() {
+			var height = $(window).scrollTop();
+			if(height  > 500) {
+			// do something
+				$('a.button.button-signup--nav').show();
+			}
+			else {
+			// do something
+				$('a.button.button-signup--nav').hide();
+			}
+		});
+	}
+
 
 
 });

@@ -2,8 +2,8 @@ header
 
 	script(type='text/javascript' src='js/header.js')
 
-	nav.navbar.navbar-fixed-top.navbar--madkudu.navbar-default
-		.container-fluid
+	nav.navbar.navbar-fixed-top.navbar--madkudu.navbar-default.bigger-nav-bar
+		.container-fluid.navbar-limited-width
 			.navbar-header
 				a.navbar-brand.navbar-brand--madkudu(href='/')
 					img.navbar-brand__logo(src='images/madkudu_rectangle.png' alt='MadKudu')
@@ -11,11 +11,13 @@ header
 			.collapse.navbar-collapse
 				ul.nav.navbar-nav.navbar-nav--madkudu
 					li#navbar_what
-						a.nav__link(href='#section-explainer') What is it?
+						a.nav__link(href='#section-explainer') Features
 					li#navbar_how
-						a.nav__link(href='#section-benefits') How it works?
-					li#navbar_why
-						a.nav__link(href='#section-why-madkudu') Why MadKudu?
+						a.nav__link(href='/team.html') About
+					//- li#navbar_why
+					//- 	a.nav__link(href='#section-why-madkudu') Why MadKudu?
 				ul.header-button--right
+
 					li
 						a.button.button-signup--nav(href='/#section-signup' style='display:none;')#navbar_invite Send me an invite!
+						a.button(href='https://app.madkudu.com').button-login--nav Login
