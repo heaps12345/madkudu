@@ -4,7 +4,7 @@ Install [Anvil](http://anvilformac.com/)
 
 Add the repository to Anvil
 
-Access the local version via [http://madkudu-website.dev/]
+Access the local version via [http://madkudu-website.dev/](http://madkudu-website.dev/)
 
 # Build
 
