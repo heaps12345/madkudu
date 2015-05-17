@@ -73,6 +73,8 @@ module.exports = function() {
 
 	var color_palette = ['#5DA5DA','#FAA43A','#60BD68','#D3D3D3'];
 
+	var currency_formatter;
+
 	var draw_mrr_chart = function(raw_data, div_target) {
 
 		console.log(raw_data);
@@ -81,6 +83,8 @@ module.exports = function() {
 		var max_value = raw_data[raw_data.length-1][1];
 
 		var data = google.visualization.arrayToDataTable(raw_data);
+		currency_formatter.format(data,1);
+
 		var options = {
 			// title : 'Monthly Coffee Production by Country',
 			height: 250,
@@ -115,6 +119,11 @@ module.exports = function() {
 
 	var draw_mrr_breakdown_chart = function(raw_data, div_target) {
 		var data = google.visualization.arrayToDataTable(raw_data);
+		currency_formatter.format(data,1);
+		currency_formatter.format(data,2);
+		currency_formatter.format(data,3);
+		currency_formatter.format(data,4);
+
 		var options = {
 			// title : 'Monthly Coffee Production by Country',
 			height: 250,
@@ -146,10 +155,51 @@ module.exports = function() {
 	};
 
 
+	var draw_mrr_with_goal = function(raw_data, div_target) {
+		var data = google.visualization.arrayToDataTable(raw_data);
+		currency_formatter.format(data,1);
+		currency_formatter.format(data,2);
+		currency_formatter.format(data,3);
+		currency_formatter.format(data,4);
+
+		var options = {
+			// title : 'Monthly Coffee Production by Country',
+			height: 250,
+			vAxis: {
+				format: '$#,###'
+			},
+			hAxis: {title: "Month"},
+			seriesType: "bars",
+			// isStacked: 'relative',
+			isStacked: true,
+			series: {
+				0: {color: color_palette[0]},
+				1: {color: color_palette[1]},
+				2: {color: color_palette[2]},
+				3: {color: color_palette[3]}
+				// 5: {type: "line"}
+			},
+			legend : {position: 'none'},
+			chartArea:{left:100,top:20,width:'100%',height:'80%'},
+			animation:{
+				duration: 1000,
+				easing: 'out',
+				startup: true
+			},
+		};
+		// var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+		var chart = new google.visualization.ComboChart(document.getElementById(div_target));
+		chart.draw(data, options);
+	};
+
 
 	function drawVisualization() {
 
 		var elements_to_listen_to = ['#starting_MRR','#revenue_growth','#churn','#upsell', '#projection_time'];
+
+		currency_formatter = new google.visualization.NumberFormat({
+			pattern: '$#,###'
+		});
 
 		var calculator = new (require('./calculator'))();
 		calculator.compute(
@@ -162,6 +212,7 @@ module.exports = function() {
 
 		draw_mrr_chart(calculator.mrr, 'chart_div_mrr');
 		draw_mrr_breakdown_chart(calculator.mrr_breakdown, 'chart_div_mrr_breakdown');
+		draw_mrr_with_goal(calculator.mrr_breakdown, 'chart_div_mrr_goal');
 
 	};
 
