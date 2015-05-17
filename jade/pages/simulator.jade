@@ -1,0 +1,54 @@
+extends ../components/skeleton.jade
+
+block neck
+	title MadKudu | Simulator
+
+	script(src="/js/jquery.inputmask.bundle.min.js" type="text/javascript")
+	script(type="text/javascript" src="https://www.google.com/jsapi")
+
+	script(src="/js/simulator/bundle.js" type="text/javascript")
+
+	script analytics.page('Simulator')
+
+block body
+
+	.container
+
+		h1 Simulator
+
+		p Want to get an idea of the impact of upsell and churn on the MRR?
+
+		.row
+
+			.col-sm-4
+
+				form.form-horizontal
+					.form-group
+						label.col-sm-6.control-label(for="starting_MRR") Starting MRR
+						.col-sm-6
+							.input-group
+								//- .input-group-addon $
+								input.form-control#starting_MRR(type="text" placeholder="")
+					.form-group
+						label.col-sm-6.control-label(for="revenue_growth") Revenue growth
+						.col-sm-6
+							.input-group
+								//- .input-group-addon $
+								input.form-control#revenue_growth(type="text" placeholder="" maxlength: 4)
+					.form-group
+						label.col-sm-6.control-label(for="revenue_growth") Revenue churn
+						.col-sm-6
+							.input-group
+								input.form-control#churn(type="text" placeholder="")
+								//- .input-group-addon %
+					.form-group
+						label.col-sm-6.control-label(for="revenue_growth") Revenue upsell
+						.col-sm-6
+							.input-group
+								input.form-control#upsell(type="text" placeholder="")
+								//- .input-group-addon %
+
+			.col-sm-8
+				#chart_div
+
+
