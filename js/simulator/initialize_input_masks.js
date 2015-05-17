@@ -24,9 +24,12 @@ module.exports = function() {
 	$('#churn').inputmask("decimal", mask_options_percentage);
 	$('#upsell').inputmask("decimal", mask_options_percentage);
 
+	$('#projection_time').inputmask("decimal", {digits: 0, suffix: ' month(s)', autoUnmask: true});
+
 	$("#starting_MRR").val(100000);
 	$("#revenue_growth").val(10000);
 	$("#churn").val(5);
 	$("#upsell").val(1);
+	$("#projection_time").val(12);
 
 };

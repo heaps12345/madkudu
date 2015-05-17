@@ -12,43 +12,161 @@ block neck
 
 block body
 
-	.container
+	.tools_wrapper(style='background-color:#f2f2f2; padding-bottom: 50px;')
 
-		h1 Simulator
+		.container
 
-		p Want to get an idea of the impact of upsell and churn on the MRR?
+			h1 Simulator
 
-		.row
+			p Want to get an idea of the impact of upsell and churn on the MRR?
 
-			.col-sm-4
+			.container(style='background-color:white;margin-bottom: 35px;')
 
-				form.form-horizontal
-					.form-group
-						label.col-sm-6.control-label(for="starting_MRR") Starting MRR
-						.col-sm-6
-							.input-group
-								//- .input-group-addon $
-								input.form-control#starting_MRR(type="text" placeholder="")
-					.form-group
-						label.col-sm-6.control-label(for="revenue_growth") Revenue growth
-						.col-sm-6
-							.input-group
-								//- .input-group-addon $
-								input.form-control#revenue_growth(type="text" placeholder="" maxlength: 4)
-					.form-group
-						label.col-sm-6.control-label(for="revenue_growth") Revenue churn
-						.col-sm-6
-							.input-group
-								input.form-control#churn(type="text" placeholder="")
-								//- .input-group-addon %
-					.form-group
-						label.col-sm-6.control-label(for="revenue_growth") Revenue upsell
-						.col-sm-6
-							.input-group
-								input.form-control#upsell(type="text" placeholder="")
-								//- .input-group-addon %
+				h3.text-center.mrr_forcecast_tagline(style='margin-bottom: 35px;')
+					| In 12 months, your MRR will be $123,000. <br>
 
-			.col-sm-8
-				#chart_div
+				.row
+					.col-sm-4
+
+						form.form-horizontal
+							.form-group
+								label.col-sm-6.control-label(for="starting_MRR") Starting MRR
+								.col-sm-6
+									.input-group
+										//- .input-group-addon $
+										input.form-control#starting_MRR(type="text" placeholder="")
+							.form-group
+								label.col-sm-6.control-label(for="revenue_growth") Revenue growth
+								.col-sm-6
+									.input-group
+										//- .input-group-addon $
+										input.form-control#revenue_growth(type="text" placeholder="" maxlength: 4)
+							.form-group
+								label.col-sm-6.control-label(for="revenue_growth") Revenue churn
+								.col-sm-6
+									.input-group
+										input.form-control#churn(type="text" placeholder="")
+										//- .input-group-addon %
+							.form-group
+								label.col-sm-6.control-label(for="revenue_growth") Revenue upsell
+								.col-sm-6
+									.input-group
+										input.form-control#upsell(type="text" placeholder="")
+										//- .input-group-addon %
+							.form-group
+								label.col-sm-6.control-label(for="projection_time") Projection Time
+								.col-sm-6
+									.input-group
+										input.form-control#projection_time(type="text" placeholder="")
+										//- .input-group-addon %
+
+
+					//- .col-sm-8(style='height: 250px;')
+					.col-sm-8(style='')
+						#chart_div_mrr
+
+
+			.container(style='background-color:white;margin-bottom: 35px;')
+
+				h3.text-center.mrr_forcecast_tagline(style='margin-bottom: 35px;')
+					| The 5% churn rate reduces your MRR by $35,000 in 12 months. <br>
+
+				.row
+					.col-sm-4
+
+
+					.col-sm-8
+						#chart_div_mrr_breakdown
+
+
+
+			.container(style='background-color:white;margin-bottom: 35px;')
+
+				h3.text-center.mrr_forcecast_tagline(style='margin-bottom: 35px;')
+					| Reducing your churn from 5% to 4% increases your MRR by $20,000 in 12 months. <br>
+
+				.row
+					.col-sm-4
+
+						form.form-horizontal
+							.form-group
+								label.col-sm-6.control-label(for="starting_MRR") Starting MRR
+								.col-sm-6
+									.input-group
+										//- .input-group-addon $
+										input.form-control#starting_MRR(type="text" placeholder="")
+							.form-group
+								label.col-sm-6.control-label(for="revenue_growth") Revenue growth
+								.col-sm-6
+									.input-group
+										//- .input-group-addon $
+										input.form-control#revenue_growth(type="text" placeholder="" maxlength: 4)
+							.form-group
+								label.col-sm-6.control-label(for="revenue_growth") Revenue churn
+								.col-sm-6
+									.input-group
+										input.form-control#churn(type="text" placeholder="")
+										//- .input-group-addon %
+							.form-group
+								label.col-sm-6.control-label(for="revenue_growth") Revenue upsell
+								.col-sm-6
+									.input-group
+										input.form-control#upsell(type="text" placeholder="")
+										//- .input-group-addon %
+							.form-group
+								label.col-sm-6.control-label(for="projection_time") Projection Time
+								.col-sm-6
+									.input-group
+										input.form-control#projection_time(type="text" placeholder="")
+										//- .input-group-addon %
+
+
+					.col-sm-8
+						#chart_div
+
+
+			.container(style='background-color:white;margin-bottom: 35px;')
+
+				h3.text-center.mrr_forcecast_tagline(style='margin-bottom: 35px;')
+					| The equivalent cost of acquiring customers to compensate for churn is $3,657,000.
+
+				.row
+					.col-sm-4
+
+						form.form-horizontal
+							.form-group
+								label.col-sm-6.control-label(for="starting_MRR") Starting MRR
+								.col-sm-6
+									.input-group
+										//- .input-group-addon $
+										input.form-control#starting_MRR(type="text" placeholder="")
+							.form-group
+								label.col-sm-6.control-label(for="revenue_growth") Revenue growth
+								.col-sm-6
+									.input-group
+										//- .input-group-addon $
+										input.form-control#revenue_growth(type="text" placeholder="" maxlength: 4)
+							.form-group
+								label.col-sm-6.control-label(for="revenue_growth") Revenue churn
+								.col-sm-6
+									.input-group
+										input.form-control#churn(type="text" placeholder="")
+										//- .input-group-addon %
+							.form-group
+								label.col-sm-6.control-label(for="revenue_growth") Revenue upsell
+								.col-sm-6
+									.input-group
+										input.form-control#upsell(type="text" placeholder="")
+										//- .input-group-addon %
+							.form-group
+								label.col-sm-6.control-label(for="projection_time") Projection Time
+								.col-sm-6
+									.input-group
+										input.form-control#projection_time(type="text" placeholder="")
+										//- .input-group-addon %
+
+
+					.col-sm-8
+						#chart_div
 
 

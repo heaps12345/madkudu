@@ -1,56 +1,37 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+// var _ = require('../underscore-min.js');
 
+var Calculator = function() {};
 
-var calculator = function(starting_mrr, revenue_growth, churn, upsell) {
-
-	console.log(starting_mrr);
-	console.log(revenue_growth);
-	console.log(churn);
-	console.log(upsell);
-
-	var number_of_month = 12;
-
-	var cumulated_existing_customer_revenue = {0: starting_mrr};
-	var retained_revenue_from_new_customers = {0: revenue_growth};
-	var churn_revenue_by_cohort = { 0: {0: 0}, 1: {0: 0}}
+Calculator.prototype.compute_mrr_breakdown = function() {
+	var cumulated_existing_customer_revenue = {0: this.starting_mrr};
 	var cumulated_new_customer_revenue = {0: 0};
 	var cumulated_upsell_revenue = {0: 0};
 	var cumulated_churn = {0: 0};
 
-	// initialize
-	for (var i=1;i<=number_of_month;i++) {
-		cumulated_existing_customer_revenue[i] = cumulated_existing_customer_revenue[i-1]*(1-churn);
-		churn_revenue_by_cohort[0][i] = cumulated_existing_customer_revenue[i] - cumulated_existing_customer_revenue[i-1];
-		retained_revenue_from_new_customers[i] = retained_revenue_from_new_customers[i-1]*(1-churn);
-		churn_revenue_by_cohort[1][i] = retained_revenue_from_new_customers[i] - retained_revenue_from_new_customers[i-1];
-	}
-
 	// calculate monthly numbers
-	for (var i=1;i<=number_of_month;i++) {
-		cumulated_new_customer_revenue[i] = cumulated_new_customer_revenue[i-1] + revenue_growth + churn_revenue_by_cohort[1][i-1];
-		cumulated_upsell_revenue[i] = cumulated_upsell_revenue[i-1]*(1-churn) + (cumulated_existing_customer_revenue[i-1]+cumulated_new_customer_revenue[i-1] + cumulated_upsell_revenue[i-1])*upsell;
-		cumulated_churn[i] = cumulated_churn[i-1] + churn_revenue_by_cohort[0][i] + churn_revenue_by_cohort[1][i-1] - cumulated_upsell_revenue[i-1]*churn;
+	for (var i=1;i<=this.number_of_month;i++) {
+		cumulated_existing_customer_revenue[i] = cumulated_existing_customer_revenue[i-1]*(1-this.churn);
+		cumulated_new_customer_revenue[i] = cumulated_new_customer_revenue[i-1]*(1-this.churn) + this.revenue_growth;
+		cumulated_upsell_revenue[i] = cumulated_upsell_revenue[i-1]*(1-this.churn) + (cumulated_existing_customer_revenue[i-1]+cumulated_new_customer_revenue[i-1] + cumulated_upsell_revenue[i-1])*this.upsell;
+		cumulated_churn[i] = cumulated_churn[i-1] - (cumulated_existing_customer_revenue[i-1] + cumulated_upsell_revenue[i-1] + cumulated_upsell_revenue[i-1])*this.churn;
 	}
 
-	console.log(cumulated_new_customer_revenue);
-	console.log(cumulated_existing_customer_revenue);
-	console.log(cumulated_upsell_revenue);
-	console.log(cumulated_churn);
-
-	// console.log(churn_revenue_by_cohort);
+	// console.log(cumulated_new_customer_revenue);
 	// console.log(cumulated_existing_customer_revenue);
-	// console.log(retained_revenue_from_new_customers);
+	// console.log(cumulated_upsell_revenue);
+	// console.log(cumulated_churn);
 
-	var results = [[
-		'Month',
+	this.mrr_breakdown = [[
+		'Months',
 		'Revenue from new customers',
 		'Revenue from upsells',
 		'Revenue from existing customers',
 		'Lost revenue from churn'
 	]];
 
-	for (var i=1;i<=number_of_month;i++) {
-		results.push([
+	for (var i=1;i<=this.number_of_month;i++) {
+		this.mrr_breakdown.push([
 			i.toString(),
 			cumulated_new_customer_revenue[i],
 			cumulated_upsell_revenue[i],
@@ -59,36 +40,74 @@ var calculator = function(starting_mrr, revenue_growth, churn, upsell) {
 		]);
 	}
 
-	return results;
-
+	// return this.mrr_breakdown;
 };
 
-module.exports = calculator;
+Calculator.prototype.compute_mrr = function() {
+	this.mrr = [['Months', 'MRR']];
+	for (var i=1; i<this.mrr_breakdown.length; i++) {
+		var month_mrr_breakdown = this.mrr_breakdown[i];
+		this.mrr.push(
+			[month_mrr_breakdown[0],month_mrr_breakdown[1]+month_mrr_breakdown[2]+month_mrr_breakdown[3]]
+		);
+	}
+};
+
+Calculator.prototype.compute = function(starting_mrr, revenue_growth, churn, upsell, number_of_month) {
+	this.starting_mrr = starting_mrr;
+	this.revenue_growth = revenue_growth;
+	this.churn = churn;
+	this.upsell = upsell;
+	this.number_of_month = number_of_month;
+	this.compute_mrr_breakdown();
+	this.compute_mrr();
+};
+
+
+module.exports = Calculator;
 
 },{}],2:[function(require,module,exports){
 module.exports = function() {
 
-	console.log('yo');
-
 	google.load("visualization", "1", {packages:["corechart"], callback: drawVisualization});
-	// google.setOnLoadCallback(drawVisualization);
 
-	function drawVisualization() {
 
-		var elements_to_listen_to = ['#starting_MRR','#revenue_growth','#churn','#upsell'];
-
-		var calculator = require('./calculator');
-		var results = calculator(
-			parseFloat($(elements_to_listen_to[0]).val()),
-			parseFloat($(elements_to_listen_to[1]).val()),
-			$(elements_to_listen_to[2]).val()/100,
-			$(elements_to_listen_to[3]).val()/100
-			);
-
-		var data = google.visualization.arrayToDataTable(results);
-
+	var draw_mrr_chart = function(raw_data, div_target) {
+		var data = google.visualization.arrayToDataTable(raw_data);
 		var options = {
 			// title : 'Monthly Coffee Production by Country',
+			height: 250,
+			vAxis: {
+				format: '$#,###',
+				viewWindowMode: 'pretty'
+			},
+			hAxis: {title: "Month", viewWindowMode: 'pretty'},
+			// seriesType: "bars",
+			// isStacked: 'relative',
+			isStacked: true,
+			series: {
+				0: {areaOpacity: 0.10},
+			},
+			pointSize: 8,
+			legend : {position: 'none'},
+			chartArea:{left:100,top:20,width:'100%',height:'80%'},
+			animation:{
+				duration: 1000,
+				easing: 'out',
+				startup: true
+			},
+		};
+		// var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+		var chart = new google.visualization.AreaChart(document.getElementById(div_target));
+		chart.draw(data, options);
+	};
+
+
+	var draw_mrr_breakdown_chart = function(raw_data, div_target) {
+		var data = google.visualization.arrayToDataTable(raw_data);
+		var options = {
+			// title : 'Monthly Coffee Production by Country',
+			height: 250,
 			vAxis: {
 				format: '$#,###'
 			},
@@ -111,10 +130,29 @@ module.exports = function() {
 				startup: true
 			},
 		};
-
 		// var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
-		var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+		var chart = new google.visualization.ComboChart(document.getElementById(div_target));
 		chart.draw(data, options);
+	};
+
+
+
+	function drawVisualization() {
+
+		var elements_to_listen_to = ['#starting_MRR','#revenue_growth','#churn','#upsell', '#projection_time'];
+
+		var calculator = new (require('./calculator'))();
+		calculator.compute(
+			parseFloat($(elements_to_listen_to[0]).val()),
+			parseFloat($(elements_to_listen_to[1]).val()),
+			$(elements_to_listen_to[2]).val()/100,
+			$(elements_to_listen_to[3]).val()/100,
+			parseFloat($(elements_to_listen_to[4]).val())
+			);
+
+		draw_mrr_chart(calculator.mrr, 'chart_div_mrr');
+		draw_mrr_breakdown_chart(calculator.mrr_breakdown, 'chart_div_mrr_breakdown');
+
 	};
 
 };
@@ -146,10 +184,13 @@ module.exports = function() {
 	$('#churn').inputmask("decimal", mask_options_percentage);
 	$('#upsell').inputmask("decimal", mask_options_percentage);
 
+	$('#projection_time').inputmask("decimal", {digits: 0, suffix: ' month(s)', autoUnmask: true});
+
 	$("#starting_MRR").val(100000);
 	$("#revenue_growth").val(10000);
 	$("#churn").val(5);
 	$("#upsell").val(1);
+	$("#projection_time").val(12);
 
 };
 
@@ -164,7 +205,7 @@ var add_listeners = function(refresh_function) {
 	 };
 	})();
 
-	var elements_to_listen_to = ['#starting_MRR','#revenue_growth','#churn','#upsell'];
+	var elements_to_listen_to = ['#starting_MRR','#revenue_growth','#churn','#upsell', '#projection_time'];
 
 	for (var i=0; i<elements_to_listen_to.length; i++) {
 		$(elements_to_listen_to[i]).keyup(function() {

@@ -1,55 +1,36 @@
+// var _ = require('../underscore-min.js');
 
+var Calculator = function() {};
 
-var calculator = function(starting_mrr, revenue_growth, churn, upsell) {
-
-	console.log(starting_mrr);
-	console.log(revenue_growth);
-	console.log(churn);
-	console.log(upsell);
-
-	var number_of_month = 12;
-
-	var cumulated_existing_customer_revenue = {0: starting_mrr};
-	var retained_revenue_from_new_customers = {0: revenue_growth};
-	var churn_revenue_by_cohort = { 0: {0: 0}, 1: {0: 0}}
+Calculator.prototype.compute_mrr_breakdown = function() {
+	var cumulated_existing_customer_revenue = {0: this.starting_mrr};
 	var cumulated_new_customer_revenue = {0: 0};
 	var cumulated_upsell_revenue = {0: 0};
 	var cumulated_churn = {0: 0};
 
-	// initialize
-	for (var i=1;i<=number_of_month;i++) {
-		cumulated_existing_customer_revenue[i] = cumulated_existing_customer_revenue[i-1]*(1-churn);
-		churn_revenue_by_cohort[0][i] = cumulated_existing_customer_revenue[i] - cumulated_existing_customer_revenue[i-1];
-		retained_revenue_from_new_customers[i] = retained_revenue_from_new_customers[i-1]*(1-churn);
-		churn_revenue_by_cohort[1][i] = retained_revenue_from_new_customers[i] - retained_revenue_from_new_customers[i-1];
-	}
-
 	// calculate monthly numbers
-	for (var i=1;i<=number_of_month;i++) {
-		cumulated_new_customer_revenue[i] = cumulated_new_customer_revenue[i-1] + revenue_growth + churn_revenue_by_cohort[1][i-1];
-		cumulated_upsell_revenue[i] = cumulated_upsell_revenue[i-1]*(1-churn) + (cumulated_existing_customer_revenue[i-1]+cumulated_new_customer_revenue[i-1] + cumulated_upsell_revenue[i-1])*upsell;
-		cumulated_churn[i] = cumulated_churn[i-1] + churn_revenue_by_cohort[0][i] + churn_revenue_by_cohort[1][i-1] - cumulated_upsell_revenue[i-1]*churn;
+	for (var i=1;i<=this.number_of_month;i++) {
+		cumulated_existing_customer_revenue[i] = cumulated_existing_customer_revenue[i-1]*(1-this.churn);
+		cumulated_new_customer_revenue[i] = cumulated_new_customer_revenue[i-1]*(1-this.churn) + this.revenue_growth;
+		cumulated_upsell_revenue[i] = cumulated_upsell_revenue[i-1]*(1-this.churn) + (cumulated_existing_customer_revenue[i-1]+cumulated_new_customer_revenue[i-1] + cumulated_upsell_revenue[i-1])*this.upsell;
+		cumulated_churn[i] = cumulated_churn[i-1] - (cumulated_existing_customer_revenue[i-1] + cumulated_upsell_revenue[i-1] + cumulated_upsell_revenue[i-1])*this.churn;
 	}
 
-	console.log(cumulated_new_customer_revenue);
-	console.log(cumulated_existing_customer_revenue);
-	console.log(cumulated_upsell_revenue);
-	console.log(cumulated_churn);
-
-	// console.log(churn_revenue_by_cohort);
+	// console.log(cumulated_new_customer_revenue);
 	// console.log(cumulated_existing_customer_revenue);
-	// console.log(retained_revenue_from_new_customers);
+	// console.log(cumulated_upsell_revenue);
+	// console.log(cumulated_churn);
 
-	var results = [[
-		'Month',
+	this.mrr_breakdown = [[
+		'Months',
 		'Revenue from new customers',
 		'Revenue from upsells',
 		'Revenue from existing customers',
 		'Lost revenue from churn'
 	]];
 
-	for (var i=1;i<=number_of_month;i++) {
-		results.push([
+	for (var i=1;i<=this.number_of_month;i++) {
+		this.mrr_breakdown.push([
 			i.toString(),
 			cumulated_new_customer_revenue[i],
 			cumulated_upsell_revenue[i],
@@ -58,8 +39,28 @@ var calculator = function(starting_mrr, revenue_growth, churn, upsell) {
 		]);
 	}
 
-	return results;
-
+	// return this.mrr_breakdown;
 };
 
-module.exports = calculator;
+Calculator.prototype.compute_mrr = function() {
+	this.mrr = [['Months', 'MRR']];
+	for (var i=1; i<this.mrr_breakdown.length; i++) {
+		var month_mrr_breakdown = this.mrr_breakdown[i];
+		this.mrr.push(
+			[month_mrr_breakdown[0],month_mrr_breakdown[1]+month_mrr_breakdown[2]+month_mrr_breakdown[3]]
+		);
+	}
+};
+
+Calculator.prototype.compute = function(starting_mrr, revenue_growth, churn, upsell, number_of_month) {
+	this.starting_mrr = starting_mrr;
+	this.revenue_growth = revenue_growth;
+	this.churn = churn;
+	this.upsell = upsell;
+	this.number_of_month = number_of_month;
+	this.compute_mrr_breakdown();
+	this.compute_mrr();
+};
+
+
+module.exports = Calculator;

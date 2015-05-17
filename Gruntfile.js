@@ -46,6 +46,10 @@ module.exports = function(grunt) {
 				{
 					expand: true, cwd: 'bower_components/jquery.inputmask/dist/',
 					src: ['jquery.inputmask.bundle.min.js'], dest: 'js'
+				},
+				{
+					expand: true, cwd: 'bower_components/underscore/',
+					src: ['underscore-min.js'], dest: 'js'
 				}
 				]
 			},
