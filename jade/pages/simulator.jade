@@ -46,13 +46,33 @@ block body
 
 		.mrr_forcecast_tagline {
 			margin-bottom: 35px;
+			//- color: black;
+		}
+
+		.label_red {
+			color: #F15854
+		}
+		.label_green {
+			color: #60BD68
+		}
+		.label_blue {
+			color: #5DA5DA
+		}
+
+		input {
+			text-align: center;
+			font-weight: bold;
+		}
+
+		.form-control {
+			color: #818181;
 		}
 
 	.tools_wrapper
 
 		.container
 
-			h1 SaaS MRR and Churn Simulator
+			h1 SaaS MRR Simulator
 
 			p Should I increase my focus on acquisition or on retention?
 				| Use this simulator to find out.
@@ -61,7 +81,12 @@ block body
 			.container.insight_card
 
 				h2.mrr_forcecast_tagline
-					| In 12 months, your MRR will be $123,000. <br>
+					| In&nbsp
+					span.label_projection_time.label_blue 12
+					|  months,
+					| your MRR will be&nbsp
+					span.label_final_mrr.label_green $ 158 k
+					| .<br>
 
 				.row
 					.col-sm-4
@@ -107,7 +132,13 @@ block body
 			.container.insight_card
 
 				h2.mrr_forcecast_tagline
-					| A 5% churn rate reduces your MRR by $35,000 in 12 months. <br>
+					| A&nbsp
+					span.label_current_churn.label_red 5%
+					|  churn rate reduces your MRR by&nbsp
+					span.label_churn_amount.label_red $ 53 k
+					|  in&nbsp
+					span.label_projection_time.label_blue 12
+					|  months. <br>
 
 
 				//- var color_palette = ['5DA5DA','FAA43A','60BD68','#D3D3D3'];
@@ -136,25 +167,37 @@ block body
 			.container.insight_card_no_chart
 
 				h2.mrr_forcecast_tagline
-					| You will spend $3,657,000 in acquisition to compensate for churn.
+					| You will spend&nbsp
+					span.label_acquisition_spend_for_churn.label_red $ 211 k
+					|  in acquisition to compensate churned revenue.
 
 				.row
 					.col-sm-6
 						//- form.form-horizontal
 						form
 							.form-group
-								label.control-label(for="starting_MRR") Sales & Marketing expenses
+								label.control-label(for="acquisition_spend") Sales & Marketing expenses
 								//- .col-sm-6
 								.input-group
 									input.form-control#acquisition_spend(type="text" placeholder="")
 
-				p You have to spend $14 in acquisition to increase your MRR by $1.
+				p You have to spend&nbsp
+					span.label_acquisition_units $ 4
+					|  in acquisition to increase your MRR by $ 1.
 
 
 			.container.insight_card
 
 				h2.mrr_forcecast_tagline
-					| Reducing your churn from 5% to 4% increases your MRR by $20,000 in 12 months. <br>
+					| Reducing your churn from&nbsp
+					span.label_current_churn.label_red 5%
+					|  to&nbsp
+					span.label_desired_churn.label_red 4%
+					|  increases your MRR by&nbsp
+					span.label_mrr_saved.label_green $20,000
+					|  in&nbsp
+					span.label_projection_time.label_blue 12
+					|  months. <br>
 
 				.row
 					.col-sm-4
@@ -167,10 +210,18 @@ block body
 								//- 	.input-group
 								//- 		//- .input-group-addon $
 								//- 		input.form-control#desired_churn(type="text" placeholder="")
-								label.control-label(for="starting_MRR") Desired revenue churn
+								label.control-label(for="desired_churn") Desired revenue churn
 								.input-group
 									//- .input-group-addon $
 									input.form-control#desired_churn(type="text" placeholder="")
+
+						ul(style='list-style-type: none;padding-left: 0px;margin-top: 50px;')
+							li
+								.color-box(style='background-color:#5DA5DA;')
+								| MRR with current churn
+							li
+								.color-box(style='background-color:#60BD68;')
+								| MRR from desired churn
 
 
 					.col-sm-8

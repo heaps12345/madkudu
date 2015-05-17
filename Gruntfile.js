@@ -50,6 +50,14 @@ module.exports = function(grunt) {
 				{
 					expand: true, cwd: 'bower_components/underscore/',
 					src: ['underscore-min.js'], dest: 'js'
+				},
+				{
+					expand: true, cwd: 'bower_components/numeral/min/',
+					src: ['numeral.min.js'], dest: 'js'
+				},
+				{
+					expand: true, cwd: 'bower_components/q/',
+					src: ['q.js'], dest: 'js'
 				}
 				]
 			},
