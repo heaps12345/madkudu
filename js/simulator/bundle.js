@@ -71,17 +71,27 @@ module.exports = function() {
 
 	google.load("visualization", "1", {packages:["corechart"], callback: drawVisualization});
 
+	var color_palette = ['#5DA5DA','#FAA43A','#60BD68','#D3D3D3'];
 
 	var draw_mrr_chart = function(raw_data, div_target) {
+
+		console.log(raw_data);
+
+		var min_value = raw_data[1][1];
+		var max_value = raw_data[raw_data.length-1][1];
+
 		var data = google.visualization.arrayToDataTable(raw_data);
 		var options = {
 			// title : 'Monthly Coffee Production by Country',
 			height: 250,
 			vAxis: {
 				format: '$#,###',
-				viewWindowMode: 'pretty'
+				viewWindow: {
+					min: min_value - (max_value-min_value)*.1 ,
+					max: max_value + (max_value-min_value)*.1
+				}
 			},
-			hAxis: {title: "Month", viewWindowMode: 'pretty'},
+			hAxis: {title: "Month"},
 			// seriesType: "bars",
 			// isStacked: 'relative',
 			isStacked: true,
@@ -116,10 +126,10 @@ module.exports = function() {
 			// isStacked: 'relative',
 			isStacked: true,
 			series: {
-				0: {color: '5DA5DA'},
-				1: {color: 'FAA43A'},
-				2: {color: '60BD68'},
-				3: {color: '#D3D3D3'}
+				0: {color: color_palette[0]},
+				1: {color: color_palette[1]},
+				2: {color: color_palette[2]},
+				3: {color: color_palette[3]}
 				// 5: {type: "line"}
 			},
 			legend : {position: 'none'},

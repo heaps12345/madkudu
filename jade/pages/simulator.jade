@@ -20,7 +20,25 @@ block body
 
 			p Want to get an idea of the impact of upsell and churn on the MRR?
 
-			.container(style='background-color:white;margin-bottom: 35px;')
+			style.
+				.insight_card {
+					background-color:white;
+					margin-bottom: 35px;
+					padding-bottom: 25px;
+					height: 360px;
+				}
+
+				.color-box {
+					width: 15px;
+					height: 15px;
+					display: inline-block;
+					background-color: #ccc;
+					left: 5px;
+					top: 5px;
+					margin-right: 5px;
+				}
+
+			.container.insight_card
 
 				h3.text-center.mrr_forcecast_tagline(style='margin-bottom: 35px;')
 					| In 12 months, your MRR will be $123,000. <br>
@@ -66,13 +84,28 @@ block body
 						#chart_div_mrr
 
 
-			.container(style='background-color:white;margin-bottom: 35px;')
+			.container.insight_card
 
 				h3.text-center.mrr_forcecast_tagline(style='margin-bottom: 35px;')
-					| The 5% churn rate reduces your MRR by $35,000 in 12 months. <br>
+					| A 5% churn rate reduces your MRR by $35,000 in 12 months. <br>
 
+
+				//- var color_palette = ['5DA5DA','FAA43A','60BD68','#D3D3D3'];
 				.row
 					.col-sm-4
+						ul(style='list-style-type: none;')
+							li
+								.color-box(style='background-color:#5DA5DA;')
+								| MRR from new customers
+							li
+								.color-box(style='background-color:#FAA43A;')
+								| MRR from upsells
+							li
+								.color-box(style='background-color:#60BD68;')
+								| MRR from existing customers
+							li
+								.color-box(style='background-color:#D3D3D3;')
+								| Lost MRR due to churn
 
 
 					.col-sm-8
@@ -80,7 +113,52 @@ block body
 
 
 
-			.container(style='background-color:white;margin-bottom: 35px;')
+			.container.insight_card
+
+				h3.text-center.mrr_forcecast_tagline(style='margin-bottom: 35px;')
+					| The equivalent cost of acquiring customers to compensate for churn is $3,657,000.
+
+				.row
+					.col-sm-4
+
+						form.form-horizontal
+							.form-group
+								label.col-sm-6.control-label(for="starting_MRR") Starting MRR
+								.col-sm-6
+									.input-group
+										//- .input-group-addon $
+										input.form-control#starting_MRR(type="text" placeholder="")
+							.form-group
+								label.col-sm-6.control-label(for="revenue_growth") Revenue growth
+								.col-sm-6
+									.input-group
+										//- .input-group-addon $
+										input.form-control#revenue_growth(type="text" placeholder="" maxlength: 4)
+							.form-group
+								label.col-sm-6.control-label(for="revenue_growth") Revenue churn
+								.col-sm-6
+									.input-group
+										input.form-control#churn(type="text" placeholder="")
+										//- .input-group-addon %
+							.form-group
+								label.col-sm-6.control-label(for="revenue_growth") Revenue upsell
+								.col-sm-6
+									.input-group
+										input.form-control#upsell(type="text" placeholder="")
+										//- .input-group-addon %
+							.form-group
+								label.col-sm-6.control-label(for="projection_time") Projection Time
+								.col-sm-6
+									.input-group
+										input.form-control#projection_time(type="text" placeholder="")
+										//- .input-group-addon %
+
+					.col-sm-8
+						#chart_div
+
+
+
+			.container.insight_card
 
 				h3.text-center.mrr_forcecast_tagline(style='margin-bottom: 35px;')
 					| Reducing your churn from 5% to 4% increases your MRR by $20,000 in 12 months. <br>
@@ -124,49 +202,5 @@ block body
 					.col-sm-8
 						#chart_div
 
-
-			.container(style='background-color:white;margin-bottom: 35px;')
-
-				h3.text-center.mrr_forcecast_tagline(style='margin-bottom: 35px;')
-					| The equivalent cost of acquiring customers to compensate for churn is $3,657,000.
-
-				.row
-					.col-sm-4
-
-						form.form-horizontal
-							.form-group
-								label.col-sm-6.control-label(for="starting_MRR") Starting MRR
-								.col-sm-6
-									.input-group
-										//- .input-group-addon $
-										input.form-control#starting_MRR(type="text" placeholder="")
-							.form-group
-								label.col-sm-6.control-label(for="revenue_growth") Revenue growth
-								.col-sm-6
-									.input-group
-										//- .input-group-addon $
-										input.form-control#revenue_growth(type="text" placeholder="" maxlength: 4)
-							.form-group
-								label.col-sm-6.control-label(for="revenue_growth") Revenue churn
-								.col-sm-6
-									.input-group
-										input.form-control#churn(type="text" placeholder="")
-										//- .input-group-addon %
-							.form-group
-								label.col-sm-6.control-label(for="revenue_growth") Revenue upsell
-								.col-sm-6
-									.input-group
-										input.form-control#upsell(type="text" placeholder="")
-										//- .input-group-addon %
-							.form-group
-								label.col-sm-6.control-label(for="projection_time") Projection Time
-								.col-sm-6
-									.input-group
-										input.form-control#projection_time(type="text" placeholder="")
-										//- .input-group-addon %
-
-
-					.col-sm-8
-						#chart_div
 
 
