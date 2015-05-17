@@ -2017,7 +2017,7 @@ module.exports = function() {
 	$('#projection_time').inputmask("decimal", {digits: 0, suffix: ' month(s)', autoUnmask: true});
 
 	$('#acquisition_spend').inputmask("decimal",mask_options_currency);
-	$('#desired_churn').inputmask("decimal", mask_options_percentage);
+	$('#simulated_churn').inputmask("decimal", mask_options_percentage);
 
 	// set up the default values
 	$("#starting_MRR").val(100000);
@@ -2027,7 +2027,7 @@ module.exports = function() {
 	$("#projection_time").val(12);
 
 	$("#acquisition_spend").val(10000/(5/100)/5);
-	$('#desired_churn').val(2.5);
+	$('#simulated_churn').val(2.5);
 
 };
 
@@ -2044,7 +2044,7 @@ var add_listeners = function(refresh_function) {
 	 };
 	})();
 
-	var elements_to_listen_to = ['#starting_MRR','#revenue_growth','#churn','#upsell', '#projection_time', '#desired_churn', '#acquisition_spend'];
+	var elements_to_listen_to = ['#starting_MRR','#revenue_growth','#churn','#upsell', '#projection_time', '#simulated_churn', '#acquisition_spend'];
 
 	for (var i=0; i<elements_to_listen_to.length; i++) {
 		$(elements_to_listen_to[i]).keyup(function() {
@@ -2204,6 +2204,8 @@ var refresh_charts = function() {
 		var min_value = raw_data[1][1] < raw_data_goal[1][1] ? raw_data[1][1] : raw_data_goal[1][1];
 		var max_value = raw_data[raw_data.length-1][1] > raw_data_goal[raw_data_goal.length-1][1] ? raw_data[raw_data.length-1][1]: raw_data_goal[raw_data_goal.length-1][1];
 
+		window.mk_simulator.label_final_mrr_simulated = raw_data_goal[raw_data_goal.length-1][1];
+
 		var combined_raw_data = raw_data;
 		combined_raw_data[0] = ['Months', 'MRR with current churn', 'MRR with desired churn'];
 
@@ -2253,7 +2255,7 @@ var refresh_charts = function() {
 
 
 	function drawVisualization() {
-		var elements_to_listen_to = ['#starting_MRR','#revenue_growth','#churn','#upsell', '#projection_time', '#desired_churn'];
+		var elements_to_listen_to = ['#starting_MRR','#revenue_growth','#churn','#upsell', '#projection_time', '#simulated_churn'];
 
 		currency_formatter = new google.visualization.NumberFormat({
 			pattern: '$#,###'
@@ -2311,6 +2313,11 @@ var refresh_labels = function() {
 
 	$('.label_acquisition_units').text(numeral($('#acquisition_spend').val()/$('#revenue_growth').val()).format('($ 0.[0] a)'));
 	$('.label_acquisition_spend_for_churn').text(numeral($('#acquisition_spend').val()/$('#revenue_growth').val()*window.mk_simulator.label_churn_amount).format('($ 0 a)'));
+
+	$('.label_simulated_churn').text(numeral($('#simulated_churn').val()/100).format('0.[0]%'));
+	$('.label_mrr_saved').text(numeral(window.mk_simulator.label_final_mrr_simulated - window.mk_simulator.label_final_mrr).format('($ 0 a)'));
+
+
 
 };
 

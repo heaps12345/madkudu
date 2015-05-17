@@ -31,7 +31,7 @@ module.exports = function() {
 	$('#projection_time').inputmask("decimal", {digits: 0, suffix: ' month(s)', autoUnmask: true});
 
 	$('#acquisition_spend').inputmask("decimal",mask_options_currency);
-	$('#desired_churn').inputmask("decimal", mask_options_percentage);
+	$('#simulated_churn').inputmask("decimal", mask_options_percentage);
 
 	// set up the default values
 	$("#starting_MRR").val(100000);
@@ -41,6 +41,6 @@ module.exports = function() {
 	$("#projection_time").val(12);
 
 	$("#acquisition_spend").val(10000/(5/100)/5);
-	$('#desired_churn').val(2.5);
+	$('#simulated_churn').val(2.5);
 
 };

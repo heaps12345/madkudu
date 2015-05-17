@@ -103,6 +103,8 @@ var refresh_charts = function() {
 		var min_value = raw_data[1][1] < raw_data_goal[1][1] ? raw_data[1][1] : raw_data_goal[1][1];
 		var max_value = raw_data[raw_data.length-1][1] > raw_data_goal[raw_data_goal.length-1][1] ? raw_data[raw_data.length-1][1]: raw_data_goal[raw_data_goal.length-1][1];
 
+		window.mk_simulator.label_final_mrr_simulated = raw_data_goal[raw_data_goal.length-1][1];
+
 		var combined_raw_data = raw_data;
 		combined_raw_data[0] = ['Months', 'MRR with current churn', 'MRR with desired churn'];
 
@@ -152,7 +154,7 @@ var refresh_charts = function() {
 
 
 	function drawVisualization() {
-		var elements_to_listen_to = ['#starting_MRR','#revenue_growth','#churn','#upsell', '#projection_time', '#desired_churn'];
+		var elements_to_listen_to = ['#starting_MRR','#revenue_growth','#churn','#upsell', '#projection_time', '#simulated_churn'];
 
 		currency_formatter = new google.visualization.NumberFormat({
 			pattern: '$#,###'

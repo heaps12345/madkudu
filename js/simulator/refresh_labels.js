@@ -19,6 +19,11 @@ var refresh_labels = function() {
 	$('.label_acquisition_units').text(numeral($('#acquisition_spend').val()/$('#revenue_growth').val()).format('($ 0.[0] a)'));
 	$('.label_acquisition_spend_for_churn').text(numeral($('#acquisition_spend').val()/$('#revenue_growth').val()*window.mk_simulator.label_churn_amount).format('($ 0 a)'));
 
+	$('.label_simulated_churn').text(numeral($('#simulated_churn').val()/100).format('0.[0]%'));
+	$('.label_mrr_saved').text(numeral(window.mk_simulator.label_final_mrr_simulated - window.mk_simulator.label_final_mrr).format('($ 0 a)'));
+
+
+
 };
 
 module.exports = refresh_labels;
