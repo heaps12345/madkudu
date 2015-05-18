@@ -2069,6 +2069,9 @@ $(document).ready(function(){
 
 	window.mk_simulator = window.mk_simulator || {};
 
+	// turn on the tooltips on the page
+	$('[data-toggle="tooltip"]').tooltip();
+
 	var initialize_input_masks = require('./initialize_input_masks.js');
 	initialize_input_masks();
 

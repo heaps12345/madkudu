@@ -10,6 +10,8 @@ block neck
 
 	script analytics.page('Simulator')
 
+	link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
+
 block body
 
 
@@ -68,6 +70,11 @@ block body
 			color: #818181;
 		}
 
+		.icon_help {
+			width: 5px;
+			height: 5px;
+		}
+
 	.tools_wrapper
 
 		.container
@@ -93,31 +100,36 @@ block body
 
 						form.form-horizontal
 							.form-group
-								label.col-sm-6.control-label(for="starting_MRR") Starting MRR
+								label.col-sm-6.control-label(for="starting_MRR") Starting MRR&nbsp
+									i.fa.fa-question-circle(data-toggle="tooltip" title="your current monthly recurring revenue")
 								.col-sm-6
 									.input-group
 										//- .input-group-addon $
 										input.form-control#starting_MRR(type="text" placeholder="")
 							.form-group
-								label.col-sm-6.control-label(for="revenue_growth") Revenue growth
+								label.col-sm-6.control-label(for="revenue_growth") Revenue growth&nbsp
+									i.fa.fa-question-circle(data-toggle="tooltip" title="how much revenue from new customers is added each month to the MRR")
 								.col-sm-6
 									.input-group
 										//- .input-group-addon $
 										input.form-control#revenue_growth(type="text" placeholder="" maxlength: 4)
 							.form-group
-								label.col-sm-6.control-label(for="revenue_growth") Revenue churn
+								label.col-sm-6.control-label(for="revenue_growth") Revenue churn&nbsp
+									i.fa.fa-question-circle(data-toggle="tooltip" title="revenue lost to cancellations in a month from customers existing at the beginning of the month divided by the MRR at the beginning of the month")
 								.col-sm-6
 									.input-group
 										input.form-control#churn(type="text" placeholder="")
 										//- .input-group-addon %
 							.form-group
-								label.col-sm-6.control-label(for="revenue_growth") Revenue upsell
+								label.col-sm-6.control-label(for="revenue_growth") Revenue upsell&nbsp
+									i.fa.fa-question-circle(data-toggle="tooltip" title="revenue added (or lost) due to upgrade and downgrade in a month from customers existing at the beginning of the month divided by the MRR at the beginning of the month")
 								.col-sm-6
 									.input-group
 										input.form-control#upsell(type="text" placeholder="")
 										//- .input-group-addon %
 							.form-group
-								label.col-sm-6.control-label(for="projection_time") Projection Time
+								label.col-sm-6.control-label(for="projection_time") Projection Time&nbsp
+									i.fa.fa-question-circle(data-toggle="tooltip" title="number of months to run the simulation for")
 								.col-sm-6
 									.input-group
 										input.form-control#projection_time(type="text" placeholder="")
@@ -176,7 +188,8 @@ block body
 						//- form.form-horizontal
 						form
 							.form-group
-								label.control-label(for="acquisition_spend") Sales & Marketing expenses
+								label.control-label(for="acquisition_spend") Sales & Marketing expenses&nbsp
+									i.fa.fa-question-circle(data-toggle="tooltip" title="total sales and marketing expenditure per month, including advertising, salaries, etc.")
 								//- .col-sm-6
 								.input-group
 									input.form-control#acquisition_spend(type="text" placeholder="")
@@ -210,7 +223,8 @@ block body
 								//- 	.input-group
 								//- 		//- .input-group-addon $
 								//- 		input.form-control#desired_churn(type="text" placeholder="")
-								label.control-label(for="simulated_churn") Desired revenue churn
+								label.control-label(for="simulated_churn") Desired revenue churn&nbsp
+									i.fa.fa-question-circle(data-toggle="tooltip" title="enter a churn rate to see the impact on the MRR")
 								.input-group
 									//- .input-group-addon $
 									input.form-control#simulated_churn(type="text" placeholder="")
