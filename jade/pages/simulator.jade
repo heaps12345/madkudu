@@ -1,7 +1,7 @@
 extends ../components/skeleton.jade
 
 block neck
-	title MadKudu | Simulator
+	title MadKudu | SaaS MRR Simulator
 
 	script(src="/js/jquery.inputmask.bundle.min.js" type="text/javascript")
 	script(type="text/javascript" src="https://www.google.com/jsapi")
@@ -74,6 +74,10 @@ block body
 			width: 5px;
 			height: 5px;
 		}
+
+		.tooltip-inner {
+		  width: 200px;
+		 }
 
 	.tools_wrapper
 
@@ -181,7 +185,7 @@ block body
 				h2.mrr_forcecast_tagline
 					| You will spend&nbsp
 					span.label_acquisition_spend_for_churn.label_red $ 211 k
-					|  in acquisition to compensate churned revenue.
+					|  in acquisition to make up for the churned revenue.
 
 				.row
 					.col-sm-6
@@ -189,14 +193,18 @@ block body
 						form
 							.form-group
 								label.control-label(for="acquisition_spend") Sales & Marketing expenses&nbsp
-									i.fa.fa-question-circle(data-toggle="tooltip" title="total sales and marketing expenditure per month, including advertising, salaries, etc.")
+									i.fa.fa-question-circle(data-toggle="tooltip" title="Enter your estimated total sales and marketing expenditure per month, including advertising, salaries, etc. A rough number is enough to give an idea of the acquisition cost.")
 								//- .col-sm-6
 								.input-group
 									input.form-control#acquisition_spend(type="text" placeholder="")
 
-				p You have to spend&nbsp
+				p This means you spend about &nbsp
 					span.label_acquisition_units $ 4
-					|  in acquisition to increase your MRR by $ 1.
+					|  in acquisition to increase your MRR by $ 1. Assuming that the acquisition cost remains linear, the cost of winning new MRR to making up for the churned MRR is&nbsp
+					span.label_acquisition_units $ 4
+					|  multiplied by&nbsp
+					span.label_churn_amount $ 53 k
+					|.
 
 
 			.container.insight_card
