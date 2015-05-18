@@ -1,6 +1,9 @@
 /*global module:false*/
 module.exports = function(grunt) {
 
+	// would be better to use this package
+	// require('load-grunt-tasks')(grunt);
+
 	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
@@ -39,10 +42,32 @@ module.exports = function(grunt) {
 				{
 					expand: true, cwd: 'bower_components/bootstrap/dist/js',
 					src: ['bootstrap.min.js'], dest: 'js'
+				},
+				{
+					expand: true, cwd: 'bower_components/jquery.inputmask/dist/',
+					src: ['jquery.inputmask.bundle.min.js'], dest: 'js'
+				},
+				{
+					expand: true, cwd: 'bower_components/underscore/',
+					src: ['underscore-min.js'], dest: 'js'
+				},
+				{
+					expand: true, cwd: 'bower_components/numeral/min/',
+					src: ['numeral.min.js'], dest: 'js'
+				},
+				{
+					expand: true, cwd: 'bower_components/q/',
+					src: ['q.js'], dest: 'js'
 				}
 				]
 			},
 
+		},
+		browserify: {
+			main: {
+				src: 'js/simulator/main.js',
+				dest: 'js/simulator/bundle.js'
+			}
 		},
 		ftpush: {
 			site: {
@@ -108,7 +133,7 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			client: {
-				files: ['less/**/*.less','jade/**/*.jade'],
+				files: ['less/**/*.less','js/**/*.js','jade/**/*.jade'],
 				tasks: ['build']
 			}
 		},
@@ -125,10 +150,11 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-git');
 	grunt.loadNpmTasks('grunt-newer');
 	grunt.loadNpmTasks('grunt-zip');
+	grunt.loadNpmTasks('grunt-browserify');
 
 	// Default task.
 	grunt.registerTask('default', ['build', 'watch']);
-	grunt.registerTask('build', ['copy:vendor','less','jade','autoprefixer']);
+	grunt.registerTask('build', ['copy:vendor','less','jade','browserify','autoprefixer']);
 	grunt.registerTask('unpack', ['unzip','copy:main','clean']);
 	grunt.registerTask('commit', ['gitcommit:site','gitpush:site']);
 	grunt.registerTask('push-site', ['ftpush:site']);
