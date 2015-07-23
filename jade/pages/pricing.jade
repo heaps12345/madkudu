@@ -1,0 +1,120 @@
+extends ../components/skeleton.jade
+
+block neck
+	title MadKudu | SaaS MRR Simulator
+
+	script analytics.page('Pricing')
+
+	link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css')
+
+	link(rel="stylesheet" href="css/pricing_reset.css")
+	link(rel="stylesheet" href="css/pricing_style.css")
+
+
+block body
+
+	.pricing__wrapper
+
+		.cd-header
+			h1 Early Access Pricing
+
+		.cd-pricing-container.cd-has-margins
+				ul.cd-pricing-list
+						li
+							header.cd-pricing-header
+								h2 GROWTH
+								.cd-price
+									span.cd-currency $
+									span.cd-value 249
+									span.cd-duration mo
+								.tier
+									span Up to 10K customers
+							// .cd-pricing-header
+							.cd-pricing-body
+								ul.cd-pricing-features
+									li Data Audit
+									li Full SQL access to MadKudu Data
+									li Conversion Factor Analysis
+									li &nbsp
+									li &nbsp
+									li Predicted Lifetime Value
+									li Likelihood to convert
+									li Likelihood to upsell
+									li &nbsp
+									li
+										em 2
+										|  integrations
+									li &nbsp
+									li Onboarding & Training
+									li Email and Call Support
+									li &nbsp
+							// .cd-pricing-body
+							footer.cd-pricing-footer
+								a.cd-select(href='/#section-signup') 30-DAY FREE TRIAL
+							// .cd-pricing-footer
+						li.cd-popular
+							header.cd-pricing-header
+								h2 PRO
+								.cd-price
+									span.cd-currency $
+									span.cd-value 799
+									span.cd-duration mo
+								.tier
+									span Up to 250K customers
+							// .cd-pricing-header
+							.cd-pricing-body
+								ul.cd-pricing-features
+									li Advanced Data Audit
+									li Full SQL access to MadKudu Data
+									li Conversion Factor Analysis
+									li User clustering
+									li &nbsp
+									li Predicted Lifetime Value
+									li Likelihood to convert
+									li Likelihood to upsell
+									li &nbsp
+									li
+										em 5
+										|  integrations
+									li &nbsp
+									li Onboarding & Training
+									li Dedicated Account Manager
+									li Monthly data-scientist check-in
+							// .cd-pricing-body
+							footer.cd-pricing-footer
+								a.cd-select(href='/#section-signup') 30-DAY FREE TRIAL
+							// .cd-pricing-footer
+						li
+							header.cd-pricing-header
+								h2 Premier
+								.cd-price
+									span.cd-currency $
+									span.cd-value 2,499
+									span.cd-duration mo
+								.tier
+									span Up to 1M customers
+							// .cd-pricing-header
+							.cd-pricing-body
+								ul.cd-pricing-features
+									li Advanced Data Audit
+									li Full SQL access to MadKudu Data
+									li Conversion Factor Analysis
+									li User clustering
+									li &nbsp
+									li Predicted Lifetime Value
+									li Likelihood to convert
+									li Likelihood to upsell
+									li &nbsp
+									li
+										em Unlimited
+										|  integrations
+									li &nbsp
+									li Onboarding & Training
+									li Dedicated Account Manager
+									li Weekly data scientist check-in
+							// .cd-pricing-body
+							footer.cd-pricing-footer
+								a.cd-select(href='/#section-signup') 30-DAY FREE TRIAL
+							// .cd-pricing-footer
+					// .cd-pricing-list
+				// .cd-pricing-container
