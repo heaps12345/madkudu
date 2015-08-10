@@ -15,24 +15,49 @@ block body
 
 		.container.madkudu-story
 			.row
-				.col-sm-3
-				.col-sm-6.team-column
-					p Sam and Paul have more than 10 years of combined experience helping companies
-						| leverage their data to better understand their customers and to
-						| deliver meaningful experiences.
-					p They have seen again and again how effective it could be. But also how difficult and complicated
-						| it is to turn disparate data into actionable intelligence.
-					p Only a few companies today have the resources to do so.
-					p MadKudu was started from the desire to make it simple for every company to reap the benefits of deep customer analytics.
-				.col-sm-3
+				//- .col-sm-3
+				//- .col-sm-6.team-column
+				p We are passionate about helping companies
+					| leverage their data to better understand their customers and to
+					| deliver meaningful experiences. This is what we have done for years.
+				p We have seen again and again how effective it could be. But also how difficult and complicated
+					| it is to turn disparate data into actionable intelligence.
+				p Only a few companies today are able to do so.
+				p MadKudu was started from the desire to make it simple for every company to reap the benefits of deep customer analytics.
+				//- .col-sm-3
 
 		.container
 			.row
-				.col-sm-6.team-column
+				.col-sm-4.team-column
+					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
+						img(class="team__image" src="images/paul.png" width="200" alt="Kudu horn" itemprop="photo")
+						.team__name(itemprop="name") Paul Cothenet
+						.team__work(itemprop="title") Chief No Officer (CTO)
+						.team__social
+							a.team__social--link(href="https://www.linkedin.com/in/paulcothenet/en")
+								img(src="images/linkedin_footer.svg" target="_blank" width="15" alt="Paul Cothenet LinkedIn")
+							a.team__social--link(href="https://twitter.com/paulcothenet")
+								img(src="images/twitter_footer.svg" target="_blank" width="15" alt="Paul Cothenet Twitter")
+						a.team__email(href="mailto:paul@madkudu.com?subject=Tell%20me%20more%20about%20MadKudu!" target="_blank") paul@madkudu.com
+						h4.team__header Loves
+						ul.team__list
+							li Data
+							li Mountains
+							li Coffee
+						h4.team__header Fears
+						ul.team__list
+							li Sam's kids
+							li
+								a(href="http://attackwithnumbers.com/the-laws-of-shitty-dashboard" target="_blank") Shitty dashboards
+						h4.team__header Previous Lives
+						ul.team__list
+							li Product Manager & Data Plumber at <a href='http://www.agilone.com/'>AgilOne</a>
+							li Nuclear Engineer
+				.col-sm-4.team-column
 					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
 						img(class="team__image" src="images/sam.png" width="200" alt="Sam" itemprop="photo")
 						.team__name(itemprop="name") Sam Levan
-						.team__work(itemprop="title") Chief Yes Officer
+						.team__work(itemprop="title") Chief Yes Officer (CEO)
 						.team__social
 							a.team__social--link(href="https://www.linkedin.com/pub/anselme-levan/1/958/119")
 								img(src="images/linkedin_footer.svg" target="_blank" width="15" alt="Sam Levan LinkedIn")
@@ -52,27 +77,99 @@ block body
 						ul.team__list
 							li VP Product at <a href='http://www.agilone.com/'>AgilOne</a>
 							li Data Scientist
-				.col-sm-6.team-column
+				.col-sm-4.team-column
 					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
-						img(class="team__image" src="images/paul.png" width="200" alt="Kudu horn" itemprop="photo")
-						.team__name(itemprop="name") Paul Cothenet
-						.team__work(itemprop="title") Chief No Officer
+						img(class="team__image" src="images/francis.png" width="200" alt="Kudu horn" itemprop="photo")
+						.team__name(itemprop="name") Francis Brero
+						.team__work(itemprop="title") Chief Yiha Officer (CCO)
 						.team__social
-							a.team__social--link(href="https://www.linkedin.com/in/paulcothenet/en")
-								img(src="images/linkedin_footer.svg" target="_blank" width="15" alt="Paul Cothenet LinkedIn")
-							a.team__social--link(href="https://twitter.com/paulcothenet")
-								img(src="images/twitter_footer.svg" target="_blank" width="15" alt="Paul Cothenet Twitter")
-						a.team__email(href="mailto:paul@madkudu.com?subject=Tell%20me%20more%20about%20MadKudu!" target="_blank") paul@madkudu.com
+							a.team__social--link(href="https://www.linkedin.com/in/francisbrero")
+								img(src="images/linkedin_footer.svg" target="_blank" width="15" alt="Francis Brero LinkedIn")
+							a.team__social--link(href="https://twitter.com/francisbrero")
+								img(src="images/twitter_footer.svg" target="_blank" width="15" alt="Francis Brero Twitter")
+						a.team__email(href="mailto:francis@madkudu.com?subject=Tell%20me%20more%20about%20MadKudu!" target="_blank") francis@madkudu.com
 						h4.team__header Loves
 						ul.team__list
-							li Data
-							li Mountains
-							li Coffee
+							li Implementing
+							li Surfing
+							li The number 73
 						h4.team__header Fears
 						ul.team__list
-							li Sam's kids
-							li Shitty dashboards
+							li Irrationality
+							li Kooks
 						h4.team__header Previous Lives
 						ul.team__list
-							li Product Manager & Data Plumber at <a href='http://www.agilone.com/'>AgilOne</a>
-							li Nuclear Engineer
+							li Dir. Implementation at <a href='http://www.agilone.com/'>AgilOne</a>
+							li Data Scientist
+
+
+		.container.madkudu-mentors-title
+			h1.text-center Mentors
+
+		.container.madkudu-mentors-list
+			.row
+				.col-sm-4.team-column
+					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
+						img(class="team__image" src="images/team/promise.png" width="200" alt="Kudu horn" itemprop="photo")
+						.team__name(itemprop="name") Promise Phelon
+						.mentor-team__social
+							a.team__social--link(href="https://www.linkedin.com/in/promisephelon")
+								img(src="images/linkedin_footer.svg" target="_blank" width="15" alt="Promise Phelon's LinkedIn")
+							a.team__social--link(href="https://twitter.com/promisephelon")
+								img(src="images/twitter_footer.svg" target="_blank" width="15" alt="Promise Phelon's Twitter")
+
+				.col-sm-4.team-column
+					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
+						img(class="team__image" src="images/team/howard.png" width="200" alt="Howard" itemprop="photo")
+						.team__name(itemprop="name") Howard Diamond
+						.mentor-team__social
+							a.team__social--link(href="https://www.linkedin.com/pub/howard-diamond/0/93/b3a")
+								img(src="images/linkedin_footer.svg" target="_blank" width="15" alt="Howard Diamond's LinkedIn")
+							a.team__social--link(href="https://twitter.com/hsdiamond")
+								img(src="images/twitter_footer.svg" target="_blank" width="15" alt="Howard Diamond's Twitter")
+
+				.col-sm-4.team-column
+					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
+						img(class="team__image" src="images/team/denise.png" width="200" alt="Kudu horn" itemprop="photo")
+						.team__name(itemprop="name") Denise Hulce
+						.mentor-team__social
+							a.team__social--link(href="https://www.linkedin.com/in/denisehulce")
+								img(src="images/linkedin_footer.svg" target="_blank" width="15" alt="Denise Hulce's LinkedIn")
+							a.team__social--link(href="https://twitter.com/dmhulce")
+								img(src="images/twitter_footer.svg" target="_blank" width="15" alt="Denise Hulce's Twitter")
+
+
+			.row
+				.col-sm-2.team-column
+
+				.col-sm-4.team-column
+					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
+						img(class="team__image" src="images/team/brad.png" width="200" alt="Brad" itemprop="photo")
+						.team__name(itemprop="name") Brad Bernthal
+						.mentor-team__social
+							a.team__social--link(href="https://www.linkedin.com/pub/brad-bernthal/3/85a/baa")
+								img(src="images/linkedin_footer.svg" target="_blank" width="15" alt="Brad Bernthal's LinkedIn")
+							a.team__social--link(href="https://twitter.com/bradbernthal")
+								img(src="images/twitter_footer.svg" target="_blank" width="15" alt="Brad Bernthal's Twitter")
+
+				.col-sm-4.team-column
+					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
+						img(class="team__image" src="images/team/alex.png" width="200" alt="Alex" itemprop="photo")
+						.team__name(itemprop="name") Alex Raymond
+						.mentor-team__social
+							a.team__social--link(href="https://www.linkedin.com/in/afraymond")
+								img(src="images/linkedin_footer.svg" target="_blank" width="15" alt="Alex Raymond's LinkedIn")
+							a.team__social--link(href="https://twitter.com/afraymond")
+								img(src="images/twitter_footer.svg" target="_blank" width="15" alt="Alex Raymond's Twitter")
+
+				.col-sm-2.team-column
+					//- .team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
+					//- 	img(class="team__image" src="images/team/denise.png" width="200" alt="Kudu horn" itemprop="photo")
+					//- 	.team__name(itemprop="name") Denise Hulce
+					//- 	.team__social
+					//- 		a.team__social--link(href="https://www.linkedin.com/in/denisehulce")
+					//- 			img(src="images/linkedin_footer.svg" target="_blank" width="15" alt="Denise Hulce's LinkedIn")
+					//- 		a.team__social--link(href="https://twitter.com/dmhulce")
+					//- 			img(src="images/twitter_footer.svg" target="_blank" width="15" alt="Denise Hulce's Twitter")
+
+
