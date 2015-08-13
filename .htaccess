@@ -19,6 +19,7 @@ RewriteRule ^pricing/?$ pricing.html [NC,L]
 RewriteRule ^simulator/?$ simulator.html [NC,L]
 RewriteRule ^about/?$ team.html [NC,L]
 RewriteRule ^team/?$ team.html [NC,L]
+RewriteRule ^customers-uxpin/?$ customers-uxpin.html [NC,L]
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
