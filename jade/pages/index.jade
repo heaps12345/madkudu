@@ -25,9 +25,12 @@ block body
 
 				section.section--signup
 					//- .container
+
 					.signup-form-wrap#signup
-						form.signup-form(id='mc-early-signup-form' name='email-form' data-name='Email Form' action='//madkudu.us8.list-manage.com/subscribe/post?u=50d10dbb43453c101e00a5f6f&amp;id=2562f30397' method='post')
-							input.signup-field(id='mc-EMAIL' type='email' placeholder='Your email address' name='EMAIL' data-name='EMAIL' required='required')
+						form.signup-form.form-inline(id='mc-early-signup-form' name='email-form' data-name='Email Form' action='//madkudu.us8.list-manage.com/subscribe/post?u=50d10dbb43453c101e00a5f6f&amp;id=2562f30397' method='post')
+							.form-group
+								input.signup-field(id='mc-EMAIL' type='email' placeholder='Your email address' name='EMAIL' data-name='EMAIL' required='required')
+							//- button.button.button-signup(type='submit' value='Send me an invite!' data-wait='Please wait...')
 							input.button.button-signup(type='submit' value='Send me an invite!' data-wait='Please wait...')
 						.form-success
 							p.signup-text Thank you! We'll get in touch very soon!
