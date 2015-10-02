@@ -20,6 +20,7 @@ RewriteRule ^simulator/?$ simulator.html [NC,L]
 RewriteRule ^about/?$ team.html [NC,L]
 RewriteRule ^team/?$ team.html [NC,L]
 RewriteRule ^customers-uxpin/?$ customers-uxpin.html [NC,L]
+RewriteRule ^customers-codeship/?$ customers-codeship.html [NC,L]
 RewriteRule ^investors/?$ investors.html [NC,L]
 
 # BEGIN WordPress
