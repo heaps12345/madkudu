@@ -1,9 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
-<path id="Facebook" fill="#818181" d="M38.078,22.431c0,2.268,0,12.391,0,12.391H29v15.152h9.078V95h18.648V49.975H69.24
-	c0,0,1.172-7.265,1.74-15.209c-1.629,0-14.184,0-14.184,0s0-8.815,0-10.36c0-1.548,2.033-3.631,4.043-3.631c2.006,0,6.239,0,10.16,0
-	c0-2.063,0-9.191,0-15.774c-5.234,0-11.189,0-13.814,0C37.617,5,38.078,20.167,38.078,22.431z"/>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="100" height="100" viewBox="0, 0, 100, 100">
+  <g id="Layer_1">
+    <path d="M38.078,22.431 C38.078,24.699 38.078,34.822 38.078,34.822 L29,34.822 L29,49.974 L38.078,49.974 L38.078,95 L56.726,95 L56.726,49.975 L69.24,49.975 C69.24,49.975 70.412,42.71 70.98,34.766 C69.351,34.766 56.796,34.766 56.796,34.766 C56.796,34.766 56.796,25.951 56.796,24.406 C56.796,22.858 58.829,20.775 60.839,20.775 C62.845,20.775 67.078,20.775 70.999,20.775 C70.999,18.712 70.999,11.584 70.999,5.001 C65.765,5.001 59.81,5.001 57.185,5.001 C37.617,5 38.078,20.167 38.078,22.431 z" fill="#FFFFFF" id="Facebook"/>
+  </g>
 </svg>

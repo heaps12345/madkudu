@@ -42,3 +42,4 @@ Thumbs.db
 .grunt
 node_modules
 docs
+dist
