@@ -1,29 +1,27 @@
-# How to develop on local
+# madkudu-website
 
-Install [Anvil](http://anvilformac.com/)
+## Development
 
-Add the repository to Anvil
-
-Access the local version via [http://madkudu-website.dev/](http://madkudu-website.dev/)
-
-# Build
+### Build
 
 ```
 #!shell
 
 npm install
+gulp
 ```
-# Version control
+
+### Version control
 
 For now, commit and push directly to the master branch
 
-# Deployment
+## Deployment
 
-Every push to the master branch automatically deploys the new site to namecheap.
+Managed via codeship
 
-If you want to push without deploying (to save your work remotely), use a branch and do a pull request when ready.
+Every push to the master branch automatically deploys the new site to our ftp.
 
-# Blog
+## Blog
 
 Go to [http://www.madkudu.com/blog/wp-admin](http://www.madkudu.com/blog/wp-admin)
 

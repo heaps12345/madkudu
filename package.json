@@ -1,27 +1,25 @@
 {
-  "name": "madkudu-website",
-  "description": "yiha",
-  "version": "0.3.1",
   "private": true,
-  "engines": {
-    "node": ">= 0.10.0"
+  "name": "toolkit-dashboard",
+  "version": "1.0.0",
+  "description": "A bootstrap toolkit.",
+  "main": "gulpfile.js",
+  "author": "Colossal",
+  "scripts": {
+    "start": "./node_modules/.bin/gulp docs"
   },
   "devDependencies": {
-    "browserify": "^11.0.1",
-    "grunt": "~0.4.5",
-    "grunt-autoprefixer": "^2.2.0",
-    "grunt-browserify": "^3.8.0",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-copy": "^0.7.0",
-    "grunt-contrib-jade": "^0.13.0",
-    "grunt-contrib-less": "^1.0.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-ftpush": "^0.3.3",
-    "grunt-git": "^0.2.14",
-    "grunt-newer": "^1.1.0",
-    "grunt-zip": "^0.16.2"
+    "gulp": "3.9.0",
+    "gulp-autoprefixer": "2.3.1",
+    "gulp-concat": "2.6.0",
+    "gulp-connect": "2.2.0",
+    "gulp-jade": "1.1.0",
+    "gulp-less": "3.0.3",
+    "gulp-minify-css": "1.2.0",
+    "gulp-open": "1.0.0",
+    "gulp-rename": "1.2.2",
+    "gulp-sourcemaps": "1.5.2",
+    "gulp-uglify": "1.2.0"
   },
-  "dependencies": {
-    "grunt-cli": "^0.1.13"
-  }
+  "dependencies": {}
 }

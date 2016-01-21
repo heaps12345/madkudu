@@ -3,238 +3,165 @@ extends ../components/skeleton.jade
 block neck
 	title MadKudu | Turn trial users into paying customers
 
-	script(type='text/javascript' src='js/index.js')
-
 block body
 
-	style.
-		 p {
-			font-size: 18px;
-			line-height: 28px;
-		}
+	.block.block-inverse.block-fill-height(style='background-image: url(static/images/startup-1.jpg);')
 
-	.wrapper
-		.hero#section-signup
+		include ../components/header_transparent.jade
+
+		img.app-graph(src="static/images/startup-0.svg")
+
+		.block-xs-middle.p-b-lg
 			.container
-				//- h1.home-title Customer intelligence<br>to grow the lifetime value<br>of SaaS customers
-				h1.home-title Turn free users into paying customers
-				h2.home-subtitle Increase trial conversions by 20%.
-
-				//- h2.home-subtitle MadKudu analyzes your customer interactions <br>and finds out how you can be most helpful and most effective.
-				//- img.hero-screenshot(src='images/Accounts.png' width='80%' alt='MadKudu account dashboard')
-
-				section.section--signup
-					//- .container
-
-					.signup-form-wrap#signup
-						form.signup-form.form-inline(id='mc-early-signup-form' name='email-form' data-name='Email Form' action='//madkudu.us8.list-manage.com/subscribe/post?u=50d10dbb43453c101e00a5f6f&amp;id=2562f30397' method='post')
-							.form-group
-								input.signup-field(id='mc-EMAIL' type='email' placeholder='Your email address' name='EMAIL' data-name='EMAIL' required='required')
-							//- button.button.button-signup(type='submit' value='Send me an invite!' data-wait='Please wait...')
-							input.button.button-signup(type='submit' value='Send me an invite!' data-wait='Please wait...')
-						.form-success
-							p.signup-text Thank you! We'll get in touch very soon!
-						.form-fail
-							p.signup-text Oops! Something went wrong while submitting the form
+				.row
+					.col-sm-10.col-md-6
+						h1.block-title.m-b-sm Analytics on demand.
+						p.lead.m-b-md.text-muted Stop installing bloated scripts that all track the exact same things. Install one that does everything
+						button.btn.btn-primary.btn-lg Try it now
 
 
-		section.section--logos#section-logos
+	.block.block-secondary.app-iphone-block
+		.container
+			.row.app-align-center
+
+				.col-sm-5.hidden-xs
+					img(class="app-iphone" src="static/images/startup-2.jpg" style="width: 100%;")
+
+				.col-sm-6.col-sm-offset-1
+					h6.text-muted.text-uppercase Rich Information
+					h3.m-t-0 Make informed decisions with historical & real time data.
+					p.lead.m-b-md We combine immediate real time events with rich historical data to help answer the toughest questions about retention, growth, and engagement.
+					.row.hidden-sm
+						.col-sm-6.m-b-md
+							h5.m-y-0 Data frequency
+							p We poll for data on a millisecond basis. You can react to new information in seconds rather than days. <a href="#" class="text-primary">Learn more.</a>
+						.col-sm-6
+							h5.m-y-0 Reliability & uptime
+							p We process our data across a massively distributed network of reliable servers to ensure 99.99% uptime, always. <a href="#" class="text-primary">Learn more</a>.
+
+	.block.block-inverse.block-secondary.app-code-block
+		.container
 			.row
-				.col-md-2
-				.col-md-8
-					h2 Featured customers
-					p
-						a(href='http://www.uxpin.com' target='_blank')
-							img(src='images/customers-logo/uxpin-logo.png').image-customer-logo
-						a(href='http://www.codeship.com' target='_blank')
-							img(src='images/customers-logo/codeship-logo.png').image-customer-logo
-						a(href='http://www.waffle.io' target='_blank')
-							img(src='images/customers-logo/waffle-logo.png').image-customer-logo
-				.col-md-2
+				.col-sm-5.col-sm-push-7
+					pre.app-code
+						| <span>1</span> <span class="hidden-xs">goAnalytics</span> “who are the latest 3 users?”
+						| <span>2</span>
+						| <span>3</span>  {
+						| <span>4</span>    "Dave": {
+						| <span>5</span>      "fullName": "Dave Gamache",
+						| <span>6</span>      "twitterHandle": "@dhg",
+						| <span>7</span>    }
+						| <span>8</span>    "Mark": {
+						| <span>9</span>      "fullName": "Mark Otto",
+						| <span>10</span>      "twitterHandle": "@mdo",
+						| <span>11</span>    }
+						| <span>12</span>    "Jacob": {
+						| <span>13</span>      "fullName": "Jacob Thornton",
+						| <span>14</span>      "twitterHandle": "@fat",
+						| <span>15</span>    }
+						| <span>16</span>  }
+
+				.col-sm-6.col-sm-pull-5
+					h6.text-muted.text-uppercase Easy development
+					h3.m-t-0 Natural language queries make mining data easy for anyone
+					p.lead.m-b-md.text-muted
+						| Rather than force everyone at your company to learn incredibly difficult terminal commands, we allow anyone to query the data with natural language to return data.</p>
+					button.btn.btn-default.btn-lg.btn-borderless Read our docs
+
+	.block.block-secondary.app-high-praise.p-b-0
+		.container
+			.row.app-align-center
+				.col-sm-5.col-sm-push-7
+					h6.text-muted.text-uppercase High Praise
+					h3.m-t-0.m-b-md Go Analytics is amazing. Decisions that used to take weeks, now only takes minutes and is available to everyone on my team.”
+					p.m-b-md.text-muted Cindy Smith, founder of Cool Startup
+				.col-sm-6.col-sm-pull-5
+					img(src="static/images/startup-3.jpg")
+
+	.block.app-ribbon.p-y-lg
+		.container.text-center
+			img(src='static/images/startup-4.svg')
+			img(src='static/images/startup-5.svg')
+			img(src='static/images/startup-6.svg')
+			img(src='static/images/startup-7.svg')
+			img(src='static/images/startup-8.svg')
+
+
+	.block.block-secondary.app-block-marketing-grid
+		.container.text-center
+			.row.m-b-lg
+				.col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-lg-6.col-lg-offset-3
+					h6.text-muted.text-uppercase Inside the machine
+					h3.m-t-0.m-b It’s not hard to see how we make your life easier every day.
+
+			.row.app-marketing-grid
+				.col-sm-4.p-x-md.m-b-lg
+					img.m-b(src='static/images/startup-9.svg')
+					p <strong>24/7 support.</strong> We’re always here for you no matter what time of day.
+				.col-sm-4.p-x-md.m-b-lg
+					img.m-b(src='static/images/startup-10.svg')
+					p <strong>E-commerce.</strong> We automatically handle all sales analytics.
+				.col-sm-4.p-x-md.m-b-lg
+					img.m-b(src='static/images/startup-11.svg')
+					p <strong>Turnaround.</strong> Our data analysis is distributed, so it processes in seconds.
+
+			.row.app-marketing-grid
+				.col-sm-4.p-x-md.m-b-lg
+					img.m-b(src='static/images/startup-12.svg')
+					p <strong>Rich calculations.</strong> Limitless ways to splice and dice your data.
+				.col-sm-4.p-x-md.m-b-lg
+					img.m-b(src='static/images/startup-13.svg')
+					p <strong>Mobile apps.</strong> iOS and Android apps available for monitoring.
+				.col-sm-4.p-x-md.m-b-lg
+					img.m-b(src='static/images/startup-14.svg')
+					p <strong>Secure connections.</strong> Every single request is routed through HTTPS.
+
+	.block.app-price-plans
+		.container.text-center
+			.row.m-b-lg
+				.col-sm-8.col-sm-offset-2.col-lg-6.col-lg-offset-3
+					h6.text-muted.text-uppercase Business Talk
+					h3.m-t-0 No plans. We just bump your plan whenever you need it.
+
 			.row
-				.col-md-2
-				.col-md-8.case-study-one-liner.text-center
-					p
-						small Case study:&nbsp
-							a(href='customers-uxpin') learn more
-							|  about how UXPin increased trial conversion rate by 21%
-					p
-						small Case study:&nbsp
-							a(href='customers-codeship') learn more
-							|  about how Codeship helps more users stay engaged using MadKudu moments		
-				.col-md-2
 
-		section.section--explainer#section-explainer
+				.col-sm-4.p-x.m-b-lg
+					.p-x
+						h6.text-muted.text-uppercase.m-b Personal
+						img.m-b(src='static/images/startup-15.svg')
+						p Plenty of processing power for any personal projects, big or small.
 
-			.container
-				.row
-					.col-md-12
-						h2.heading-section Understand what keeps your users around
+					ul.list-unstyled.list-bordered.text-left.m-y-md
+						li.p-y <strong>10k</strong> monthly requests
+						li.p-y <strong>9am-5pm</strong> technical supprt
+						li.p-y <strong>Public</strong> API access
 
-				.row
-					.col-md-2
-					.col-md-8
-						h3.section-sub-heading MadKudu analyzes the behavior of your best and worst users to find out what are the most important drivers of engagement. And what is not.
-					.col-md-2
-
-				.row
-					.col-md-2
-					.col-md-8
-						img(src='images/factor_analysis_2.png').section_image
-					.col-md-2
-
-			.banner-use-case
-				.container
-					.row
-						.media
-							.media-left
-								img(src='images/andrew_at_waffle.png').media-object.use-case-face
-							.media-body
-								p "MadKudu helps us help our users reach their "Aha!" moment - the moment when our user realizes Waffle has changed the way their team works for the better." Andrew Homeyer, Intrapreneur at Waffle.io
+					button.btn.btn-lg.btn-primary.btn-block Start <span class="visible-lg-inline">a personal account</span>
 
 
-			.container
-				.row
-					.col-md-12
-						h2.heading-section.heading-section-margin-top Give extra love to your top users<br><span style="border-bottom: 2px dashed #000;text-decoration: none;">before</span> they become top customers
-				.row
-					.col-md-2
-					.col-md-8
-						h3.section-sub-heading MadKudu overlays behavior data to public information about your customers to find out who has the potential to become tomorrow's best customer.
-					.col-md-2
+				.col-sm-4.p-x.m-b-lg
+					.p-x
+						h6.text-muted.text-uppercase.m-b Business
+						img.m-b(src='static/images/startup-16.svg')
+						p PThe perfect sized plan for small businesses to get started.
 
-				.row.section-three-images
-					.col-md-2
-					.col-md-4
-						img(src='images/best_customers_lisa.png').section_image.image_churn_gary
-					.col-md-4
-						img(src='images/best_customer_lisa_email.png').section_image.image_churn_gary
-					.col-md-2
+					ul.list-unstyled.list-bordered.text-left.m-y-md
+						li.p-y <strong>100k</strong> monthly requests
+						li.p-y <strong>24/7</strong> technical supprt
+						li.p-y <strong>Public</strong> API access
+
+					button.btn.btn-lg.btn-primary.btn-block Start <span class="visible-lg-inline">a business account</span>
 
 
+				.col-sm-4.p-x.m-b-lg
+					.p-x
+						h6.text-muted.text-uppercase.m-b Corporate
+						img.m-b(src='static/images/startup-17.svg')
+						p An unlimited plan that will scale infinitely to any size project.
 
-			.banner-use-case
-				.container
-					.row
-						.media
-							.media-left
-								img(src='images/awesome_dude_3.png').media-object.use-case-face
-							.media-body
-								p "I have often asked myself what makes my best customers different from my other customers? <br>Now I know! And I make sure that each customer who is a great fit is successful with us.
+					ul.list-unstyled.list-bordered.text-left.m-y-md
+						li.p-y <strong>Unlimited</strong> monthly requests
+						li.p-y <strong>24/7</strong> technical supprt
+						li.p-y <strong>Public & Private</strong> API access
 
-
-
-			.container
-				.row
-					.col-md-12
-						h2.heading-section.heading-section-margin-top Sell to users when they are ready to buy
-				.row
-					.col-md-2
-					.col-md-8
-						h3.section-sub-heading MadKudu analyzes past behavior to find out when a customer is ready to convert or ready for an upsell.
-					.col-md-2
-
-				.row.section-three-images
-					.col-md-2
-					.col-md-4
-						img(src='images/upsell_linda_profile.png').section_image.image_churn_gary
-					.col-md-4
-						img(src='images/upsell_linda_email.png').section_image.image_churn_gary
-					.col-md-2
-
-			.banner-use-case
-				.container
-					.row
-						.media
-							.media-left
-								img(src='images/awesome_dude_4.png').media-object.use-case-face
-							.media-body
-								p "Timing is key when it comes to converting or upselling customers. Before MadKudu, I would send emails from time to time to all customers on a free plan. Now I can run very targeted campaigns that give awesome results."
-
-
-
-			.container
-				.row
-					.col-md-12
-						h2.heading-section.heading-section-margin-top Save at-risk trials
-				.row
-					.col-md-2
-					.col-md-8
-						h3.section-sub-heading MadKudu monitors signals that indicate a user is likely to not convert.<br>You can now reach out and offer to help before it is too late.
-					.col-md-2
-
-				.row.section-three-images
-					.col-md-4
-						img(src='images/convert_claire.png').section_image.image_churn_gary
-					.col-md-4
-						img(src='images/churn_diana.png').section_image.image_churn_gary
-					.col-md-4
-						img(src='images/churn_gary_response.png').section_image.image_churn_gary
-
-
-			.banner-use-case
-				.container
-					.row
-						.media
-							.media-left
-								img(src='images/awesome_gal_1.png').media-object.use-case-face
-							.media-body
-								p "Being able to identify and get in touch with dissatisfied customers before they leave is so effective. <br>I love it when customers say 'I was just about to call you but you beat me to it.'"
-
-
-
-		section.section--how-it-works#section-how-it-works
-
-			.container
-				.row
-					.col-md-12
-						h2.heading-section.heading-section-margin-top How it works
-				//- .row
-				//- 	.col-md-2
-				//- 	.col-md-8
-				//- 		h3.section-sub-heading Bla bla bla
-				//- 	.col-md-2
-
-				.row.text-center.how-it-works-steps
-					.col-md-3
-						.how-it-works-icon-container
-							img(src='images/how-it-works-connect-icon.png').how-it-works-icon
-						p
-							strong.black-text Connect to your web analytics
-							|  to know what each user does within your product
-					.col-md-3
-						.how-it-works-icon-container
-							img(src='images/how-it-works-enrich-icon.png').how-it-works-icon
-						p
-							strong.black-text Enrich customer profiles
-							|  with 3rd-party company and contact data
-					.col-md-3
-						.how-it-works-icon-container
-							img(src='images/how-it-works-science-icon.png').how-it-works-icon
-						p
-							strong.black-text Use machine learning
-							|  to predict lifetime value, recommended next action, and likelihood to convert
-					.col-md-3
-						.how-it-works-icon-container
-							img(src='images/how-it-works-message-icon.png').how-it-works-icon
-						p
-							strong.black-text Send timely and hyper-relevant messages
-							|  to users using your existing email solution
-
-
-
-		section.section--simple-stack#section-simple-stack
-
-			.container
-				.row
-					.col-md-12
-						h2.heading-section.heading-section-margin-top Give super powers to the applications you already use
-				.row
-					.col-md-2
-					.col-md-8
-						h3.section-sub-heading MadKudu connects to your existing solutions to get raw customer data and push back actionable customer intelligence.
-					.col-md-2
-
-				.row.text-center
-					img(src='images/feature_integrations.png').meet_madkudu_image
-
+					button.btn.btn-lg.btn-primary.btn-block Start <span class="visible-lg-inline">a personal account</span>

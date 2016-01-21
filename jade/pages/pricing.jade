@@ -5,96 +5,60 @@ block neck
 
 	script analytics.page('Pricing')
 
-	link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css')
-
-	link(rel="stylesheet" href="css/pricing_reset.css")
-	link(rel="stylesheet" href="css/pricing_style.css")
-
+block neck
+	title MadKudu | Turn trial users into paying customers
 
 block body
 
-	.pricing__wrapper
+	include ../components/header_white.jade
 
-		.cd-header
-			h1 Early Access Pricing
+	.block.app-price-plans
 
-		.cd-pricing-container.cd-has-margins
-				ul.cd-pricing-list
-						li
-							header.cd-pricing-header
-								h2 GROWTH
-								.cd-price
-									span.cd-currency $
-									span.cd-value 249
-									span.cd-duration mo
-								.tier
-									span Up to 10K users
-							// .cd-pricing-header
-							.cd-pricing-body
-								ul.cd-pricing-features
-									li Data Audit
-									li Conversion Factor Analysis
-									li Likelihood to convert
-									li Likelihood to upsell
-									li
-										em 2
-										|  one-click integrations
-									li Email Support
-							// .cd-pricing-body
-							footer.cd-pricing-footer
-								a.cd-select(href='/#section-signup') 14-DAY FREE TRIAL
-							// .cd-pricing-footer
-						li.cd-popular
-							header.cd-pricing-header
-								h2 PRO
-								.cd-price
-									span.cd-currency $
-									span.cd-value 799
-									span.cd-duration mo
-								.tier
-									span Up to 250K users
-							// .cd-pricing-header
-							.cd-pricing-body
-								ul.cd-pricing-features
-									li Advanced Data Audit
-									li Conversion Factor Analysis
-									li Likelihood to convert
-									li Likelihood to upsell
-									li
-										em 5
-										|  one-click integrations
-									li Onboarding & Training
-									li Monthly data-scientist check-in
-							// .cd-pricing-body
-							footer.cd-pricing-footer
-								a.cd-select(href='/#section-signup') 14-DAY FREE TRIAL
-							// .cd-pricing-footer
-						li
-							header.cd-pricing-header
-								h2 Premier
-								.cd-price
-									span.cd-currency $
-									span.cd-value 2,499
-									span.cd-duration mo
-								.tier
-									span Up to 1M users
-							// .cd-pricing-header
-							.cd-pricing-body
-								ul.cd-pricing-features
-									li Advanced Data Audit
-									li Conversion Factor Analysis
-									li User clustering
-									li Full SQL access to MadKudu Data
-									li Likelihood to convert
-									li Likelihood to upsell
-									li
-										em Unlimited
-										|  integrations
-									li Onboarding & Training
-									li Weekly data scientist check-in
-							// .cd-pricing-body
-							footer.cd-pricing-footer
-								a.cd-select(href='/#section-signup') 14-DAY FREE TRIAL
-							// .cd-pricing-footer
-					// .cd-pricing-list
-				// .cd-pricing-container
+		.container.text-center
+			.row.m-b-lg
+				.col-sm-8.col-sm-offset-2.col-lg-6.col-lg-offset-3
+					h6.text-muted.text-uppercase Business Talk
+					h3.m-t-0 No plans. We just bump your plan whenever you need it.
+
+			.row
+
+				.col-sm-4.p-x.m-b-lg
+					.p-x
+						h6.text-muted.text-uppercase.m-b Personal
+						img.m-b(src='static/images/startup-15.svg')
+						p Plenty of processing power for any personal projects, big or small.
+
+					ul.list-unstyled.list-bordered.text-left.m-y-md
+						li.p-y <strong>10k</strong> monthly requests
+						li.p-y <strong>9am-5pm</strong> technical supprt
+						li.p-y <strong>Public</strong> API access
+
+					button.btn.btn-lg.btn-primary.btn-block Start <span class="visible-lg-inline">a personal account</span>
+
+
+				.col-sm-4.p-x.m-b-lg
+					.p-x
+						h6.text-muted.text-uppercase.m-b Business
+						img.m-b(src='static/images/startup-16.svg')
+						p PThe perfect sized plan for small businesses to get started.
+
+					ul.list-unstyled.list-bordered.text-left.m-y-md
+						li.p-y <strong>100k</strong> monthly requests
+						li.p-y <strong>24/7</strong> technical supprt
+						li.p-y <strong>Public</strong> API access
+
+					button.btn.btn-lg.btn-primary.btn-block Start <span class="visible-lg-inline">a business account</span>
+
+
+				.col-sm-4.p-x.m-b-lg
+					.p-x
+						h6.text-muted.text-uppercase.m-b Corporate
+						img.m-b(src='static/images/startup-17.svg')
+						p An unlimited plan that will scale infinitely to any size project.
+
+					ul.list-unstyled.list-bordered.text-left.m-y-md
+						li.p-y <strong>Unlimited</strong> monthly requests
+						li.p-y <strong>24/7</strong> technical supprt
+						li.p-y <strong>Public & Private</strong> API access
+
+					button.btn.btn-lg.btn-primary.btn-block Start <span class="visible-lg-inline">a personal account</span>
