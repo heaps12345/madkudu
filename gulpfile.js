@@ -10,6 +10,9 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var connect = require('gulp-connect');
 var open = require('gulp-open');
+var browserify = require('browserify');
+var transform = require('vinyl-transform');
+var source = require('vinyl-source-stream');
 
 var Paths = {
 	HERE: './',
@@ -36,12 +39,13 @@ var Paths = {
 		'./js/custom/*',
 		'./js/madkudu/**.js',
 	],
+	SIMULATOR: './js/simulator/simulator.js',
 	STATIC: ['./static/**/**']
 };
 
 gulp.task('default', ['build', 'serve']);
 
-gulp.task('build', ['less-min', 'js-min', 'jade', 'static']);
+gulp.task('build', ['less-min', 'js-min', 'jade', 'static', 'simulator']);
 
 gulp.task('watch', function () {
 	gulp.watch(Paths.LESS, ['less-min']);
@@ -122,4 +126,14 @@ gulp.task('jade', function () {
 gulp.task('static', function () {
 	return gulp.src(Paths.STATIC)
   		.pipe(gulp.dest(Paths.DIST_STATIC));
+});
+
+
+
+gulp.task('simulator', function () {
+
+	return browserify(Paths.SIMULATOR)
+		.bundle()
+		.pipe(source('simulator.js'))
+		.pipe(gulp.dest(Paths.DIST));
 });
