@@ -11,6 +11,8 @@ var uglify = require('gulp-uglify');
 var connect = require('gulp-connect');
 var open = require('gulp-open');
 var browserify = require('browserify');
+var livereload = require('gulp-livereload');
+var gutil = require('gutil');
 
 var source = require('vinyl-source-stream');
 
@@ -52,6 +54,7 @@ gulp.task('default', ['build', 'serve']);
 gulp.task('build', ['less-min', 'js-min', 'jade', 'static', 'utils', 'simulator']);
 
 gulp.task('watch', function () {
+	livereload.listen();
 	gulp.watch(Paths.LESS, ['less-min']);
 	gulp.watch(Paths.JS,   ['js-min']);
 	gulp.watch(Paths.JADE_WATCH, ['jade']);
@@ -84,17 +87,8 @@ gulp.task('server', ['watch'], function () {
 	});
 });
 
-gulp.task('less', function () {
-	return gulp.src(Paths.LESS_TOOLKIT_SOURCES)
-		.pipe(sourcemaps.init())
-		.pipe(less())
-		.pipe(autoprefixer())
-		.pipe(sourcemaps.write(Paths.HERE))
-		.pipe(gulp.dest('dist'));
-});
-
-gulp.task('less-min', ['less'], function () {
-	return gulp.src(Paths.LESS_TOOLKIT_SOURCES)
+gulp.task('less-min', function () {
+	gulp.src(Paths.LESS_TOOLKIT_SOURCES)
 		.pipe(sourcemaps.init())
 		.pipe(less())
 		.pipe(minifyCSS())
@@ -103,45 +97,46 @@ gulp.task('less-min', ['less'], function () {
 			suffix: '.min'
 		}))
 		.pipe(sourcemaps.write(Paths.HERE))
-		.pipe(gulp.dest(Paths.DIST));
+		.pipe(gulp.dest(Paths.DIST))
+		.pipe(livereload());
 });
 
 gulp.task('js', function () {
-	return gulp.src(Paths.JS)
+	gulp.src(Paths.JS)
 		.pipe(concat('toolkit.js'))
 		.pipe(gulp.dest(Paths.DIST));
 });
 
 gulp.task('js-min', ['js'], function () {
-	return gulp.src(Paths.DIST_TOOLKIT_JS)
+	gulp.src(Paths.DIST_TOOLKIT_JS)
 		.pipe(uglify())
 		.pipe(rename({
 			suffix: '.min'
 		}))
-		.pipe(gulp.dest(Paths.DIST));
+		.pipe(gulp.dest(Paths.DIST))
+		.pipe(livereload());
 });
 
 gulp.task('jade', function () {
-	return gulp.src(Paths.JADE)
+	gulp.src(Paths.JADE)
 		.pipe(jade())
-		.pipe(gulp.dest(Paths.DIST));
+		.pipe(gulp.dest(Paths.DIST))
+		.pipe(livereload());
 });
 
 gulp.task('static', function () {
-	return gulp.src(Paths.STATIC)
-		.pipe(gulp.dest(Paths.DIST_STATIC));
+	gulp.src(Paths.STATIC)
+		.pipe(gulp.dest(Paths.DIST_STATIC))
+		.pipe(livereload());
 });
 
 gulp.task('utils', function () {
-	return gulp.src(Paths.UTILS)
+	gulp.src(Paths.UTILS)
 		.pipe(gulp.dest(Paths.DIST));
 });
 
-
-
 gulp.task('simulator', function () {
-
-	return browserify(Paths.SIMULATOR)
+	browserify(Paths.SIMULATOR)
 		.bundle()
 		.pipe(source('simulator.js'))
 		.pipe(gulp.dest(Paths.DIST));
