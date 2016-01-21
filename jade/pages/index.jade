@@ -3,11 +3,14 @@ extends ../components/skeleton.jade
 block neck
 	title MadKudu | Turn trial users into paying customers
 
+	script analytics.page('Home')
+
 block body
 
-	.block.block-inverse.block-fill-height(style='background-image: url(static/images/startup-1.jpg);')
+	.block.block-inverse.block-fill-height.block-home
+		//(style='background-image: url(static/images/startup-1.jpg);')
 
-		include ../components/header_transparent.jade
+		include ../components/header_white.jade
 
 		img.app-graph(src="static/images/startup-0.svg")
 
@@ -20,7 +23,7 @@ block body
 						button.btn.btn-primary.btn-lg Try it now
 
 
-	.block.block-secondary.app-iphone-block
+	.block.block-secondary.block-product
 		.container
 			.row.app-align-center
 
@@ -39,7 +42,7 @@ block body
 							h5.m-y-0 Reliability & uptime
 							p We process our data across a massively distributed network of reliable servers to ensure 99.99% uptime, always. <a href="#" class="text-primary">Learn more</a>.
 
-	.block.block-inverse.block-secondary.app-code-block
+	.block.block-inverse.block-secondary.block-code
 		.container
 			.row
 				.col-sm-5.col-sm-push-7
@@ -68,7 +71,7 @@ block body
 						| Rather than force everyone at your company to learn incredibly difficult terminal commands, we allow anyone to query the data with natural language to return data.</p>
 					button.btn.btn-default.btn-lg.btn-borderless Read our docs
 
-	.block.block-secondary.app-high-praise.p-b-0
+	.block.block-secondary.block-praise.p-b-0
 		.container
 			.row.app-align-center
 				.col-sm-5.col-sm-push-7
@@ -78,7 +81,7 @@ block body
 				.col-sm-6.col-sm-pull-5
 					img(src="static/images/startup-3.jpg")
 
-	.block.app-ribbon.p-y-lg
+	.block.block-ribbon.p-y-lg
 		.container.text-center
 			img(src='static/images/startup-4.svg')
 			img(src='static/images/startup-5.svg')
@@ -87,14 +90,14 @@ block body
 			img(src='static/images/startup-8.svg')
 
 
-	.block.block-secondary.app-block-marketing-grid
+	.block.block-secondary.block-marketing-grid
 		.container.text-center
 			.row.m-b-lg
 				.col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-lg-6.col-lg-offset-3
 					h6.text-muted.text-uppercase Inside the machine
 					h3.m-t-0.m-b It’s not hard to see how we make your life easier every day.
 
-			.row.app-marketing-grid
+			.row.row-marketing-grid
 				.col-sm-4.p-x-md.m-b-lg
 					img.m-b(src='static/images/startup-9.svg')
 					p <strong>24/7 support.</strong> We’re always here for you no matter what time of day.
@@ -105,7 +108,7 @@ block body
 					img.m-b(src='static/images/startup-11.svg')
 					p <strong>Turnaround.</strong> Our data analysis is distributed, so it processes in seconds.
 
-			.row.app-marketing-grid
+			.row.row-marketing-grid
 				.col-sm-4.p-x-md.m-b-lg
 					img.m-b(src='static/images/startup-12.svg')
 					p <strong>Rich calculations.</strong> Limitless ways to splice and dice your data.
@@ -116,52 +119,3 @@ block body
 					img.m-b(src='static/images/startup-14.svg')
 					p <strong>Secure connections.</strong> Every single request is routed through HTTPS.
 
-	.block.app-price-plans
-		.container.text-center
-			.row.m-b-lg
-				.col-sm-8.col-sm-offset-2.col-lg-6.col-lg-offset-3
-					h6.text-muted.text-uppercase Business Talk
-					h3.m-t-0 No plans. We just bump your plan whenever you need it.
-
-			.row
-
-				.col-sm-4.p-x.m-b-lg
-					.p-x
-						h6.text-muted.text-uppercase.m-b Personal
-						img.m-b(src='static/images/startup-15.svg')
-						p Plenty of processing power for any personal projects, big or small.
-
-					ul.list-unstyled.list-bordered.text-left.m-y-md
-						li.p-y <strong>10k</strong> monthly requests
-						li.p-y <strong>9am-5pm</strong> technical supprt
-						li.p-y <strong>Public</strong> API access
-
-					button.btn.btn-lg.btn-primary.btn-block Start <span class="visible-lg-inline">a personal account</span>
-
-
-				.col-sm-4.p-x.m-b-lg
-					.p-x
-						h6.text-muted.text-uppercase.m-b Business
-						img.m-b(src='static/images/startup-16.svg')
-						p PThe perfect sized plan for small businesses to get started.
-
-					ul.list-unstyled.list-bordered.text-left.m-y-md
-						li.p-y <strong>100k</strong> monthly requests
-						li.p-y <strong>24/7</strong> technical supprt
-						li.p-y <strong>Public</strong> API access
-
-					button.btn.btn-lg.btn-primary.btn-block Start <span class="visible-lg-inline">a business account</span>
-
-
-				.col-sm-4.p-x.m-b-lg
-					.p-x
-						h6.text-muted.text-uppercase.m-b Corporate
-						img.m-b(src='static/images/startup-17.svg')
-						p An unlimited plan that will scale infinitely to any size project.
-
-					ul.list-unstyled.list-bordered.text-left.m-y-md
-						li.p-y <strong>Unlimited</strong> monthly requests
-						li.p-y <strong>24/7</strong> technical supprt
-						li.p-y <strong>Public & Private</strong> API access
-
-					button.btn.btn-lg.btn-primary.btn-block Start <span class="visible-lg-inline">a personal account</span>
