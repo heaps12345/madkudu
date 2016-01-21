@@ -11,7 +11,7 @@ var uglify = require('gulp-uglify');
 var connect = require('gulp-connect');
 var open = require('gulp-open');
 var browserify = require('browserify');
-var transform = require('vinyl-transform');
+
 var source = require('vinyl-source-stream');
 
 var Paths = {
@@ -40,12 +40,16 @@ var Paths = {
 		'./js/madkudu/**.js',
 	],
 	SIMULATOR: './js/simulator/simulator.js',
-	STATIC: ['./static/**/**']
+	STATIC: ['./static/**/**'],
+	UTILS: [
+		'./robots.txt',
+		'./madkudu_ico.png'
+	]
 };
 
 gulp.task('default', ['build', 'serve']);
 
-gulp.task('build', ['less-min', 'js-min', 'jade', 'static', 'simulator']);
+gulp.task('build', ['less-min', 'js-min', 'jade', 'static', 'utils', 'simulator']);
 
 gulp.task('watch', function () {
 	gulp.watch(Paths.LESS, ['less-min']);
@@ -125,7 +129,12 @@ gulp.task('jade', function () {
 
 gulp.task('static', function () {
 	return gulp.src(Paths.STATIC)
-  		.pipe(gulp.dest(Paths.DIST_STATIC));
+		.pipe(gulp.dest(Paths.DIST_STATIC));
+});
+
+gulp.task('utils', function () {
+	return gulp.src(Paths.UTILS)
+		.pipe(gulp.dest(Paths.DIST));
 });
 
 
