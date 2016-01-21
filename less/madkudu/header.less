@@ -6,13 +6,13 @@
 	position: absolute;
 
 	.navbar-nav > li > a {
-		color: @brand-primary;
+		color: #000;
 		font-weight: 500;
 		transition: all 0.5s ease;
 	}
 
 	.navbar-nav > li > a:hover {
-		color: #000;
+		color: @brand-primary;
 		font-weight: 500;
 	}
 }
@@ -29,6 +29,10 @@
 
 .navbar-brand--logo {
 	padding: 0em;
+
+	img {
+		height: 50px;
+	}
 }
 
 .btn-navbar {
@@ -36,4 +40,5 @@
 	margin: 5px 0;
 	padding: 10px 15px;
 	text-transform: uppercase;
+	transition: all 0.5s ease;
 }
