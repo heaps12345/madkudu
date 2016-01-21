@@ -1,2 +1,20 @@
 nav.navbar.navbar-transparent.navbar-fixed-top.p-t-md.navbar-madkudu--white
-	include ./navbar.jade
+	.container
+		.navbar-header
+			button.navbar-toggle.collapsed.p-x-0(type='button' data-toggle='collapse' data-target='#navbar-collapse-com')
+				span.sr-only Toggle navigation
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			a.navbar-brand.navbar-brand--logo(href="/")
+				img(src='static/images/madkudu_rectangle.png' alt='MadKudu')
+		.navbar-collapse.collapse#navbar-collapse-com
+			ul.nav.navbar-nav.navbar-right.text-uppercase
+				li
+					a(href='/') Product
+				li
+					a(href='/pricing.html') Pricing
+				li
+					a(href='/blog') Blog
+				li
+					a(href='/team.html') About
