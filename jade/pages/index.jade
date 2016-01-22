@@ -8,7 +8,6 @@ block neck
 block body
 
 	.block.block-inverse.block-fill-height.block-home
-		//(style='background-image: url(static/images/startup-1.jpg);')
 
 		include ../components/header_white.jade
 
@@ -25,10 +24,12 @@ block body
 	.block.p-y-md.block-customers(style="background-color: lightgray;")
 		.customer-logo.m-x.m-y
 			img(src='static/images/customers/pingboard-logo-grayscale.png')
-		.customer-logo.m-x.m-y
-			img(src='static/images/customers/codeship-logo-grayscale.png')
-		.customer-logo.m-x.m-y
-			img(src='static/images/customers/uxpin-logo-grayscale.png')
+		.customer-logo.m-x.m-y.customer-case-study
+			a(href='/customers-codeship.html')
+				img(src='static/images/customers/codeship-logo-grayscale.png')
+		.customer-logo.m-x.m-y.customer-case-study
+			a(href='/customers-uxpin.html')
+				img(src='static/images/customers/uxpin-logo-grayscale.png')
 		.customer-logo.m-x.m-y
 			img(src='static/images/customers/vend-logo-grayscale.png')
 		.customer-logo.m-x.m-y
