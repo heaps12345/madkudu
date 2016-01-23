@@ -1,0 +1,14 @@
+nav.navbar.navbar-transparent.navbar-fixed-top.p-t-md.navbar-madkudu--white
+	.container
+		.navbar-header
+			button.navbar-toggle.collapsed.p-x-0(type='button' data-toggle='collapse' data-target='#navbar-collapse-com')
+				span.sr-only Toggle navigation
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			a.navbar-brand.navbar-brand--logo(href="/")
+				img(src='static/images/madkudu_rectangle_large_white.svg' alt='MadKudu')
+		.navbar-collapse.collapse#navbar-collapse-com
+			ul.nav.navbar-nav.navbar-right.text-uppercase
+				include ./navbar.jade
+				a.btn.btn-primary.btn-navbar(href='https://app.madkudu.com/signup') Signup

@@ -3,238 +3,160 @@ extends ../components/skeleton.jade
 block neck
 	title MadKudu | Turn trial users into paying customers
 
-	script(type='text/javascript' src='js/index.js')
+	script analytics.page('Home')
 
 block body
 
-	style.
-		 p {
-			font-size: 18px;
-			line-height: 28px;
-		}
+	.block.block-inverse.block-fill-height.block-home
 
-	.wrapper
-		.hero#section-signup
+		include ../components/header_white.jade
+
+		img.app-graph(src="static/images/startup-0.svg")
+
+		.block-xs-middle.p-b-lg
 			.container
-				//- h1.home-title Customer intelligence<br>to grow the lifetime value<br>of SaaS customers
-				h1.home-title Turn free users into paying customers
-				h2.home-subtitle Increase trial conversions by 20%.
+				.row
+					.col-sm-10.col-md-6
+						h1.block-title.m-b-sm Turn free users into paying customers
+						p.lead.m-b-md.text-muted Increase conversion rate by 20% or more.
+						button.btn.btn-primary.btn-lg.text-uppercase(style="height: 80px; width: 400px;") Get started
 
-				//- h2.home-subtitle MadKudu analyzes your customer interactions <br>and finds out how you can be most helpful and most effective.
-				//- img.hero-screenshot(src='images/Accounts.png' width='80%' alt='MadKudu account dashboard')
+	.block.block-customers.p-y-md(style="background-color: lightgray;")
+		.customer-logo.m-x.m-y
+			img(src='static/images/customers/pingboard-logo-grayscale.png')
+		.customer-logo.m-x.m-y.customer-case-study
+			a(href='/customers-codeship.html')
+				img(src='static/images/customers/codeship-logo-grayscale.png')
+		.customer-logo.m-x.m-y.customer-case-study
+			a(href='/customers-uxpin.html')
+				img(src='static/images/customers/uxpin-logo-grayscale.png')
+		.customer-logo.m-x.m-y
+			img(src='static/images/customers/vend-logo-grayscale.png')
+		.customer-logo.m-x.m-y
+			img(src='static/images/customers/sumall-logo-grayscale.png')
+		.customer-logo.m-x.m-y
+			img(src='static/images/customers/waffle-logo-grayscale.png')
+		.customer-logo.m-x.m-y
+			img(src='static/images/customers/shopventory-logo.png')
+				
 
-				section.section--signup
-					//- .container
+	.block
+		.container.text-center
+			.row.m-b-lg
+				.col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-lg-6.col-lg-offset-3
+					h6.text-muted.text-uppercase Prescriptive data science
+					h3.m-t-0.m-b The right message for the right customer at the right time through the right channel
 
-					.signup-form-wrap#signup
-						form.signup-form.form-inline(id='mc-early-signup-form' name='email-form' data-name='Email Form' action='//madkudu.us8.list-manage.com/subscribe/post?u=50d10dbb43453c101e00a5f6f&amp;id=2562f30397' method='post')
-							.form-group
-								input.signup-field(id='mc-EMAIL' type='email' placeholder='Your email address' name='EMAIL' data-name='EMAIL' required='required')
-							//- button.button.button-signup(type='submit' value='Send me an invite!' data-wait='Please wait...')
-							input.button.button-signup(type='submit' value='Send me an invite!' data-wait='Please wait...')
-						.form-success
-							p.signup-text Thank you! We'll get in touch very soon!
-						.form-fail
-							p.signup-text Oops! Something went wrong while submitting the form
+			.row.row-marketing-grid
+				.col-sm-6.p-x-md.m-b-lg.text-center.stack-column
+					img.m-b-md(src='static/images/smarter_stack_detect.png' style="width: 225px;")
+					h4 Detect
+					p who needs attention and what to do
+					.stack-right-arrow
+						img(src='static/images/arrow_right.svg')
+				.col-sm-6.p-x-md.m-b-lg.text-center.stack-column
+					img.m-b-md(src='static/images/action_in_stack.png' style="width: 225px;")
+					h4 Convert and upsell
+					p by engaging customers the right way
 
 
-		section.section--logos#section-logos
+	.block.block-inverse.block-code
+		.container.text-center
 			.row
-				.col-md-2
-				.col-md-8
-					h2 Featured customers
-					p
-						a(href='http://www.uxpin.com' target='_blank')
-							img(src='images/customers-logo/uxpin-logo.png').image-customer-logo
-						a(href='http://www.codeship.com' target='_blank')
-							img(src='images/customers-logo/codeship-logo.png').image-customer-logo
-						a(href='http://www.waffle.io' target='_blank')
-							img(src='images/customers-logo/waffle-logo.png').image-customer-logo
-				.col-md-2
-			.row
-				.col-md-2
-				.col-md-8.case-study-one-liner.text-center
-					p
-						small Case study:&nbsp
-							a(href='customers-uxpin') learn more
-							|  about how UXPin increased trial conversion rate by 21%
-					p
-						small Case study:&nbsp
-							a(href='customers-codeship') learn more
-							|  about how Codeship helps more users stay engaged using MadKudu moments		
-				.col-md-2
-
-		section.section--explainer#section-explainer
-
-			.container
-				.row
-					.col-md-12
-						h2.heading-section Understand what keeps your users around
-
-				.row
-					.col-md-2
-					.col-md-8
-						h3.section-sub-heading MadKudu analyzes the behavior of your best and worst users to find out what are the most important drivers of engagement. And what is not.
-					.col-md-2
-
-				.row
-					.col-md-2
-					.col-md-8
-						img(src='images/factor_analysis_2.png').section_image
-					.col-md-2
-
-			.banner-use-case
-				.container
-					.row
-						.media
-							.media-left
-								img(src='images/andrew_at_waffle.png').media-object.use-case-face
-							.media-body
-								p "MadKudu helps us help our users reach their "Aha!" moment - the moment when our user realizes Waffle has changed the way their team works for the better." Andrew Homeyer, Intrapreneur at Waffle.io
+				blockquote.pull-quote
+					img.img-circle(src="static/images/andrew_at_waffle.png")
+					p "MadKudu helps our users reach their "Aha!" moment - the moment when our user realizes Waffle has changed the way their team works for the better.”
+					cite Andrew Homeyer, Intrapreneur at Waffle.io
 
 
-			.container
-				.row
-					.col-md-12
-						h2.heading-section.heading-section-margin-top Give extra love to your top users<br><span style="border-bottom: 2px dashed #000;text-decoration: none;">before</span> they become top customers
-				.row
-					.col-md-2
-					.col-md-8
-						h3.section-sub-heading MadKudu overlays behavior data to public information about your customers to find out who has the potential to become tomorrow's best customer.
-					.col-md-2
+	.block
+		.container.p-u-0
+			.row.p-b-lg.p-u-0
+				h3.text-center Make your sales & marketing stack smarter without changing it
 
-				.row.section-three-images
-					.col-md-2
-					.col-md-4
-						img(src='images/best_customers_lisa.png').section_image.image_churn_gary
-					.col-md-4
-						img(src='images/best_customer_lisa_email.png').section_image.image_churn_gary
-					.col-md-2
+		.container.m-t-lg
+			.row.app-align-center
+
+				.col-sm-6
+					h3.m-t-0 Pro-actively reach out to your highest potential users as they sign up
+					p.text-muted.lead.m-b-md MadKudu identifies new high potential lifetime value users and alerts your sales team to greet them.
+					.row.hidden-sm
+						.col-sm-6.m-b-md
+							h5.m-y-0 Continuouly learn
+							p MadKudu automatically finds out what user attributes and behaviors are the right indicators of lifetime value
+						.col-sm-6
+							h5.m-y-0 Deeply Integrated
+							p MadKudu triggers alerts in Slack with links to your CRM, LinkedIn and many others. <a href="#" class="text-primary">Learn more</a>.
+
+				.col-sm-6.p-l-lg
+					img(src="static/images/channels_slack.png" style="width: 500px;")
+
+
+	.block
+		.container
+			.row.app-align-center
+				.col-sm-6
+					img(src="static/images/channels_marketo.png" style="width: 500px; margin-left: -15px;")
+
+				.col-sm-6.m-l-lg
+					h3.m-t-0.m-b-md Convert users by engaging them at the appropriate time
+					p.text-muted.lead.m-b-md MadKudu creates triggers in your Automation platforms to send the right email at the right time.
+					.row.hidden-sm
+						.col-sm-6.m-b-md
+							h5.m-y-0 Continuouly learn
+							p MadKudu finds the key moments and behaviors in the customer journey for conversion, introducing features...
+						.col-sm-6
+							h5.m-y-0 Deeply Integrated
+							p MadKudu creates triggers and behavioral attributes in your marketing automation platforms. <a href="#" class="text-primary">Learn more</a>.
+
+
+	.block
+		.container
+			.row.app-align-center
+
+				.col-sm-6
+					h3.m-t-0 Pro-actively re-engage with users whose onboarding is at risk
+					p.text-muted.lead.m-b-md MadKudu identifies which users need assistance and how to help them.
+					.row.hidden-sm
+						.col-sm-6.m-b-md
+							h5.m-y-0 Continuouly learn
+							p MadKudu finds the "user happy path" to conversion and identifies users who are lost on it.
+						.col-sm-6
+							h5.m-y-0 Deeply Integrated
+							p MadKudu triggers and behavioral attributes in your support platforms. <a href="#" class="text-primary">Learn more</a>.
+
+				.col-sm-6.p-l-lg
+					img(src="static/images/channels_intercom.png" style="width: 500px;")
 
 
 
-			.banner-use-case
-				.container
-					.row
-						.media
-							.media-left
-								img(src='images/awesome_dude_3.png').media-object.use-case-face
-							.media-body
-								p "I have often asked myself what makes my best customers different from my other customers? <br>Now I know! And I make sure that each customer who is a great fit is successful with us.
+
+	.block.block-inverse.block-code
+		.container.text-center
+			.row.m-b-md
+				h3 Using Mixpanel, KISSmetrics or Segment?
+				
+			.row.m-b-md
+				.col-sm-3
+				.col-sm-6(style="line-height: 250%;")
+					h4 Madkudu offers a free analysis that
+					h4 will reveal the DNA of your ideal customer.
+				.col-sm-3
+
+			.row.text-left.m-b-md
+				.col-sm-3
+				.col-sm-6(style="line-height: 250%;")
+					ul
+						li What <strong>industries</strong> gives you the best conversions and lifetime value?
+						li What is the <strong>company size</strong> sweetspot?
+						li What are the <strong>job titles</strong> that convert and engage best?
+						li What <strong>geographies</strong> to focus in?
+						li What <strong>features</strong> do your best customers value most?
+				.col-sm-3
+				
+			.row.p-b-lg
+				button.btn.btn-primary.btn-lg Get a free ideal customer profile analysis in less than 5 minutes
 
 
 
-			.container
-				.row
-					.col-md-12
-						h2.heading-section.heading-section-margin-top Sell to users when they are ready to buy
-				.row
-					.col-md-2
-					.col-md-8
-						h3.section-sub-heading MadKudu analyzes past behavior to find out when a customer is ready to convert or ready for an upsell.
-					.col-md-2
-
-				.row.section-three-images
-					.col-md-2
-					.col-md-4
-						img(src='images/upsell_linda_profile.png').section_image.image_churn_gary
-					.col-md-4
-						img(src='images/upsell_linda_email.png').section_image.image_churn_gary
-					.col-md-2
-
-			.banner-use-case
-				.container
-					.row
-						.media
-							.media-left
-								img(src='images/awesome_dude_4.png').media-object.use-case-face
-							.media-body
-								p "Timing is key when it comes to converting or upselling customers. Before MadKudu, I would send emails from time to time to all customers on a free plan. Now I can run very targeted campaigns that give awesome results."
-
-
-
-			.container
-				.row
-					.col-md-12
-						h2.heading-section.heading-section-margin-top Save at-risk trials
-				.row
-					.col-md-2
-					.col-md-8
-						h3.section-sub-heading MadKudu monitors signals that indicate a user is likely to not convert.<br>You can now reach out and offer to help before it is too late.
-					.col-md-2
-
-				.row.section-three-images
-					.col-md-4
-						img(src='images/convert_claire.png').section_image.image_churn_gary
-					.col-md-4
-						img(src='images/churn_diana.png').section_image.image_churn_gary
-					.col-md-4
-						img(src='images/churn_gary_response.png').section_image.image_churn_gary
-
-
-			.banner-use-case
-				.container
-					.row
-						.media
-							.media-left
-								img(src='images/awesome_gal_1.png').media-object.use-case-face
-							.media-body
-								p "Being able to identify and get in touch with dissatisfied customers before they leave is so effective. <br>I love it when customers say 'I was just about to call you but you beat me to it.'"
-
-
-
-		section.section--how-it-works#section-how-it-works
-
-			.container
-				.row
-					.col-md-12
-						h2.heading-section.heading-section-margin-top How it works
-				//- .row
-				//- 	.col-md-2
-				//- 	.col-md-8
-				//- 		h3.section-sub-heading Bla bla bla
-				//- 	.col-md-2
-
-				.row.text-center.how-it-works-steps
-					.col-md-3
-						.how-it-works-icon-container
-							img(src='images/how-it-works-connect-icon.png').how-it-works-icon
-						p
-							strong.black-text Connect to your web analytics
-							|  to know what each user does within your product
-					.col-md-3
-						.how-it-works-icon-container
-							img(src='images/how-it-works-enrich-icon.png').how-it-works-icon
-						p
-							strong.black-text Enrich customer profiles
-							|  with 3rd-party company and contact data
-					.col-md-3
-						.how-it-works-icon-container
-							img(src='images/how-it-works-science-icon.png').how-it-works-icon
-						p
-							strong.black-text Use machine learning
-							|  to predict lifetime value, recommended next action, and likelihood to convert
-					.col-md-3
-						.how-it-works-icon-container
-							img(src='images/how-it-works-message-icon.png').how-it-works-icon
-						p
-							strong.black-text Send timely and hyper-relevant messages
-							|  to users using your existing email solution
-
-
-
-		section.section--simple-stack#section-simple-stack
-
-			.container
-				.row
-					.col-md-12
-						h2.heading-section.heading-section-margin-top Give super powers to the applications you already use
-				.row
-					.col-md-2
-					.col-md-8
-						h3.section-sub-heading MadKudu connects to your existing solutions to get raw customer data and push back actionable customer intelligence.
-					.col-md-2
-
-				.row.text-center
-					img(src='images/feature_integrations.png').meet_madkudu_image
-
+				

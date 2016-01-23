@@ -1,0 +1,74 @@
+extends ../components/skeleton.jade
+
+block neck
+	title MadKudu | Features
+
+	script analytics.page('Features')
+
+block body
+
+	.block.block-grey
+
+		include ../components/header_black.jade
+
+		.container
+			.block-title.m-b-lg.text-center
+				h2 Integrations
+				h4 Give super powers to the applications you already use
+
+			.row.row-integrations
+				.col-md-3
+					.integration__header
+						h4 Analytics
+				.col-md-9
+					.col-md-4
+						.integration__box
+							h2.integration
+								.integration__logo(title='Mixpanel' style='background-image: url(/static/images/integrations/segment.svg);')
+					.col-md-4
+						.integration__box
+							h2.integration
+								.integration__logo(title='Mixpanel' style='background-image: url(/static/images/integrations/mixpanel.svg);')
+					.col-md-4
+						.integration__box
+							h2.integration
+								.integration__logo(title='Mixpanel' style='background-image: url(/static/images/integrations/kissmetrics.svg);')
+
+			.row.row-integrations
+				.col-md-3
+					.integration__header
+						h4 Marketing Automation
+				.col-md-9
+					.col-md-4
+						.integration__box
+							h2.integration
+								.integration__logo(title='Mixpanel' style='background-image: url(/static/images/integrations/intercom.svg);')
+					.col-md-4
+						.integration__box
+							h2.integration
+								.integration__logo(title='Mixpanel' style='background-image: url(/static/images/integrations/marketo.svg);')
+
+			.row.row-integrations
+				.col-md-3
+					.integration__header
+						h4 CRM
+				.col-md-9
+					.col-md-4
+						.integration__box
+							h2.integration
+								.integration__logo(title='Mixpanel' style='background-image: url(/static/images/integrations/salesforce.svg);')
+					.col-md-4
+						.integration__box
+							h2.integration
+								.integration__logo(title='Mixpanel' style='background-image: url(/static/images/integrations/salesforceiq.svg);')
+
+			.row.row-integrations
+				.col-md-3
+					.integration__header
+						h4 Chat
+				.col-md-9
+					.col-md-4
+						.integration__box
+							h2.integration
+								.integration__logo(title='Slack' style='background-image: url(/static/images/integrations/slack.svg);')
+

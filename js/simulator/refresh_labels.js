@@ -1,8 +1,6 @@
-var refresh_labels = function() {
+var refresh_labels = function () {
 
-	var numeral = require('../numeral.min.js');
-
-	var elements_to_listen_to = ['#starting_MRR','#revenue_growth','#churn','#upsell', '#projection_time', '#desired_churn'];
+	var numeral = require('numeral');
 
 	$('.label_projection_time').text($('#projection_time').val());
 	$('.label_final_mrr').text(numeral(window.mk_simulator.label_final_mrr).format('($ 0 a)'));
@@ -22,8 +20,6 @@ var refresh_labels = function() {
 	$('.label_simulated_churn').text(numeral($('#simulated_churn').val()/100).format('0.[0]%'));
 	$('.label_mrr_saved').text(numeral(window.mk_simulator.label_final_mrr_simulated - window.mk_simulator.label_final_mrr).format('($ 0 a)'));
 
-
-
 };
 
-module.exports = refresh_labels;
+exports = module.exports = refresh_labels;

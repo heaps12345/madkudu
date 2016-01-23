@@ -1,36 +1,57 @@
-footer.footer_wrapper
+.block.block-inverse.footer-madkudu
 	.container
 		.row
-			.col-sm-4.footer-column-contact
-				.company-info(itemtype='http://schema.org/Organization' itemscope='itemscope')
-					span(itemprop='name') MadKudu Inc.
-					a(href='http://www.madkudu.com' itemprop='url')
-					a(href='mailto:hello@madkudu.com?subject=I%20want%20to%20learn%20more%20about%20MadKudu!') hello@madkudu.com
-					span(itemprop='telephone') (203) 216-9872
-					.address(itemprop='address' itemtype='http://schema.org/PostalAddress' itemscope='itemscope')
-						img.info-icon(src='images/address.png' width='18' alt='536c2cb8c0b084ab35bc897b_address.png')
-						span(itemprop='addressLocality') San Francisco
-						span ,
-						span(itemprop='addressRegion')  CA
-					.footer-logo
-						img(itemprop='logo' src='images/madkudu_rectangle.png')
-			.col-sm-4.footer-column-links
-				a(href='http://help.madkudu.com') Support
-				a(href='credits') Credits
-				a(href='terms') Terms of Service
-				a(href='privacy') Privacy Policy
-			.col-sm-4.footer-column-social
-				.footer-social-links
-					a.social-icon(href='https://www.facebook.com/pages/MadKudu/682334211804512')
-						img(src='images/facebook_footer.svg' width='15' alt='MadKudu Facebook')
-					a.social-icon(href='https://www.linkedin.com/company/madkudu')
-						img(src='images/linkedin_footer.svg' width='15' alt='MadKudu LinkedIn')
-					a.social-icon(href='https://www.twitter.com/madkudu')
-						img(src='images/twitter_footer.svg' width='15' alt='MadKudu Twitter')
-				.techstars-logo
-					a(href='http://www.techstars.com')
-						img(src='images/logos/techstars-logo.png' alt='Techstars')
 
-				//- .mixpanel-badge
-				//- 	a(href='https://mixpanel.com/f/partner')
-				//- 		img(src='https://cdn.mxpnl.com/site_media/images/partner/badge_light.png' alt='Mobile Analytics')
+			.col-sm-3.m-b-md
+				ul.list-unstyled.list-spaced
+					li.m-b
+						h6.text-uppercase Contact
+					li.text-muted MadKudu Inc.
+					li.text-muted San Francisco, CA
+					li.text-muted <a href="mailto:hello@madkud.com">hello@madkudu.com</a>
+					li.footer-social-links.m-t
+						a.social-icon(href='https://www.facebook.com/pages/MadKudu/682334211804512')
+							img(src='static/images/footer_facebook.svg' width='15' alt='MadKudu Facebook')
+						a.social-icon(href='https://www.linkedin.com/company/madkudu')
+							img(src='static/images/footer_linkedin.svg' width='15' alt='MadKudu LinkedIn')
+						a.social-icon(href='https://www.twitter.com/madkudu')
+							img(src='static/images/footer_twitter.svg' width='15' alt='MadKudu Twitter')
+
+
+			.col-sm-3.m-b-md
+				ul.list-unstyled.list-spaced
+					li.m-b
+						h6.text-uppercase Company
+					li.text-muted
+						a(href='/team.html') Team
+					li.text-muted
+						a(href='/blog') Blog
+
+
+			.col-sm-3.m-b-md
+				ul.list-unstyled.list-spaced
+					li.m-b
+						h6.text-uppercase Product
+					li.text-muted
+						a(href='/pricing.html') Pricing
+					li.text-muted
+						a(href='http://docs.madkudu.com') Documentation
+					li.text-muted
+						a(href='/simulator') MRR Simulator
+
+			.col-sm-3.m-b-md
+				ul.list-unstyled.list-spaced
+					li.m-b
+						h6.text-uppercase Legal
+					//- li.text-muted
+					//- 	a(href='/credits.html') Credits
+					li.text-muted
+						a(href='/terms.html') Terms of Service
+					li.text-muted
+						a(href='/privacy.html') Privacy Policy
+
+		.row
+
+			.col-sm-12.text-center
+				a(href='http://www.techstars/com')
+					img.techstars--footer(src='static/images/techstars.png' alt='techstars')

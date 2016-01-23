@@ -1,8 +1,8 @@
 {
   "name": "madkudu-website",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "authors": [
-    "Paul Cothenet <pcothenet@gmail.com>"
+    "Paul Cothenet <paul@madkudu.com>"
   ],
   "description": "public website",
   "main": "index.html",
@@ -20,6 +20,5 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.3.2"
   }
 }

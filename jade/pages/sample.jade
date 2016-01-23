@@ -1,0 +1,119 @@
+extends ../components/skeleton.jade
+
+block neck
+	title MadKudu | Turn trial users into paying customers
+
+	script analytics.page('Home')
+
+block body
+
+	.block.block-inverse.block-fill-height.block-home
+		//(style='background-image: url(static/images/startup-1.jpg);')
+		include ../components/header_white.jade
+
+		img.app-graph(src="static/images/startup-0.svg")
+
+		.block-xs-middle.p-b-lg
+			.container
+				.row
+					.col-sm-10.col-md-6
+						h1.block-title.m-b-sm Analytics on demand.
+						p.lead.m-b-md.text-muted Stop installing bloated scripts that all track the exact same things. Install one that does everything
+						button.btn.btn-primary.btn-lg Try it now
+
+
+	.block.block-secondary.block-product
+		.container
+			.row.app-align-center
+
+				.col-sm-5.hidden-xs
+					img(class="app-iphone" src="static/images/startup-2.jpg" style="width: 100%;")
+
+				.col-sm-6.col-sm-offset-1
+					h6.text-muted.text-uppercase Rich Information
+					h3.m-t-0 Make informed decisions with historical & real time data.
+					p.lead.m-b-md We combine immediate real time events with rich historical data to help answer the toughest questions about retention, growth, and engagement.
+					.row.hidden-sm
+						.col-sm-6.m-b-md
+							h5.m-y-0 Data frequency
+							p We poll for data on a millisecond basis. You can react to new information in seconds rather than days. <a href="#" class="text-primary">Learn more.</a>
+						.col-sm-6
+							h5.m-y-0 Reliability & uptime
+							p We process our data across a massively distributed network of reliable servers to ensure 99.99% uptime, always. <a href="#" class="text-primary">Learn more</a>.
+
+	.block.block-inverse.block-secondary.block-code
+		.container
+			.row
+				.col-sm-5.col-sm-push-7
+					pre.pre-code
+						| <span>1</span> <span class="hidden-xs">goAnalytics</span> “who are the latest 3 users?”
+						| <span>2</span>
+						| <span>3</span>  {
+						| <span>4</span>    "Dave": {
+						| <span>5</span>      "fullName": "Dave Gamache",
+						| <span>6</span>      "twitterHandle": "@dhg",
+						| <span>7</span>    }
+						| <span>8</span>    "Mark": {
+						| <span>9</span>      "fullName": "Mark Otto",
+						| <span>10</span>      "twitterHandle": "@mdo",
+						| <span>11</span>    }
+						| <span>12</span>    "Jacob": {
+						| <span>13</span>      "fullName": "Jacob Thornton",
+						| <span>14</span>      "twitterHandle": "@fat",
+						| <span>15</span>    }
+						| <span>16</span>  }
+
+				.col-sm-6.col-sm-pull-5
+					h6.text-muted.text-uppercase Easy development
+					h3.m-t-0 Natural language queries make mining data easy for anyone
+					p.lead.m-b-md.text-muted
+						| Rather than force everyone at your company to learn incredibly difficult terminal commands, we allow anyone to query the data with natural language to return data.</p>
+					button.btn.btn-default.btn-lg.btn-borderless Read our docs
+
+	.block.block-secondary.block-praise.p-b-0
+		.container
+			.row.app-align-center
+				.col-sm-5.col-sm-push-7
+					h6.text-muted.text-uppercase High Praise
+					h3.m-t-0.m-b-md Go Analytics is amazing. Decisions that used to take weeks, now only takes minutes and is available to everyone on my team.”
+					p.m-b-md.text-muted Cindy Smith, founder of Cool Startup
+				.col-sm-6.col-sm-pull-5
+					img(src="static/images/startup-3.jpg")
+
+	.block.block-ribbon.p-y-lg
+		.container.text-center
+			img(src='static/images/startup-4.svg')
+			img(src='static/images/startup-5.svg')
+			img(src='static/images/startup-6.svg')
+			img(src='static/images/startup-7.svg')
+			img(src='static/images/startup-8.svg')
+
+
+	.block.block-secondary.block-marketing-grid
+		.container.text-center
+			.row.m-b-lg
+				.col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-lg-6.col-lg-offset-3
+					h6.text-muted.text-uppercase Inside the machine
+					h3.m-t-0.m-b It’s not hard to see how we make your life easier every day.
+
+			.row.row-marketing-grid
+				.col-sm-4.p-x-md.m-b-lg
+					img.m-b(src='static/images/startup-9.svg')
+					p <strong>24/7 support.</strong> We’re always here for you no matter what time of day.
+				.col-sm-4.p-x-md.m-b-lg
+					img.m-b(src='static/images/startup-10.svg')
+					p <strong>E-commerce.</strong> We automatically handle all sales analytics.
+				.col-sm-4.p-x-md.m-b-lg
+					img.m-b(src='static/images/startup-11.svg')
+					p <strong>Turnaround.</strong> Our data analysis is distributed, so it processes in seconds.
+
+			.row.row-marketing-grid
+				.col-sm-4.p-x-md.m-b-lg
+					img.m-b(src='static/images/startup-12.svg')
+					p <strong>Rich calculations.</strong> Limitless ways to splice and dice your data.
+				.col-sm-4.p-x-md.m-b-lg
+					img.m-b(src='static/images/startup-13.svg')
+					p <strong>Mobile apps.</strong> iOS and Android apps available for monitoring.
+				.col-sm-4.p-x-md.m-b-lg
+					img.m-b(src='static/images/startup-14.svg')
+					p <strong>Secure connections.</strong> Every single request is routed through HTTPS.

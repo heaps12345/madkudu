@@ -1,11 +1,11 @@
-var Q = require('../q.js');
+var Q = require('q');
 
 var refresh_charts = function() {
-	var deferred = Q.defer()
+	var deferred = Q.defer();
 
 	window.mk_simulator = window.mk_simulator || {};
 
-	google.load("visualization", "1", {packages:["corechart"], callback: drawVisualization});
+	google.load('visualization', '1', {packages:['corechart'], callback: drawVisualization});
 
 	var color_palette = ['#5DA5DA','#FAA43A','#60BD68','#D3D3D3'];
 	// 4D4D4D (gray)
@@ -33,11 +33,11 @@ var refresh_charts = function() {
 			vAxis: {
 				format: '$#,###',
 				viewWindow: {
-					min: min_value - (max_value-min_value)*.1 ,
-					max: max_value + (max_value-min_value)*.1
+					min: min_value - (max_value-min_value)*0.1,
+					max: max_value + (max_value-min_value)*0.1
 				}
 			},
-			hAxis: {title: "Months"},
+			hAxis: {title: 'Months'},
 			isStacked: true,
 			series: {
 				0: {
@@ -74,8 +74,8 @@ var refresh_charts = function() {
 			vAxis: {
 				format: '$#,###'
 			},
-			hAxis: {title: "Months"},
-			seriesType: "bars",
+			hAxis: {title: 'Months'},
+			seriesType: 'bars',
 			// isStacked: 'relative',
 			isStacked: true,
 			series: {
@@ -83,7 +83,7 @@ var refresh_charts = function() {
 				1: {color: color_palette[1]},
 				2: {color: color_palette[2]},
 				3: {color: color_palette[3]}
-				// 5: {type: "line"}
+				// 5: {type: 'line'}
 			},
 			legend : {position: 'none'},
 			chartArea:{left:100,top:20,width:'100%',height:'80%'},
@@ -125,7 +125,7 @@ var refresh_charts = function() {
 					max: max_value + (max_value-min_value)*.1
 				}
 			},
-			hAxis: {title: "Months"},
+			hAxis: {title: 'Months'},
 			isStacked: false,
 			series: {
 				0: {
@@ -184,9 +184,9 @@ var refresh_charts = function() {
 		draw_mrr_with_goal(calculator.mrr, calculator_goal.mrr, 'chart_div_mrr_goal');
 
 		deferred.resolve();
-	};
+	}
 
 	return deferred.promise;
 };
 
-module.exports = refresh_charts;
+exports = module.exports = refresh_charts;

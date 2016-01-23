@@ -1,0 +1,51 @@
+// customers block
+
+.block-customers {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.customer-logo {
+	img {
+		max-height: 70px;
+	}
+}
+
+.customer-case-study {
+
+	position: relative;
+
+	&::after {
+		background-color: @blue-2;
+		content: 'Case study';
+		position: absolute;
+		display: block;
+		bottom: -40%;
+		left: -5px;
+		width: 80px;
+		text-align: center;
+		padding: 1px;
+		border-radius: 5px;
+		color: #eee;
+	}
+
+}
+
+.stack-column {
+	position: relative;
+}
+
+.stack-right-arrow {
+	position: absolute;
+	display: block;
+	filter: opacity(20%);
+	top: 20%;
+	right: -10%;
+
+	img {
+		height: 100px;
+		width: 50px;
+	}
+
+}
