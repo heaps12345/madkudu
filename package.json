@@ -8,6 +8,10 @@
   "scripts": {
     "start": "./node_modules/.bin/gulp docs"
   },
+  "engines": {
+    "node": "4.2.3",
+    "npm": "2.14.7"
+  },
   "devDependencies": {
     "browserify": "13.0.0",
     "grunt": "0.4.5",
