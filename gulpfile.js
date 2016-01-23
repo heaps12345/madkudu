@@ -13,11 +13,16 @@ var open = require('gulp-open');
 var browserify = require('browserify');
 var livereload = require('gulp-livereload');
 var gutil = require('gutil');
+var ftp = require('vinyl-ftp');
 
 var source = require('vinyl-source-stream');
 
 var Paths = {
 	HERE: './',
+	DEPLOY: [
+		'dist/**',
+		'dist/.*'
+	],
 	DIST: 'dist/',
 	DIST_STATIC: 'dist/static',
 	DIST_TOOLKIT_JS: 'dist/toolkit.js',
@@ -45,7 +50,9 @@ var Paths = {
 	STATIC: ['./static/**/**'],
 	UTILS: [
 		'./robots.txt',
-		'./madkudu_ico.png'
+		'./madkudu_ico.png',
+		'./sitemap.xml',
+		'./.htaccess'
 	]
 };
 
@@ -91,11 +98,9 @@ gulp.task('less-min', function () {
 	gulp.src(Paths.LESS_TOOLKIT_SOURCES)
 		.pipe(sourcemaps.init())
 		.pipe(less())
-		.pipe(minifyCSS())
+		// .pipe(minifyCSS())
 		.pipe(autoprefixer())
-		.pipe(rename({
-			suffix: '.min'
-		}))
+		.pipe(rename('madkudu.min.css'))
 		.pipe(sourcemaps.write(Paths.HERE))
 		.pipe(gulp.dest(Paths.DIST))
 		.pipe(livereload());
@@ -141,3 +146,18 @@ gulp.task('simulator', function () {
 		.pipe(source('simulator.js'))
 		.pipe(gulp.dest(Paths.DIST));
 });
+
+gulp.task( 'deploy', function () {
+	var conn = ftp.create( {
+		host: 'server40.web-hosting.com',
+		user: 'madkkqbe',
+		password:'CRennucNnUSuD',
+		log: gutil.log
+	});
+	return gulp.src(Paths.DEPLOY, { base: './dist', buffer: false })
+		.pipe(conn.newer('/public_html')) // only upload newer files
+		.pipe(conn.dest('/public_html'));
+
+});
+
+gulp.task('build_and_deploy', ['build', 'deploy']);

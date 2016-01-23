@@ -1,17 +1,20 @@
 extends ../components/skeleton.jade
 
+
 block neck
 	title MadKudu | Turn trial users into paying customers
 
 	script analytics.page('Home')
 
+
 block body
+
 
 	.block.block-inverse.block-fill-height.block-home
 
 		include ../components/header_white.jade
 
-		img.app-graph(src="static/images/startup-0.svg")
+		img.app-graph(src='static/images/startup-0.svg')
 
 		.block-xs-middle.p-b-lg
 			.container
@@ -19,16 +22,17 @@ block body
 					.col-sm-10.col-md-6
 						h1.block-title.m-b-sm Turn free users into paying customers
 						p.lead.m-b-md.text-muted Increase conversion rate by 20% or more.
-						button.btn.btn-primary.btn-lg.text-uppercase(style="height: 80px; width: 400px;") Get started
+						button.btn.btn-primary.btn-lg.text-uppercase Get started
 
-	.block.block-customers.p-y-md(style="background-color: lightgray;")
+
+	.block.block-customers.p-y-md(style='background-color: lightgray;')
 		.customer-logo.m-x.m-y
 			img(src='static/images/customers/pingboard-logo-grayscale.png')
 		.customer-logo.m-x.m-y.customer-case-study
-			a(href='/customers-codeship.html')
+			a(href='/customers-codeship')
 				img(src='static/images/customers/codeship-logo-grayscale.png')
 		.customer-logo.m-x.m-y.customer-case-study
-			a(href='/customers-uxpin.html')
+			a(href='/customers-uxpin')
 				img(src='static/images/customers/uxpin-logo-grayscale.png')
 		.customer-logo.m-x.m-y
 			img(src='static/images/customers/vend-logo-grayscale.png')
@@ -38,125 +42,122 @@ block body
 			img(src='static/images/customers/waffle-logo-grayscale.png')
 		.customer-logo.m-x.m-y
 			img(src='static/images/customers/shopventory-logo.png')
-				
 
-	.block
+
+	.block.block-prescriptive
 		.container.text-center
 			.row.m-b-lg
 				.col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-lg-6.col-lg-offset-3
 					h6.text-muted.text-uppercase Prescriptive data science
-					h3.m-t-0.m-b The right message for the right customer at the right time through the right channel
+					h3.m-t-0.m-b The right message, for the right customer, at the right time, through the right channel
 
 			.row.row-marketing-grid
 				.col-sm-6.p-x-md.m-b-lg.text-center.stack-column
-					img.m-b-md(src='static/images/smarter_stack_detect.png' style="width: 225px;")
+					img.m-b-md(src='static/images/smarter_stack_detect.png')
 					h4 Detect
 					p who needs attention and what to do
 					.stack-right-arrow
 						img(src='static/images/arrow_right.svg')
 				.col-sm-6.p-x-md.m-b-lg.text-center.stack-column
-					img.m-b-md(src='static/images/action_in_stack.png' style="width: 225px;")
+					img.m-b-md(src='static/images/action_in_stack.png')
 					h4 Convert and upsell
 					p by engaging customers the right way
 
 
-	.block.block-inverse.block-code
+	.block.block-inverse.block-praise
 		.container.text-center
 			.row
 				blockquote.pull-quote
-					img.img-circle(src="static/images/andrew_at_waffle.png")
-					p "MadKudu helps our users reach their "Aha!" moment - the moment when our user realizes Waffle has changed the way their team works for the better.”
+					img.img-circle(src='static/images/andrew_at_waffle.png')
+					p "MadKudu helps our users reach their "Aha!" moment - the moment when our user realizes Waffle has changed the way their team works for the better."
 					cite Andrew Homeyer, Intrapreneur at Waffle.io
 
 
-	.block
+	.block.block-screenshots
 		.container.p-u-0
 			.row.p-b-lg.p-u-0
 				h3.text-center Make your sales & marketing stack smarter without changing it
 
-		.container.m-t-lg
-			.row.app-align-center
+			.row.align-top.m-b-lg
 
 				.col-sm-6
 					h3.m-t-0 Pro-actively reach out to your highest potential users as they sign up
-					p.text-muted.lead.m-b-md MadKudu identifies new high potential lifetime value users and alerts your sales team to greet them.
+					h4.text-muted.m-b MadKudu identifies new high potential lifetime value users and alerts your sales team to greet them.
 					.row.hidden-sm
 						.col-sm-6.m-b-md
-							h5.m-y-0 Continuouly learn
-							p MadKudu automatically finds out what user attributes and behaviors are the right indicators of lifetime value
+							h5 Continuouly learn
+							p.m-t-0 MadKudu automatically finds out what user attributes and behaviors are the right indicators of lifetime value
 						.col-sm-6
-							h5.m-y-0 Deeply Integrated
-							p MadKudu triggers alerts in Slack with links to your CRM, LinkedIn and many others. <a href="#" class="text-primary">Learn more</a>.
+							h5 Deeply Integrated
+							p.m-y-0  MadKudu triggers alerts in Slack with links to your CRM, LinkedIn and many others.
+							p.m-t-0 <a href='/features' class='text-primary'>Learn more</a>.
 
-				.col-sm-6.p-l-lg
-					img(src="static/images/channels_slack.png" style="width: 500px;")
+				.col-sm-5.col-sm-offset-1
+					img(src='static/images/channels_slack.png')
 
 
-	.block
-		.container
-			.row.app-align-center
-				.col-sm-6
-					img(src="static/images/channels_marketo.png" style="width: 500px; margin-left: -15px;")
+			.row.align-top.m-y-lg
 
-				.col-sm-6.m-l-lg
-					h3.m-t-0.m-b-md Convert users by engaging them at the appropriate time
-					p.text-muted.lead.m-b-md MadKudu creates triggers in your Automation platforms to send the right email at the right time.
+				.col-sm-5
+					img(src='static/images/channels_marketo.png')
+
+				.col-sm-6.col-sm-offset-1
+					h3.m-t-0 Convert users by engaging them at the appropriate time
+					h4.text-muted.m-b MadKudu creates triggers in your Automation platforms to send the right email at the right time.
 					.row.hidden-sm
 						.col-sm-6.m-b-md
-							h5.m-y-0 Continuouly learn
-							p MadKudu finds the key moments and behaviors in the customer journey for conversion, introducing features...
+							h5 Continuouly learn
+							p.m-t-0 MadKudu finds the key moments and behaviors in the customer journey for conversion, introducing features...
 						.col-sm-6
-							h5.m-y-0 Deeply Integrated
-							p MadKudu creates triggers and behavioral attributes in your marketing automation platforms. <a href="#" class="text-primary">Learn more</a>.
+							h5 Deeply Integrated
+							p.m-y-0 MadKudu creates triggers and behavioral attributes in your marketing automation platforms.
+							p.m-t-0 <a href='/features' class='text-primary'>Learn more</a>.
 
 
-	.block
-		.container
-			.row.app-align-center
+			.row.align-top.m-y-lg
 
 				.col-sm-6
 					h3.m-t-0 Pro-actively re-engage with users whose onboarding is at risk
-					p.text-muted.lead.m-b-md MadKudu identifies which users need assistance and how to help them.
+					h4.text-muted.m-b MadKudu identifies which users need assistance and how to help them.
 					.row.hidden-sm
 						.col-sm-6.m-b-md
-							h5.m-y-0 Continuouly learn
-							p MadKudu finds the "user happy path" to conversion and identifies users who are lost on it.
+							h5 Continuouly learn
+							p.m-t-0 MadKudu finds the "user happy path" to conversion and identifies users who are lost on it.
 						.col-sm-6
-							h5.m-y-0 Deeply Integrated
-							p MadKudu triggers and behavioral attributes in your support platforms. <a href="#" class="text-primary">Learn more</a>.
+							h5 Deeply Integrated
+							p.m-y-0 MadKudu triggers and behavioral attributes in your support platforms.
+							p.m-t-0 <a href='/features' class='text-primary'>Learn more</a>.
 
-				.col-sm-6.p-l-lg
-					img(src="static/images/channels_intercom.png" style="width: 500px;")
+				.col-sm-5.col-sm-offset-1
+					img(src="static/images/channels_intercom.png")
 
 
-
-
-	.block.block-inverse.block-code
+	.block.block-inverse.block-dark-grey
 		.container.text-center
 			.row.m-b-md
 				h3 Using Mixpanel, KISSmetrics or Segment?
-				
+
 			.row.m-b-md
 				.col-sm-3
-				.col-sm-6(style="line-height: 250%;")
+				.col-sm-6
 					h4 Madkudu offers a free analysis that
 					h4 will reveal the DNA of your ideal customer.
 				.col-sm-3
 
 			.row.text-left.m-b-md
 				.col-sm-3
-				.col-sm-6(style="line-height: 250%;")
-					ul
+				.col-sm-6
+					ul(style='line-height: 250%;')
 						li What <strong>industries</strong> gives you the best conversions and lifetime value?
 						li What is the <strong>company size</strong> sweetspot?
 						li What are the <strong>job titles</strong> that convert and engage best?
 						li What <strong>geographies</strong> to focus in?
 						li What <strong>features</strong> do your best customers value most?
 				.col-sm-3
-				
+
 			.row.p-b-lg
-				button.btn.btn-primary.btn-lg Get a free ideal customer profile analysis in less than 5 minutes
+				a.btn.btn-primary.btn-lg(href='https://app.madkudu.com/signup') Get a free ideal customer profile analysis in less than 5 minutes
 
 
 
-				
+
