@@ -148,14 +148,15 @@ gulp.task('simulator', function () {
 });
 
 gulp.task( 'deploy', function () {
-	var conn = ftp.create( {
+	var conn = ftp.create({
 		host: 'server40.web-hosting.com',
 		user: 'madkkqbe',
 		password:'CRennucNnUSuD',
+		reload: true,
 		log: gutil.log
 	});
 	return gulp.src(Paths.DEPLOY, { base: './dist', buffer: false })
-		.pipe(conn.newer('/public_html')) // only upload newer files
+		// .pipe(conn.newer('/public_html'))
 		.pipe(conn.dest('/public_html'));
 
 });
