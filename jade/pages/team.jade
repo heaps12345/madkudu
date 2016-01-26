@@ -127,7 +127,7 @@ block body
 
 			.row
 
-				.col-sm-4.team-column
+				.col-sm-3.team-column
 					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
 						img(class="team__image" src="static/images/team/denise.png" width="200" alt="Kudu horn" itemprop="photo")
 						.team__name(itemprop="name") Denise Hulce
@@ -137,7 +137,7 @@ block body
 							a.team__social--link(href="https://twitter.com/dmhulce")
 								img(src="static/images/team_twitter.svg" target="_blank" width="15" alt="Denise Hulce's Twitter")
 
-				.col-sm-4.team-column
+				.col-sm-3.team-column
 					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
 						img(class="team__image" src="static/images/team/brad.png" width="200" alt="Brad" itemprop="photo")
 						.team__name(itemprop="name") Brad Bernthal
@@ -147,7 +147,7 @@ block body
 							a.team__social--link(href="https://twitter.com/bradbernthal")
 								img(src="static/images/team_twitter.svg" target="_blank" width="15" alt="Brad Bernthal's Twitter")
 
-				.col-sm-4.team-column
+				.col-sm-3.team-column
 					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
 						img(class="team__image" src="static/images/team/alex.png" width="200" alt="Alex" itemprop="photo")
 						.team__name(itemprop="name") Alex Raymond
@@ -156,6 +156,17 @@ block body
 								img(src="static/images/team_linkedin.svg" target="_blank" width="15" alt="Alex Raymond's LinkedIn")
 							a.team__social--link(href="https://twitter.com/afraymond")
 								img(src="static/images/team_twitter.svg" target="_blank" width="15" alt="Alex Raymond's Twitter")
+
+				.col-sm-3.team-column
+					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
+						img(class="team__image" src="static/images/team/kevin.png" width="200" alt="Kevin" itemprop="photo")
+						.team__name(itemprop="name") Kevin Dewalt
+						.mentor-team__social
+							a.team__social--link(href="https://www.linkedin.com/in/kevindewalt")
+								img(src="static/images/team_linkedin.svg" target="_blank" width="15" alt="Kevin Dewalt's LinkedIn")
+							a.team__social--link(href="https://twitter.com/kevindewalt")
+								img(src="static/images/team_twitter.svg" target="_blank" width="15" alt="Kevin Dewalt's Twitter")
+
 
 	.block.block-team
 		.container
@@ -170,8 +181,20 @@ block body
 
 				.col-sm-12.text-center
 					.team__investor
-						a(href='http://www.techstars/com')
+						a(href='http://www.techstars/com' target='_blank')
 							img.techstars--footer(src='static/images/techstars.png' alt='techstars')
+
+
+	.block.block-inverse.block-dark-grey.p-y.p-b.block-pledge
+		.container.text-center
+
+			.row.m-t-md
+				.col-sm-12.text-center
+					a(href='http://pledge1percent.org/' target='_blank')
+						img(src='static/images/pledge1percent.png' alt='Pledge 1 Percent' width="80")
+			.row.m-t.m-b-md
+				h4.text-muted MadKudu is proud to be a member of the <a href='http://pledge1percent.org/' target='_blank'>Pledge 1%</a> movement.
+
 
 
 
