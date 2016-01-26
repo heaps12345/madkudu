@@ -1,8 +1,8 @@
 /* ========================================================================
- * Bootstrap: scrollspy.js v3.3.5
+ * Bootstrap: scrollspy.js v3.3.6
  * http://getbootstrap.com/javascript/#scrollspy
  * ========================================================================
- * Copyright 2011-2015 Twitter, Inc.
+ * Copyright 2011-2016 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
@@ -17,7 +17,7 @@
     this.$body          = $(document.body)
     this.$scrollElement = $(element).is(document.body) ? $(window) : $(element)
     this.options        = $.extend({}, ScrollSpy.DEFAULTS, options)
-    this.selector       = this.options.selector || ((this.options.target || '') + ' .nav li > a')
+    this.selector       = (this.options.target || '') + ' .nav li > a'
     this.offsets        = []
     this.targets        = []
     this.activeTarget   = null
@@ -28,7 +28,7 @@
     this.process()
   }
 
-  ScrollSpy.VERSION  = '3.3.5'
+  ScrollSpy.VERSION  = '3.3.6'
 
   ScrollSpy.DEFAULTS = {
     offset: 10
