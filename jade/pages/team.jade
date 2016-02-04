@@ -41,7 +41,27 @@ block body
 					h3.m-t-0.m-b-lg.text-center.text-uppercase Team
 
 			.row
-				.col-sm-4.team-column
+				.col-sm-3.team-column
+					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
+						img(class="team__image" src="static/images/team/sam.png" width="200" alt="Sam" itemprop="photo")
+						.team__name(itemprop="name") Sam Levan
+						.team__work(itemprop="title") Chief Yes Officer (CEO)
+						.team__social
+							a.team__social--link(href="https://www.linkedin.com/pub/anselme-levan/1/958/119")
+								img(src="static/images/team_linkedin.svg" target="_blank" width="15" alt="Sam Levan LinkedIn")
+							a.team__social--link(href="https://twitter.com/anselmelevan")
+								img(src="static/images/team_twitter.svg" target="_blank" width="15" alt="Sam Levan Twitter")
+						a.team__email(href="mailto:sam@madkudu.com?subject=Tell%20me%20more%20about%20MadKudu!" target="_blank") sam@madkudu.com
+						h4.team__header Loves
+						ul.team__list
+							li Happy customers
+							li Great products
+							li Flamenco
+						h4.team__header Fears
+						ul.team__list
+							li Ignorance
+							li Fear itself
+				.col-sm-3.team-column
 					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
 						img(class="team__image" src="static/images/team/paul.png" width="200" alt="Kudu horn" itemprop="photo")
 						.team__name(itemprop="name") Paul Cothenet
@@ -62,35 +82,7 @@ block body
 							li Sam's kids
 							li
 								a(href="http://attackwithnumbers.com/the-laws-of-shitty-dashboard" target="_blank") Shitty dashboards
-						h4.team__header Previous Lives
-						ul.team__list
-							li Product Manager & Data Plumber at <a href='http://www.agilone.com/'>AgilOne</a>
-							li Nuclear Engineer
-				.col-sm-4.team-column
-					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
-						img(class="team__image" src="static/images/team/sam.png" width="200" alt="Sam" itemprop="photo")
-						.team__name(itemprop="name") Sam Levan
-						.team__work(itemprop="title") Chief Yes Officer (CEO)
-						.team__social
-							a.team__social--link(href="https://www.linkedin.com/pub/anselme-levan/1/958/119")
-								img(src="static/images/team_linkedin.svg" target="_blank" width="15" alt="Sam Levan LinkedIn")
-							a.team__social--link(href="https://twitter.com/anselmelevan")
-								img(src="static/images/team_twitter.svg" target="_blank" width="15" alt="Sam Levan Twitter")
-						a.team__email(href="mailto:sam@madkudu.com?subject=Tell%20me%20more%20about%20MadKudu!" target="_blank") sam@madkudu.com
-						h4.team__header Loves
-						ul.team__list
-							li Happy customers
-							li Great products
-							li Flamenco
-						h4.team__header Fears
-						ul.team__list
-							li Ignorance
-							li Fear itself
-						h4.team__header Previous Lives
-						ul.team__list
-							li VP Product at <a href='http://www.agilone.com/'>AgilOne</a>
-							li Data Scientist
-				.col-sm-4.team-column
+				.col-sm-3.team-column
 					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
 						img(class="team__image" src="static/images/team/francis.png" width="200" alt="Kudu horn" itemprop="photo")
 						.team__name(itemprop="name") Francis Brero
@@ -110,10 +102,24 @@ block body
 						ul.team__list
 							li Irrationality
 							li Kooks
-						h4.team__header Previous Lives
+				.col-sm-3.team-column
+					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
+						img(class="team__image" src="static/images/team/erik.png" width="200" alt="Kudu horn" itemprop="photo")
+						.team__name(itemprop="name") Erik Villaume
+						.team__work(itemprop="title") Chief Pun Officer (Engineer)
+						.team__social
+							a.team__social--link(href="https://www.linkedin.com/in/erik-villaume-a32a6624")
+								img(src="static/images/team_linkedin.svg" target="_blank" width="15" alt="Erik Villaume LinkedIn")
+						a.team__email(href="mailto:erik@madkudu.com?subject=Tell%20me%20more%20about%20MadKudu!" target="_blank") erik@madkudu.com
+						h4.team__header Loves
 						ul.team__list
-							li Dir. Implementation at <a href='http://www.agilone.com/'>AgilOne</a>
-							li Data Scientist
+							li Predicting lift
+							li Suffering
+							li Chvres
+						h4.team__header Fears
+						ul.team__list
+							li Stagnation
+							li Raccoons
 
 
 

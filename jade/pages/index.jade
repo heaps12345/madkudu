@@ -23,26 +23,27 @@ block body
 					.col-sm-10.col-md-6
 						h1.block-title.m-b-sm Turn free users into paying customers
 						p.lead.m-b-md.text-muted Increase conversion rate by 20% or more.
-						a.btn.btn-warning.btn-lg.text-uppercase(href='https://app.madkudu.com/signup') Get a <strong>free customer analysis</strong> in less than 5 minutes
+						a.btn.btn-warning.btn-lg.btn-wrap(href='https://app.madkudu.com/signup') Get a <strong>free customer analysis</strong> in less than 5 minutes
 
 
 	.block.block-customers.p-t.p-b-md
-		.customer-logo.customer-case-study
-			a(href='/customers-codeship')
-				img(src='static/images/customers/codeship-logo-grayscale.png')
-		.customer-logo
-			img(src='static/images/customers/sumall-logo-grayscale.png')
-		.customer-logo
-			img(src='static/images/customers/vend-logo-grayscale.png')
-		.customer-logo.customer-case-study
-			a(href='/customers-uxpin')
-				img(src='static/images/customers/uxpin-logo-grayscale.png')
-		.customer-logo
-			img(src='static/images/customers/waffle-logo-grayscale.png')
-		.customer-logo
-			img(src='static/images/customers/pingboard-logo-grayscale.png')
-		.customer-logo
-			img(src='static/images/customers/shopventory-logo.png')
+		.row.text-center
+			h4.text-uppercase Our customers
+		.row.customers-logos.m-b
+			//- .customer-logo__box
+			//- 	.customer-logo(href='/customers-codeship' style='background-image: url(/static/images/customers/codeship-logo-grayscale.png);')
+			.customer-logo__box
+				.customer-logo(style='background-image: url(/static/images/customers/pingboard_black.svg);')
+			.customer-logo__box.customer-case-study
+				a.customer-logo(href='/customers-uxpin' style='background-image: url(/static/images/customers/uxpin_black.svg);')
+			.customer-logo__box
+				.customer-logo(style='background-image: url(/static/images/customers/vend_black.svg);')
+			.customer-logo__box
+				.customer-logo(style='background-image: url(/static/images/customers/shopventory_black.svg);')
+			//- .customer-logo__box
+			//- 	img(src='static/images/customers/sumall-logo-grayscale.png')
+			//- .customer-logo__box
+			//- 	img(src='static/images/customers/waffle-logo-grayscale.png')
 
 
 	.block.block-prescriptive
@@ -81,7 +82,7 @@ block body
 				h3.text-center Make your sales & marketing stack smarter without changing it
 
 		.container.p-t-lg
-			.row.m-b-md
+			.row.row-screenshots.m-b-md
 
 				.col-md-6.col-xs-12
 					h3.m-t-0 Pro-actively reach out to your highest potential users as they sign up
@@ -95,17 +96,14 @@ block body
 							p.m-y-0  MadKudu triggers alerts in Slack with links to your CRM, LinkedIn and many others.
 							p.m-t-0 <a href='/features' class='text-primary'>Learn more</a>.
 
-				.col-md-5.col-md-offset-1.col-xs-12
+				.col-md-5.col-xs-12.pull-right
 					img(src='static/images/channels_slack.png')
 
 		.container.p-t-lg
 
-			.row.m-y-md
+			.row.row-screenshots.m-y-md
 
-				.col-md-5.col-xs-12
-					img(src='static/images/channels_marketo.png')
-
-				.col-md-6.col-md-offset-1.col-xs-12
+				.col-md-6.col-xs-12
 					h3.m-t-0 Convert users by engaging them at the appropriate time
 					h4.text-muted.m-b MadKudu creates triggers in your automation platform to send the right email at the right time.
 					.row.hidden-xs.hidden-sm
@@ -117,9 +115,13 @@ block body
 							p.m-y-0 MadKudu creates triggers and behavioral attributes in your existing marketing automation platform.
 							p.m-t-0 <a href='/features' class='text-primary'>Learn more</a>.
 
+				.col-md-5.col-xs-12.screenshot-left
+					img(src='static/images/channels_marketo.png')
+
 
 		.container.p-t-lg
-			.row.m-y-md
+
+			.row.row-screenshots.m-y-md
 
 				.col-md-6.col-xs-12
 					h3.m-t-0 Pro-actively re-engage with users whose onboarding is at risk
@@ -133,7 +135,7 @@ block body
 							p.m-y-0 MadKudu pushes behavioral attributes directly in your support platforms.
 							p.m-t-0 <a href='/features' class='text-primary'>Learn more</a>.
 
-				.col-md-5.col-md-offset-1.col-xs-12
+				.col-md-5.col-xs-12
 					img(src="static/images/channels_intercom.png")
 
 
@@ -163,4 +165,4 @@ block body
 				.col-sm-3
 
 			.row.p-b-lg
-				a.btn.btn-primary.btn-lg(href='https://app.madkudu.com/signup') Get a <strong>free customer analysis</strong> in less than 5 minutes
+				a.btn.btn-primary.btn-lg.btn-wrap(href='https://app.madkudu.com/signup') Get a <strong>free customer analysis</strong> in less than 5 minutes

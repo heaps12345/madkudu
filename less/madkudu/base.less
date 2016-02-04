@@ -18,17 +18,18 @@
 .btn-lg:not(.btn-block) {
 	padding: 12px 50px;
 }
-@media (min-width: 768px) {
+@media (min-width: @screen-sm-min) {
 	.btn-lg:not(.btn-block) {
 		width: auto;
 	}
 }
 
 
-/* ie10+ */
-@media (min-width: 768px) {
-	.app-align-center {
-		display: flex;
-		align-items: center;
+@media (max-width: @screen-sm-min) {
+	.btn-wrap {
+		max-width: @screen-xs-min;
+		white-space:normal !important;
 	}
 }
+
+
