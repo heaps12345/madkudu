@@ -2,19 +2,30 @@
 
 .block-customers {
 	background-color: #eee;
+}
+
+.customers-logos {
+	align-items: center;
 	display: flex;
-	flex-wrap: nowrap;
+	flex-wrap: wrap;
 	justify-content: center;
+	padding: 0 10px;
+}
+
+.customer-logo__box {
+	width: 200px;
+	height: 100px;
+	padding: 20px;
 }
 
 .customer-logo {
-
-	margin: 0.5em;
-
-	img {
-		max-height: 70px;
-		// max-width: 200px;
-	}
+	background-position: center center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: block;
+    height: 100%;
+    margin: 0.5em;
+    opacity: 0.5;
 }
 
 .customer-case-study {
@@ -26,13 +37,18 @@
 		content: 'Case study';
 		position: absolute;
 		display: block;
-		bottom: -40%;
-		left: -5px;
+		bottom: -20%;
+		left: 30%;
 		width: 80px;
 		text-align: center;
 		padding: 1px;
 		border-radius: 5px;
 		color: #eee;
+
+		@media (max-width: @screen-sm-min) {
+			display: none;
+		}
+
 	}
 
 }
@@ -53,4 +69,20 @@
 		width: 50px;
 	}
 
+}
+
+.row-screenshots {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+
+.screenshot-left {
+	order: -1;
+
+	@media (max-width: @screen-sm-min) {
+		order: 1;
+	}
 }
