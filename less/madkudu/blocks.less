@@ -8,6 +8,9 @@
 	}
 }
 
+.block-fill-height {
+	height: 95vh;
+}
 
 /* general inverse overrides */
 .block-inverse .text-muted {
@@ -26,17 +29,33 @@
 	background-color: @blue-3;
 }
 
+.background-grey {
+	background-color: @gray-even-lighter;
+}
+
 .block-grey {
-	background-color: #F4F5F6;
+	.background-grey;
+}
+
+.background-dark-grey {
+	background-color: #262F36;
 }
 
 .block-dark-grey {
-	background-color: #262F36;
+	.background-dark-grey;
 	overflow: hidden;
 
 	a {
 		color: #fff;
 	}
+}
+
+.background-white {
+	background-color: #fff;
+}
+
+.block-white {
+	.background-white;
 }
 
 // graph block
@@ -127,9 +146,7 @@
 // pricing block
 
 /* price plan block */
-.block-grey {
-	background-color: #F4F5F6;
-}
+
 .block-pricing .container {
 	margin-bottom: -60px;
 }

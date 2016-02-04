@@ -3,7 +3,6 @@
 .navbar-madkudu {
 	font-weight: 500;
 	letter-spacing: .05em;
-	position: absolute;
 
 	.navbar-nav > li > a {
 		cursor: pointer;
@@ -16,6 +15,10 @@
 	.navbar-nav > li > a:hover {
 		color: @brand-primary;
 		font-weight: 500;
+	}
+
+	.navbar-toggle .icon-bar {
+		background-color: #000;
 	}
 }
 
@@ -30,13 +33,21 @@
 		color: #000;
 	}
 
+	.navbar-toggle .icon-bar {
+		background-color: #fff;
+	}
+
 }
 
 .navbar-brand--logo {
-	padding: 0em;
+	padding: 0;
 
 	img {
 		height: 50px;
+	}
+
+	@media (max-width: @screen-sm-min) {
+		padding: 0 10px;
 	}
 }
 
@@ -48,4 +59,10 @@
 	padding: 10px 15px;
 	text-transform: uppercase;
 	transition: all 0.5s ease;
+}
+
+.navbar-margin-right {
+	@media (min-width: @screen-sm-min) {
+		margin-right: 30px;
+	}
 }
