@@ -29,7 +29,7 @@ var Paths = {
 	LESS_TOOLKIT_SOURCES: './less/toolkit*',
 	LESS: './less/**/**',
 	JADE_WATCH: './jade/**/*.jade',
-	JADE: './jade/pages/*.jade',
+	JADE: './jade/pages/**/*.jade',
 	JS: [
 		'./js/bootstrap/transition.js',
 		'./js/bootstrap/alert.js',
