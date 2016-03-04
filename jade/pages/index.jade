@@ -18,13 +18,62 @@ block body
 		img.app-graph(src='static/images/startup-0.svg')
 
 		.container
-			.row
-				.col-sm-12
-					h1.block-title.m-b Turn free users into paying customers
-					p.lead.m-b-lg.text-muted Predictive analytics that increases conversion rate by 20% or more.
+			.row.vertical-center
+				.col-sm-12.text-center
+					h1.block-title.m-b Accelerate Sales by 20% with <br /> Intelligent Lead Notifications in Slack
+					p.lead.m-b-lg.text-muted SaaS marketers become sales heros with MadKudu.
 					div
-						a.btn.btn-primary.btn-lg.cta-home.btn-wrap(href='https://app.madkudu.com/signup') Start my 14-day trial
-						a.btn.btn-warning.btn-lg.cta-home.btn-wrap(href='https://app.madkudu.com/signup') Get a <strong>free customer analysis</strong> in less than 5 minutes
+						a.btn.btn-primary.btn-lg.cta-home.btn-wrap(href='https://app.madkudu.com/signup') 
+							| Start your free trial
+						//a.btn.btn-warning.btn-lg.cta-home.btn-wrap(href='https://app.madkudu.com/signup') Get a <strong>free customer analysis</strong> in less than 5 minutes
+
+	.block.block-screenshots
+
+		.container.p-u-0
+			.row.p-b-lg.p-u-0
+				h2.text-center Your sales reps will call the best leads in the 1st hour 
+
+		.container.p-t-lg
+			.row.row-screenshots.m-b-md
+
+				.col-md-6.col-xs-12
+					h3.m-t-0 Automatically researches your trial customers
+					//- h4.text-muted.m-b MadKudu identifies new high potential lifetime value users and alerts your sales team to greet them.
+					.row.hidden-xs.hidden-sm
+						.col-md-12.m-b-md
+							h4 Qualify your leads on just an email address
+							p.m-t-0 No name? No title? Gmail address? No problem! 	
+							p.m-t-0 Using only an email address we get you critical sales metrics like location, company size, and role.
+							p.m-t-0 We instantly identify the best prospects for your product - no more wasted time on unqualified leads.
+						//- .col-sm-6
+						//- 	h5 Keep your existing workflow
+						//- 	p.m-y-0  MadKudu triggers alerts in Slack with links to your CRM, LinkedIn and many others.
+						//- 	p.m-t-0 <a href='/features' class='text-primary'>Learn more</a>.
+
+				.col-md-5.col-xs-12.pull-right
+					img(src='static/images/people.jpg')
+
+		.container.p-t-lg
+
+			.row.row-screenshots.m-y-md
+
+				.col-md-6.col-xs-12
+					h3.m-t-0 Get notified about qualified leads in Slack
+					//- h4.text-muted.m-b MadKudu creates triggers in your automation platform to send the right email at the right time.
+					.row.hidden-xs.hidden-sm
+						.col-md-12.m-b-md
+							h4 Instant productivity - no more digging through Salesforce
+							p.m-t-0 Your entire company works in Slack - why not sales?
+							p.m-t-0 Get more productivity, collaboration and responsiveness from your sales team.
+							p.m-t-0 Never miss another opportunity.
+
+
+				.col-md-5.col-xs-12.screenshot-left
+					img(src='static/images/channels_slack.png')
+
+
+
+
 
 
 	.block.block-customers.p-t.p-b-md
@@ -50,120 +99,91 @@ block body
 	.block.block-prescriptive
 		.container.text-center
 			.row.m-b-lg
-				.col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-lg-6.col-lg-offset-3
-					h6.text-muted.text-uppercase Prescriptive data science
-					h3.m-t-0.m-b The right message, for the right customer, at the right time, through the right channel
+				.col-xs-12
+					h1.m-t-0.m-b No integration - get started in minutes
 
 			.row.row-marketing-grid
-				.col-sm-6.p-x-md.m-b-lg.text-center.stack-column
-					img.m-b-md(src='static/images/smarter_stack_detect.png')
-					h4 Detect
-					p who needs attention and what to do
-					.stack-right-arrow.hidden-xs.hidden-sm
-						img(src='static/images/arrow_right.svg')
-				.col-sm-6.p-x-md.m-b-lg.text-center.stack-column
-					img.m-b-md(src='static/images/action_in_stack.png')
-					h4 Convert and upsell
-					p by engaging customers the right way
-
+				.col-sm-12.p-x-md.m-b-lg.text-center.stack-column
+					h3 Step 1 - Connect Slack
+					img.m-a(src='static/images/integrations/slack.svg')
+					//- .stack-right-arrow.hidden-xs.hidden-sm
+						//- img(src='static/images/arrow_right.svg')
+				.col-sm-12.p-x-md.m-b-md.text-center.stack-column
+					h3 Step 2 - Connect Segment, KISSmetrics, or mixpanel
+					img.m-a(src='static/images/integrations/segment.svg')
+					img.m-a(src='static/images/integrations/kissmetrics.svg')
+					img.m-a(src='static/images/integrations/mixpanel.svg')
+						
+			.row.m-t-lg
+				a.btn.btn-primary.m-t-lg.btn-lg.cta-home.btn-wrap(href='https://app.madkudu.com/signup') 
+							| Start your free trial
+		
 
 	.block.block-inverse.block-praise
 		.container.text-center
+			.row.m-b-lg
+				.col-xs-12
+					h1.m-t-0.m-b Customer testimonials
+					
+		.container.text-center
 			.row
 				blockquote.pull-quote
-					img.img-circle(src='static/images/andrew_at_waffle.png')
-					p "MadKudu helps our users reach their "Aha!" moment - the moment when our user realizes Waffle has changed the way their team works for the better."
-					cite Andrew Homeyer, Intrapreneur at Waffle.io
+					img.img-circle(src='static/images/team/francois.png')
+					p “This just works - an instant, highly-visible win. Our sales team team is calling qualified leads in the 1st hour instead of digging through Salesforce and searching LinkedIn.”
+					cite.m-b-lg Francois Bondiguel, Director of Online Marketing at Vend
+
+		//- .container.text-center
+		//- 	.row.m-t-lg
+		//- 		blockquote.pull-quote
+		//- 			img.img-circle(src='static/images/andrew_at_waffle.png')
+		//- 			p “A no-brainer. We closed X leads and MadKudu paid for itself in X weeks”
+		//- 			cite jack customer
 
 
-	.block.block-screenshots
 
-		.container.p-u-0
-			.row.p-b-lg.p-u-0
-				h3.text-center Make your sales & marketing stack smarter without changing it
-
-		.container.p-t-lg
-			.row.row-screenshots.m-b-md
-
-				.col-md-6.col-xs-12
-					h3.m-t-0 Pro-actively reach out to your highest potential users as they sign up
-					h4.text-muted.m-b MadKudu identifies new high potential lifetime value users and alerts your sales team to greet them.
-					.row.hidden-xs.hidden-sm
-						.col-md-6.m-b-md
-							h5 Score on fit and engagement
-							p.m-t-0 MadKudu automatically finds out what user attributes and behaviors are the right indicators of lifetime value.
-						.col-sm-6
-							h5 Keep your existing workflow
-							p.m-y-0  MadKudu triggers alerts in Slack with links to your CRM, LinkedIn and many others.
-							p.m-t-0 <a href='/features' class='text-primary'>Learn more</a>.
-
-				.col-md-5.col-xs-12.pull-right
-					img(src='static/images/channels_slack.png')
-
-		.container.p-t-lg
-
-			.row.row-screenshots.m-y-md
-
-				.col-md-6.col-xs-12
-					h3.m-t-0 Convert users by engaging them at the appropriate time
-					h4.text-muted.m-b MadKudu creates triggers in your automation platform to send the right email at the right time.
-					.row.hidden-xs.hidden-sm
-						.col-sm-6.m-b-md
-							h5 Detect key user moments
-							p.m-t-0 MadKudu learns from past users to detect the key moments in the user journey: ready to buy, upgrade, use a poweruser feature...
-						.col-sm-6
-							h5 Integrate with what you have
-							p.m-y-0 MadKudu creates triggers and behavioral attributes in your existing marketing automation platform.
-							p.m-t-0 <a href='/features' class='text-primary'>Learn more</a>.
-
-				.col-md-5.col-xs-12.screenshot-left
-					img(src='static/images/channels_marketo.png')
-
-
-		.container.p-t-lg
-
-			.row.row-screenshots.m-y-md
-
-				.col-md-6.col-xs-12
-					h3.m-t-0 Pro-actively re-engage with users whose onboarding is at risk
-					h4.text-muted.m-b MadKudu identifies which users need assistance and how to help them.
-					.row.hidden-xs.hidden-sm
-						.col-sm-6.m-b-md
-							h5 Detect struggling users
-							p.m-t-0 MadKudu finds the "user happy path" to conversion and identifies users who are lost on it.
-						.col-sm-6
-							h5 Take action faster
-							p.m-y-0 MadKudu pushes behavioral attributes directly in your support platforms.
-							p.m-t-0 <a href='/features' class='text-primary'>Learn more</a>.
-
-				.col-md-5.col-xs-12
-					img(src="static/images/channels_intercom.png")
+		//- .container.p-t-lg
+		//- 
+		//- 	.row.row-screenshots.m-y-md
+		//- 
+		//- 		.col-md-6.col-xs-12
+		//- 			h3.m-t-0 Pro-actively re-engage with users whose onboarding is at risk
+		//- 			h4.text-muted.m-b MadKudu identifies which users need assistance and how to help them.
+		//- 			.row.hidden-xs.hidden-sm
+		//- 				.col-sm-6.m-b-md
+		//- 					h5 Detect struggling users
+		//- 					p.m-t-0 MadKudu finds the "user happy path" to conversion and identifies users who are lost on it.
+		//- 				.col-sm-6
+		//- 					h5 Take action faster
+		//- 					p.m-y-0 MadKudu pushes behavioral attributes directly in your support platforms.
+		//- 					p.m-t-0 <a href='/features' class='text-primary'>Learn more</a>.
+		//- 
+		//- 		.col-md-5.col-xs-12
+		//- 			img(src="static/images/channels_intercom.png")
 
 
 	.block.block-inverse.block-dark-grey
 		.container.text-center
 			.row.m-b-md
-				h3 Using Mixpanel, KISSmetrics or Segment?
+				h3 100% No-bs risk free trial
 
 			.row.m-b-md
 				.col-sm-3
 				.col-sm-6
-					h4 Madkudu can tell you
-					h4 what your best customers look like
-					h4 and how to identify them early on.
+					h4 Just connect Slack to get started. 
+					h4 You don't pay us until we help you get more sales.
 				.col-sm-3
 
-			.row.text-left.m-b-md
-				.col-sm-3
-				.col-sm-6
-					//- ul(style='line-height: 250%;')
-					.text-center(style='line-height: 250%;')
-						p What <strong>industries</strong> gives you the best conversions and lifetime value?
-						p What is the <strong>company size</strong> sweetspot?
-						p What are the <strong>job titles</strong> that convert and engage best?
-						p What <strong>geographies</strong> to focus in?
-						p What <strong>features</strong> do your best customers value most?
-				.col-sm-3
+			//- .row.text-left.m-b-md
+			//- 	.col-sm-3
+			//- 	.col-sm-6
+			//- 		//- ul(style='line-height: 250%;')
+			//- 		.text-center(style='line-height: 250%;')
+			//- 			p What <strong>industries</strong> gives you the best conversions and lifetime value?
+			//- 			p What is the <strong>company size</strong> sweetspot?
+			//- 			p What are the <strong>job titles</strong> that convert and engage best?
+			//- 			p What <strong>geographies</strong> to focus in?
+			//- 			p What <strong>features</strong> do your best customers value most?
+			//- 	.col-sm-3
 
 			.row.p-b-lg
-				a.btn.btn-primary.btn-lg.btn-wrap(href='https://app.madkudu.com/signup') Get a <strong>free customer analysis</strong> in less than 5 minutes
+				a.btn.btn-primary.btn-lg.btn-wrap(href='https://app.madkudu.com/signup') Start your free trial
