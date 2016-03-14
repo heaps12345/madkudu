@@ -37,9 +37,13 @@
 ehthumbs.db
 Thumbs.db
 
-# Node modules and grunt#
+# Node modules and grunt #
 ################
 .grunt
 node_modules
 docs
 dist
+
+# Compiled markdown #
+################
+markdown/html
