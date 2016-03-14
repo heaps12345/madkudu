@@ -17,13 +17,15 @@
     "grunt": "0.4.5",
     "grunt-cli": "0.1.13",
     "grunt-ftpush": "0.3.3",
-    "gulp": "3.9.0",
+    "gulp": "3.9.1",
     "gulp-autoprefixer": "2.3.1",
+    "gulp-clean": "0.3.2",
     "gulp-concat": "2.6.0",
     "gulp-connect": "2.2.0",
     "gulp-jade": "1.1.0",
     "gulp-less": "3.0.3",
     "gulp-livereload": "3.8.1",
+    "gulp-markdown": "1.2.0",
     "gulp-minify-css": "1.2.0",
     "gulp-open": "1.0.0",
     "gulp-rename": "1.2.2",
@@ -36,8 +38,5 @@
     "vinyl-ftp": "0.4.5",
     "vinyl-source-stream": "1.1.0"
   },
-  "dependencies": {
-    "gulp": "3.9.0",
-    "gulp-jade": "1.1.0"
-  }
+  "dependencies": {}
 }

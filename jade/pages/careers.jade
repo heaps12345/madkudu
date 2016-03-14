@@ -1,0 +1,29 @@
+extends ../components/skeleton.jade
+
+block neck
+	title MadKudu | Careers
+
+	script analytics.page('Careers')
+
+block body
+
+	.background-white
+
+		include ../components/header_black.jade
+
+		.block
+			//- .block-grey
+
+			.container
+
+				.block-title.text-center
+					h2 Work at MadKudu
+
+				.block
+					h3 Current openings
+
+					ul
+						li
+							a(href='./careers/data_engineer') Data Engineer
+
+
