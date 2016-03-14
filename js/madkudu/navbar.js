@@ -1,5 +1,4 @@
 $(document).ready(function () {
-	'use strict';
 
 	// var scroll_offset = 20;
 

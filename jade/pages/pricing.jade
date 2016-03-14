@@ -5,8 +5,19 @@ block neck
 
 	script analytics.page('Pricing')
 
-block neck
-	title MadKudu | Turn trial users into paying customers
+	script.
+		$(document).ready(function () {
+			$('.mki_pricing_demo').click(function (event) {
+				event.preventDefault();
+				analytics.track('Pricing - Clicked request demo');
+				window.open('http://www.formlets.com/forms/56de30b13735111b2d934a79','_blank');
+			});
+			$('.mki_pricing_trial').click(function (event) {
+				event.preventDefault();
+				analytics.track('Pricing - Clicked free trial');
+				window.location = 'https://app.madkudu.com/signup';
+			});
+		});
 
 block body
 
@@ -17,11 +28,6 @@ block body
 		.block.block-grey
 
 			.container.text-center
-				//- .row.m-b
-				//- 	.col-sm-8.col-sm-offset-2.col-lg-6.col-lg-offset-3
-						//- h6.text-uppercase How long is our free trial? As long as it takes us to get you new sales
-						//- h2.m-t-0 Free trial until we prove ourselves
-						//- h5.m-a We are 100% confident we can grow your revenue.<br>You don't pay until we do.
 
 				.row.container-pricing
 
@@ -42,7 +48,7 @@ block body
 								li QUALIFIED NEW LEAD alerts
 
 						footer.cd-pricing-footer
-							a.btn.btn-block.btn-primary.btn-lg(href='https://app.madkudu.com/signup') Start your free trial
+							a.btn.btn-block.btn-primary.btn-lg(href='https://app.madkudu.com/signup' class='mki_pricing_trial') Start your free trial
 
 					.col-sm-3.column-pricing.cd-popular
 						header.cd-pricing-header
@@ -67,7 +73,7 @@ block body
 								//- 	|  one-click integrations
 								//- li Email Support
 						footer.cd-pricing-footer
-							a.btn.btn-block.btn-primary.btn-lg(href='https://app.madkudu.com/signup') Start your free trial
+							a.btn.btn-block.btn-primary.btn-lg(href='https://app.madkudu.com/signup' class='mki_pricing_trial') Start your free trial
 
 					.col-sm-3.column-pricing.cd-popular
 						header.cd-pricing-header
@@ -88,19 +94,15 @@ block body
 								li READY-TO-BUY alerts
 								li Personal Slack notifications
 								li Push data to CRM
-								//- 
+								//-
 						footer.cd-pricing-footer
-							a.btn.btn-block.btn-primary.btn-lg(href='https://app.madkudu.com/signup') Start your free trial
+							a.btn.btn-block.btn-primary.btn-lg(href='https://app.madkudu.com/signup' class='mki_pricing_trial') Start your free trial
 
 					.col-sm-3.column-pricing
 						header.cd-pricing-header
 							h2 ENTERPRISE
-							//- .cd-price
-							//- 	span.cd-currency $
-							//- 	span.cd-value 2,499
-							//- 	span.cd-duration mo
 							.tier
-								span More than 10 sales reps? Contact us. 
+								span More than 10 sales reps? Contact us.
 						.cd-pricing-body
 							//- ul.p-l-0.cd-pricing-features
 							//- 	li Advanced Data Audit
@@ -115,7 +117,7 @@ block body
 							//- 	li Onboarding & Training
 							//- 	li Weekly data scientist check-in
 						footer.cd-pricing-footer
-							a.btn.btn-block.btn-primary.btn-lg(href='http://www.formlets.com/forms/56de30b13735111b2d934a79') Contact us
+							a.btn.btn-block.btn-primary.btn-lg(href='http://www.formlets.com/forms/56de30b13735111b2d934a79' target='_blank' class='mki_pricing_demo') Contact us
 					.container
 						.row.m-t.text-center
 							.col-sm-8.col-sm-offset-2.col-lg-6.col-lg-offset-3
@@ -135,7 +137,7 @@ block body
 								ul.featured-list.text-left
 									li.m-b-md
 										h4 Can I get a demo?
-										p Sure, just 
-											a(href='http://www.formlets.com/forms/56de30b13735111b2d934a79') contact us.
+										p Sure, just
+											a(href='http://www.formlets.com/forms/56de30b13735111b2d934a79' target='_blank' class='mki_pricing_demo') &nbsp contact us.
 
-										
+
