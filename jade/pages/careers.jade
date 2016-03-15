@@ -11,19 +11,20 @@ block body
 
 		include ../components/header_black.jade
 
-		.block
-			//- .block-grey
+		.container
 
-			.container
+			.block.block-careers
 
-				.block-title.text-center
-					h2 Work at MadKudu
+				h2 Working at MadKudu
 
-				.block
-					h3 Current openings
+				include ../../markdown/html/careers.html
 
-					ul
-						li
-							a(href='./careers/data_engineer') Data Engineer
+			.block.block-careers
+
+				h2 Current openings
+
+				ul.careers-list
+					li
+						a(href='./careers/data_engineer') Data Engineer
 
 
