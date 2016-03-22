@@ -5,6 +5,7 @@ var less = require('gulp-less');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var minifyCSS = require('gulp-minify-css');
+var markdown = require('gulp-markdown');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
@@ -14,6 +15,7 @@ var browserify = require('browserify');
 var livereload = require('gulp-livereload');
 var gutil = require('gutil');
 var ftp = require('vinyl-ftp');
+var clean = require('gulp-clean');
 
 var source = require('vinyl-source-stream');
 
@@ -30,6 +32,8 @@ var Paths = {
 	LESS: './less/**/**',
 	JADE_WATCH: './jade/**/*.jade',
 	JADE: './jade/pages/**/*.jade',
+	MARKDOWN: './markdown/**/*.md',
+	DIST_MARKDOWN: './markdown/html',
 	JS: [
 		'./js/bootstrap/transition.js',
 		'./js/bootstrap/alert.js',
@@ -58,14 +62,13 @@ var Paths = {
 
 gulp.task('default', ['build', 'serve']);
 
-gulp.task('build', ['less-min', 'js-min', 'jade', 'static', 'utils', 'simulator']);
-
 gulp.task('watch', function () {
 	livereload.listen();
 	gulp.watch(Paths.LESS, ['less-min']);
-	gulp.watch(Paths.JS,   ['js-min']);
+	gulp.watch(Paths.JS, ['js-min']);
 	gulp.watch(Paths.JADE_WATCH, ['jade']);
-	gulp.watch(Paths.STATIC, ['static']);
+	gulp.watch(Paths.MARKDOWN, ['jade']);
+	// gulp.watch(Paths.STATIC, ['static']);
 });
 
 gulp.task('docs', ['server_docs'], function () {
@@ -93,6 +96,8 @@ gulp.task('server', ['watch'], function () {
 		livereload: true
 	});
 });
+
+gulp.task('build', ['less-min', 'js-min', 'jade', 'utils', 'simulator', 'static']);
 
 gulp.task('less-min', function () {
 	gulp.src(Paths.LESS_TOOLKIT_SOURCES)
@@ -122,11 +127,22 @@ gulp.task('js-min', ['js'], function () {
 		.pipe(livereload());
 });
 
-gulp.task('jade', function () {
+gulp.task('markdown', function () {
+	return gulp.src(Paths.MARKDOWN)
+		.pipe(markdown())
+		.pipe(gulp.dest(Paths.DIST_MARKDOWN));
+});
+
+gulp.task('jade', ['markdown'], function () {
 	gulp.src(Paths.JADE)
 		.pipe(jade())
 		.pipe(gulp.dest(Paths.DIST))
 		.pipe(livereload());
+});
+
+gulp.task('clean-markdown', ['jade'], function () {
+	return gulp.src(Paths.DIST_MARKDOWN, { read: false })
+		.pipe(clean());
 });
 
 gulp.task('static', function () {
