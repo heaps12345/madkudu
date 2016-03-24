@@ -4,7 +4,7 @@ var jade = require('gulp-jade');
 var less = require('gulp-less');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
-var minifyCSS = require('gulp-minify-css');
+var minifyCSS = require('gulp-clean-css');
 var markdown = require('gulp-markdown');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
@@ -26,6 +26,7 @@ var Paths = {
 		'dist/.*'
 	],
 	DIST: 'dist/',
+	DIST_JS: 'dist/js/',
 	DIST_STATIC: 'dist/static',
 	DIST_TOOLKIT_JS: 'dist/toolkit.js',
 	LESS_TOOLKIT_SOURCES: './less/toolkit*',
@@ -111,7 +112,12 @@ gulp.task('less-min', function () {
 		.pipe(livereload());
 });
 
-gulp.task('js', function () {
+gulp.task('clean-js', function () {
+	return gulp.src(Paths.DIST_JS, { read: false })
+		.pipe(clean());
+});
+
+gulp.task('js', ['clean-js'], function () {
 	gulp.src(Paths.JS)
 		.pipe(concat('toolkit.js'))
 		.pipe(gulp.dest(Paths.DIST));
@@ -119,7 +125,7 @@ gulp.task('js', function () {
 
 gulp.task('js-min', ['js'], function () {
 	gulp.src(Paths.DIST_TOOLKIT_JS)
-		.pipe(uglify())
+		// .pipe(uglify())
 		.pipe(rename({
 			suffix: '.min'
 		}))
@@ -138,11 +144,6 @@ gulp.task('jade', ['markdown'], function () {
 		.pipe(jade())
 		.pipe(gulp.dest(Paths.DIST))
 		.pipe(livereload());
-});
-
-gulp.task('clean-markdown', ['jade'], function () {
-	return gulp.src(Paths.DIST_MARKDOWN, { read: false })
-		.pipe(clean());
 });
 
 gulp.task('static', function () {

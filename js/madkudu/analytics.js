@@ -20,11 +20,9 @@ if (window.location.hostname === 'localhost') {
 
 // Segment
 
-/* jshint ignore:start */
-window.analytics=window.analytics||[],window.analytics.methods=["identify","group","track","page","pageview","alias","ready","on","once","off","trackLink","trackForm","trackClick","trackSubmit"],window.analytics.factory=function(t){return function(){var a=Array.prototype.slice.call(arguments);return a.unshift(t),window.analytics.push(a),window.analytics}};for(var i=0;i<window.analytics.methods.length;i++){var key=window.analytics.methods[i];window.analytics[key]=window.analytics.factory(key)}window.analytics.load=function(t){if(!document.getElementById("analytics-js")){var a=document.createElement("script");a.type="text/javascript",a.id="analytics-js",a.async=!0,a.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.io/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n)}},window.analytics.SNIPPET_VERSION="2.0.9",
-window.analytics.load(segment_key);
-/* jshint ignore:end */
-
+!function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+analytics.load(segment_key);
+}}();
 
 // Hotjar
 
@@ -32,4 +30,8 @@ window.analytics.load(segment_key);
 (function(h,o,t,j,a,r){h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};h._hjSettings={hjid:hotjar_id,hjsv:5};a=o.getElementsByTagName('head')[0];r=o.createElement('script');r.async=1;r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;a.appendChild(r);})(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
 /* jshint ignore:end */
 
+// MadKudu
 
+!function(){var madkudu=window.madkudu=window.madkudu||[];if(!madkudu.initialize)if(madkudu.invoked)window.console&&console.error&&console.error("MadKudu snippet included twice.");else{madkudu.invoked=!0;madkudu.methods=["identify","reset","group","ready","page","track","once","on"];;madkudu.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);madkudu.push(e);return madkudu}};for(var t=0;t<madkudu.methods.length;t++){var e=madkudu.methods[t];madkudu[e]=madkudu.factory(e)}madkudu.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.madkudu.com/madkudu.js/v1/"+t+"/madkudu.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};madkudu.SNIPPET_VERSION="0.1.0";
+madkudu.load("985ccd7664cec040468ba02ac8864151");
+}}();
