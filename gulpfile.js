@@ -125,7 +125,7 @@ gulp.task('js', ['clean-js'], function () {
 
 gulp.task('js-min', ['js'], function () {
 	gulp.src(Paths.DIST_TOOLKIT_JS)
-		// .pipe(uglify())
+		.pipe(uglify())
 		.pipe(rename({
 			suffix: '.min'
 		}))
