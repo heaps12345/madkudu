@@ -1,6 +1,6 @@
 # An Open Letter from Sam, Paul, and Francis
 
-> “If You're Offered a Seat on a Rocket Ship You Don't Ask What Seat. You Just Get On.”
+> "If You're Offered a Seat on a Rocket Ship You Don't Ask What Seat. You Just Get On.”
 --Eric Schmidt, former CEO, Google
 
 Thank you, thank you, thank you. Thank you for taking the time to read about MadKudu.
@@ -48,17 +48,17 @@ Even in this incredibly tough funding environment MadKudu was able to raise a $1
 
 MadKudu isn't an idea - it is a real business with real customers. To date we've processed over X Billion events for our early customers.
 
-### Real results make us “A no-brainer”
+### Real results make us "A no-brainer”
 We recently generated more than $300K in annual revenue for one of our customers - about 10x what we charge them.
 
-That customer told us “with results like this buying MadKudu is a no-brainer”.
+That customer told us "with results like this buying MadKudu is a no-brainer”.
 
 ## Culture is easy to talk about - at MadKudu we live it
 
-> “MadKudu is a rare combination of a world-class team pursuing a big market opportunity. But what makes the company truly special is just how likeable they are. From the moment I met these guys I just wanted them to succeed. Their customers obviously feel the same way.”
+> "MadKudu is a rare combination of a world-class team pursuing a big market opportunity. But what makes the company truly special is just how likeable they are. From the moment I met these guys I just wanted them to succeed. Their customers obviously feel the same way.”
 --Kevin Dewalt, MadKudu investor.
 
-### Join a team obsessed with “people potential”
+### Join a team obsessed with "people potential”
 
 We think we're good - but we can be much, much better. We work together to help each other define and achieve our calls.
 
@@ -69,7 +69,7 @@ Have a personal goal? Exercise more? Meditate? Learn a new skill? We work togeth
 > "In God we trust; all others must bring data."
 --Edwards Deming
 
-At MadKudu we make business decisions based on what the data says - not what “the boss” says. We strive to let the best arguments based on the best data win.
+At MadKudu we make business decisions based on what the data says - not what "the boss” says. We strive to let the best arguments based on the best data win.
 
 What is the best market? What feature should we build next?
 
