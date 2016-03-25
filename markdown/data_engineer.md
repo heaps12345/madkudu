@@ -14,7 +14,7 @@ Automate the training of machine learning models
 
 Predicting the future with data involves digging through billions of analytics events to find the needle in the haystack. So you must be into data, databases, distributed systems and machine learning.
 
-Today we run on node.js, Redshift and R, Redis. We are starting to move some of it to Spark and Kafka. Our entire infrastructure runs on AWS. We’re into service-oriented, streams, continuous deployment and building awesome reusable code and open-sourcing it if we can.
+Today we run on **node.js**, **Redshift** and **R**. We are starting to move some of it to **Spark** and **Kafka**. Our entire infrastructure runs on AWS. We're into service-oriented, streams, continuous deployment and building awesome reusable code and open-sourcing it if we can.
 
 Think there is some cool tech we should add to the stack? We're still super young and we need to scale that stuff fast. Bring your expertise!
 
@@ -24,6 +24,7 @@ Things you should be excellent at (or on your way to):
 * Databases technology and Big Data processing
 * Expert knowledge in one programming language (JavaScript, Java, Go, Ruby, Python...)
 * Managing Big Data processing over extended period of time
+* Working with Data Scientists
 
 We think this job is probably better suited for someone with some experience (4+ years) developing Big Data SaaS applications. But if you don't and think you would still do a terrific job, we'd still love to hear from you.
 
