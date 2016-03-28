@@ -35,7 +35,7 @@ Even in this incredibly tough funding environment MadKudu was able to raise a $1
 
 ### Join a company with real - paying - customers
 
-MadKudu isn't an idea - it is a real business with real customers. To date we've processed over X Billion events for our early customers.
+MadKudu isn't an idea - it is a real business with real customers. To date we've processed over 30 Billion events for our early customers.
 
 ### Real results make us "A no-brainer"
 We recently generated more than $300K in annual revenue for one of our customers - about 10x what we charge them.
