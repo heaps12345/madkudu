@@ -1,24 +1,26 @@
 # Data Engineer
 
 ## What you will be working on
+
 You will be our second engineer. That's kind of a big deal. It also means that what we have in mind today could be completely different from what you will do six months today. You have to be excited by that prospect.
 
 Here are a few of the things you might be doing:
 
-Move our architecture to a high-throughput distributed queue and scale our platform to billions of rows of data per day
-Ultimately own the complete data pipeline
-Build new integrations to grab and analyze data from anywhere
-Automate the training of machine learning models
+* Move our architecture to something that can process billions of events a day (we're thinking Kakfa / Spark but that's up for grabs)
+* Ultimately own the complete data pipeline
+* Build new integrations to grab and analyze data from anywhere
+* Automate the training of machine learning models
 
 ## Our stack
 
 Predicting the future with data involves digging through billions of analytics events to find the needle in the haystack. So you must be into data, databases, distributed systems and machine learning.
 
-Today we run on **node.js**, **Redshift** and **R**. We are starting to move some of it to **Spark** and **Kafka**. Our entire infrastructure runs on AWS. We're into service-oriented, streams, continuous deployment and building awesome reusable code and open-sourcing it if we can.
+Today we run on **node.js**, **Redshift** and **R**. We are starting to move to **Spark** and **Kafka** to keep scaling. Our entire infrastructure runs on AWS. We're into service-oriented, continuous deployment and building awesome reusable code and open-sourcing it if we can.
 
-Think there is some cool tech we should add to the stack? We're still super young and we need to scale that stuff fast. Bring your expertise!
+Think there is tech we should add to the stack? We're still super young and we need to scale that stuff fast. Bring your expertise!
 
 ## You
+
 Things you should be excellent at (or on your way to):
 
 * Databases technology and Big Data processing
@@ -29,7 +31,8 @@ Things you should be excellent at (or on your way to):
 We think this job is probably better suited for someone with some experience (4+ years) developing Big Data SaaS applications. But if you don't and think you would still do a terrific job, we'd still love to hear from you.
 
 ## Where? How Much?
-The company is located in **Mountain View, CA** but **you don't have to**. If you're the perfect candidate but prefer working remotely (and have experience doing so), let's talk!
+
+We're located in **Mountain View, CA** but **you don't have to**. If you have experience working remotely, let's talk!
 
 **[80k to 130k]** salary and **[0.8%-1.5%]** equity based on your experience and choice
 
