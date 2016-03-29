@@ -11,7 +11,7 @@ Because you're one of the best.<br>
 Because you have high standards.<br>
 And because you're fun.
 
-Like all amazing people you look for great opportunities - places to do more, make a bigger impact, and work with [ambitious people](http://www.madkudu.com/team).
+Like all amazing people you look for great opportunities - places to do more, make a bigger impact, and work with [ambitious and opiniated people](http://www.madkudu.com/team).
 
 <br>
 
@@ -36,10 +36,10 @@ MadKudu isn't an idea - it is a real business with real customers. Here is some 
 
 As of April 1, 2016:
 
-+ We have world-class customers you've head of like [Segment](https://segment.com/), [Codeship](https://codeship.com/), and [Contactually](https://www.contactually.com/).
++ We have world-class customers you've heard of like [Segment](https://segment.com/), [Codeship](https://codeship.com/), and [Contactually](https://www.contactually.com/).
 + We're growing annual revenue **by 20% every month**.
-+ We manage more than **10 million** users for our customers
-+ We process more than **500 Million events every day**.
++ We manage more than **10 million** user profiles for our customers
++ We process more than **500 million events every day**.
 
 ### We're a Techstars company
 
@@ -74,7 +74,7 @@ MadKudu isn't a team of "lone wolves" - and that includes personal growth.
 
 We help each other define our goals and achieve them through mutual accountability.
 
-Have a personal goal? Exercise more? Meditate? Learn a new skill like HTML/CSS coding? We work together to help each other become better.
+Have a personal goal? Exercise more? Meditate? Learn how to finally pronounce "th" correctly? Learn Python? We work together to help each other become better.
 
 ### Join a team that makes data-driven decisions
 
