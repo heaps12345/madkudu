@@ -34,7 +34,7 @@ We think this job is probably better suited for someone with some experience (4+
 
 We're located in **Mountain View, CA** but **you don't have to**. If you have experience working remotely, let's talk!
 
-**[80k to 130k]** salary and **[0.8%-1.5%]** equity based on your experience and choice
+**Competitive salary and early employee equity**
 
 **100% paid healthcare and dental coverage for you and your dependents**
 
