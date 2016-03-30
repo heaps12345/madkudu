@@ -37,7 +37,7 @@ MadKudu isn't an idea - it is a real business with real customers. Here is some 
 As of April 1, 2016:
 
 + We have world-class customers you've heard of like [Segment](https://segment.com/), [Codeship](https://codeship.com/), and [Contactually](https://www.contactually.com/).
-+ We're growing annual revenue **by 20% every month**.
++ We're growing annual revenue **by 50% every month**.
 + We manage more than **10 million** user profiles for our customers
 + We process more than **500 million events every day**.
 
