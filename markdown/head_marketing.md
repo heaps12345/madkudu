@@ -65,12 +65,12 @@ Think we can get to our goals faster with a PR/media strategy? Love design and t
 
 If you can demonstrate that your efforts will help us achieve our goals we're behind you 110%.
 
-# Where? How Much?
+## Where? How Much?
 We're located in Mountain View, CA but you don't have to. If you have experience working remotely, let's talk!
 
 Competitive salary and early employee equity. 100% paid healthcare and dental coverage for you and your dependents.
 
-# What do you want on your resume in 2021?
+## What do you want on your resume in 2021?
 Startups are not for everyone. If you value fancy desks and a predictable work schedule you won't be happy here.
 
 But if you've been looking for your big break this could be the job for you. Do you want your resume to say the following in 5 years?
