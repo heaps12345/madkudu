@@ -18,6 +18,7 @@ Redirect 301 /newsletter /blog/newsletter
 RewriteRule ^about/?$ team.html [NC,L]
 RewriteRule ^careers/?$ careers.html [NC,L]
 RewriteRule ^careers/data_engineer?$ careers/data_engineer.html [NC,L]
+RewriteRule ^careers/head_marketing?$ careers/head_marketing.html [NC,L]
 RewriteRule ^customers-uxpin/?$ customers-uxpin.html [NC,L]
 RewriteRule ^customers-codeship/?$ customers-codeship.html [NC,L]
 RewriteRule ^features/?$ features.html [NC,L]
