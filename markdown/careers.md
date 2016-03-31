@@ -11,7 +11,7 @@ Because you're one of the best.<br>
 Because you have high standards.<br>
 And because you're fun.
 
-Like all amazing people you look for great opportunities - places to do more, make a bigger impact, and work with [ambitious and opiniated people](http://www.madkudu.com/team).
+Like all amazing people you look for great opportunities - places to do more, make a bigger impact, and work with [ambitious and opinionated people](http://www.madkudu.com/team).
 
 <br>
 
