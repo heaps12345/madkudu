@@ -4,9 +4,9 @@ Companies like Amazon and Capital One build their own data-science tools to driv
 
 [more about MadKudu](#)
 
-You just might suspect that we're a group of turbo-nerds who spend our weekends reading about information theory and building software "for fun". Well … yeah … that pretty much describes us!
+You just might suspect that we're a group of turbo-nerds who spend our weekends reading about information theory and building software "for fun". Well ... yeah ... that pretty much describes us!
 
-Which brings us to … YOU! We're looking for our first full-time marketing hire to help us explain what we do and build the engine to drive scale. If you're looking for your big break - an opportunity to build a world-class marketing team from scratch - this job is for you.
+Which brings us to ... YOU! We're looking for our first full-time marketing hire to help us explain what we do and build the engine to drive scale. If you're looking for your big break - an opportunity to build a world-class marketing team from scratch - this job is for you.
 
 ## How you can help us get to $1M in annual revenue
 
@@ -58,7 +58,7 @@ You don't need to be an expert - just have the interest and aptitude to learn mo
 ### Are you ok with making mistakes?
 We hope so - because we fully expect you to make them. If you're not making mistakes you're probably not pushing hard enough.
 
-### Can you … (fill in the blank)?
+### Can you ... (fill in the blank)?
 We are a startup. As the first marketing hire you have the opportunity to define your own job decide what is most important for the company to do to hit our goals. Of course we expect that you will take advantage of your own experience and skills in doing so.
 
 Think we can get to our goals faster with a PR/media strategy? Love design and think our product would sell better if it was more beautiful? Think you have a growth hack to help us generate qualified leads? Think SEM will generate qualified leads faster than writing content?
