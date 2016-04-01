@@ -2,7 +2,7 @@
 
 Companies like Amazon and Capital One build their own data-science tools to drive their businesses. Unfortunately few other businesses have $$ and expertise to do this. MadKudu is solving this problem by bringing the powers of data science to every business in the world.
 
-[more about MadKudu](#)
+[more about MadKudu]('/jobs')
 
 You just might suspect that we're a group of turbo-nerds who spend our weekends reading about information theory and building software "for fun". Well ... yeah ... that pretty much describes us!
 
