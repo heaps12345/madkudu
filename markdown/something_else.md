@@ -25,9 +25,3 @@ Tell us what you do!
 Don't be shy. If you think you'd love working with us and have the skills to join our world-class team we'd love to hear from you.
 
 Just [click here](https://docs.google.com/forms/d/1jxsm_KzuylJyfMCwPE3uW5DLzfIIZxu4o-eL_F7ehmk/viewform) to tell us more about you.
-
-
-
-If so we hope you'll [click here and apply](https://docs.google.com/forms/d/1l8Zt2AYpWklEcffrpspdgXqh5FadrXz2C7yvAQ9BCso/viewform).
-
-Questions? Email [Kevin](https://angel.co/kevindewalt) at **kevin@madkudu.com**.
