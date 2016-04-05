@@ -6,7 +6,7 @@ Even if we don't have a need today we might next week - and we mean that quite l
 
 ### B2B Sales
 
-We're selling to some of the hottest and most exiting SaaS companies in the world. We'd love to hear how you can help us pull in the big fish.
+We're selling to some of the hottest and most exciting SaaS companies in the world. We'd love to hear how you can help us pull in the big fish.
 
 ### Customer Success
 
