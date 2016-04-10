@@ -91,7 +91,7 @@ We work hard but we're not workaholics. Building a great company takes years - y
 
 Yes, you can work at a startup and have a life - in fact, we think this is the only way to do it. Our CEO Sam Levan himself has 4 amazing kids.
 
-![Sam Levan family](/static/images/samfamily.jpg)
+<img src='/static/images/samfamily.jpg' width='500'>
 
 ### Leave the office BS behind you
 
