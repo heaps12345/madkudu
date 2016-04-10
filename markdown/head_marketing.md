@@ -22,7 +22,7 @@ Like every fast-growing startup we have our strengths and weaknesses. To reach o
 + Drive inbound leads. As a B2B company we need a steady stream of qualified leads to drive our growth.
 + Everything else. As our first marketing hire, you'll need help us identify and fill every marketing-related need.
 
-#Is this job for you?
+# Is this job for you?
 
 "Marketing" is a pretty general term - even among startups. Here are a few questions to help you decide if this is the right job for you.
 

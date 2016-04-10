@@ -89,7 +89,9 @@ What is the best market? What feature should we build next? We start by looking 
 
 We work hard but we're not workaholics. Building a great company takes years - years where you'll need your health, happiness, and a strong personal life.
 
-Yes, you can work at a startup and have a life - in fact, we think this is the only way to do it.
+Yes, you can work at a startup and have a life - in fact, we think this is the only way to do it. Our CEO Sam Levan himself has 4 amazing kids.
+
+![Sam Levan family](/static/images/samfamily.jpg)
 
 ### Leave the office BS behind you
 
