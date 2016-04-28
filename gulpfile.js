@@ -29,11 +29,16 @@ var Paths = {
 	DIST_JS: 'dist/js/',
 	DIST_STATIC: 'dist/static',
 	DIST_TOOLKIT_JS: 'dist/toolkit.js',
-	LESS_TOOLKIT_SOURCES: './less/toolkit*',
-	LESS: './less/**/**',
+	LESS_TOOLKIT_SOURCES: './less/toolkit-startup.less',
+	LESS: [
+		'./less/bootstrap/.',
+		'./less/madkudu/.',
+		'./less/custom/.',
+		'./less/*.less'
+	],
 	JADE_WATCH: './jade/**/*.jade',
 	JADE: './jade/pages/**/*.jade',
-	MARKDOWN: './markdown/**/*.md',
+	MARKDOWN: './markdown/*.md',
 	DIST_MARKDOWN: './markdown/html',
 	JS: [
 		'./js/bootstrap/transition.js',
@@ -68,7 +73,7 @@ gulp.task('watch', function () {
 	gulp.watch(Paths.LESS, ['less-min']);
 	gulp.watch(Paths.JS, ['js-min']);
 	gulp.watch(Paths.JADE_WATCH, ['jade']);
-	//gulp.watch(Paths.MARKDOWN, ['jade']);
+	// gulp.watch(Paths.MARKDOWN, ['jade']);
 	// gulp.watch(Paths.STATIC, ['static']);
 });
 
