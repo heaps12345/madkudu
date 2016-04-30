@@ -12,7 +12,7 @@ block neck
 		$(document).ready(function () {
 			$('.mki_landing_demo').click(function (event) {
 				event.preventDefault();
-				analytics.track('Langing Page - Clicked request demo');
+				analytics.track('Landing Page - Clicked request demo');
 				window.open('http://www.formlets.com/forms/56de30b13735111b2d934a79','_blank');
 			});
 		});
@@ -48,29 +48,29 @@ block body
 
 	.block.block-screenshots
 
-		.container.p-u-0
-			.row.p-b-md.p-u-0
+		.container
+			.row.p-b-md
 				h1.text-center Increase SaaS sales by 20% or more with the power of predictive analytics
-				
+
 		.container.m-t-md
 			.row
 				.col-md-6
 					img(src='/static/images/people_grid.jpg')
-				.col-md-4.m-l-md
+				.col-md-offset-1.col-md-4
 					h4.text-center Which leads are most valuable?
 					p Who has a budget and a problem? And who is just poking around?
 					p Does your sales team know which leads have performed critical actions in your product? And which ones never finished signing-up?
 			.row.m-t-lg
-				.col-md-4
-					h4.text-center Focus on your most valuable leads
+				.col-md-4.col-md-offset-1
+					h4.text-center Focus on your best leads
 					p MadKudu identifies your best leads based on customer fit and behavior.
 					p No more wasted time on unqualified leads
-				.col-md-8.pull-right
+				.col-md-6.col-md-offset-1
 					img(src='/static/images/lead_score_grid.jpg')
 
 		//- .container.p-t-lg
 		//- 	.row.row-screenshots.m-b-md
-		//- 
+		//-
 		//- 		.col-md-6.col-xs-12
 		//- 			h3.m-t-0 Automatically researches your trial customers
 		//- 			//- h4.text-muted.m-b MadKudu identifies new high potential lifetime value users and alerts your sales team to greet them.
@@ -84,14 +84,14 @@ block body
 		//- 				//- 	h5 Keep your existing workflow
 		//- 				//- 	p.m-y-0  MadKudu triggers alerts in Slack with links to your CRM, LinkedIn and many others.
 		//- 				//- 	p.m-t-0 <a href='/features' class='text-primary'>Learn more</a>.
-		//- 
+		//-
 		//- 		.col-md-5.col-xs-12.pull-right
 		//- 			img(src='/static/images/people.jpg')
-		//- 
+		//-
 		//- .container.p-t-lg
-		//- 
+		//-
 		//- 	.row.row-screenshots.m-y-md
-		//- 
+		//-
 		//- 		.col-md-4.col-md-offset-1.col-xs-12
 		//- 			h3.m-t-0 QUALIFIED LEAD alerts in Slack
 		//- 			//- h4.text-muted.m-b MadKudu creates triggers in your automation platform to send the right email at the right time.
@@ -101,39 +101,39 @@ block body
 		//- 					p.m-t-0 Your entire company works in Slack - why not sales?
 		//- 					p.m-t-0 Get more productivity, collaboration and responsiveness from your sales team.
 		//- 					p.m-t-0 All the information at your fingertips: LinkedIn, Salesforce, web sites, and more.
-		//- 
-		//- 
+		//-
+		//-
 		//- 		.col-md-7.col-xs-12.screenshot-left
 		//- 			img(src='/static/images/qualified_lead_alert.png')
 
 	.block.block-screenshots.block-inverse.block-dark-grey
 
-		.container.p-u-0
-			.row.p-b-lg.p-u-0
-				h1.text-center What's our secret sauce? 
+		.container
+			.row.p-b-lg
+				h1.text-center What's our secret sauce?
 				h1.text-center We grok in-app behavior, the key to SaaS sales
 			.row
-				h3 If selling SaaS products was like selling tractors your wouldn't need MadKudu
-				p Lots of lead scoring systems can tell if a lead is a good customer fit - and we do that too. Heck, if you're selling tractors just knowing whether that new lead is a farmer or an astronaut is probably enough.  
-				
+				h3.m-b If selling SaaS products was like selling tractors your wouldn't need MadKudu
+				p Lots of lead scoring systems can tell if a lead is a good customer fit - and we do that too. Heck, if you're selling tractors just knowing whether that new lead is a farmer or an astronaut is probably enough.
+
 				p But SaaS businesses are unique:
-				
-				ul 
-					li Our products change constantly 
+
+				ul
+					li Our products change constantly
 					li Customers convert at different times
 					li Customers churn if we don't resell our value every billing cycle
-					
+
 				p The key to SaaS sales is giving your reps deep, actionable insight into the most important steps customers take during their journey with you.
-				
+
 				p Only with behavior insight can your sales reps predict what customers will do.
 
 		.container.m-t-lg
 			.row
 				h2.text-center A simple "behavior fit" score isn't enough - MadKudu gives you multiple customer lifecycle predictions
-				
+
 			.row.row-screenshots.m-t-lg
 				.col-md-6.col-xs-12
-					h3.m-t-0 Likelihood to buy
+					h3.m-t-0.m-b Likelihood to buy
 
 					.row.hidden-xs.hidden-sm
 						.col-md-12.m-b-md
@@ -151,7 +151,7 @@ block body
 			.row.row-screenshots.row-models
 
 				.col-md-5.col-xs-12
-					h3.m-t-0 Likelihood to upsell
+					h3.m-t-0.m-b Likelihood to upsell
 					//- h4.text-muted.m-b MadKudu creates triggers in your automation platform to send the right email at the right time.
 					.row.hidden-xs.hidden-sm
 						.col-md-12.m-b-md
@@ -162,10 +162,10 @@ block body
 
 				.col-md-6.col-xs-12.screenshot-left
 					img.img-rounded(src='/static/images/likelihood_to_upsell_person.jpg')
-						
+
 			.row.row-screenshots.row-models
 				.col-md-6.col-xs-12
-					h3.m-t-0 Likelihood to churn
+					h3.m-t-0.m-b Likelihood to churn
 
 					.row.hidden-xs.hidden-sm
 						.col-md-12.m-b-md
@@ -183,7 +183,7 @@ block body
 			.row.row-screenshots.row-models
 
 				.col-md-5.col-xs-12
-					h3.m-t-0 Customized predictors
+					h3.m-t-0.m-b Customized predictors
 					//- h4.text-muted.m-b MadKudu creates triggers in your automation platform to send the right email at the right time.
 					.row.hidden-xs.hidden-sm
 						.col-md-12.m-b-md
@@ -197,11 +197,11 @@ block body
 
 	.block.block-screenshots
 
-		.container.p-u-0
-			.row.p-b-lg.p-u-0
+		.container
+			.row.p-b-lg
 				h1.text-center We tell your sales reps WHY a lead scores high or low so they can engage customers more effectively
 			.row
-				p Simply knowing a customer is likely to buy isn't good enough - sales reps need context and reasons to engage customers. 
+				p Simply knowing a customer is likely to buy isn't good enough - sales reps need context and reasons to engage customers.
 				p By knowing what behaviors lead to a lead score your reps will engage in more valuable conversations and close more leads.
 			.row.row-screenshots
 				.col-md-12
@@ -215,15 +215,15 @@ block body
 		.container
 			.row.vertical-center
 				.col-sm-12.text-center
-					h1 Updates your CRM - where your sales reps work 
+					h1 Updates your CRM - where your sales reps work
 					p MadKudu integrates with popular CRMs like Salesforce, SalesforceIQ, Marketo, and Pipedrive
 				.col-md-12.m-t-lg
 					img.img-rounded(src='/static/images/trump_shorter.jpg')
 
 		.container.m-t-lg
-		
+
 			.row.row-screenshots.m-y-md
-		
+
 				.col-md-5.col-xs-12
 					h2.m-t-0 Never miss an opportunity with Slack alerts
 					//- h4.text-muted.m-b MadKudu creates triggers in your automation platform to send the right email at the right time.
@@ -233,21 +233,21 @@ block body
 							p.m-t-0 Your entire company works in Slack - why not sales?
 							p.m-t-0 Get more productivity, collaboration and responsiveness from your sales team.
 							p.m-t-0 All the information at your fingertips: LinkedIn, Salesforce, web sites, and more.
-		
-		
+
+
 				.col-md-7.col-xs-12.screenshot-left
 					img.img-rounded(src='/static/images/ready_to_buy.png')
 
-				
+
 
 
 	.block.block-screenshots
-		.container.p-u-0
-			.row.p-b-lg.p-u-0
+		.container
+			.row.p-b-lg
 				h1.text-center Predictions automatically improve with sales rep feedback
 			.row
-				p Most sales reps are skeptical of algorithmic-based lead scoring - and for good reason. No model is smart as your sales team. 
-				p You'll get sales buy-in by giving them the tools to make MadKudu's predictions smarter based on their feedback. 				
+				p Most sales reps are skeptical of algorithmic-based lead scoring - and for good reason. No model is smart as your sales team.
+				p You'll get sales buy-in by giving them the tools to make MadKudu's predictions smarter based on their feedback.
 				.col-md-12.m-t-lg
 					img.img-rounded(src='/static/images/lead_feedback.jpg')
 
@@ -258,13 +258,13 @@ block body
 			//- 		img.m-a(src='/static/images/integrations/segment.svg')
 			//- 		img.m-a(src='/static/images/integrations/kissmetrics.svg')
 			//- 		img.m-a(src='/static/images/integrations/mixpanel.svg')
-			//- 
+			//-
 			//- .row.row-marketing-grid
 			//- 	.col-sm-12.p-x-md.m-b-lg.text-center.stack-column
 			//- 		h3 Step 2 - Connect Slack
 			//- 		img.m-a(src='/static/images/integrations/slack.svg')
-			//- 
-			//- 
+			//-
+			//-
 			//- .row.m-t-lg
 			//- 	a.btn.btn-primary.m-t-lg.btn-lg.cta-home.btn-wrap(href='https://app.madkudu.com/signup')
 			//- 				| Start your free trial
@@ -317,22 +317,21 @@ block body
 				.customer-logo(style='background-image: url(/static/images/customers/shopventory_black.svg);')
 			.customer-logo__box
 				.customer-logo(style='background-image: url(/static/images/customers/sumall_black.svg);')
-			//- .customer-logo__box
-			//- 	.customer-logo(style='background-image: url(/static/images/customers/waffle.svg);')
+
 
 	.block.block-inverse.block-home.block-screenshots
-		.container.p-u-0
-			.row.p-b-lg.p-u-0
+		.container
+			.row.p-b-lg
 				h1.text-center No integration - works across your marketing and sales stack
-				
-			.row
-				p MadKudu enriches your data with our predictive models and 3rd-party data sources. 				
+
+			.row.text-center
+				p MadKudu enriches your data with our predictive models and 3rd-party data sources.
 				.col-md-12.m-t-lg
 					img.img-rounded(src='/static/images/marketecture.jpg')
 
 
 
-	
+
 	.block.block-madkudu-way
 		.container
 			.row.text-center
@@ -341,9 +340,9 @@ block body
 
 			.row.m-a-lg.hidden-xs.hidden-sm
 				.col-md-12
-					p Manual, rule-based lead scoring systems like HubSpot are fine for qualifying leads in static applications (like e-commerce). 
-					
-					p However, lead scoring rules are impossible to maintain in SaaS applications where the market and product are constantly evolving. 
+					p Manual, rule-based lead scoring systems like HubSpot are fine for qualifying leads in static applications (like e-commerce).
+
+					p However, lead scoring rules are impossible to maintain in SaaS applications where the market and product are constantly evolving.
 
 
 			.row.text-center
@@ -372,7 +371,7 @@ block body
 
 			.row.m-y-lg
 				.col-md-8.col-md-offset-2.pull-left
-					
+
 					h3 Are you a B2B SaaS company?
 					p Awesome! SaaS is all we do and we think we're the best at it.
 
@@ -381,7 +380,7 @@ block body
 
 					h3 Do you get >500 leads/month?
 					p MadKudu needs enough data points to make accurate predictions.
-					
+
 					p.m-t-md If you answered "yes" to all 3 questions MadKudu is for you. Let's talk about how we can work together and accelerate your sales.
 
 
