@@ -12,10 +12,11 @@ Which brings us to ... YOU! We're looking for our first full-time marketing hire
 
 Like every fast-growing startup we have our strengths and weaknesses. To reach our near-term goal of $1M in ARR we need someone who can fill in the gaps.
 
-### Our current team is decent at
+### Our current team kicks ass at
++ Big data engineering.
++ Filtering the noise from the signal.
 + Direct sales.
-+ Software.
-+ Service.
++ Customer success.
 
 ### Where we need your help now
 + **Product messaging**. Explain what we do in ways our customers will understand.
@@ -25,7 +26,7 @@ Like every fast-growing startup we have our strengths and weaknesses. To reach o
 
 ### Where we may need your help soon
 
-MadKudu isn't in scale mode at the moment - but if you hustle and prove yourself you may be the person who helps drive our future growth in areas like content marketing, PR, SEM, SEO, etc.
+We're not focused on TOFU (ie. "top of funnel") right now but this is an area we'll get to soon. If you hustle and prove yourself you may be the person who helps drive our future growth in areas like content marketing, PR, SEM, SEO, etc.
 
 &nbsp;
 
@@ -35,7 +36,11 @@ MadKudu isn't in scale mode at the moment - but if you hustle and prove yourself
 
 ### Are you a "product person"?
 
-We have early customers and revenue but are not yet in growth mode. Before we try to drive growth we need to align our product features and message with our go-to-market. You will need to help us figure this out.
+We're obsessed with growth, but we've also seen first-hand the danger of [pre-mature scaling](http://www.forbes.com/sites/nathanfurr/2011/09/02/1-cause-of-startup-death-premature-scaling/#60e7dd4c15aa).
+
+We know that the best growth strategy is to test and refine product market fit before going big on everything else.
+
+If you know what we're talking about here and enjoy this phase of building a company, read on!
 
 ### Do you want to be at the ground level?
 
@@ -45,9 +50,9 @@ You'll play a key role in finding the answers.
 
 ### Can you do strategic & hands-on work?
 
-All of us - especially our CEO - contribute as an individual. If you want to manage a team on day 1 you won't enjoy working here.
+All of us contribute as an individual. If you want to manage a team on day 1, it is probably not a good time yet to join MadKudu.
 
-Current hands-on skills such as HTML, CSS, Javascript, or design are a big, big plus. You'll need to find, hire, and manage any resources for skills you don't have.
+Current hands-on skills such as setting up landing pages, distributing slideshares, running webinars are a big plus. You'll need to find, hire, and manage any resources for skills you don't have.
 
 ### Can you write B2B marketing copy?
 
@@ -85,6 +90,6 @@ But if you've been looking for your big break this could be the job for you. Do 
 
 Better still, do you want to look back on your time at MadKudu as a special experience where you worked with other passionate people? Where you helped create a unique corporate culture? Where you hired A people and turned them into A+++ people?
 
-If so we hope you'll [click here and apply](https://docs.google.com/forms/d/1l8Zt2AYpWklEcffrpspdgXqh5FadrXz2C7yvAQ9BCso/viewform).
+If so [click here and let's talk](https://docs.google.com/forms/d/1l8Zt2AYpWklEcffrpspdgXqh5FadrXz2C7yvAQ9BCso/viewform)!
 
 Questions? Email [Kevin](https://angel.co/kevindewalt) at **kevin@madkudu.com**.
