@@ -1,0 +1,20 @@
+extends ../components/skeleton.jade
+
+block neck
+	title MadKudu | Proof of Concept
+
+	script analytics.page('POC')
+
+block body
+
+	.background-white
+
+		include ../components/header_black.jade
+
+		.container
+
+			.block.block-poc
+				
+				h1 About MadKudu's Proof of Concept 
+
+				include ../../markdown/html/poc.html
