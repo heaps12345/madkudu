@@ -128,6 +128,7 @@
  
 .jumbotron {
 	margin-bottom: 0;
+	padding: 0;
 	text-align: center;
 	color: white;
 	background-color: @m-color-dark-blue;
@@ -136,7 +137,15 @@
 		padding-top: 213px;
 		padding-bottom: 213px;
 		.background-image("@{m-path-image}/general/graphic-chart.png", contain);
-		background-position: left bottom;
+		background-position: right bottom;
+	}
+
+	@media (min-width: 1601px) {
+		background-size: 1600px 391px;
+	}
+
+	@media (min-width: 1921px) {
+		background-image: none !important;
 	}
 	
 	.container > * + * {
