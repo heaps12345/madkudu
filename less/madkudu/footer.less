@@ -55,3 +55,210 @@
 		margin-top: 5px;
 	}
 }
+
+
+/* Footer
+ *-----------------------------------------------------------*/
+
+.footer {
+	padding-top: 48px;
+	text-align: center;
+	background-color: white;
+	
+	@media (min-width: @screen-sm-min) {
+		padding: 60px 0 30px;	
+	}
+}
+
+.footer .logo {
+	display: block;
+	margin: 0 auto;
+	width: 122px;
+	height: 32px;
+	.background-image("@{m-path-image}/general/main-logo-madkudu.png", contain);
+	
+	@media (min-width: @screen-sm-min) {
+		margin: 0 auto 30px;
+		width: 152px;
+		height: 40px;	
+	}
+	
+	@media (min-width: @screen-md-min) {
+		margin: 0;
+	}
+
+	span {
+		color: transparent;
+	}
+}
+
+.footer h5 {
+	margin-bottom: 15px;
+	font-size: 15px;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: @m-color-blue;
+}
+
+.footer ul,
+.footer li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	color: @m-color-alt-dark-grey;
+}
+
+.footer li + li {
+	margin-top: 5px; 
+}
+
+.footer p,
+.footer li a {
+	color: @m-color-alt-dark-grey;
+	letter-spacing: 0.025em;
+}
+
+.footer a {
+	cursor: pointer;
+}
+
+
+/* Specific style for first row */
+
+.first > * {
+	
+	@media (min-width: @screen-sm-min) {
+		text-align: left;	
+	}
+}
+
+.first > * + * {
+	margin-top: 40px;
+	
+	@media (min-width: @screen-sm-min) {
+		margin: 0;	
+	}
+}
+
+.footer .contact {
+	padding-left: 30px;
+	background-position: left center;
+	
+	&.location {
+		.background-image("@{m-path-image}/general/location.png", 12px 16px);
+	}
+	
+	&.email {
+		.background-image("@{m-path-image}/general/email.png", 16px 12px);
+	}
+}
+
+
+/* Specific style for second row */
+
+.second {
+	margin-top: 50px;
+}
+
+.footer {
+	.inline-list {
+		display: block;	
+		
+		li {
+			display: inline-block;
+			line-height: 1.5em;
+			
+			@media (min-width: @screen-sm-min) {
+				margin-top: 0;
+			}
+		}
+		
+		&:not(.find-us) {
+			margin-bottom: 50px;
+			
+			@media (min-width: @screen-sm-min) {
+				margin-bottom: 20px;	
+			}
+			
+			@media (min-width: @screen-md-min) {
+				text-align: left;
+				margin-bottom: 0;
+			}
+		}
+		
+		&:not(.find-us) li {
+			width: 100%;
+			
+			@media (min-width: @screen-sm-min) {
+				width: auto;	
+			}
+			
+			& + li {
+				
+				@media (min-width: @screen-sm-min) {
+					margin-left: 20px;	
+				}
+			}
+		}
+	}
+}
+
+.copyright {
+	
+	&.hidden-xs {
+		margin-bottom: 0;
+		text-align: left;
+	}
+	
+	&.visible-xs-block {
+		margin-bottom: 50px;
+	}
+	
+	&.visible-sm-block {
+		margin-bottom: 20px;
+	}
+}
+
+ul.find-us {
+	margin-bottom: 50px;
+	
+	@media (min-width: @screen-sm-min) {
+		margin-bottom: 20px;	
+	}
+	
+	@media (min-width: @screen-md-min) {
+		margin-bottom: 0;	
+	}
+	
+	li + li {
+		margin-left: 10px;
+	}
+	
+	a {
+		display: block;
+		width: 24px;
+		height: 24px;
+		color: transparent !important;
+		background-position: center center;
+		cursor: pointer;
+		
+		&:hover,
+		&:focus {
+			opacity: 0.8;
+		}
+	}
+}
+
+.twitter a {
+	.background-image("@{m-path-image}/general/twitter.png", 19px 16px);
+}
+.facebook a {
+	.background-image("@{m-path-image}/general/facebook.png", 9px 16px);
+}
+.linkedin a {
+	.background-image("@{m-path-image}/general/linkedin.png", 16px 16px);
+}
+.angelist a {
+	.background-image("@{m-path-image}/general/angelist.png", 14px 20px);
+}

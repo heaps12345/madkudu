@@ -37,3 +37,62 @@
 .kevin {
 	font-size: 32px;
 }
+
+// NOTE: Added by Montazze
+
+/* Base Style
+ *--------------------------------------------------*/
+
+a {
+	color: @m-link-color;
+	
+	&:hover,
+	&:focus {
+		color: @m-color-blue;
+	}
+}
+
+.container-narrow {
+	max-width: 1080px;
+}
+
+//- NOTE: Some hack i put for new site only, Consider to fixing the grid later
+.new-site, 
+.footer {
+
+	.container {
+		.container-fixed();
+
+		@media (min-width: @screen-sm-min) {
+			width: 750px;
+		}
+		@media (min-width: @screen-md-min) {
+			width: 970px;
+		}
+		@media (min-width: @screen-lg-min) {
+			width: 1170px;
+		}
+	}
+}
+
+
+section,
+.section {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	border-bottom: solid 1px @m-color-subtle-grey-border;
+	background-color: white;
+	
+	@media (min-width: @screen-sm-min) {
+		padding-top: 80px;
+		padding-bottom: 80px;		
+	}
+	
+	&.alt {	
+		background-color: @m-color-subtle-grey;
+	}
+}
+
+.grey {
+	color: @m-color-grey;
+}

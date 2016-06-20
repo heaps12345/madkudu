@@ -1,32 +1,39 @@
+//- Including Bootstrap components mixin for faster development
+include ../bootstrap/bootstrap.jade
+
+// Content in index demo
+include content_var.jade
+
+
 doctype html
-html
+html(lang="en", class="no-js")
 	head
 
-		block head
-
-		//- MadKudu CSS
-		link(rel="stylesheet" href="/madkudu.min.css")
-
-		//- Fonts
-		link(rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic')
-		link(rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Ubuntu:300,300italic,400,400italic,500,500italic,700,700italic')
-
 		//- Meta
-		meta(name='viewport' content='width=device-width, initial-scale=1')
-		meta(http-equiv='X-UA-Compatible' content='IE=edge')
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible", content="IE=edge")
+		meta(name="viewport",content="width=device-width, initial-scale=1")
+
+		block head
 
 		//- Favicon
 		link(rel='shortcut icon' href='/madkudu_ico.png' type='image/x-icon')
 		link(rel='apple-touch-icon' href='/static/images/madkudu_square_256.png')
 
-		//- jQuery
-		script(type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+		//- Fonts
+		link(rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic')
+		link(rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Ubuntu:300,300italic,400,400italic,500,500italic,700,700italic')
 
-		//- JS
-		script(type='text/javascript' src='/toolkit.min.js')
+		//-css
+		link(rel="stylesheet" href="/madkudu.min.css")
 
-		//- Optimizely
-		script(type='text/javascript' src='//cdn.optimizely.com/js/4566955495.js')
+		//- Modernizr
+		script(src="static/modernizr-custom.js")
+
+		//- js
+		script(src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+		script(src='/toolkit.min.js')
+		script(src='//cdn.optimizely.com/js/4566955495.js')
 
 		block neck
 
@@ -38,4 +45,5 @@ html
 
 			block footer
 
-				include ../components/footer.jade
+				//- NOTE: can you help how to check if page is index in this skeleton? I still cant figure it out
+				include ../components/footer_new.jade

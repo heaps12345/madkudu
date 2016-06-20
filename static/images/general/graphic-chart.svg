@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1600px" height="391px" viewBox="0 0 1600 391" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>graphic-chart</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="home" transform="translate(0.000000, -377.000000)" stroke-width="2">
+            <g id="header">
+                <g id="hero">
+                    <g id="graphic-chart" transform="translate(0.000000, 378.000000)">
+                        <path d="M0,389.532089 C97.2187292,389.532092 120.237137,300.658047 177.809677,300.658047 C235.382217,300.658047 238.081851,347.642542 308.233948,347.642544 C378.386044,347.642546 433.625206,241.898254 505.058868,241.898251 C576.49253,241.898247 653.034729,321.398171 733.920471,321.39819 C814.806213,321.398209 861.187317,220.313412 929.071533,220.313412 C996.95575,220.313412 1016.78885,300.658048 1098.85022,300.658047 C1180.91159,300.658046 1197.79407,166.816479 1265.26562,166.816479 C1332.73718,166.816479 1358.10955,255.234533 1437.64062,255.234524 C1517.1717,255.234515 1600.56435,0.5645716 1600.56435,0.5645716" id="1" stroke="#2595FF"></path>
+                        <circle id="1" stroke="#2ECC71" fill="#134B80" cx="179" cy="300" r="5"></circle>
+                        <circle id="1-copy" stroke="#2ECC71" fill="#134B80" cx="305" cy="347" r="5"></circle>
+                        <circle id="1-copy-2" stroke="#2ECC71" fill="#134B80" cx="507" cy="242" r="5"></circle>
+                        <circle id="1-copy-3" stroke="#2ECC71" fill="#134B80" cx="739" cy="321" r="5"></circle>
+                        <circle id="1-copy-4" stroke="#2ECC71" fill="#134B80" cx="928" cy="220" r="5"></circle>
+                        <circle id="1-copy-5" stroke="#2ECC71" fill="#134B80" cx="1098" cy="300" r="5"></circle>
+                        <circle id="1-copy-6" stroke="#2ECC71" fill="#134B80" cx="1265" cy="166" r="5"></circle>
+                        <circle id="1-copy-7" stroke="#2ECC71" fill="#134B80" cx="1437" cy="254" r="5"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

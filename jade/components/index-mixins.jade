@@ -1,0 +1,192 @@
+//- Testimonial Section
+//- --------------------------------
+
+mixin testimony-list()
+	ul.testimony
+		block
+
+
+//- If want to use Background image in Testimonial avatar,
+//- set bg variable to 'true' and add more additional css per testimony name
+
+mixin testimony_item(name, position, quote, photo, bg)
+	li
+		blockquote 
+			p #{quote}
+			footer
+				if (bg == false)
+					if (photo != false)
+						img(src='images/testimony/'+photo+'@2x.png', alt=name)
+				else 
+					div(class=["image-bg", "image-testimony", photo])
+					
+				div
+					strong #{name}
+					span #{position}
+
+
+//- Customer Section
+//- --------------------------------
+
+mixin customer-list()
+	ul.customer
+		block
+
+
+//- If want to use Background image in Customer logo list,
+//- set bg variable to 'true' and add additional css per customer name
+
+mixin customer_item(name, image, url, bg)
+	li
+		.centering
+			.centering-inner
+				if (bg == false)
+					if (image != false)
+						img(src='images/customer/'+image+'@2x.png', alt=name)
+				else 
+					div(class=["image-bg", "image-customer", image])
+					
+				if (url!=false)
+					a(href=url, title=name) Case Study
+
+
+//- Sales Section
+//- --------------------------------
+
+mixin data-box-1(data, index)
+	div(class=["data-box", "data-box-" + data[index].illustration])
+		if (data[index].illustrationtext)
+			.data-box--arrow 
+				.centering
+					.centering-inner #{data[index].illustrationtext}
+		.illustration
+		.bio
+			if (data[index].name)
+				p 
+					span Name:
+					span #{data[index].name}
+			if (data[index].title)
+				p
+					span Title:
+					span #{data[index].title}
+			if (data[index].company)
+				p
+					span Company:
+					span #{data[index].company}
+			if (data[index].companysize)
+				p
+					span No. Employees:
+					span #{data[index].companysize}
+			if (data[index].callcount)
+				p.mt
+					span Calls Made:
+					span #{data[index].callcount}
+			if (data[index].emailcount)
+				p
+					span Emails Sent:
+					span #{data[index].emailcount}
+
+
+mixin data-box-2(data,index)
+	div(class=["data-box", "data-box-" + data[index].illustration])
+		.illustration
+		.bio
+			if (data[index].name)
+				p 
+					span Name:
+					span #{data[index].name}
+			if (data[index].title)
+				p
+					span Title:
+					span #{data[index].title}
+			if (data[index].sectiontitle)					
+				p
+					strong #{data[index].sectiontitle}
+				if (data[index].segment || data[index].score || data[index].reason || data[index].industry)
+				ul
+					if (data[index].segment)
+						li
+							p
+								span - Segment:
+								span #{data[index].segment}
+					if (data[index].score)
+						li
+							p
+								span - Score:
+								span #{data[index].score}
+					if (data[index].reason)
+						li
+							p
+								span - Reason:
+								span #{data[index].reason}
+					if (data[index].industry)
+						li.mt
+							p
+								span Industry:
+								span #{data[index].industry}
+
+
+//- Integration Section
+//- --------------------------------
+
+mixin integration-list()
+	ul
+		block
+
+
+//- If want to use Background image in Integration logo,
+//- set bg variable to 'true' and add additional css per integration name
+
+mixin integration_item(name, image, index, bg)
+	if (index < 12)
+		if (index > -1 && index < 3)
+			- className = "first"
+		else if(index > 2 && index < 7)
+			- className = "second"
+		else
+			- className = "third"
+		
+		li(class=[className])
+			.centering
+				.centering-inner
+					if (bg == false)
+						if (image != false)
+							img(src='images/integration/'+image+'@2x.png', alt=name)
+					else 
+						div(class=["image-bg", "image-integration", image])
+
+
+//- Comparison Section
+//- --------------------------------		
+		
+mixin bad-email()
+	.compare-email
+		p Mr. Don Newcustomer,
+		.highlight
+			p Thanks for Signing up to SuperApp. Is there anything I can do to help make SuperApp more valuable for you?
+		p Thanks!
+		p.identity Billy Boring
+			br
+			| Customer Success Specialist, SuperApp
+
+mixin good-email()
+	.compare-email
+		p Mr. Don Newcustomer,
+		.highlight
+			p I noticed you finished connecting your bank account and 
+				strong added your accountant, Jack Pinstripes.
+			p Are you interested in preparing your taxes with SuperApp? If so 
+				| you'll want to 
+				strong upgrade to our Pro plan 
+				| so your accountant can generate tax returns with a push of a button.
+		p Thanks!
+		p.identity Chris Crushingit
+			br
+			| Customer Success Guru, SuperApp
+
+mixin oldway_item(event, point)
+	li
+		div #{event}
+		div
+			strong #{point} 
+			span.hidden-sx.hidden-sm points
