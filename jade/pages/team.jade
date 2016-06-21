@@ -7,31 +7,31 @@ block neck
 
 block body
 
-	include ../components/header_white.jade
+	include ../components/header_white_new.jade
 
-	.block.block-inverse.block-home
-		//- .block-primary
-
-		.container
-
-			.row.m-b-lg.m-t-lg
-
-				.col-sm-10.col-sm-offset-1
-					h2.m-t-0.m-b.text-center We're on a mission to help companies use their data<br>to build meaningful and profitable relationships<br>with their customers.
-
-			.row
-				p.lead
-					| We are passionate about helping companies
-					| leverage their data to better understand their customers and to
-					| deliver meaningful experiences. This is what we have done for years.
-				p.lead
-					| We have seen again and again how effective it can be. But also how difficult and complicated
-					| it is to turn disparate data into actionable intelligence.
-				p.lead
-					| Only a few companies today are able to do so.
-				p.lead
-					| MadKudu was started from the desire to make it simple for every company to reap the benefits of deep customer analytics.
-
+	//- .block.block-inverse.block-home
+	//- 	//- .block-primary
+	//- 
+	//- 	.container
+	//- 
+	//- 		.row.m-b-lg.m-t-lg
+	//- 
+	//- 			.col-sm-10.col-sm-offset-1
+	//- 				h2.m-t-0.m-b.text-center We're on a mission to help companies use their data<br>to build meaningful and profitable relationships<br>with their customers.
+	//- 
+	//- 		.row
+	//- 			p.lead
+	//- 				| We are passionate about helping companies
+	//- 				| leverage their data to better understand their customers and to
+	//- 				| deliver meaningful experiences. This is what we have done for years.
+	//- 			p.lead
+	//- 				| We have seen again and again how effective it can be. But also how difficult and complicated
+	//- 				| it is to turn disparate data into actionable intelligence.
+	//- 			p.lead
+	//- 				| Only a few companies today are able to do so.
+	//- 			p.lead
+	//- 				| MadKudu was started from the desire to make it simple for every company to reap the benefits of deep customer analytics.
+	//- 
 
 	.block.block-team
 		.container
@@ -120,6 +120,47 @@ block body
 						ul.team__list
 							li Stagnation
 							li Raccoons
+
+			.row.m-t-lg
+
+				.col-sm-3.col.col-sm-offset-3.team-column
+					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
+						img(class="team__image img-circle" src="/static/images/team/yuan.jpg" width="200" alt="Kudu horn" itemprop="photo")
+						.team__name(itemprop="name") Yuan Zhao
+						.team__work(itemprop="title") 大王 (Engineer)
+						.team__social
+							a.team__social--link(href="https://www.linkedin.com/in/yuanzhao0501")
+								img(src="/static/images/team_linkedin.svg" target="_blank" width="15" alt="Yuan Zhao` LinkedIn")
+						a.team__email(href="mailto:yuan@madkudu.com?subject=Tell%20me%20more%20about%20MadKudu!" target="_blank") yuan@madkudu.com
+						h4.team__header Loves
+						ul.team__list
+							li Classical music
+							li Kong Fu
+							li Adventure
+						h4.team__header Fears
+						ul.team__list
+							li Laziness
+							li Boring &amp; Repetitive work
+							li Repetitive work
+				.col-sm-3.team-column
+					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
+						img(class="team__image img-circle" src="/static/images/team/mara.jpg" width="200" alt="Kudu horn" itemprop="photo")
+						.team__name(itemprop="name") Mara Sagge
+						.team__work(itemprop="title") Chief Done Officer (Assistant)
+						.team__social
+							a.team__social--link(href="https://www.linkedin.com/in/mara-sagge-a75093a8")
+								img(src="/static/images/team_linkedin.svg" target="_blank" width="15" alt="Francis Brero LinkedIn")
+						a.team__email(href="mailto:mara@madkudu.com?subject=Tell%20me%20more%20about%20MadKudu!" target="_blank") mara@madkudu.com
+						h4.team__header Loves
+						ul.team__list
+							li Data Capture
+							li Self help books
+							li Pasta
+						h4.team__header Fears
+						ul.team__list
+							li Unreached Targets
+							li Spiders
+
 
 
 
@@ -212,8 +253,3 @@ block body
 						img(src='/static/images/pledge1percent.png' alt='Pledge 1 Percent' width="80")
 			.row.m-t.m-b-md
 				h4.text-muted MadKudu is proud to be a member of the <a href='http://pledge1percent.org/' target='_blank'>Pledge 1%</a> movement.
-
-
-
-
-
