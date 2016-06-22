@@ -28,8 +28,6 @@ block body
 		.block.block-grey
 
 			.container.text-center
-				.row.m-t-0.m-b-md
-					h3 "<em>A no-brainer.<br> MadKudu more than pays for itself with the additional sales we close.</em>"
 
 				.row.container-pricing
 
@@ -50,8 +48,8 @@ block body
 								li Customer fit lead scoring
 								li QUALIFIED NEW LEAD alerts
 
-						footer.cd-pricing-footer
-							a.btn.btn-block.btn-primary.btn-lg(class='mki_pricing_trial') Start your free trial
+						//- footer.cd-pricing-footer
+						//- 	a.btn.btn-block.btn-primary.btn-lg(class='mki_pricing_trial') Get started
 
 					.col-sm-3.column-pricing.cd-popular
 						header.cd-pricing-header
@@ -76,8 +74,8 @@ block body
 								//- 	em 5
 								//- 	|  one-click integrations
 								//- li Email Support
-						footer.cd-pricing-footer
-							a.btn.btn-block.btn-primary.btn-lg(class='mki_pricing_demo') Get a demo
+						//- footer.cd-pricing-footer
+						//- 	a.btn.btn-block.btn-primary.btn-lg(class='mki_pricing_demo') Get a demo
 
 					.col-sm-3.column-pricing.cd-popular
 						header.cd-pricing-header
@@ -100,8 +98,8 @@ block body
 								li Personal Slack notifications
 								li Push data to CRM
 								//-
-						footer.cd-pricing-footer
-							a.btn.btn-block.btn-primary.btn-lg(class='mki_pricing_demo') Get a demo
+						//- footer.cd-pricing-footer
+						//- 	a.btn.btn-block.btn-primary.btn-lg(class='mki_pricing_demo') Get a demo
 
 					.col-sm-3.column-pricing
 						header.cd-pricing-header
@@ -121,8 +119,14 @@ block body
 							//- 		|  integrations
 							//- 	li Onboarding & Training
 							//- 	li Weekly data scientist check-in
-						footer.cd-pricing-footer
-							a.btn.btn-block.btn-primary.btn-lg(class='mki_pricing_demo') Get a demo
+						//- footer.cd-pricing-footer
+						//- 	a.btn.btn-block.btn-primary.btn-lg(class='mki_pricing_demo') Get a demo
+							
+				.row.pricing-buttons.m-y-md			
+					p 
+						a.btn.btn-trial.btn-lg.btn-primary.m-r-md(class='mki_pricing_trial', role='button') Get started
+						a.btn.btn-demo.btn-lg.btn-primary(class='mki_pricing_demo', role='button') Get a Demo
+
 					.container
 						.row.m-t.text-center
 							.col-sm-8.col-sm-offset-2.col-lg-6.col-lg-offset-3

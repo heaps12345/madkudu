@@ -191,3 +191,33 @@
 	text-transform: uppercase;
 	letter-spacing: 2px;
 }
+
+.pricing-buttons .btn {
+	color: white;
+	padding: 14px 42px;
+	line-height: 1em;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.pricing-buttons .btn-trial {
+	background-color: @m-color-blue;
+	border-color: @m-color-blue;
+
+	&:hover,
+	&:focus {
+		background-color: lighten(@m-color-blue, 5%);
+  }
+}
+
+
+.pricing-buttons .btn-demo {
+	background-color: @m-color-green;
+	border-color: @m-color-green;
+
+	&:hover,
+	&:focus {
+		background-color: lighten(@m-color-green, 5%);
+  }
+}
