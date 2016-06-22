@@ -16,6 +16,11 @@ block neck
 				analytics.track('Landing Page - Clicked request demo');
 				window.open('http://www.formlets.com/forms/56de30b13735111b2d934a79','_blank');
 			});
+			$('.mki_landing_trial').click(function (event) {
+				event.preventDefault();
+				analytics.track('Landing Page - Clicked free trial');
+				window.location = 'https://app.madkudu.com/signup';
+			});
 		});
 
 block body
@@ -34,10 +39,8 @@ block body
 					| SaaS sales
 				p Grow sales 20% by leveraging your customers' in-app behavior
 				p 
-					a.btn.btn-lg.btn-primary(class='mki_landing_demo', role='button') Get a Demo
-				p.small Using Segment? 
-					a(href="/segment") Get started
-					|  faster.
+					a.btn.btn-trial.btn-lg.btn-primary.m-r-md(class='mki_landing_trial', role='button') Get started
+					a.btn.btn-demo.btn-lg.btn-primary(class='mki_landing_demo', role='button') Get a Demo
 						
 		section.sales
 			.container
@@ -246,4 +249,5 @@ block body
 					li Do you get >500 Leads/month?
 				.cta
 					p If you answered "yes" to all 3 questions MadKudu is for you. Let's talk about how we can work together and accelerate your sales.
-					a(class=['mki_landing_demo','btn']) Get a demo
+					a.m-r-md(class=['mki_landing_trial','btn', 'btn-trial']) Get started
+					a(class=['mki_landing_demo','btn', 'btn-demo']) Get a demo
