@@ -1,0 +1,443 @@
+extends ../components/skeleton.jade
+
+
+block neck
+	title MadKudu | Accelerating SaaS sales with Segment and MadKudu
+
+	meta(name='description' content='Accelerating SaaS sales with predictive analytics')
+
+	script analytics.page('Segment landing page')
+
+	script.
+		$(document).ready(function () {
+			$('.mki_segment_demo').click(function (event) {
+				event.preventDefault();
+				analytics.track('Landing Page - Clicked request demo');
+				window.open('http://www.formlets.com/forms/56de30b13735111b2d934a79','_blank');
+			});
+			$('.mki_segment_trial').click(function (event) {
+				event.preventDefault();
+				analytics.track('Pricing - Clicked free trial');
+				window.location = 'https://app.madkudu.com/signup';
+			});
+		});
+
+
+block body
+
+	include ../components/header_white_new.jade
+
+	.block.block-inverse.block-home
+
+		.container
+			.row.vertical-center
+				.col-sm-12.text-center
+					h1.block-title.m-b The world's most intelligent lead scoring system is easy with Segment
+					p.lead.text-muted Segment + MadKudu = SaaS sales teams are thrilled
+
+	.block.block-segment
+		
+		.container
+			.row.m-b-md
+				.col-md-3.col-md-offset-2
+					img(src="http://kpcbweb2.s3.amazonaws.com/companies/550/logo/original/segment-logo-black_(1).png?1416858423", alt="segment logo", width="250px")
+				
+				.col-md-3.col-md-offset-2
+					img(src="static/images/madkudu_rectangle_large.png", width="250px")
+				.col-md-2
+				
+			.row.p-b-md
+				h1.m-b-md Got Segment? Awesome! 
+				h4 Start your Proof of Concept with MadKudu in seconds. 100% risk-free.
+				
+				ol
+					li Sign up for MadKudu
+					li Connect Segment
+					
+				p That's it! We'll import your data and start your Proof of Concept (POC). <a href="/poc.html">About MadKudu's POC</a>.
+				
+				div.text-center.m-t-md
+					a.btn.btn-primary.btn-lg.m-r-md(class='mki_segment_trial') 
+						| Get started
+					a.btn.btn-primary.btn-lg(class='mki_segment_demo')
+						| Get a demo
+						
+			.row.p-b-md.m-t-md
+				h1.m-b-md Not using <a href="https://segment.com/?utm_source=madkudu.com&utm_medium=landingpage&utm_campaign=partners">Segment</a>? You're missing out ...
+				h4.m-b-md Segment. How do we love thee? Let us count the ways ...
+				
+				p Segment unlocks your data and <strong>sends it to hundreds of applications with a single integration</strong>. Analytics. Sales. Marketing. Pretty much any way you want to use your data, you can with Segment.
+				
+				p <strong>Save days of engineering time</strong> every month. Instead of managing third-party APIs, focus on building your product.
+				
+				p And, start sending your behavioral data to a data warehouse, without any code. Instantly <strong>run analytics queries across platforms</strong> instead of spending months reconciling data.
+
+				p <a href="https://segment.com/?utm_source=madkudu.com&utm_medium=landingpage&utm_campaign=partners">Sign up for Segment</a> to easily send your data to MadKudu and 180+ tools for analytics and marketing.
+
+	.block.block-inverse.block-home
+
+		.container
+			.row.vertical-center
+				.col-sm-12.text-center
+					h1.block-title.m-b The predictive lead scoring solution for SaaS sales teams
+					p.lead.m-b-lg.text-muted You'll wonder how you ever sold without MadKudu 
+					div
+						a.btn.btn-primary.btn-lg.cta-home.btn-wrap(class='mki_landing_demo')
+							| Get a demo
+
+
+	
+	.block.block-customers.p-t.p-b-md
+		.row.text-center
+			h1.text-muted.text-uppercase Featured Customers
+		.row.customers-logos.m-b
+			.customer-logo__box
+				.customer-logo(style='background-image: url(/static/images/customers/segment-logo-black.svg); background-size: 145px;')
+			.customer-logo__box.customer-case-study
+				a.customer-logo(href='/customers-codeship' style='background-image: url(/static/images/customers/codeship.svg); background-size: 145px;')
+			.customer-logo__box.customer-case-study
+				a.customer-logo(href='/customers-uxpin' style='background-image: url(/static/images/customers/uxpin_black.svg); background-size: 160px;')
+
+
+	.block.block-screenshots
+
+		.container
+			.row.p-b-md
+				h1.text-center Increase SaaS sales by 20% or more with the power of predictive analytics
+
+		.container.m-t-md
+			.row
+				.col-md-6.p-r-md
+					h4.text-center Problem: You don't know the value of every lead
+					p Who has a budget and a problem? Who is just poking around?
+					p Who took critical steps in your product? Who never finished signing up?
+				.col-md-6.p-l-md
+					h4.text-center Solution: Sales focuses on just your best leads
+					p MadKudu identifies your best leads based on customer fit and behavior.
+					p No more wasted time on unqualified leads. More time on those who may close.
+			.row.m-t-md
+				.col-md-6.p-r-md
+					img(src='/static/images/people_grid.jpg')
+				.col-md-6.p-l-md
+					img(src='/static/images/lead_score_grid.jpg')
+
+		//- .container.p-t-lg
+		//- 	.row.row-screenshots.m-b-md
+		//-
+		//- 		.col-md-6.col-xs-12
+		//- 			h3.m-t-0 Automatically researches your trial customers
+		//- 			//- h4.text-muted.m-b MadKudu identifies new high potential lifetime value users and alerts your sales team to greet them.
+		//- 			.row.hidden-xs.hidden-sm
+		//- 				.col-md-12.m-b-md
+		//- 					h4.m-b-md Qualify your leads on just an email address
+		//- 					p.m-t-0 No name? No title? Gmail address? No problem!
+		//- 					p.m-t-0 Get critical sales metrics like location, company size, and role from an email address.
+		//- 					p.m-t-0 We do the research and find the best leads.
+		//- 				//- .col-sm-6
+		//- 				//- 	h5 Keep your existing workflow
+		//- 				//- 	p.m-y-0  MadKudu triggers alerts in Slack with links to your CRM, LinkedIn and many others.
+		//- 				//- 	p.m-t-0 <a href='/features' class='text-primary'>Learn more</a>.
+		//-
+		//- 		.col-md-5.col-xs-12.pull-right
+		//- 			img(src='/static/images/people.jpg')
+		//-
+		//- .container.p-t-lg
+		//-
+		//- 	.row.row-screenshots.m-y-md
+		//-
+		//- 		.col-md-4.col-md-offset-1.col-xs-12
+		//- 			h3.m-t-0 QUALIFIED LEAD alerts in Slack
+		//- 			//- h4.text-muted.m-b MadKudu creates triggers in your automation platform to send the right email at the right time.
+		//- 			.row.hidden-xs.hidden-sm
+		//- 				.col-md-12.m-b-md
+		//- 					h4.m-b-md Instant productivity - no more digging through Salesforce
+		//- 					p.m-t-0 Your entire company works in Slack - why not sales?
+		//- 					p.m-t-0 Get more productivity, collaboration and responsiveness from your sales team.
+		//- 					p.m-t-0 All the information at your fingertips: LinkedIn, Salesforce, web sites, and more.
+		//-
+		//-
+		//- 		.col-md-7.col-xs-12.screenshot-left
+		//- 			img(src='/static/images/qualified_lead_alert.png')
+
+	.block.block-screenshots.block-inverse.block-dark-grey
+
+		.container
+			.row.p-b-lg
+				h1.text-center What's our secret sauce?
+				h1.text-center We grok in-app behavior, the key to SaaS sales
+			.row
+				h3.m-b If selling SaaS products was like selling tractors you wouldn't need MadKudu
+				p Lots of lead scoring systems can tell if a lead is a good customer fit - and we do that too. Heck, if you're selling tractors just knowing whether that new lead is a farmer or an astronaut is probably enough.
+
+				p But SaaS businesses are unique:
+
+				ul
+					li Our products change constantly
+					li Customers convert at different times
+					li Customers churn if we don't resell our value every billing cycle
+
+				p The key to SaaS sales is giving your reps deep, actionable insight into the most important steps customers take during their journey with you.
+
+				p Only with behavior insight can your sales reps predict what customers will do.
+
+		.container.m-t-lg
+			.row
+				h2.text-center A simple "behavior fit" score isn't enough - MadKudu gives you multiple customer lifecycle predictions
+
+			.row.row-screenshots.m-t-lg
+				.col-md-6.col-xs-12
+					h3.m-t-0.m-b Likelihood to buy
+
+					.row.hidden-xs.hidden-sm
+						.col-md-12.m-b-md
+							p.m-t-0 MadKudu tracks your previous customers' buying behavior and looks for events highly correlated with leads who convert.
+							p.m-t-0 These signals are used to build models that predict a lead's Likelihood of buying.
+
+						//- .col-sm-6
+						//- 	h5 Keep your existing workflow
+						//- 	p.m-y-0  MadKudu triggers alerts in Slack with links to your CRM, LinkedIn and many others.
+						//- 	p.m-t-0 <a href='/features' class='text-primary'>Learn more</a>.
+
+				.col-md-6.col-xs-12.pull-right
+					img.img-rounded(src='/static/images/likelihood_to_buy_person.jpg')
+
+			.row.row-screenshots.row-models
+
+				.col-md-5.col-xs-12
+					h3.m-t-0.m-b Likelihood to upsell
+					//- h4.text-muted.m-b MadKudu creates triggers in your automation platform to send the right email at the right time.
+					.row.hidden-xs.hidden-sm
+						.col-md-12.m-b-md
+							p.m-t-0 Boom! Your sales teams instantly know which customers to call about migrating to an enterprise plan.
+
+							p.m-t-0 MadKudu's algorithms automatically adapt to new features or customers.
+
+
+				.col-md-6.col-xs-12.screenshot-left
+					img.img-rounded(src='/static/images/likelihood_to_upsell_person.jpg')
+
+			.row.row-screenshots.row-models
+				.col-md-6.col-xs-12
+					h3.m-t-0.m-b Likelihood to churn
+
+					.row.hidden-xs.hidden-sm
+						.col-md-12.m-b-md
+							p.m-t-0 Yikes! One of your enterprise customers is exhibiting patterns just like the last 3 who canceled their account.
+							p.m-t-0 Fortunately your sales reps can intervene before they cancel.
+
+						//- .col-sm-6
+						//- 	h5 Keep your existing workflow
+						//- 	p.m-y-0  MadKudu triggers alerts in Slack with links to your CRM, LinkedIn and many others.
+						//- 	p.m-t-0 <a href='/features' class='text-primary'>Learn more</a>.
+
+				.col-md-6.col-xs-12.pull-right
+					img.img-rounded(src='/static/images/likelihood_to_churn_person.jpg')
+
+			.row.row-screenshots.row-models
+
+				.col-md-5.col-xs-12
+					h3.m-t-0.m-b Customized predictors
+					//- h4.text-muted.m-b MadKudu creates triggers in your automation platform to send the right email at the right time.
+					.row.hidden-xs.hidden-sm
+						.col-md-12.m-b-md
+							p.m-t-0 Your product is unique - sign up for our enterprise plan and we'll build customized behavior predictors.
+
+
+
+				.col-md-6.col-xs-12.screenshot-left
+					img.img-rounded(src='/static/images/likelihood_to_custom_person.jpg')
+
+
+	.block.block-screenshots
+
+		.container
+			.row.p-b-lg
+				h1.text-center We tell your sales reps WHY a lead scores high or low so they can engage customers more effectively
+			.row
+				p Simply knowing a customer is likely to buy isn't good enough - sales reps need context and reasons to engage customers.
+				p By knowing what behaviors lead to a lead score your reps will engage in more valuable conversations and close more leads.
+			.row.row-screenshots
+				.col-md-12
+					img.img-rounded(src='/static/images/bad_email.jpg')
+
+				.col-md-12
+					img.img-rounded(src='/static/images/good_email.jpg')
+
+	.block.block-inverse.block-home.block-screenshots
+
+		.container
+			.row.vertical-center
+				.col-sm-12.text-center
+					h1 Updates your CRM - where your sales reps work
+					p MadKudu integrates with popular CRMs like Salesforce, SalesforceIQ, Marketo, and Pipedrive
+				.col-md-12.m-t-lg
+					img.img-rounded(src='/static/images/trump_shorter.jpg')
+
+		.container.m-t-lg
+
+			.row.row-screenshots.m-y-md
+
+				.col-md-5.col-xs-12
+					h2.m-t-0 Never miss an opportunity with Slack alerts
+					//- h4.text-muted.m-b MadKudu creates triggers in your automation platform to send the right email at the right time.
+					.row.hidden-xs.hidden-sm
+						.col-md-12.m-b-md
+							h4.m-b-md Instant productivity - no more digging through Salesforce
+							p.m-t-0 Your entire company works in Slack - why not sales?
+							p.m-t-0 Get more productivity, collaboration and responsiveness from your sales team.
+							p.m-t-0 All the information at your fingertips: LinkedIn, Salesforce, web sites, and more.
+
+
+				.col-md-7.col-xs-12.screenshot-left
+					img.img-rounded(src='/static/images/ready_to_buy.png')
+
+
+
+
+	.block.block-screenshots
+		.container
+			.row.p-b-lg
+				h1.text-center Predictions automatically improve with sales rep feedback
+			.row
+				p Most sales reps are skeptical of algorithmic-based lead scoring - and for good reason. No model is smart as your sales team.
+				p You'll get sales buy-in by giving them the tools to make MadKudu's predictions smarter based on their feedback.
+				.col-md-12.m-t-lg
+					img.img-rounded(src='/static/images/lead_feedback.jpg')
+
+
+			//- .row.row-marketing-grid
+			//- 	.col-sm-12.p-x-md.m-b-md.text-center.stack-column
+			//- 		h3 Step 1 - Connect Segment, KISSmetrics, or mixpanel
+			//- 		img.m-a(src='/static/images/integrations/segment.svg')
+			//- 		img.m-a(src='/static/images/integrations/kissmetrics.svg')
+			//- 		img.m-a(src='/static/images/integrations/mixpanel.svg')
+			//-
+			//- .row.row-marketing-grid
+			//- 	.col-sm-12.p-x-md.m-b-lg.text-center.stack-column
+			//- 		h3 Step 2 - Connect Slack
+			//- 		img.m-a(src='/static/images/integrations/slack.svg')
+			//-
+			//-
+			//- .row.m-t-lg
+			//- 	a.btn.btn-primary.m-t-lg.btn-lg.cta-home.btn-wrap(href='https://app.madkudu.com/signup')
+			//- 				| Start your free trial
+
+
+	.block.block-inverse.block-praise
+		.container.text-center
+			.row.m-b-lg
+				.col-xs-12
+					h1.m-t-0.m-b Customer testimonials
+
+		.container.text-center
+			.row
+				.col-md-6
+					blockquote.pull-quote
+						img.img-circle(src='/static/images/team/guillaume.jpeg')
+						p "Lead Scoring is a fantastic way to improve your marketing. MadKudu does a great job at it, and integrates perfectly with the Segment platform."
+						cite.m-b-lg Guillaume Cabane, VP of Growth Segment
+				.col-md-6
+					blockquote.pull-quote
+						img.img-circle(src='/static/images/team/francois.png')
+						p "This just works - an instant, highly-visible win. Our sales team team is calling qualified leads in the 1st hour instead of digging through Salesforce and searching LinkedIn."
+						cite.m-b-lg Francois Bondiguel, Director of Online Marketing at Vend
+			//- .row
+			//- 	.col-md-6
+			//- 		blockquote.pull-quote
+			//- 			img.img-circle(src='/static/images/team/francois.png')
+			//- 			p "This just works - an instant, highly-visible win. Our sales team team is calling qualified leads in the 1st hour instead of digging through Salesforce and searching LinkedIn."
+			//- 			cite.m-b-lg Francois Bondiguel, Director of Online Marketing at Vend
+			//- 	.col-md-6
+			//- 		blockquote.pull-quote
+			//- 			img.img-circle(src='/static/images/team/francois.png')
+			//- 			p "This just works - an instant, highly-visible win. Our sales team team is calling qualified leads in the 1st hour instead of digging through Salesforce and searching LinkedIn."
+			//- 			cite.m-b-lg Francois Bondiguel, Director of Online Marketing at Vend
+
+
+	.block.block-customers.p-t.p-b-md
+		.row.text-center
+			h1.text-muted.text-uppercase More Customers
+		.row.customers-logos.m-b
+			.customer-logo__box.customer-case-study
+				a.customer-logo(href='/customers-codeship' style='background-image: url(/static/images/customers/codeship.svg);')
+			.customer-logo__box
+				.customer-logo(style='background-image: url(/static/images/customers/pingboard_black.svg);')
+			.customer-logo__box.customer-case-study
+				a.customer-logo(href='/customers-uxpin' style='background-image: url(/static/images/customers/uxpin_black.svg);')
+			.customer-logo__box
+				.customer-logo(style='background-image: url(/static/images/customers/vend_black.svg);')
+			.customer-logo__box
+				.customer-logo(style='background-image: url(/static/images/customers/shopventory_black.svg);')
+			.customer-logo__box
+				.customer-logo(style='background-image: url(/static/images/customers/sumall_black.svg);')
+
+
+	.block.block-inverse.block-home.block-screenshots
+		.container
+			.row.p-b-lg
+				h1.text-center No integration - works across your marketing and sales stack
+
+			.row.text-center
+				p MadKudu enriches your data with our predictive models and 3rd-party data sources.
+				.col-md-12.m-t-lg
+					img.img-rounded(src='/static/images/marketecture.jpg')
+
+
+
+
+	.block.block-madkudu-way
+		.container
+			.row.text-center
+				.col-xs-12
+					h1.m-t-0.m-b No manual lead scoring rules
+
+			.row.m-a-lg.hidden-xs.hidden-sm
+				.col-md-12
+					p Manual, rule-based lead scoring systems like HubSpot are fine for qualifying leads in static applications (like e-commerce).
+
+					p However, lead scoring rules are impossible to maintain in SaaS applications where the market and product are constantly evolving.
+
+
+			.row.text-center
+				.col-md-6.hidden-sm.hidden-xs
+					h2 The old way
+					p.m-a-md Takes too much time to maintain by hand
+					div
+						img(src='/static/images/old_way.jpg')
+
+				.col-md-6
+					h2.hidden-xs.hidden-sm The MadKudu way
+					p.m-a-md.hidden-sm.hidden-xs Setup once. You're done.
+					div
+						img(src='/static/images/madkudu_way.jpg')
+
+
+
+
+	.block.block-inverse.block-dark-grey.block-for-you
+		.container
+			.row.text-center
+				.col-md-8.col-md-offset-2
+					h1 Is MadKudu for you?
+					p So here you are ... at the bottom of our landing page ... still reading ... and wondering ... "Is this for me?"
+
+
+			.row.m-y-lg
+				.col-md-8.col-md-offset-2.pull-left
+
+					h3 Are you a B2B SaaS company?
+					p Awesome! SaaS is all we do and we think we're the best at it.
+
+					h3 Do you have a sales team?
+					p Great! We'll give them the data they need to convert more sales.
+
+					h3 Do you get >500 leads/month?
+					p MadKudu needs enough data points to make accurate predictions.
+
+					p.m-t-md If you answered "yes" to all 3 questions MadKudu is for you. Let's talk about how we can work together and accelerate your sales.
+
+
+
+			.row.p-b-lg.text-center
+				a.btn.btn-primary.btn-lg.cta-home.btn-wrap(class='mki_landing_demo')
+					| Get a demo

@@ -1,15 +1,15 @@
 /* Top Menu Navigation
  *--------------------------------------------------*/
- 
+
 #nav-top {
 	margin-bottom: 0;
 	min-height: 40px;
 	padding: 3px 0;
 	background-color: white;
-	
-	@media (min-width: @screen-sm-min) { 
+
+	@media (min-width: @screen-sm-min) {
 		padding: 17px 0 16px;
-	}	
+	}
 }
 
 #nav-top .navbar-header {
@@ -25,7 +25,7 @@
 	height: 23px;
 	color: transparent;
 	.background-image("@{m-path-image}/general/main-logo-madkudu.png", 88px 23px);
-	
+
 	@media (min-width: @screen-sm-min) {
 		margin-top: 0;
 		margin-bottom: 0;
@@ -43,16 +43,16 @@
 }
 
 #nav-top .navbar-toggle {
-	
+
 	@media (max-width: @screen-xs-max) {
 		margin: 0;
 	}
 }
 
 #nav-top .navbar-collapse {
-	
+
 	@media (max-width: @screen-xs-max) {
-		background-color: @m-color-subtle-grey;	
+		background-color: @m-color-subtle-grey;
 	}
 }
 
@@ -61,7 +61,7 @@
 }
 
 #nav-top .navbar-nav {
-	
+
 	@media (min-width: @screen-sm-min) {
 		margin-top: 2px;
 		margin-bottom: 2px;
@@ -69,14 +69,14 @@
 }
 
 #nav-top .navbar-nav > li + li {
-	
+
 	@media (min-width: @screen-sm-min) {
 		margin-left: 15px;
 	}
 }
 
 #nav-top .navbar-nav > li:last-child {
-	
+
 	@media (min-width: @screen-sm-min) {
 		margin-left: 25px;
 	}
@@ -87,13 +87,13 @@
 	text-transform: uppercase;
 	text-align: center;
 	cursor: pointer;
-	
+
 	@media (min-width: @screen-sm-min) {
 	    padding-top: 10px;
 	    padding-bottom: 10px;
 	    text-align: inherit
 	}
-	
+
 	&:hover,
 	&:focus {
 		color: @m-color-blue;
@@ -108,11 +108,11 @@
 	color: @m-color-blue;
 	border-color: @m-color-blue;
 	margin: 5px 15px;
-	
+
 	@media (min-width: @screen-sm-min) {
 		margin: 0 auto;
 	}
-	
+
 	&:hover,
 	&:focus {
 		color: white;
@@ -125,14 +125,14 @@
 
 /* Jumbotron a.k.a Header Section
  *--------------------------------------------------*/
- 
+
 .jumbotron {
 	margin-bottom: 0;
 	padding: 0;
 	text-align: center;
 	color: white;
 	background-color: @m-color-dark-blue;
-	
+
 	@media (min-width: @screen-sm-min) {
 		padding-top: 213px;
 		padding-bottom: 213px;
@@ -147,14 +147,14 @@
 	@media (min-width: 1921px) {
 		background-image: none !important;
 	}
-	
+
 	.container > * + * {
 		margin-top: 40px;
 		margin-bottom: 0;
 	}
 }
- 
-.jumbotron h1, 
+
+.jumbotron h1,
 .jumbotron .h1 {
 	font-size: 32px;
 	line-height: 1.25em;
@@ -166,9 +166,9 @@
 	    font-size: 40px;
 	    line-height: 1em;
 	}
-	
+
 	br {
-		
+
 		@media (min-width: @screen-sm-min) {
 		    display: none;
 		}
@@ -179,12 +179,12 @@
 	font-size: 18px;
 	margin: 0 10px;
 	letter-spacing: 0.075em;
-	
+
 	&.small {
 		font-size: 15px;
 	}
 }
- 
+
 .jumbotron p a {
 	color: @m-color-sky-blue;
 	text-decoration: underline;
@@ -197,11 +197,25 @@
 	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
+}
+
+.jumbotron .btn-trial {
+	background-color: @m-color-blue;
+	border-color: @m-color-blue;
+
+	&:hover,
+	&:focus {
+		background-color: lighten(@m-color-blue, 5%);
+  }
+}
+
+
+.jumbotron .btn-demo {
 	background-color: @m-color-green;
-	border-color: @m-color-green;	
-	
+	border-color: @m-color-green;
+
 	&:hover,
 	&:focus {
 		background-color: lighten(@m-color-green, 5%);
-	}
+  }
 }

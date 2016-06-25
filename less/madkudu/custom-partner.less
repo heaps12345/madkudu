@@ -1,0 +1,107 @@
+.custom-partner h3 {
+	margin: 0 auto;
+	font-size: 29px;
+	line-height: 1.25em;
+	text-align: center;
+
+	@media (min-width: @screen-sm-min) {
+		font-size: 36px;
+	}
+}
+
+.custom-partner h3 strong {
+	font-weight: normal;
+	font-weight: 500;
+	border-bottom: solid 4px @m-color-dark-orange;
+}
+
+.custom-partner h3 br {
+
+	@media (max-width: @screen-sm-max) {
+		display: none;
+	}
+}
+
+.custom-partner.alt {
+
+	.cta-box p, li {
+		font-size: 18px;
+		font-weight: 300;
+	}
+
+	.partner-box p, li {
+		font-size: 18px;
+		font-weight: 300;
+	}
+
+
+}
+
+.custom-partner p {
+	font-weight: 400;
+
+	@media (min-width: @screen-sm-min) {
+		font-weight: 300;
+	}
+}
+
+
+.custom-partner:not(.alt) .box-flow .text {
+
+	@media (min-width: @screen-sm-min) {
+		margin-top: 30px;
+	}
+}
+
+.custom-partner:not(.alt) .box-flow .figure {
+
+	@media (max-width: @screen-sm-min) {
+		margin-top: 60px;
+	}
+}
+
+.custom-partner.alt .box-flow .text {
+
+	@media (min-width: @screen-sm-min) {
+		margin-top: 15px;
+	}
+}
+
+.custom-partner.alt .box-flow li:last-child .text {
+
+	@media (min-width: @screen-sm-min) {
+		margin-top: 35px;
+	}
+}
+
+.custom-partner .btn .btn-left {
+	color: white;
+	padding: 14px 42px;
+	line-height: 1em;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	background-color: @m-color-blue;
+	border-color: @m-color-blue;
+
+	&:hover,
+	&:focus {
+		background-color: lighten(@m-color-blue, 5%);
+	}
+}
+
+.custom-partner .btn.btn-right {
+	color: white;
+	padding: 14px 42px;
+	line-height: 1em;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	background-color: @m-color-green;
+	border-color: @m-color-green;
+
+	&:hover,
+	&:focus {
+		background-color: lighten(@m-color-green, 5%);
+	}
+}
