@@ -1,3 +1,109 @@
+/* Jumbotron a.k.a Header Section
+ *--------------------------------------------------*/
+
+.jumbotron {
+	margin-bottom: 0;
+	text-align: center;
+	color: white;
+	background-color: @m-color-dark-blue;
+
+	@media (min-width: @screen-sm-min) {
+		padding-top: 213px;
+		padding-bottom: 213px;
+		.background-image("@{m-path-image}/general/graphic-chart.png", contain);
+		background-position: right bottom;
+	}
+
+	@media (min-width: 1601px) {
+		background-size: 1600px 391px;
+	}
+
+	@media (min-width: 1921px) {
+		background-image: none !important;
+	}
+
+	.container > * + * {
+		margin-top: 40px;
+		margin-bottom: 0;
+	}
+}
+
+.jumbotron h1,
+.jumbotron .h1 {
+	font-size: 32px;
+	line-height: 1.25em;
+	font-weight: 300;
+	margin: 0 auto;
+	letter-spacing: 0.05em;
+
+	@media (min-width: @screen-sm-min) {
+	    font-size: 40px;
+	    line-height: 1em;
+	}
+
+	br {
+
+		@media (min-width: @screen-sm-min) {
+		    display: none;
+		}
+	}
+}
+
+.jumbotron p {
+	font-size: 18px;
+	margin: 0 10px;
+	letter-spacing: 0.075em;
+
+	&.small {
+		font-size: 15px;
+	}
+}
+
+.jumbotron p a {
+	color: @m-color-sky-blue;
+	text-decoration: underline;
+}
+
+.jumbotron .btn {
+	color: white;
+	min-width: 210px;
+	padding: 14px 42px;
+	line-height: 1em;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.jumbotron .btn + .btn {
+	margin-top: 20px;
+
+	@media (min-width: @screen-sm-min) {
+		margin-top: 0;
+		margin-left: 30px;
+	}
+}
+
+.jumbotron .btn-trial {
+	background-color: @m-color-blue;
+	border-color: @m-color-blue;
+
+	&:hover,
+	&:focus {
+		background-color: lighten(@m-color-blue, 5%);
+  }
+}
+
+.jumbotron .btn-demo {
+	background-color: @m-color-green;
+	border-color: @m-color-green;
+
+	&:hover,
+	&:focus {
+		background-color: lighten(@m-color-green, 5%);
+  }
+}
+
+
 /* Testimonial Section
  *-----------------------------------------------------------*/
 
