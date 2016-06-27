@@ -1,4 +1,21 @@
-/* Jumbotron a.k.a Header Section
+/* Button Trial + Button Demo */
+
+.btn-trial,
+.btn-demo {
+	min-width: 210px;
+}
+
+.btn-trial + .btn-demo {
+	margin-top: 20px;
+
+	@media (min-width: @screen-sm-min) {
+		margin-top: 0;
+		margin-left: 30px;
+	}
+}
+
+
+/* Jumbotron
  *--------------------------------------------------*/
 
 .jumbotron {
@@ -66,21 +83,11 @@
 
 .jumbotron .btn {
 	color: white;
-	min-width: 210px;
 	padding: 14px 42px;
 	line-height: 1em;
 	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
-}
-
-.jumbotron .btn + .btn {
-	margin-top: 20px;
-
-	@media (min-width: @screen-sm-min) {
-		margin-top: 0;
-		margin-left: 30px;
-	}
 }
 
 .jumbotron .btn-trial {
@@ -1686,6 +1693,7 @@
 }
 
 .teaser .cta .btn {
+	min-width: 220px;
 	padding: 12px 34px;
 	text-transform: uppercase;
 	color: white;
