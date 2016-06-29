@@ -85,9 +85,10 @@ block scripts
 			var formEl = document.getElementById('fcontact');
 
 			$(document).on("submit", formEl, function (event) {
-				analytics.identify({
-				  email: 'testdata@test.com'
-				});
+				// This works but trackForm won't fire. Must be a js error.
+				//- analytics.identify({
+				//-   email: 'testdata@test.com'
+				//- });
 				analytics.trackForm(formEl, 'Request Demo', {
 					firstname: $('#firstname').val(),
 					lastname: $('#lastname').val(),
