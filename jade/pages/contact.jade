@@ -84,26 +84,43 @@ block scripts
 		};
 
 		$(document).ready( function() {
-			var formEl = document.getElementById('fcontact');
 
-			var alertBox = getParameterByName('email');
+			var alertBox = getParameterByName('s');
 
-			if (alertBox != null) {
+			if (alertBox == "sent") {
 				alertBoxSuccess = '<div role="alert" class="alert alert-dismissible alert-success"><button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Fabulous! We\'ll be in touch';
 
 				$('.contact .container').prepend(alertBoxSuccess);
 			}
 
-			analytics.identify();
+			var formEl = $('#fcontact');
 
-			analytics.trackForm(formEl, 'Request Demo', {
-				firstname: $('#firstname').val(),
-				lastname: $('#lastname').val(),
-				email: $('#email').val(),
-				phone: $('#phone').val(),
-				company: $('#company').val(),
-				timecall: $('#timecall').val()
+			formEl.on('submit', function(e) {
+				
+				e.preventDefault();
+
+				var email = formEl.find('[name=email]').val();
+				if (email) {
+					analytics.alias(email);
+					analytics.identify(email, {
+						email: email
+					});
+
+					analytics.track('Request Demo Tracking', {
+					 	firstname: $('#firstname').val(),
+					 	lastname: $('#lastname').val(),
+					 	email: $('#email').val(),
+					 	phone: $('#phone').val(),
+					 	company: $('#company').val(),
+					 	timecall: $('#timecall').val()
+					});
+
+					setTimeout( function() {
+						window.location.href = "/contact.html?s=sent"
+					}, 1000);
+				}
 			});
+
 		});
 
 
