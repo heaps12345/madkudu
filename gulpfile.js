@@ -56,6 +56,12 @@ var Paths = {
 		'./js/custom/*',
 		'./js/madkudu/**.js',
 	],
+	STATIC_JS: [
+		'./js/vendor/modernizr-custom.js',
+		'./js/vendor/parsley.min.js',
+		'./js/vendor/moment.min.js',
+		'./js/plugins/eonasdan-bootstrap-datetimepicker.min.js'
+	],
 	SIMULATOR: './js/simulator/simulator.js',
 	STATIC: ['./static/**/**'],
 	UTILS: [
@@ -126,6 +132,8 @@ gulp.task('js', ['clean-js'], function () {
 	gulp.src(Paths.JS)
 		.pipe(concat('toolkit.js'))
 		.pipe(gulp.dest(Paths.DIST));
+	gulp.src(Paths.STATIC_JS)
+		.pipe(gulp.dest(Paths.DIST_JS));
 });
 
 gulp.task('js-min', ['js'], function () {

@@ -1,0 +1,24 @@
+/* Utilities
+ *-----------------------------------------------------------*/
+
+/* Centering */
+
+.centering {
+	display: table;
+	width: 100%;
+
+	&-inner {
+		display: table-cell;
+		vertical-align: middle;
+
+		& > * {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}
+
+.grey {
+	color: @m-color-grey;
+}

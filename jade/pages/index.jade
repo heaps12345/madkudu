@@ -14,7 +14,7 @@ block neck
 			$('.mki_landing_demo').click(function (event) {
 				event.preventDefault();
 				analytics.track('Landing Page - Clicked request demo');
-				window.open('http://www.formlets.com/forms/56de30b13735111b2d934a79','_blank');
+				window.open('/contact.html','_blank');
 			});
 			$('.mki_landing_trial').click(function (event) {
 				event.preventDefault();
@@ -25,27 +25,27 @@ block neck
 
 block body
 
-	// - NOTE: Should remove this wrapper after changed all your site
-	.new-site 
+	//- MONTAZZE NOTE: Should remove this wrapper after changed all your site
+	.body
 
 		include ../components/header_white_new.jade
 
 		header.jumbotron
 			.container
-				h1 Advanced lead 
-					br 
-					| scoring for 
+				h1 Advanced lead
 					br
-					| SaaS sales
-				p Grow sales 20% by leveraging your customers' in-app behavior
-				p 
-					a.btn.btn-trial.btn-lg.btn-primary.m-r-md(class='mki_landing_trial', role='button') Get started
+					|  scoring for
+					br
+					|  SaaS sales
+				p Grow sales 20% by leveraging your customer's in-app behavior
+				p
+					a.btn.btn-trial.btn-lg.btn-primary(class='mki_landing_trial', role='button') Get started
 					a.btn.btn-demo.btn-lg.btn-primary(class='mki_landing_demo', role='button') Get a Demo
-						
+
 		section.sales
 			.container
-				h3 Your sales team is 
-					| missing data it needs 
+				h3 Your sales team is
+					| missing data it needs
 					br
 					| to prioritize leads
 				ol.box-flow
@@ -54,25 +54,25 @@ block body
 							.centering
 								.centering-inner
 									h4 Your reps waste time on unqualified leads
-									p Some leads don't fit your customer profile. 
+									p Some leads don't fit your customer profile.
 									p Others will never close because they won't use your product.
 						.figure
 							+data-box-1(sales1, 0)
-							
+
 					li.connector
 						div.up
 						div.down
-						
+
 					li.figure-left
 						.text
 							.centering
 								.centering-inner
 									h4 Your reps miss high-potential leads
 									p Sales can miss great leads because reps have an incomplete view of the customer.
-									
+
 						.figure
 							+data-box-1(sales1, 1)
-							
+
 		section.alt.sales
 			.container
 				h3 MadKudu identifies your best customers using
@@ -83,15 +83,15 @@ block body
 							.centering
 								.centering-inner
 									h4 Identify your best leads
-									p MadKudu analyzes your customers and segments leads based on demographic data like title, industry, and size. 
+									p MadKudu analyzes your customers and segments leads based on demographic data like title, industry, and size.
 
 						.figure
 							+data-box-2(sales2, 0)
-							
+
 					li.connector
 						div.up
 						div.down
-						
+
 					li.figure-left
 						.text
 							.centering
@@ -100,11 +100,11 @@ block body
 									p MadKudu aggregates your customers’ in-app behavior to identify those who are ready to buy.
 						.figure
 							+data-box-2(sales2, 1)
-							
+
 					li.connector.reverse
 						div.up
 						div.down
-						
+
 					li.figure-right
 						.text
 							.centering
@@ -113,11 +113,11 @@ block body
 									p MadKudu identifies upsell candidates based on customer profile and behavior.
 						.figure
 							+data-box-2(sales2, 2)
-							
+
 					//- li.connector
 					//- 	div.up
 					//- 	div.down
-					//- 	
+					//-
 					//- li.figure-left
 					//- 	.text
 					//- 		.centering
@@ -127,7 +127,7 @@ block body
 					//- 				p Your Customer Success team can intervene before she does.
 					//- 	.figure
 					//- 		+data-box-2(sales2, 3)
-		
+
 		section.customers
 			.container
 				h2 Featured Customers
@@ -140,10 +140,10 @@ block body
 			.container
 				h3 Our secret sauce? We build predictive models using in-app behavior.
 				p Other lead scoring approaches don't give your sales team a complete view of the customer
-				
+
 				//- see howitworks.jade file
 				+works-illustration()
-				
+
 		section.alt.testimonials
 			.container
 				+testimony-list
@@ -163,54 +163,54 @@ block body
 
 		section.comparison.hidden-xs
 			.container
-				h3 Close more sales by giving your reps a complete 
+				h3 Close more sales by giving your reps a complete
 					br
 					| view of your customers.
 				.row
 					.col-sm-6
 						.compare.wo-madkudu
-							h4 
+							h4
 								span.icon-wo-madkudu
 								| Without Madkudu
 							ol
-								li 
+								li
 									p Your sales team is missing important data about how
 										br
 										| a customer is using your product.
 									.img-container
 										img(src='static/images/comparison/image-crm-without-madkudu@2x.png', alt='CRM Without Madkudu')
 								li
-									p Leads to 
-										strong generic emails 
+									p Leads to
+										strong generic emails
 										| and
-										br  
+										br
 										| conversations.
 								li
 									p Bad! Lacks Context
 									+bad-email()
 					.col-sm-6
 						.compare.w-madkudu
-							h4 
+							h4
 								span.icon-w-madkudu
 								| With Madkudu
 							ol
-									li 
+									li
 										p MadKudu shows your reps a complete view of how customers
 											| are using your product.
 										.img-container
 											img(src='static/images/comparison/image-crm-with-madkudu@2x.png', alt='CRM With Madkudu')
 									li
-										p Leads to  
-											strong relevant emails 
+										p Leads to
+											strong relevant emails
 											| and valuable
-											br 
+											br
 											| conversations.
 									li
-										p Good! Explains 
-											strong why 
+										p Good! Explains
+											strong why
 											| Sales is Contacting The Customer
 										+good-email()
-										
+
 		section.alt.comparison
 			.container.container-narrow
 				h3 No manual lead scoring rules
@@ -226,9 +226,9 @@ block body
 								each item in oldway
 									+oldway_item(item.param, item.point)
 					.col-sm-6
-						.scoring.w-madkudu 
+						.scoring.w-madkudu
 							h4 The MadKudu way
-							p Setup once. Prediction algorithms automatically 
+							p Setup once. Prediction algorithms automatically
 								br
 								| adapt based on data.
 							ol
@@ -239,7 +239,7 @@ block body
 									div Predictive Analysis
 								li
 									div Intelligent lead scores &amp; enriched customer profiles
-		
+
 		section.teaser
 			.container
 				h3 Is MadKudu for you?
@@ -249,5 +249,5 @@ block body
 					li Do you get >500 Leads/month?
 				.cta
 					p If you answered "yes" to all 3 questions MadKudu is for you. Let's talk about how we can work together and accelerate your sales.
-					a.m-r-md(class=['mki_landing_trial','btn', 'btn-trial']) Get started
+					a(class=['mki_landing_trial','btn', 'btn-trial']) Get started
 					a(class=['mki_landing_demo','btn', 'btn-demo']) Get a demo
