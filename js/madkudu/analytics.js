@@ -1,4 +1,6 @@
 var segment_keys = {
+	//dev: 'FRGajmyLnzs4rV1pFHApalqD8V9ijOkp',
+	//prod: 'FRGajmyLnzs4rV1pFHApalqD8V9ijOkp'
 	dev: 'U2gPGmLgd9q3xq8iSYcwSpCV48glOaMl',
 	prod: 'Gr7DJYrd6qzqArwk047D0iKxHuGbfGWI'
 };
