@@ -1,0 +1,100 @@
+extends ../components/skeleton.jade
+
+include ../components/contact_form.jade
+
+
+block head
+	title MadKudu | Accelerating SaaS sales with predictive analytics
+	meta(name='description' content='Accelerating SaaS sales with predictive analytics')
+
+block neck
+	script analytics.page('Contact')
+
+block body
+
+	//- MONTAZZE NOTE: Should remove this wrapper after changed all site
+	.body
+
+		include ../components/header_white_new.jade
+
+		section.contact
+			.container
+				h1 Let's talk about making your sales
+					br
+					| team more efficient
+				span.subheading Schedule a call with Sam or Francis, Madkudu's founders
+				.contact-content
+					div.team-list
+						ul
+							li
+								.item-wrapper
+									div(class=["image-bg", "image-team", "sam-levan"])
+									div
+										strong Sam levan
+										span CEO
+							li
+								.item-wrapper
+									div(class=["image-bg", "image-team", "francis-brero"])
+									div
+										strong Francis Brero
+										span CCO
+						p 10 years experience using data science to improve sales operations at companies like Segment, Jitterbit, Contactually, ....
+						p Industry Experts who are invited to speak at confences
+					div.form-contact-wrapper
+						form#fcontact.form.form-contact
+							legend Talk to a MadKudu specialist today!
+							fieldset
+								+input-field('text','firstname',null,'First Name','firstname','required')
+								+input-field('text','lastname',null,'Last Name','lastname','required')
+								+input-field('email','email',null,'Email','email', 'required')
+								+input-field('tel','phone',null,'Phone Number','phone','required')
+								+input-field('text','company',null,'Company Name or URL','company','required')
+								.form-group.required
+									label(for="timecall") When Are You Available for a call?
+									input.form-control(type="text",id="timecall",name="timecall",required="required")
+								button.btn.btn-lg.btn-primary.btn-block.mki_contact(type='submit') Let's Chat!
+					div.reason
+						p We’ll spend 90% of the call talking about your existing sales operations, infrastructure, and team.
+						p We’ll offer some immediate advice on ways to improve your sales performance.
+						p If we mutually agree that MadKudu can help your sales team be more efficient we’ll walk you through the next steps.
+						blockquote.testimony-item.reason__testimony
+							p My first conversation with this team
+								br
+								| wasn’t a demo - it was a sales
+								br
+								| consultation. The advice was so valuable
+								br
+								| I would have paid for it.
+							footer
+								div(class=["image-bg", "image-testimony", "kevin-dewalt"])
+								div
+									strong Kevin Dewalt
+									span Founder SoHelpful
+
+block scripts
+	script(src="js/parsley.min.js")
+	script(src="js/moment.min.js")
+	script(src="js/eonasdan-bootstrap-datetimepicker.min.js")
+	script.
+		$(document).ready( function() {
+			$('#timecall').datetimepicker({
+		    	stepping: 5,
+			    keepOpen: true
+			});
+
+			var formEl = document.getElementById('fcontact');
+
+			formEl.on("submit", function (event) {
+				analytics.track('Contact Page - Send Contact Details');
+				analytics.trackForm(formEl, 'Request Demo', {
+					firstname: $('#firstname').val(),
+					lastname: $('#lastname').val(),
+					email: $('#email').val(),
+					phone: $('#phone').val(),
+					company: $('#company').val(),
+					timecall: $('#timecall').val()
+				});
+
+				event.preventDefault();
+			});
+		});

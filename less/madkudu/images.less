@@ -1,0 +1,158 @@
+/* Additional Image CSS:
+ * ----------------------------------------------------------
+ * Please consider review this block style if image as background set to true in these mixins:
+ * 		+testimony_item
+ *		+customer_item
+ *		+integration_item
+ *
+ * We use .background-image-bmp since the possibiliy no SVG image provided
+ */
+
+.image-bg {
+	display: block;
+}
+
+
+/* Testimonial Image: Add your image class here */
+
+.image-testimony {
+	overflow: hidden;
+	min-width: 96px;
+	min-height: 96px;
+	margin: auto 20px auto 0;
+
+	@media (min-width: @screen-sm-min) {
+		margin-left: 0;
+	}
+}
+
+.guillaume-cabane {
+	.background-image-bmp('@{m-path-image}/people/guillaume-cabane.png', contain);
+}
+.francois-bondiguel {
+	.background-image-bmp('@{m-path-image}/people/francois-bondiguel.png', contain);
+}
+.simon-whittick {
+	.background-image-bmp('@{m-path-image}/people/simon-whittick.png', contain);
+}
+.kevin-dewalt {
+	.background-image-bmp('@{m-path-image}/people/kevin-dewalt.png', contain);
+}
+
+
+/* Customer Image: Add your image class here */
+
+.image-customer {
+	overflow: hidden;
+	max-width: 60%;
+	max-height: 40px;
+	height: 40px;
+	margin-bottom: 20px;
+	background-position: center center;
+
+	@media (min-width: @screen-sm-min) {
+		max-width: 80%;
+		max-height: 50px;
+		height: 50px;
+	}
+}
+
+.codeship {
+	.background-image-bmp('@{m-path-image}/customer/codeship.png', contain);
+}
+.uxpin {
+	.background-image-bmp('@{m-path-image}/customer/uxpin.png', contain);
+}
+.segment {
+	.background-image-bmp('@{m-path-image}/customer/segment.png', contain);
+}
+.pingboard {
+	.background-image-bmp('@{m-path-image}/customer/pingboard.png', contain);
+}
+.vend {
+	.background-image-bmp('@{m-path-image}/customer/vend.png', contain);
+}
+.shopventory {
+	.background-image-bmp('@{m-path-image}/customer/shopventory.png', contain);
+}
+.jitterbit {
+	.background-image-bmp('@{m-path-image}/customer/jitterbit.png', contain);
+}
+.contactually {
+	.background-image-bmp('@{m-path-image}/customer/contactually.png', contain);
+}
+
+
+/* Integration Image: Add your image class here */
+
+.image-integration {
+	overflow: hidden;
+	max-width: 150px;
+	height: 50px;
+	margin-bottom: 20px;
+	background-position: center center;
+
+	@media (min-width: @screen-sm-min) {
+		height: 70px;
+		max-width: 200px;
+	}
+
+	@media (min-width: @screen-md-min) {
+		height: 65px;
+		max-width: 190px;
+	}
+}
+
+.salesforce {
+	.background-image-bmp('@{m-path-image}/integration/salesforce.png', contain);
+}
+.pipedrive {
+	.background-image-bmp('@{m-path-image}/integration/pipedrive.png', contain);
+}
+.salesforce-iq {
+	.background-image-bmp('@{m-path-image}/integration/salesforce-iq.png', contain);
+}
+.segment {
+	.background-image-bmp('@{m-path-image}/integration/segment.png', contain);
+}
+.intercom {
+	.background-image-bmp('@{m-path-image}/integration/intercom.png', contain);
+}
+.mixpanel {
+	.background-image-bmp('@{m-path-image}/integration/mixpanel.png', contain);
+}
+.kissmetrics {
+	.background-image-bmp('@{m-path-image}/integration/kissmetrics.png', contain);
+}
+.hubspot {
+	.background-image-bmp('@{m-path-image}/integration/hubspot.png', contain);
+}
+.marketo {
+	.background-image-bmp('@{m-path-image}/integration/marketo.png', contain);
+}
+.amazon {
+	.background-image-bmp('@{m-path-image}/integration/amazon.png', contain);
+}
+.slack {
+	.background-image-bmp('@{m-path-image}/integration/slack.png', contain);
+}
+.redshift {
+	.background-image-bmp('@{m-path-image}/integration/redshift.png', contain);
+}
+
+
+/* Team Image: Add your image class here */
+
+.image-team {
+	overflow: hidden;
+	width: 100px;
+	height: 100px;
+	background-position: center center;
+}
+
+.sam-levan {
+	.background-image-bmp('@{m-path-image}/people/sam-levan.png', contain);
+}
+.francis-brero {
+	.background-image-bmp('@{m-path-image}/people/francis-brero.png', contain);
+}
