@@ -88,27 +88,21 @@ block scripts
 
 			var alertBox = getParameterByName('email');
 
-			if (alertBox != '') {
+			if (alertBox != null) {
 				alertBoxSuccess = '<div role="alert" class="alert alert-dismissible alert-success"><button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Fabulous! We\'ll be in touch';
 
 				$('.contact .container').prepend(alertBoxSuccess);
 			}
 
-			$(document).on("submit", formEl, function (event) {
-				e.preventDefault();
+			analytics.identify();
 
-				analytics.identify({
-					email: $('#email').val()
-				});
-
-				analytics.trackForm(formEl, 'Request Demo', {
-					firstname: $('#firstname').val(),
-					lastname: $('#lastname').val(),
-					email: $('#email').val(),
-					phone: $('#phone').val(),
-					company: $('#company').val(),
-					timecall: $('#timecall').val()
-				});
+			analytics.trackForm(formEl, 'Request Demo', {
+				firstname: $('#firstname').val(),
+				lastname: $('#lastname').val(),
+				email: $('#email').val(),
+				phone: $('#phone').val(),
+				company: $('#company').val(),
+				timecall: $('#timecall').val()
 			});
 		});
 
