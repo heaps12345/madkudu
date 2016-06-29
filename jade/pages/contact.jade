@@ -85,10 +85,6 @@ block scripts
 			var formEl = document.getElementById('fcontact');
 
 			$(document).on("submit", formEl, function (event) {
-				analytics.identify( {
-				  name: 'Test Data from Demo form',
-				  email: 'testdata@test.com'
-				});
 				analytics.trackForm(formEl, 'Request Demo', {
 					firstname: $('#firstname').val(),
 					lastname: $('#lastname').val(),
