@@ -49,9 +49,7 @@ block body
 								+input-field('email','email',null,'Email','email', 'required')
 								+input-field('tel','phone',null,'Phone Number','phone','required')
 								+input-field('text','company',null,'Company Name or URL','company','required')
-								.form-group.required
-									label(for="timecall") When Are You Available for a call?
-									input.form-control(type="text",id="timecall",name="timecall",required="required")
+								+input-field('text','timecall',null,'When Are You Available for a call?','timecall',null)
 								button.btn.btn-lg.btn-primary.btn-block.mki_contact(type='submit') Let's Chat!
 					div.reason
 						p We’ll spend 90% of the call talking about your existing sales operations, infrastructure, and team.
@@ -73,15 +71,8 @@ block body
 
 block scripts
 	script(src="js/parsley.min.js")
-	script(src="js/moment.min.js")
-	script(src="js/eonasdan-bootstrap-datetimepicker.min.js")
 	script.
 		$(document).ready( function() {
-			$('#timecall').datetimepicker({
-		    	stepping: 5,
-			    keepOpen: true
-			});
-
 			var formEl = document.getElementById('fcontact');
 
 			$(document).on("submit", formEl, function (event) {
