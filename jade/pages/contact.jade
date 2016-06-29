@@ -1,6 +1,7 @@
 extends ../components/skeleton.jade
 
 include ../components/contact_form.jade
+include ../bootstrap/alerts.jade
 
 
 block head
@@ -19,6 +20,7 @@ block body
 
 		section.contact
 			.container
+
 				h1 Let's talk about making your sales
 					br
 					| team more efficient
@@ -49,9 +51,7 @@ block body
 								+input-field('email','email',null,'Email','email', 'required')
 								+input-field('tel','phone',null,'Phone Number','phone','required')
 								+input-field('text','company',null,'Company Name or URL','company','required')
-								.form-group.required
-									label(for="timecall") When Are You Available for a call?
-									input.form-control(type="text",id="timecall",name="timecall",required="required")
+								+input-field('text','timecall',null,'When Are You Available for a call?','timecall',null)
 								button.btn.btn-lg.btn-primary.btn-block.mki_contact(type='submit') Let's Chat!
 					div.reason
 						p We’ll spend 90% of the call talking about your existing sales operations, infrastructure, and team.
@@ -73,16 +73,17 @@ block body
 
 block scripts
 	script(src="js/parsley.min.js")
-	script(src="js/moment.min.js")
-	script(src="js/eonasdan-bootstrap-datetimepicker.min.js")
 	script.
 		$(document).ready( function() {
-			$('#timecall').datetimepicker({
-		    	stepping: 5,
-			    keepOpen: true
-			});
-
 			var formEl = document.getElementById('fcontact');
+
+			var alertBox = getParameterByName('s');
+
+			if (alertBox === 'sent') {
+				alertBoxSuccess = '<div role="alert" class="alert alert-dismissible alert-success"><button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Fabulous! We\'ll be in touch';
+
+				$('.contact .container').prepend(alertBoxSuccess);
+			}
 
 			$(document).on("submit", formEl, function (event) {
 				// This works but trackForm won't fire. Must be a js error.
@@ -98,6 +99,18 @@ block scripts
 					timecall: $('#timecall').val()
 				});
 
+				window.location.href = '/contact.html?s=sent';
+
 				event.preventDefault();
 			});
 		});
+
+		function getParameterByName(name, url) {
+		    if (!url) url = window.location.href;
+		    name = name.replace(/[\[\]]/g, "\\$&");
+		    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+		        results = regex.exec(url);
+		    if (!results) return null;
+		    if (!results[2]) return '';
+		    return decodeURIComponent(results[2].replace(/\+/g, " "));
+		}
