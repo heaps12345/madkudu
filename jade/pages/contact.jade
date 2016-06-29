@@ -1,6 +1,7 @@
 extends ../components/skeleton.jade
 
 include ../components/contact_form.jade
+include ../bootstrap/alerts.jade
 
 
 block head
@@ -19,6 +20,7 @@ block body
 
 		section.contact
 			.container
+
 				h1 Let's talk about making your sales
 					br
 					| team more efficient
@@ -75,6 +77,14 @@ block scripts
 		$(document).ready( function() {
 			var formEl = document.getElementById('fcontact');
 
+			var alertBox = getParameterByName('s');
+
+			if (alertBox === 'sent') {
+				alertBoxSuccess = '<div role="alert" class="alert alert-dismissible alert-success"><button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Fabulous! We\'ll be in touch';
+
+				$('.contact .container').prepend(alertBoxSuccess);
+			}
+
 			$(document).on("submit", formEl, function (event) {
 				analytics.trackForm(formEl, 'Request Demo', {
 					firstname: $('#firstname').val(),
@@ -85,6 +95,18 @@ block scripts
 					timecall: $('#timecall').val()
 				});
 
+				window.location.href = '/contact.html?s=sent';
+
 				event.preventDefault();
 			});
 		});
+
+		function getParameterByName(name, url) {
+		    if (!url) url = window.location.href;
+		    name = name.replace(/[\[\]]/g, "\\$&");
+		    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+		        results = regex.exec(url);
+		    if (!results) return null;
+		    if (!results[2]) return '';
+		    return decodeURIComponent(results[2].replace(/\+/g, " "));
+		}
