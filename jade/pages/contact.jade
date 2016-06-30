@@ -85,6 +85,8 @@ block scripts
 
 		$(document).ready( function() {
 
+			analytics.identify();
+
 			var alertBox = getParameterByName('s');
 
 			if (alertBox == "sent") {
@@ -95,30 +97,24 @@ block scripts
 
 			var formEl = $('#fcontact');
 
+
+
 			formEl.on('submit', function(e) {
 				
 				e.preventDefault();
 
-				var email = formEl.find('[name=email]').val();
-				if (email) {
-					analytics.alias(email);
-					analytics.identify(email, {
-						email: email
-					});
+				analytics.track('Request Demo Tracking', {
+				 	firstname: $('#firstname').val(),
+				 	lastname: $('#lastname').val(),
+				 	email: $('#email').val(),
+				 	phone: $('#phone').val(),
+				 	company: $('#company').val(),
+				 	timecall: $('#timecall').val()
+				});
 
-					analytics.track('Request Demo Tracking', {
-					 	firstname: $('#firstname').val(),
-					 	lastname: $('#lastname').val(),
-					 	email: $('#email').val(),
-					 	phone: $('#phone').val(),
-					 	company: $('#company').val(),
-					 	timecall: $('#timecall').val()
-					});
-
-					setTimeout( function() {
-						window.location.href = "/contact.html?s=sent"
-					}, 1000);
-				}
+				setTimeout( function() {
+					window.location.href = "/contact.html?s=sent"
+				}, 1000);
 			});
 
 		});
