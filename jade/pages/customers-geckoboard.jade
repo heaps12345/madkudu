@@ -1,0 +1,86 @@
+extends ../components/skeleton.jade
+
+block neck
+
+	title MadKudu Case Study | Geckoboard
+
+	script analytics.page('Geckoboard case study')
+
+block body
+
+	.block.block-fill-height.block-case-study
+
+		include ../components/header_white_new.jade
+
+		.container
+
+			.row.text-center
+				h1.title.m-b Geckoboard Case Study (draft)
+				h3.subtitle.m-t-md Advanced lead scoring increases Sales Accepted Leads(SAls) by 85%
+				a(href='http://www.geckoboard.com' target='_blank').customer-logo.m-b
+					img(src='/static/images/customers/geckoboard-logo.png')
+
+			.row.m-t-lg
+				p <a href='http://www.geckoboard.com' target='_blank'>Geckoboard</a>'s software allows its customers to build beautify, accessible KPI dashboards. By bringing critical business data to the surface its customers build a productive data-driven culture.
+
+				p Funded by top-tier investors like 500 Startups and with an impressive customer list that includes the BBC and Nike, Geckoboard is becoming the go-to dashboard solution for data-driven teams.
+				
+				p.text-center.m-y-md
+					img(src='/static/images/geckoboard-dashboard.png' width='800')
+
+				h3.m-t-md.m-b The challenge: a great product generates lots of trial customers
+
+				p Like all successful SaaS products, Geckoboard realizes that marketing automation and product design isn’t enough to help customers achieve their goals. Real customers need help understanding how to integrate dashboards into their operations.
+
+				p But success breeds its own challenges: with thousands of trial customers every month sales and customer success cannot engage all of them. The volumes create two challenges:
+
+				ol.m-y.-md 
+					li Reps <strong>overlook qualified leads</strong> who don’t fit obvious profiles.
+					li Reps can spend too much <strong>time on leads who will never convert</strong>.
+
+				p <em>Who is likely to convert? Who has budget? Who is ready to buy now?</em>
+
+				p Getting answers to these questions by searching LinkedIn, Salesforce, and marketing databases can consume a lot of sales’ time - time better spent helping customers.
+
+				h3.m-t-md.m-b The solution: intelligent lead scoring using predictive analytics
+
+				p It took Geckoboard less than 5 minutes to get started - no work is required other than connecting Mixpanel and Salesforce to MadKudu.
+				
+				p MadKudu then began ingesting the customer data from these sources to see what user characteristics and activities were most correlated with key customer lifecycle events like buying, upselling, or churning. 
+				
+				p A study of the Geckoboard's customer data helped build a predictive model of the highest potential value customers based on characteristics like industry, region, and title.
+				
+				h4.m-t-md The customers' in-app behavior leads to further insight
+				
+				p Data science also reviewed critical moments in a customer's lifecycle such as:
+				
+				ul.m-y-md
+
+					li Connecting a data source to a dashboard was a necessary condition for converting.
+					li The absolute number of dashboards a customer creates is highly correlated with converting.
+					li Customers who changed the dashboard theme had the highest probability of converting.
+					
+				p MadKudu's software built predictive models based on these key customer events in the application. The models predict the following for every new trial customer:
+				
+				ul.m-y-md
+
+					li The leads with <strong>highest potential</strong> to become Geckoboard customers
+					li Leads most <strong>likely to buy</strong> now based on behavior.
+					li The best <strong>upsell</strong> candidates.
+					li Customers at the highest risk of <strong>churn</strong>.
+
+				h3.m-t-md.m-b The results: SALs increased by 85%
+
+				p MadKudu's predictive models lead to an almost instant increase in productivity. With the predictive model results in Salesforce, Slack, and Intercom the entire sales, customers success, and marketing teams instantly have access to the enriched customer profile data.
+				
+				h4.m-t-md A win-win that aligns sales and marketing
+				
+				p The enriched customer data allowed the sales team to discover non-obvious leads and work through Marketing Qualified Leads (MQLs) faster. 
+
+				p As a result the sales team increased Sales Accepted Leads (SALs) by 85%. Sales is now spending time talking to customers and solving their problems instead of digging through LinkedIn and Salesforce.
+				
+				h1 Ready to increase your sales productivity?
+				
+				p Your sales team is missing too many qualified leads and spending time on customers who won't convert.
+
+				p <a href="/">Get started with MadKudu</a> today.
