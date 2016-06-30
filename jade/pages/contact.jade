@@ -83,6 +83,30 @@ block scripts
 		    return decodeURIComponent(results[2].replace(/\+/g, " "));
 		};
 
+		if (!Date.prototype.toISOString) {
+			(function() {
+
+			    function pad(number) {
+			    	if (number < 10) {
+			        	return '0' + number;
+						}
+					return number;
+			    }
+
+			    Date.prototype.toISOString = function() {
+			    	return this.getUTCFullYear() +
+				        '-' + pad(this.getUTCMonth() + 1) +
+				        '-' + pad(this.getUTCDate()) +
+				        'T' + pad(this.getUTCHours()) +
+				        ':' + pad(this.getUTCMinutes()) +
+				        ':' + pad(this.getUTCSeconds()) +
+				        '.' + (this.getUTCMilliseconds() / 1000).toFixed(3).slice(2, 5) +
+				        'Z';
+			    };
+
+			}());
+		}
+
 		$(document).ready( function() {
 
 			analytics.identify();
@@ -97,24 +121,43 @@ block scripts
 
 			var formEl = $('#fcontact');
 
-
-
 			formEl.on('submit', function(e) {
-				
+
 				e.preventDefault();
 
-				analytics.track('Request Demo', {
-				 	firstname: $('#firstname').val(),
-				 	lastname: $('#lastname').val(),
-				 	email: $('#email').val(),
-				 	phone: $('#phone').val(),
-				 	company: $('#company').val(),
-				 	timecall: $('#timecall').val()
-				});
+				var firstName = formEl.find('[name=firstname]').val(),
+					lastName = formEl.find('[name=lastname]').val(),
+					email = formEl.find('[name=email]').val(),
+					phone = formEl.find('[name=phone]').val(),
+					company = formEl.find('[name=company]').val(),
+					timeCall = formEl.find('[name=timecall]').val(),
+					timeNowObj = new Date(),
+					timeNowStr = timeNowObj.toISOString();
 
-				setTimeout( function() {
-					window.location.href = "/contact.html?s=sent"
-				}, 1000);
+				if (email) {
+					analytics.identify({
+						firstName: firstName,
+						lastName: lastName,
+						email: email,
+						phone: phone,
+						company: company,
+						timeCall: timeCall,
+						createdAt: timeNowStr
+					});
+
+					analytics.track('Request Demo', {
+						firstName: firstName,
+						lastName: lastName,
+						email: email,
+						phone: phone,
+						company: company,
+						timeCall: timeCall
+					});
+
+					setTimeout( function() {
+						window.location.href = "/contact.html?s=sent"
+					}, 1000);
+				}
 			});
 
 		});
