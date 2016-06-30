@@ -101,10 +101,10 @@ block scripts
 
 				var email = formEl.find('[name=email]').val();
 				if (email) {
-					analytics.alias(email);
-					analytics.identify(email, {
-						email: email
-					});
+					//- analytics.alias(email);
+					//- analytics.identify(email, {
+					//- 	email: email
+					//- });
 
 					analytics.track('Request Demo Tracking', {
 					 	firstname: $('#firstname').val(),
@@ -122,5 +122,4 @@ block scripts
 			});
 
 		});
-
-
+//- 741
