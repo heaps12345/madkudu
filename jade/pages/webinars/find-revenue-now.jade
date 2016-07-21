@@ -1,0 +1,65 @@
+extends ../../components/skeleton.jade
+
+include ../../components/index-mixins.jade
+
+block head
+	title MadKudu | Accelerating SaaS sales with predictive analytics
+	meta(name='description' content='Accelerating SaaS sales with predictive analytics')
+
+block neck
+	script analytics.page('Home')
+	script.
+		
+		//- $(document).ready(function () {
+		//- 	$('.mki_landing_demo').click(function (event) {
+		//- 		event.preventDefault();
+		//- 		analytics.track('Landing Page - Clicked request demo');
+		//- 		window.open('/contact','_blank');
+		//- 	});
+		//- 	$('.mki_landing_trial').click(function (event) {
+		//- 		event.preventDefault();
+		//- 		analytics.track('Landing Page - Clicked free trial');
+		//- 		window.location = 'https://app.madkudu.com/signup';
+		//- 	});
+		//- });
+
+block body
+
+	//- MONTAZZE NOTE: Should remove this wrapper after changed all your site
+	.body
+
+		include ../../components/header_white_new.jade
+
+		header.jumbotron
+			.container(style="margin-top: -150px; margin-bottom: 70px;")
+				h2.color-blue.light-font-weigth The Effective Sales and Marketing Machine
+				h2.color-blue.m-t-0.light-font-weigth A MadKudu Webinar Series
+			.container
+				h1 Find revenue this quarter. Period.
+				p Tuesday, August 4th 10am Pacific
+				p Straightorward things you can do right now to drive revenue. 
+					| This is going to be a no fluff session with proven campaigns and techniques
+					| that have shown returns to SaaS organizations like yours. High value-to-time ratio.
+				p 30 minute Webinar
+				form.form-inline(action="//madkudu.us8.list-manage.com/subscribe/post?u=50d10dbb43453c101e00a5f6f&amp;id=c825ab9398" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate)
+					input(type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL").email-input-field.form-control.m-r
+					input.btn.btn-demo.btn-lg.btn-primary(input type="submit" value="Register" name="subscribe" id="mc-embedded-subscribe" class="button" class='mki_landing_demo', role='button')
+
+					//- <!-- Begin MailChimp Signup Form -->
+					//- <div id="mc_embed_signup">
+					//- <form action="//madkudu.us8.list-manage.com/subscribe/post?u=50d10dbb43453c101e00a5f6f&amp;id=c825ab9398" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+					//-     <div id="mc_embed_signup_scroll">
+					//- 	
+					//- <div class="mc-field-group">
+					//- 	<label for="mce-EMAIL">Email</label>
+					//- 	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+					//- </div>
+					//- 	<div id="mce-responses" class="clear">
+					//- 		<div class="response" id="mce-error-response" style="display:none"></div>
+					//- 		<div class="response" id="mce-success-response" style="display:none"></div>
+					//- 	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+					//-     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_50d10dbb43453c101e00a5f6f_c825ab9398" tabindex="-1" value=""></div>
+					//-     <div class="clear"><input type="submit" value="Register" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+					//-     </div>
+					//- </form>
+					//- </div>
