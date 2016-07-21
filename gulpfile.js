@@ -98,14 +98,14 @@ gulp.task('server_docs', function () {
 
 gulp.task('serve', ['server'], function () {
 	gulp.src(__filename)
-		.pipe(open({uri: 'http://localhost:9001/index.html'}));
+		.pipe(open({uri: 'http://localhost:8080/index.html'}));
 });
 
 gulp.task('server', ['watch'], function () {
 	connect.server({
 		root: 'dist',
-		port: 9001,
-		livereload: true
+		port: 8080,
+		livereload: false
 	});
 });
 
