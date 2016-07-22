@@ -18,11 +18,24 @@ gulp
 
 Write your changes on a branch
 
+To create a branch: `git branch mybranchname`
+
+To switch to that branch: `git checkout mybranchname`
+
 ## Deployment
 
 Managed via codeship
 
 Every push to the master branch automatically deploys the new version.
+
+Common git flow is:
+```
+git add .
+git commit -m 'message about the changes made'
+git rebase origin master
+git push origin mybranchname
+```
+Then go to Github, create a pull request and merge to master there.
 
 ## Blog
 
