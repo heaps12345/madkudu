@@ -1,11 +1,11 @@
-extends ../components/skeleton.jade
+extends ../../components/skeleton.jade
 
-include ../components/contact_form.jade
-include ../bootstrap/alerts.jade
+include ../../components/contact_form.jade
+include ../../bootstrap/alerts.jade
 
 
 block head
-	title MadKudu | Accelerating SaaS sales with predictive analytics
+	title Find more revenue this quarter. A no BS MadKudu webinar
 	meta(name='description' content='Accelerating SaaS sales with predictive analytics')
 
 block neck
@@ -16,31 +16,25 @@ block body
 	//- MONTAZZE NOTE: Should remove this wrapper after changed all site
 	.body
 
-		include ../components/header_white_new.jade
+		include ../../components/header_white_new.jade
 
 		section.contact
 			.container
 
-				h1 Let's make your sales
+				h1 Find more revenue this quarter. Period
 					br
-					| team more efficient
-				span.subheading Schedule a call with Sam or Francis, Madkudu's founders
+					| a MadKudu webinar
+				span.subheading by Francis, Madkudu's CRO and co-founder
 				.contact-content
 					div.team-list
 						ul
-							li
-								.item-wrapper
-									div(class=["image-bg", "image-team", "sam-levan"])
-									div
-										strong Sam Levan
-										span CEO
 							li
 								.item-wrapper
 									div(class=["image-bg", "image-team", "francis-brero"])
 									div
 										strong Francis Brero
 										span CRO
-						p 10 years experience using data science to improve sales operations at 100s of companies like Segment, Jitterbit, and Contactually.
+						p In this session, Francis unveils tactical advice from 10 years of using data science to improve B2B SaaS sales at 100s of companies like Segment, Jitterbit, and Pipedrive.
 					div.form-contact-wrapper
 						form(id="fcontact",class=["form", "form-contact"],action="contact.html?s=sent",method="get")
 							legend Schedule a call with us
@@ -53,21 +47,10 @@ block body
 								+input-field('text','timecall',null,'When Are You Available for a call?','timecall',null)
 								button.btn.btn-lg.btn-primary.btn-block.mki_contact(type='submit') Let's Chat!
 					div.reason
-						p Let's talk about your existing sales operations - we'll offer any advice we have.
+						p With these recommendations you will tapping into massive sources of unexpected revenue.
 						p If MadKudu can help your sales team be more efficient we’ll walk you through the next steps.
-						blockquote.m-t-lg.testimony-item.reason__testimony
-							p My first conversation with this team
-								br
-								| wasn’t a demo - it was a sales
-								br
-								| consultation. The advice was so valuable
-								br
-								| I would have paid for it.
-							footer
-								div(class=["image-bg", "image-testimony", "kevin-dewalt"])
-								div
-									strong Kevin Dewalt
-									span Founder SoHelpful
+
+						iframe(width="420", height="315", src="http://www.youtube.com/embed/UX0qzZkTeQs", frameborder="0", allowfullscreen='allowfullscreen')
 
 block scripts
 	script(src="js/parsley.min.js")
