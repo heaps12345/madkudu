@@ -1,0 +1,128 @@
+extends ../components/skeleton.jade
+
+block neck
+	title MadKudu | SaaS MRR Simulator
+
+	script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.2.5/jquery.inputmask.bundle.min.js")
+	script(type="text/javascript" src="https://www.google.com/jsapi")
+
+	script(src="simulator.js" type="text/javascript")
+
+	script analytics.page('Simulator')
+
+	link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
+
+
+block body
+
+	.background-white
+
+		include ../components/header_white_new.jade
+
+		.block.block-simulator
+
+			.container
+
+				h1 SaaS Sales SLA Simulator
+
+				p Should I increase my focus on volume of MQLs or reply rate?
+					| Use this simulator to find out.
+
+
+				.container.insight_card
+
+					h2.mrr_forcecast_tagline
+						| In&nbsp
+						span.label_projection_time.label_blue 12
+						|  months,
+						| your MRR will be&nbsp
+						span.label_final_mrr.label_green $ 158 k
+						| .<br>
+
+					.row
+						.col-sm-4
+
+							form.form-horizontal
+								.form-group
+									label.col-sm-6.control-label(for="starting_MRR") New Opp goal&nbsp
+										i.fa.fa-question-circle(data-toggle="tooltip" title="your current monthly new Opp")
+									.col-sm-6
+										.input-group
+											//- .input-group-addon $
+											input.form-control#starting_MRR(type="text" placeholder="")
+								.form-group
+									label.col-sm-6.control-label(for="revenue_growth") In touch to Opp&nbsp
+										i.fa.fa-question-circle(data-toggle="tooltip" title="On average what is conversion rate from response to Opp")
+									.col-sm-6
+										.input-group
+											//- .input-group-addon $
+											input.form-control#revenue_growth(type="text" placeholder="" maxlength: 4)
+								.form-group
+									label.col-sm-6.control-label(for="revenue_growth") Reply Rate&nbsp
+										i.fa.fa-question-circle(data-toggle="tooltip" title="Average response rate to your Sales")
+									.col-sm-6
+										.input-group
+											input.form-control#churn(type="text" placeholder="")
+											//- .input-group-addon %
+								.form-group
+									label.col-sm-6.control-label(for="revenue_growth") MQL to SAL&nbsp
+										i.fa.fa-question-circle(data-toggle="tooltip" title="Acceptance rate from MQL to Sales Accepted Lead")
+									.col-sm-6
+										.input-group
+											input.form-control#upsell(type="text" placeholder="")
+											//- .input-group-addon %
+								.form-group
+									label.col-sm-6.control-label(for="projection_time") New MQLs&nbsp
+										i.fa.fa-question-circle(data-toggle="tooltip" title="number of new MQLs required")
+									.col-sm-6
+										.input-group
+											input.form-control#projection_time(type="text" placeholder="")
+											//- .input-group-addon %
+
+
+						//- .col-sm-8(style='height: 250px;')
+						.col-sm-8(style='')
+							#chart_div_mrr
+				
+
+				.container.insight_card
+
+					h2.mrr_forcecast_tagline
+						| Reducing your churn from&nbsp
+						span.label_current_churn.label_red 5%
+						|  to&nbsp
+						span.label_simulated_churn.label_red 2.5%
+						|  increases your MRR by&nbsp
+						span.label_mrr_saved.label_green $ 36 k
+						|  in&nbsp
+						span.label_projection_time.label_blue 12
+						|  months. <br>
+
+					.row
+						.col-sm-4
+
+							//- form.form-horizontal
+							form
+								.form-group
+									//- label.col-sm-6.control-label(for="starting_MRR") Desired revenue churn
+									//- .col-sm-6
+									//- 	.input-group
+									//- 		//- .input-group-addon $
+									//- 		input.form-control#desired_churn(type="text" placeholder="")
+									label.control-label(for="simulated_churn") Desired revenue churn&nbsp
+										i.fa.fa-question-circle(data-toggle="tooltip" title="enter a churn rate to see the impact on the MRR")
+									.input-group
+										//- .input-group-addon $
+										input.form-control#simulated_churn(type="text" placeholder="")
+
+							ul(style='list-style-type: none;padding-left: 0px;margin-top: 50px;')
+								li
+									.color-box(style='background-color:#5DA5DA;')
+									| MRR with current churn
+								li
+									.color-box(style='background-color:#60BD68;')
+									| MRR from desired churn
+
+
+						.col-sm-8
+							#chart_div_mrr_goal
