@@ -28,7 +28,7 @@ var Paths = {
 	DIST: 'dist/',
 	DIST_JS: 'dist/js/',
 	DIST_STATIC: 'dist/static',
-	DIST_TOOLKIT_JS: 'dist/toolkit.js',
+	DIST_TOOLKIT_JS: 'dist/js/toolkit.js',
 	LESS_TOOLKIT_SOURCES: './less/toolkit-startup.less',
 	LESS: [
 		'./less/bootstrap/.',
@@ -83,19 +83,6 @@ gulp.task('watch', function () {
 	// gulp.watch(Paths.STATIC, ['static']);
 });
 
-gulp.task('docs', ['server_docs'], function () {
-	gulp.src(__filename)
-		.pipe(open({uri: 'http://localhost:9001/docs/'}));
-});
-
-gulp.task('server_docs', function () {
-	connect.server({
-		root: 'docs',
-		port: 9001,
-		livereload: true
-	});
-});
-
 gulp.task('serve', ['server'], function () {
 	gulp.src(__filename)
 		.pipe(open({uri: 'http://localhost:8080/index.html'}));
@@ -128,21 +115,26 @@ gulp.task('clean-js', function () {
 		.pipe(clean());
 });
 
-gulp.task('js', ['clean-js'], function () {
-	gulp.src(Paths.JS)
-		.pipe(concat('toolkit.js'))
-		.pipe(gulp.dest(Paths.DIST));
+gulp.task('vendor-js', ['clean-js'], function () {
 	gulp.src(Paths.STATIC_JS)
 		.pipe(gulp.dest(Paths.DIST_JS));
 });
 
+gulp.task('js', ['vendor-js'], function () {
+	gulp.src(Paths.JS)
+		.pipe(concat('toolkit.js'))
+		.pipe(gulp.dest(Paths.DIST_JS));
+});
+
+// the minimize doesn't seem to be working
 gulp.task('js-min', ['js'], function () {
 	gulp.src(Paths.DIST_TOOLKIT_JS)
 		.pipe(uglify())
 		.pipe(rename({
 			suffix: '.min'
 		}))
-		.pipe(gulp.dest(Paths.DIST))
+		.pipe(gulp.dest(Paths.DIST_JS))
+		.on('error', gutil.log)
 		.pipe(livereload());
 });
 
@@ -174,10 +166,10 @@ gulp.task('simulator', function () {
 	browserify(Paths.SIMULATOR)
 		.bundle()
 		.pipe(source('simulator.js'))
-		.pipe(gulp.dest(Paths.DIST));
+		.pipe(gulp.dest(Paths.DIST_JS));
 });
 
-gulp.task( 'deploy', function () {
+gulp.task('deploy', function () {
 	var conn = ftp.create({
 		host: 'server40.web-hosting.com',
 		user: 'madkkqbe',
@@ -190,5 +182,3 @@ gulp.task( 'deploy', function () {
 		.pipe(conn.dest('/public_html'));
 
 });
-
-gulp.task('build_and_deploy', ['build', 'deploy']);

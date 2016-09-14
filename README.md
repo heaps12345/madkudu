@@ -49,7 +49,6 @@ Already included:
 
 * jQuery
 * Bootstrap
-* Bootstrap Marketing theme
 
 To add new .js:
 
