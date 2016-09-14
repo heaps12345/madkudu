@@ -1,16 +1,13 @@
 {
   "private": true,
-  "name": "toolkit-dashboard",
-  "version": "1.0.0",
+  "name": "@madkudu/website",
+  "version": "1.0.1",
   "description": "A bootstrap toolkit.",
   "main": "gulpfile.js",
-  "author": "Colossal",
-  "scripts": {
-    "start": "./node_modules/.bin/gulp docs"
-  },
+  "author": "MadKudu",
   "engines": {
-    "node": "4.2.3",
-    "npm": "2.14.7"
+    "node": "4.4.6",
+    "npm": "2.15.5"
   },
   "devDependencies": {
     "browserify": "13.0.0",
