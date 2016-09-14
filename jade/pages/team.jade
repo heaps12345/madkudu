@@ -11,14 +11,14 @@ block body
 
 	//- .block.block-inverse.block-home
 	//- 	//- .block-primary
-	//- 
+	//-
 	//- 	.container
-	//- 
+	//-
 	//- 		.row.m-b-lg.m-t-lg
-	//- 
+	//-
 	//- 			.col-sm-10.col-sm-offset-1
 	//- 				h2.m-t-0.m-b.text-center We're on a mission to help companies use their data<br>to build meaningful and profitable relationships<br>with their customers.
-	//- 
+	//-
 	//- 		.row
 	//- 			p.lead
 	//- 				| We are passionate about helping companies
@@ -31,7 +31,7 @@ block body
 	//- 				| Only a few companies today are able to do so.
 	//- 			p.lead
 	//- 				| MadKudu was started from the desire to make it simple for every company to reap the benefits of deep customer analytics.
-	//- 
+	//-
 
 	.block.block-team
 		.container
@@ -41,11 +41,12 @@ block body
 					h3.m-t-0.m-b-lg.text-center.text-uppercase Team
 
 			.row
+
 				.col-sm-3.team-column
 					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
 						img(class="team__image" src="/static/images/team/sam.png" width="200" alt="Sam" itemprop="photo")
 						.team__name(itemprop="name") Sam Levan
-						.team__work(itemprop="title") Chief Yes Officer (CEO)
+						.team__work(itemprop="title") CEO / Chief Yes Officer
 						.team__social
 							a.team__social--link(href="https://www.linkedin.com/pub/anselme-levan/1/958/119")
 								img(src="/static/images/team_linkedin.svg" target="_blank" width="15" alt="Sam Levan LinkedIn")
@@ -61,32 +62,31 @@ block body
 						ul.team__list
 							li Ignorance
 							li Fear itself
+
 				.col-sm-3.team-column
 					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
-						img(class="team__image" src="/static/images/team/paul.png" width="200" alt="Kudu horn" itemprop="photo")
-						.team__name(itemprop="name") Paul Cothenet
-						.team__work(itemprop="title") Chief No Officer (CTO)
+						img(class="team__image img-circle" src="/static/images/team/mara.jpg" width="200" alt="Kudu horn" itemprop="photo")
+						.team__name(itemprop="name") Mara Sagge
+						.team__work(itemprop="title") Executive Assistant / Chief Done Officer
 						.team__social
-							a.team__social--link(href="https://www.linkedin.com/in/paulcothenet/en")
-								img(src="/static/images/team_linkedin.svg" target="_blank" width="15" alt="Paul Cothenet LinkedIn")
-							a.team__social--link(href="https://twitter.com/paulcothenet")
-								img(src="/static/images/team_twitter.svg" target="_blank" width="15" alt="Paul Cothenet Twitter")
-						a.team__email(href="mailto:paul@madkudu.com?subject=Tell%20me%20more%20about%20MadKudu!" target="_blank") paul@madkudu.com
+							a.team__social--link(href="https://www.linkedin.com/in/mara-sagge-a75093a8")
+								img(src="/static/images/team_linkedin.svg" target="_blank" width="15" alt="Francis Brero LinkedIn")
+						a.team__email(href="mailto:mara@madkudu.com?subject=Tell%20me%20more%20about%20MadKudu!" target="_blank") mara@madkudu.com
 						h4.team__header Loves
 						ul.team__list
-							li Data
-							li Mountains
-							li Coffee
+							li Data Capture
+							li Self help books
+							li Pasta
 						h4.team__header Fears
 						ul.team__list
-							li Sam's kids
-							li
-								a(href="http://attackwithnumbers.com/the-laws-of-shitty-dashboard" target="_blank") Shitty dashboards
+							li Unreached Targets
+							li Spiders
+
 				.col-sm-3.team-column
 					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
 						img(class="team__image" src="/static/images/team/francis.png" width="200" alt="Kudu horn" itemprop="photo")
 						.team__name(itemprop="name") Francis Brero
-						.team__work(itemprop="title") Chief Yiha Officer (CCO)
+						.team__work(itemprop="title") CRO / Chief Yiha Officer
 						.team__social
 							a.team__social--link(href="https://www.linkedin.com/in/francisbrero")
 								img(src="/static/images/team_linkedin.svg" target="_blank" width="15" alt="Francis Brero LinkedIn")
@@ -102,11 +102,12 @@ block body
 						ul.team__list
 							li Irrationality
 							li Kooks
+
 				.col-sm-3.team-column
 					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
 						img(class="team__image" src="/static/images/team/erik.png" width="200" alt="Kudu horn" itemprop="photo")
 						.team__name(itemprop="name") Erik Villaume
-						.team__work(itemprop="title") Chief Pun Officer (Engineer)
+						.team__work(itemprop="title") Engineer / Chief Pun Officer
 						.team__social
 							a.team__social--link(href="https://www.linkedin.com/in/erik-villaume-a32a6624")
 								img(src="/static/images/team_linkedin.svg" target="_blank" width="15" alt="Erik Villaume LinkedIn")
@@ -121,47 +122,26 @@ block body
 							li Stagnation
 							li Raccoons
 
-			.row.m-t-lg
-
-				.col-sm-3.col.col-sm-offset-3.team-column
-					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
-						img(class="team__image img-circle" src="/static/images/team/yuan.jpg" width="200" alt="Kudu horn" itemprop="photo")
-						.team__name(itemprop="name") Yuan Zhao
-						.team__work(itemprop="title") Chief Zeta Officer (Engineer)
-						.team__social
-							a.team__social--link(href="https://www.linkedin.com/in/yuanzhao0501")
-								img(src="/static/images/team_linkedin.svg" target="_blank" width="15" alt="Yuan Zhao` LinkedIn")
-						a.team__email(href="mailto:yuan@madkudu.com?subject=Tell%20me%20more%20about%20MadKudu!" target="_blank") yuan@madkudu.com
-						h4.team__header Loves
-						ul.team__list
-							li Classical music
-							li Kong Fu
-							li Adventure
-						h4.team__header Fears
-						ul.team__list
-							li Laziness
-							li Boring &amp; Repetitive work
-							li Repetitive work
 				.col-sm-3.team-column
 					.team-block(itemscope="itemscope" itemtype="http://data-vocabulary.org/Person")
-						img(class="team__image img-circle" src="/static/images/team/mara.jpg" width="200" alt="Kudu horn" itemprop="photo")
-						.team__name(itemprop="name") Mara Sagge
-						.team__work(itemprop="title") Chief Done Officer (Assistant)
+						img(class="team__image" src="/static/images/team/paul.png" width="200" alt="Kudu horn" itemprop="photo")
+						.team__name(itemprop="name") Paul Cothenet
+						.team__work(itemprop="title") CTO / Chief No Officer
 						.team__social
-							a.team__social--link(href="https://www.linkedin.com/in/mara-sagge-a75093a8")
-								img(src="/static/images/team_linkedin.svg" target="_blank" width="15" alt="Francis Brero LinkedIn")
-						a.team__email(href="mailto:mara@madkudu.com?subject=Tell%20me%20more%20about%20MadKudu!" target="_blank") mara@madkudu.com
+							a.team__social--link(href="https://www.linkedin.com/in/paulcothenet/en")
+								img(src="/static/images/team_linkedin.svg" target="_blank" width="15" alt="Paul Cothenet LinkedIn")
+							a.team__social--link(href="https://twitter.com/paulcothenet")
+								img(src="/static/images/team_twitter.svg" target="_blank" width="15" alt="Paul Cothenet Twitter")
+						a.team__email(href="mailto:paul@madkudu.com?subject=Tell%20me%20more%20about%20MadKudu!" target="_blank") paul@madkudu.com
 						h4.team__header Loves
 						ul.team__list
-							li Data Capture
-							li Self help books
-							li Pasta
+							li Data
+							li Mountains
+							li Coffee
 						h4.team__header Fears
 						ul.team__list
-							li Unreached Targets
-							li Spiders
-
-
+							li Sam's kids
+							li Surfers
 
 
 	.block.block-team
@@ -233,8 +213,8 @@ block body
 			.row
 
 				.col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-lg-6.col-lg-offset-3
-					h3.m-t-0.m-b-lg.text-center.text-uppercase 
-						a(href='https://www.angel.co/madkudu' target='_blank') 
+					h3.m-t-0.m-b-lg.text-center.text-uppercase
+						a(href='https://www.angel.co/madkudu' target='_blank')
 							| Investors
 
 
