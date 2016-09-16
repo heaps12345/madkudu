@@ -90,6 +90,4 @@ But if you've been looking for your big break this could be the job for you. Do 
 
 Better still, do you want to look back on your time at MadKudu as a special experience where you worked with other passionate people? Where you helped create a unique corporate culture? Where you hired A people and turned them into A+++ people?
 
-If so [click here and let's talk](https://docs.google.com/forms/d/1l8Zt2AYpWklEcffrpspdgXqh5FadrXz2C7yvAQ9BCso/viewform)!
-
-Questions? Email [Kevin](https://angel.co/kevindewalt) at **kevin@madkudu.com**.
+## If so, drop an email to [Sam](https://www.linkedin.com/in/anselmelevan). (**sam@madkudu.com**)
