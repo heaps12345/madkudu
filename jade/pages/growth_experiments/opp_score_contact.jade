@@ -110,37 +110,27 @@ block scripts
 
 				e.preventDefault();
 
-				var firstName = formEl.find('[name=firstname]').val(),
-					lastName = formEl.find('[name=lastname]').val(),
-					email = formEl.find('[name=email]').val(),
+				var email = formEl.find('[name=email]').val(),
 					phone = formEl.find('[name=phone]').val(),
-					company = formEl.find('[name=company]').val(),
-					timeCall = formEl.find('[name=timecall]').val(),
+					source = formEl.find('[name=source]').val(),
 					timeNowObj = new Date(),
 					timeNowStr = timeNowObj.toISOString();
 
 				if (email) {
 					analytics.identify({
-						firstName: firstName,
-						lastName: lastName,
 						email: email,
 						phone: phone,
-						company: company,
-						timeCall: timeCall,
-						createdAt: timeNowStr
+						source: source	
 					});
 
-					analytics.track('Request Demo', {
-						firstName: firstName,
-						lastName: lastName,
+					analytics.track('Request Demo', {						
 						email: email,
 						phone: phone,
-						company: company,
-						timeCall: timeCall
+						source: source						
 					});
 
 					setTimeout( function() {
-						window.location.href = "/contact.html?s=sent"
+						window.location.href = "/opportunity_scoring_access.html?s=sent"
 					}, 1000);
 				}
 			});
