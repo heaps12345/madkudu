@@ -42,6 +42,7 @@ RewriteRule ^simulator/?$ simulator.html [NC,L]
 RewriteRule ^team/?$ team.html [NC,L]
 RewriteRule ^terms/?$ terms.html [NC,L]
 RewriteRule ^terms-of-service/?$ terms.html [NC,L]
+RewriteRule ^opportunity_scoring_access/?$ growth_experiments/opp_score_contact.html [NC,L]
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>

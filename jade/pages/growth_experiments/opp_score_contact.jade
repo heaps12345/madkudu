@@ -1,0 +1,149 @@
+extends ../../components/skeleton.jade
+
+include ../../components/contact_form.jade
+include ../../bootstrap/alerts.jade
+
+
+block head
+	title MadKudu | Accelerating SaaS sales with predictive analytics
+	meta(name='description' content='Accelerating SaaS sales with predictive analytics')
+
+block neck
+	script analytics.page('Opportunity Scoring')
+
+block body
+
+	//- MONTAZZE NOTE: Should remove this wrapper after changed all site
+	.body
+
+		include ../../components/header_white_new.jade
+
+		section.contact
+			.container
+
+				h1 Let's make your sales
+					br
+					| team more efficient
+				span.subheading Request early access to MadKudu Opportunity Scoring
+				.contact-content
+					div.team-list
+						
+						p Gain deep insight into your sales velocity and deal fluidity.
+					div.form-contact-wrapper
+						form(id="fcontact",class=["form", "form-contact"],action="contact.html?s=sent",method="get")
+							legend Request early access 
+							fieldset								
+								+input-field('email','email',null,'Email','email', 'required')
+								+input-field('tel','phone',null,'Phone Number','phone','required')
+								+input-field('text','Source',null,'How did you hear about us?','source',null)
+								button.btn.btn-lg.btn-primary.btn-block.mki_contact(type='submit') Get started!
+					div.reason
+						p Inspired by Point Nine Capital Partner Christoph Janz's <a href='http://christophjanz.blogspot.com/2016/06/a-better-way-to-visualize-pipeline.html' target='_blank'>"A better way to visualize pipeline"</a>.
+						
+						blockquote.m-t-lg.testimony-item.reason__testimony
+							p I love my MadKudu dashboards and
+								br
+								|  reports in Salesforce, they've
+								br
+								|  helped increase dramatically
+								br
+								| the productivity of my sales team.
+							footer
+								div(class=["image-bg", "image-testimony", "matthieu-vaxelaire"])
+								div
+									strong Matthieu Vaxelaire
+									span CEO, Mention
+
+block scripts
+	script(src="js/parsley.min.js")
+	script.
+
+		function getParameterByName(name, url) {
+		    if (!url) url = window.location.href;
+		    name = name.replace(/[\[\]]/g, "\\$&");
+		    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+		        results = regex.exec(url);
+		    if (!results) return null;
+		    if (!results[2]) return '';
+		    return decodeURIComponent(results[2].replace(/\+/g, " "));
+		};
+
+		if (!Date.prototype.toISOString) {
+			(function() {
+
+			    function pad(number) {
+			    	if (number < 10) {
+			        	return '0' + number;
+						}
+					return number;
+			    }
+
+			    Date.prototype.toISOString = function() {
+			    	return this.getUTCFullYear() +
+				        '-' + pad(this.getUTCMonth() + 1) +
+				        '-' + pad(this.getUTCDate()) +
+				        'T' + pad(this.getUTCHours()) +
+				        ':' + pad(this.getUTCMinutes()) +
+				        ':' + pad(this.getUTCSeconds()) +
+				        '.' + (this.getUTCMilliseconds() / 1000).toFixed(3).slice(2, 5) +
+				        'Z';
+			    };
+
+			}());
+		}
+
+		$(document).ready( function() {
+
+			analytics.identify();
+
+			var alertBox = getParameterByName('s');
+
+			if (alertBox == "sent") {
+				alertBoxSuccess = '<div role="alert" class="alert alert-dismissible alert-success"><button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Fabulous! We\'ll be in touch';
+
+				$('.contact .container').prepend(alertBoxSuccess);
+			}
+
+			var formEl = $('#fcontact');
+
+			formEl.on('submit', function(e) {
+
+				e.preventDefault();
+
+				var firstName = formEl.find('[name=firstname]').val(),
+					lastName = formEl.find('[name=lastname]').val(),
+					email = formEl.find('[name=email]').val(),
+					phone = formEl.find('[name=phone]').val(),
+					company = formEl.find('[name=company]').val(),
+					timeCall = formEl.find('[name=timecall]').val(),
+					timeNowObj = new Date(),
+					timeNowStr = timeNowObj.toISOString();
+
+				if (email) {
+					analytics.identify({
+						firstName: firstName,
+						lastName: lastName,
+						email: email,
+						phone: phone,
+						company: company,
+						timeCall: timeCall,
+						createdAt: timeNowStr
+					});
+
+					analytics.track('Request Demo', {
+						firstName: firstName,
+						lastName: lastName,
+						email: email,
+						phone: phone,
+						company: company,
+						timeCall: timeCall
+					});
+
+					setTimeout( function() {
+						window.location.href = "/contact.html?s=sent"
+					}, 1000);
+				}
+			});
+
+		});
+//- 741
