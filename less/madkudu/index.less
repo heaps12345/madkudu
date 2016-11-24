@@ -439,7 +439,15 @@
 	}
 }
 
-.box-flow .figure-right .figure,
+
+.box-flow .figure-right .figure img {
+	max-width: 400px;
+	max-height: 400px;
+	margin-bottom: 20px;
+	@media (min-width: @screen-sm-min) {
+		float: right;
+	}
+}
 .box-flow .figure-left .text {
 
 	@media (min-width: @screen-sm-min) {
@@ -447,7 +455,15 @@
 	}
 }
 
-.box-flow .figure-left .figure,
+
+.box-flow .figure-left .figure img {
+	max-width: 400px;
+	max-height: 400px;
+	margin-bottom: 20px;
+	@media (min-width: @screen-sm-min) {
+		float: left;
+	}
+}
 .box-flow .figure-right .text {
 
 	@media (min-width: @screen-sm-min) {
