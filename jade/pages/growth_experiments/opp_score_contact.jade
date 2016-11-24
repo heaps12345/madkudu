@@ -18,28 +18,26 @@ block body
 
 		include ../../components/header_white_new.jade
 
-		section.contact
+		header.jumbotron
 			.container
 
-				h1 Let's make your sales
-					br
-					| team more efficient
-				span.subheading Request early access to MadKudu Opportunity Scoring
+				h1 "A better way to visualize Pipeline"
+				p Request early access to MadKudu Opportunity Scoring
+
+		section.contact.alt
+			.container
 				.contact-content
-					div.team-list
-						
-						p Gain deep insight into your sales velocity and deal fluidity.
 					div.form-contact-wrapper
 						form(id="fcontact",class=["form", "form-contact"],action="contact.html?s=sent",method="get")
-							legend Request early access 
-							fieldset								
+							legend Request early access
+							fieldset
 								+input-field('email','email',null,'Email','email', 'required')
 								+input-field('tel','phone',null,'Phone Number','phone','required')
 								+input-field('text','Source',null,'How did you hear about us?','source',null)
 								button.btn.btn-lg.btn-primary.btn-block.mki_contact(type='submit') Get started!
 					div.reason
-						p Inspired by Point Nine Capital Partner Christoph Janz's <a href='http://christophjanz.blogspot.com/2016/06/a-better-way-to-visualize-pipeline.html' target='_blank'>"A better way to visualize pipeline"</a>.
-						
+						p Inspired by Point Nine Capital Partner Christoph Janz's <a href='http://christophjanz.blogspot.com/2016/06/a-better-way-to-visualize-pipeline.html' target='_blank'>"A better way to visualize pipeline"</a>, MadKudu's opportunity scoring will enable you to better understand your pipeline.
+
 						blockquote.m-t-lg.testimony-item.reason__testimony
 							p I love my MadKudu dashboards and
 								br
@@ -53,6 +51,52 @@ block body
 								div
 									strong Matthieu Vaxelaire
 									span CEO, Mention
+
+		section.sales
+			.container
+				h3 You've been missing the data
+					br
+					| to answer these questions
+				ol.box-flow
+					li.figure-right
+						.text
+							.centering
+								.centering-inner
+									h4 What's my pipeline fluidity?
+									p See how much of your pipeline growth is tied to new deals.
+									p Find out at what stage your opportunities were 30 days ago.
+									p Quickly identify opportunities that require your attention.
+						.figure
+							img(src='./../../static/images/MadKudu_Opp_Fluidity_Salesforce.png')
+
+					li.figure-left
+						.text
+							.centering
+								.centering-inner
+									h4 What's my pipeline velocity?
+									p See what has happened to your pipeline over the past 30 days.
+									p Find how much of your pipeline is closing.
+									p Quickly identify bottlenecks in your opportunity flow.
+
+						.figure
+							img(src='./../../static/images/MadKudu_Opp_Fluidity_Salesforce.png')
+
+		section.contact.alt
+			.container
+				h3 FAQ
+				ul
+					li
+						h4 What is involved in setting up MadKudu Opportunity Scoring?
+						p We've made the setup as streamlined as can be. All we need is an API key.
+					li
+						h4 What CRMs are currently supported for MadKudu Opportunity Scoring?
+						p Currently only Salesforce is supported but Pidrive and Close.io are coming soon.
+					li
+						h4 How is the pricing structured for MadKudu Opportunity Scoring?
+						p This features comes at a flat rate of $249/month. As part of the early access program, we are offering a 15-day trial.
+					li
+						h4 Do the reports come pre-built with MadKudu Opportunity Scoring?
+						p Because each company looks at their business differently, we do not automatically roll out reports. However you can see <a href='http://docs.madkudu.com' target='_blank'> here </a> how to add the reports into your daily sales dashboards and reports.
 
 block scripts
 	script(src="js/parsley.min.js")
@@ -120,13 +164,13 @@ block scripts
 					analytics.identify({
 						email: email,
 						phone: phone,
-						source: source	
+						source: source
 					});
 
-					analytics.track('Request Demo', {						
+					analytics.track('Request Demo', {
 						email: email,
 						phone: phone,
-						source: source						
+						source: source
 					});
 
 					setTimeout( function() {

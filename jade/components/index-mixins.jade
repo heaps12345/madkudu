@@ -11,15 +11,15 @@ mixin testimony-list()
 
 mixin testimony_item(name, position, quote, photo, bg)
 	li
-		blockquote 
+		blockquote
 			p #{quote}
 			footer
 				if (bg == false)
 					if (photo != false)
 						img(src='images/testimony/'+photo+'@2x.png', alt=name)
-				else 
+				else
 					div(class=["image-bg", "image-testimony", photo])
-					
+
 				div
 					strong #{name}
 					span #{position}
@@ -43,9 +43,9 @@ mixin customer_item(name, image, url, bg)
 				if (bg == false)
 					if (image != false)
 						img(src='images/customer/'+image+'@2x.png', alt=name)
-				else 
+				else
 					div(class=["image-bg", "image-customer", image])
-					
+
 				if (url!=false)
 					a(href=url, title=name) Case Study
 
@@ -56,13 +56,13 @@ mixin customer_item(name, image, url, bg)
 mixin data-box-1(data, index)
 	div(class=["data-box", "data-box-" + data[index].illustration])
 		if (data[index].illustrationtext)
-			.data-box--arrow 
+			.data-box--arrow
 				.centering
 					.centering-inner #{data[index].illustrationtext}
 		.illustration
 		.bio
 			if (data[index].name)
-				p 
+				p
 					span Name:
 					span #{data[index].name}
 			if (data[index].title)
@@ -92,14 +92,14 @@ mixin data-box-2(data,index)
 		.illustration
 		.bio
 			if (data[index].name)
-				p 
+				p
 					span Name:
 					span #{data[index].name}
 			if (data[index].title)
 				p
 					span Title:
 					span #{data[index].title}
-			if (data[index].sectiontitle)					
+			if (data[index].sectiontitle)
 				p
 					strong #{data[index].sectiontitle}
 				if (data[index].segment || data[index].score || data[index].reason || data[index].industry)
@@ -145,20 +145,20 @@ mixin integration_item(name, image, index, bg)
 			- className = "second"
 		else
 			- className = "third"
-		
+
 		li(class=[className])
 			.centering
 				.centering-inner
 					if (bg == false)
 						if (image != false)
 							img(src='images/integration/'+image+'@2x.png', alt=name)
-					else 
+					else
 						div(class=["image-bg", "image-integration", image])
 
 
 //- Comparison Section
-//- --------------------------------		
-		
+//- --------------------------------
+
 mixin bad-email()
 	.compare-email
 		p Mr. Don Newcustomer,
@@ -173,18 +173,18 @@ mixin good-email()
 	.compare-email
 		p Mr. Don Newcustomer,
 		.highlight
-			p Congrats on 
-				strong connecting your bank account 
-				| and 
+			p Congrats on
+				strong connecting your bank account
+				| and
 				strong adding your accountant.
-			p Did you know we can give your accountant 
-				strong advanced reporting in our Pro plan 
+			p Did you know we can give your accountant
+				strong advanced reporting in our Pro plan
 				| to help you manage your cash flow more efficiently?
-			p Here is 
-				strong 
+			p Here is
+				strong
 					u a video
 				|  that explains advanced reporting.
-			p BTW ... I see 
+			p BTW ... I see
 				strong your company is in Cleveland
 				| - congrats on winning the NBA Championship!
 		p Thanks!
@@ -196,5 +196,5 @@ mixin oldway_item(event, point)
 	li
 		div #{event}
 		div
-			strong #{point} 
+			strong #{point}
 			span.hidden-sx.hidden-sm points
