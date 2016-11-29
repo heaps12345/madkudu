@@ -28,7 +28,7 @@ block body
 			.container
 				.contact-content
 					div.form-contact-wrapper
-						form(id="fcontact",class=["form", "form-contact"],action="opportunity_scoring_access?s=sent",method="get")
+						form(id="fcontact",class=["form", "form-contact"],action="opportunity_scoring?s=sent",method="get")
 							legend Request early access
 							fieldset
 								+input-field('email','email',null,'Email','email', 'required')
@@ -175,7 +175,7 @@ block scripts
 					});
 
 					setTimeout( function() {
-						window.location.href = "/opportunity_scoring_access?s=sent"
+						window.location.href = "/opportunity_scoring?s=sent"
 					}, 1000);
 				}
 			});
