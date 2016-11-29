@@ -28,13 +28,14 @@ block body
 			.container
 				.contact-content
 					div.form-contact-wrapper
-						form(id="fcontact",class=["form", "form-contact"],action="contact.html?s=sent",method="get")
+						form(id="fcontact",class=["form", "form-contact"],action="opportunity_scoring_access?s=sent",method="get")
 							legend Request early access
 							fieldset
 								+input-field('email','email',null,'Email','email', 'required')
 								+input-field('tel','phone',null,'Phone Number','phone','required')
 								+input-field('text','Source',null,'How did you hear about us?','source',null)
 								button.btn.btn-lg.btn-primary.btn-block.mki_contact(type='submit') Get started!
+
 					div.reason
 						p Inspired by Point Nine Capital Partner Christoph Janz's <a href='http://christophjanz.blogspot.com/2016/06/a-better-way-to-visualize-pipeline.html' target='_blank'>"A better way to visualize pipeline"</a>, MadKudu's opportunity scoring will enable you to better understand your pipeline.
 
@@ -45,7 +46,7 @@ block body
 								br
 								|  helped increase dramatically
 								br
-								| the productivity of my sales team.
+								|  the productivity of my sales team.
 							footer
 								div(class=["image-bg", "image-testimony", "matthieu-vaxelaire"])
 								div
@@ -62,12 +63,12 @@ block body
 						.text
 							.centering
 								.centering-inner
-									h4 What's my pipeline fluidity?
-									p See how much of your pipeline growth is tied to new deals.
+									h4 How healthy is my pipeline?
+									p See how much of your current pipeline is tied to new deals.
 									p Find out at what stage your opportunities were 30 days ago.
 									p Quickly identify opportunities that require your attention.
 						.figure
-							img(src='./../../static/images/MadKudu_Opp_Fluidity_Salesforce.png')
+							img(src='./../../static/images/opportunity_won_validation.png')
 
 					li.figure-left
 						.text
@@ -79,7 +80,7 @@ block body
 									p Quickly identify bottlenecks in your opportunity flow.
 
 						.figure
-							img(src='./../../static/images/MadKudu_Opp_Fluidity_Salesforce.png')
+							img(src='./../../static/images/opportunity_demo_won.png')
 
 		section.contact.alt
 			.container
@@ -167,7 +168,7 @@ block scripts
 						source: source
 					});
 
-					analytics.track('Request Demo', {
+					analytics.track('Opportunity Scoring - Clicked free trial', {
 						email: email,
 						phone: phone,
 						source: source
@@ -178,6 +179,5 @@ block scripts
 					}, 1000);
 				}
 			});
-
 		});
 //- 741
