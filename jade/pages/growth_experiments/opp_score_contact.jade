@@ -28,13 +28,14 @@ block body
 			.container
 				.contact-content
 					div.form-contact-wrapper
-						form(id="fcontact",class=["form", "form-contact"],action="contact.html?s=sent",method="get")
+						form(id="fcontact",class=["form", "form-contact"],action="https://app.madkudu.com/signup?plan=opp_scoring",method="get")
 							legend Request early access
 							fieldset
 								+input-field('email','email',null,'Email','email', 'required')
 								+input-field('tel','phone',null,'Phone Number','phone','required')
 								+input-field('text','Source',null,'How did you hear about us?','source',null)
 								button.btn.btn-lg.btn-primary.btn-block.mki_contact(type='submit') Get started!
+
 					div.reason
 						p Inspired by Point Nine Capital Partner Christoph Janz's <a href='http://christophjanz.blogspot.com/2016/06/a-better-way-to-visualize-pipeline.html' target='_blank'>"A better way to visualize pipeline"</a>, MadKudu's opportunity scoring will enable you to better understand your pipeline.
 
@@ -45,7 +46,7 @@ block body
 								br
 								|  helped increase dramatically
 								br
-								| the productivity of my sales team.
+								|  the productivity of my sales team.
 							footer
 								div(class=["image-bg", "image-testimony", "matthieu-vaxelaire"])
 								div
@@ -167,17 +168,16 @@ block scripts
 						source: source
 					});
 
-					analytics.track('Request Demo', {
+					analytics.track('Opportunity Scoring - Clicked free trial', {
 						email: email,
 						phone: phone,
 						source: source
 					});
 
 					setTimeout( function() {
-						window.location.href = "/opportunity_scoring_access?s=sent"
+						window.location.href = "https://app.madkudu.com/signup?plan=opp_scoring"
 					}, 1000);
 				}
 			});
-
 		});
 //- 741
