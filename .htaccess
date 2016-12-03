@@ -46,7 +46,7 @@ RewriteRule ^opportunity_scoring/?$ growth_experiments/opp_score_contact.html [N
 RewriteRule ^opportunity_scoring/?$ opportunity_scoring_access [NC,L]
 
 # Redirect to Instapage landing page
-RewriteRule ^opportunity-scoring$ http://try.madkudu.com/opp-scoring [NC,L]
+RewriteRule ^opportunity-scoring$ http://try.madkudu.com/opportunity-scoring [NC,L]
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
