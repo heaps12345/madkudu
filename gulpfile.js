@@ -56,6 +56,7 @@ var Paths = {
 		'./js/custom/*',
 		'./js/madkudu/**.js',
 	],
+	GOOGLE_VERIFICIATION_FILE: './googlebdc33b3118eeac9b.html',
 	STATIC_JS: [
 		'./js/vendor/modernizr-custom.js',
 		'./js/vendor/parsley.min.js',
@@ -96,7 +97,7 @@ gulp.task('server', ['watch'], function () {
 	});
 });
 
-gulp.task('build', ['less-min', 'js-min', 'jade', 'utils', 'simulator', 'static']);
+gulp.task('build', ['less-min', 'js-min', 'jade', 'utils', 'simulator', 'static', 'google_verification']);
 
 gulp.task('less-min', function () {
 	gulp.src(Paths.LESS_TOOLKIT_SOURCES)
@@ -155,6 +156,11 @@ gulp.task('static', function () {
 	gulp.src(Paths.STATIC)
 		.pipe(gulp.dest(Paths.DIST_STATIC))
 		.pipe(livereload());
+});
+
+gulp.task('google_verification', function () {
+	gulp.src(Paths.GOOGLE_VERIFICIATION_FILE)
+		.pipe(gulp.dest(Paths.DIST))
 });
 
 gulp.task('utils', function () {
