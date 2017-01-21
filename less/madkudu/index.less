@@ -22,12 +22,11 @@
 	margin-bottom: 0;
 	text-align: center;
 	color: white;
-	background-color: @m-color-dark-blue;
+	background-color: @m-color-dark-grey;
 
 	@media (min-width: @screen-sm-min) {
-		padding-top: 213px;
-		padding-bottom: 213px;
-		.background-image("@{m-path-image}/general/graphic-chart.png", contain);
+		padding-top: 100px;
+		padding-bottom: 100px;
 		background-position: right bottom;
 	}
 
@@ -42,6 +41,16 @@
 	.container > * + * {
 		margin-top: 40px;
 		margin-bottom: 0;
+	}
+}
+
+.primary_landing_page .jumbotron {
+	background-color: @m-color-darker-blue;
+
+	@media (min-width: @screen-sm-min) {
+		padding-top: 150px;
+		padding-bottom: 213px;
+		.background-image("@{m-path-image}/general/graphic-chart.png", contain);
 	}
 }
 
@@ -108,6 +117,145 @@
 	&:focus {
 		background-color: lighten(@m-color-green, 5%);
   }
+}
+
+/* Blocks section based on Bootstrap template */
+
+// .col-md-6 {
+// 	border-style: solid;
+// }
+
+.landing_page__block_title {
+	margin-bottom: 20px;
+	margin-top: 0px;
+	text-align: center;
+}
+
+.landing_page__block_subtitle {
+	font-size: 20px;
+	color: @m-color-grey;
+	text-align: center;
+}
+
+.landing_page__subblock {
+	margin-top: 45px;
+}
+
+.landing_page__quote_block {
+	padding: 40px 0;
+}
+
+.landing_page__block_light_grey {
+	background-color: @m-color-subtle-grey;
+}
+
+.landing_page__block_grey {
+	background-color: @m-color-grey;
+	color: @m-color-subtle-grey;
+}
+
+.landing_page__block_blue {
+	background-color: @m-color-blue;
+	h1 {
+		color: white;
+	}
+	p {
+		color: white;
+	}
+}
+
+.landing_page__block_feature_text {
+	font-size: 24px;
+}
+
+.landing_page__block_vertically_centered {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 95%;
+}
+
+.landing_page__block_standard_height {
+	height: 310px;
+}
+
+.landing_page__sub_block_column_image {
+	.landing_page__block_standard_height
+}
+
+.landing_page__sub_block_column_text {
+	.landing_page__block_standard_height;
+	text-align: center;
+}
+
+.landing_page__sub_block_column_image img {
+	width: 500px;
+}
+
+
+
+/* Form styling */
+
+.mk_form {
+	input {
+		height: 50px;
+    width: 300px;
+	}
+	button {
+		height: 50px;
+		border-radius: 0px;
+		background-color: @m-color-green;
+		border-color: @m-color-green;
+		color: white;
+		padding-left: 30px;
+		padding-right: 30px;
+		text-transform: uppercase;
+	}
+}
+
+
+
+/* Product Section
+ *-----------------------------------------------------------*/
+
+section.products {
+	.text-center;
+	padding-top: 50px;
+	background-color: @gray-lighter;
+
+	h2 {
+		color: @m-color-dark-grey;
+		text-transform: uppercase;
+	}
+
+	.product_box {
+		width: 220px;
+		margin: 0 auto;
+
+		h3 {
+			padding-bottom: 15px;
+		}
+
+		p {
+			line-height: 2em;
+			font-size: 18px;
+		}
+
+		.btn {
+			margin-top: 20px;
+			border-color: #2ECC71;
+	    color: #2ECC71;
+	    text-decoration: none;
+	    text-transform: uppercase;
+	    letter-spacing: 0.05em;
+	    font-weight: 600;
+	    border-style: solid;
+	    border-radius: 4px;
+	    border-width: 2px;
+	    padding: 7px 16px;
+		}
+
+	}
 }
 
 

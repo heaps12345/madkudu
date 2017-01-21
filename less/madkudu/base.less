@@ -45,7 +45,7 @@
 
 a {
 	color: @m-link-color;
-	
+
 	&:hover,
 	&:focus {
 		color: @m-color-blue;
@@ -61,6 +61,10 @@ a {
 }
 
 //- MONTAZZE NOTE: Some hack i put for new site only, make bootstrap grid as default. Consider to fixing the grid later
+.body {
+	margin-top: 72px;
+}
+
 .body,
 .footer {
 
@@ -85,13 +89,13 @@ section,
 	padding-bottom: 50px;
 	border-bottom: solid 1px @m-color-subtle-grey-border;
 	background-color: white;
-	
+
 	@media (min-width: @screen-sm-min) {
 		padding-top: 80px;
-		padding-bottom: 80px;		
+		padding-bottom: 80px;
 	}
-	
-	&.alt {	
+
+	&.alt {
 		background-color: @m-color-subtle-grey;
 	}
 }

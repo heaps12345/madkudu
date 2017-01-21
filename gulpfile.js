@@ -36,6 +36,7 @@ var Paths = {
 		'./less/custom/.',
 		'./less/*.less'
 	],
+	LESS_WATCH: './less/**/*.less',
 	JADE_WATCH: './jade/**/*.jade',
 	JADE: './jade/pages/**/*.jade',
 	MARKDOWN: './markdown/*.md',
@@ -77,6 +78,7 @@ gulp.task('default', ['build', 'serve']);
 
 gulp.task('watch', function () {
 	livereload.listen();
+	gulp.watch(Paths.LESS_WATCH, ['less-min']);
 	gulp.watch(Paths.LESS, ['less-min']);
 	gulp.watch(Paths.JS, ['js-min']);
 	gulp.watch(Paths.JADE_WATCH, ['jade']);

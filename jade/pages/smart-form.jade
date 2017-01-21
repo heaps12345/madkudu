@@ -1,0 +1,179 @@
+extends ../components/skeleton.jade
+
+include ../components/index-mixins.jade
+include ../components/how_it_works.jade
+
+block head
+	title MadKudu | Accelerating SaaS sales with predictive analytics
+	meta(name='description' content='Accelerating SaaS sales with predictive analytics')
+
+block neck
+	script analytics.page('Home')
+	script.
+		$(document).ready(function () {
+			$('.mki_landing_demo').click(function (event) {
+				event.preventDefault();
+				analytics.track('Landing Page - Clicked request demo');
+				window.open('/contact','_blank');
+			});
+			$('.mki_landing_trial').click(function (event) {
+				event.preventDefault();
+				analytics.track('Landing Page - Clicked free trial');
+				window.location = 'https://app.madkudu.com/signup?plan=smart_form';
+			});
+			$('.mki_get_started_now_bottom_button').click(function (event) {
+				event.preventDefault();
+				analytics.track('Landing Page - Clicked free trial');
+				window.location = 'https://app.madkudu.com/signup?plan=smart_form&email=' + $('#signup_trial_email_input').val();
+			});
+			$('#signup_trial_email_input').keypress(function (e) {
+			  if (e.which == 13) {
+			    $('.mki_get_started_now_bottom_button').click();
+			    return false;    //<---- Add this line
+			  }
+			});
+		});
+
+block body
+
+	.body
+
+		include ../components/header_white_new.jade
+
+		header.jumbotron
+			.container
+				h1 MadKudu Smart Form
+				p Get qualified leads to request a sales consultation
+				p
+					a.btn.btn-trial.btn-lg.btn-primary(class='mki_landing_trial', role='button') Try Now
+					a.btn.btn-demo.btn-lg.btn-primary(class='mki_landing_demo', role='button') Get a Demo
+
+		.block.text-center.landing_page__quote_block.landing_page__block_light_grey
+			blockquote.pull-quote
+				img.rounded-circle(src="static/images/people/guillaume-cabane@2x.png")
+				p "By inverting the problem and having visitors ask for our time, booking rates went through the roof."
+				cite Guillaume Cabane, VP Growth, Segment
+
+		.block.m-b-0
+			h2.landing_page__block_title Make your signup form intelligent
+			.landing_page__block_subtitle Generate 2x more qualified sales calls
+
+			.container.m-t
+
+				.row.landing_page__subblock
+					.col-md-6.landing_page__sub_block_column_text
+						.landing_page__block_vertically_centered
+							.landing_page__block_feature_text Visitors enter their email
+					.col-md-6.landing_page__sub_block_column_image
+						.landing_page__block_vertically_centered
+							.landing_page__block_feature_image
+								img(src='static/images/smart-form/signup_form_example.png')
+
+				.row.landing_page__subblock
+					.col-md-6.landing_page__sub_block_column_image
+						.landing_page__block_vertically_centered
+							.landing_page__block_feature_image
+								img(src='static/images/smart-form/smart_form_api_response.png')
+					.col-md-6.landing_page__sub_block_column_text
+						.landing_page__block_vertically_centered
+							.landing_page__block_feature_text MadKudu qualifies them in real-time
+							.landing_page__block_feature_subtext MadKudu uses historical and 3rd party data to predict whether or not they should be sent to the sales team.
+
+				.row.landing_page__subblock
+					.col-md-6.landing_page__sub_block_column_text
+						.landing_page__block_vertically_centered
+							.landing_page__block_feature_text Qualified leads opt-in for a free sales consultation
+							.landing_page__block_feature_subtext Leads identified as a great fit for sales get offered to book a sales consultation. Other leads don't get the prompt.
+					.col-md-6.landing_page__sub_block_column_image
+						.landing_page__block_vertically_centered
+							.landing_page__block_feature_image
+								img(src='static/images/smart-form/smart_form_popup_example.png')
+
+				.row.landing_page__subblock
+					.col-md-6.landing_page__sub_block_column_image
+						.landing_page__block_vertically_centered
+							.landing_page__block_feature_image
+								img(src='static/images/smart-form/smart_form_calendar_icon.png')
+					.col-md-6.landing_page__sub_block_column_text
+						.landing_page__block_vertically_centered
+							.landing_page__block_feature_text Your sales team see new meetings in their calendar!
+
+
+		.block.block-inverse.text-center.landing_page__quote_block
+			blockquote.pull-quote
+				img.rounded-circle(src="static/images/people/simon-whittick@2x.png")
+				p "MadKudu solves a huge problem by ensuring our team is booking demos only with highly qualified leads."
+				cite Simon Whittick, VP Marketing, Geckoboard
+
+
+		.block.text-center(style="display: none;")
+			h1 Want to see for yourself?
+
+			.row
+				.col-md-6
+					.test_form#test_form
+						input#test_form_email(type="email" name="email" placeholder="Try an email and press enter...")
+
+					.smart_form
+							h3 Sample Form
+
+							form
+								.form-group
+									label(for="email") <strong>Email</strong>
+									input#smart_form_email(class="item" type="email" placeholder="bob@bigco.com" readonly="true")
+								.form-group
+									label(for="password") <strong>Password</strong>
+									input#smart_form_password(type="password" placeholder="" readonly="false" value="1234567890")
+								.form-group
+									#demo_empty.demo_empty(style="display: none;")
+									#demo.demo(style="display: none;")
+										p Would you like help getting started?
+										input#demo_btn_yes(type="radio" name="demo" value="yes")
+										label(for="yes") Yes
+										input#demo_btn_no(type="radio" name="demo" value="no")
+										label(for="no") No
+								.form-group
+									button(disabled) SIGNUP
+
+		.block.text-center.landing_page__block_blue.smart_form__in_action.p-t-md
+			h1.m-t Smart Form in action
+
+			.container
+				.row.m-t-lg.m-b-lg
+					.col-md-6
+						#smart_form__pingboard_demo.cropped(style='background-image: url("static/images/smart-form/smart_form_demo_geckoboard.gif");)')
+					.col-md-6
+						#smart_form__segment_demo.cropped(style='background-image: url("static/images/smart-form/smart_form_demo_segment.gif");)')
+				.row
+					.col-md-6
+						#smart_form__mention_demo.cropped(style='background-image: url("static/images/smart-form/smart_form_demo_mention.gif");)')
+					.col-md-6
+						.cropped
+							#smart_form__you_demo
+							.smart_form_demo_vcenter You ?
+
+
+		.block.text-center.p-t-md.smart_form__easy_setup
+			h1.m-t Easy to set up
+			.container
+				.three_steps.text-left.m-t
+					p
+						.numberCircle <span>1</span>
+						.text Add a one-line javascript snippet to your signup page
+					p
+						.numberCircle <span>2</span>
+						.text Pick the field that captures your leads' emails
+					p
+						.numberCircle <span>3</span>
+						.text Pick an option to personalize your form
+			.thatsit That's it!
+
+		.block.text-center.landing_page__block_blue.smart_form__try_now
+			h1 Try FREE for 14 days
+			p No Credit Card Required. Cancel Anytime.
+
+			.mk_form.form-inline
+				.form-group
+					input#signup_trial_email_input(class="item" type="email" placeholder="Email address")
+				.form-group
+					button.btn.mki_get_started_now_bottom_button Get started now
