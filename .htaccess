@@ -15,6 +15,8 @@ RewriteRule ^index\.html$ http://www.madkudu.com/ [L,R=301]
 Redirect 301 /newsletter /blog/newsletter
 
 # Remove the .html
+RewriteRule ^lead-scoring/?$ lead-scoring.html [NC,L]
+RewriteRule ^smart-form/?$ smart-form.html [NC,L]
 RewriteRule ^about/?$ team.html [NC,L]
 RewriteRule ^careers/?$ careers.html [NC,L]
 RewriteRule ^geckoboard/?$ customers-geckoboard.html [NC,L]
@@ -47,7 +49,6 @@ RewriteRule ^opportunity_scoring/?$ opportunity_scoring_access [NC,L]
 
 # Redirect to Instapage landing page
 RewriteRule ^opportunity-scoring$ http://try.madkudu.com/opportunity-scoring [NC,L]
-RewriteRule ^smart-form$ http://try.madkudu.com/smart-form [NC,L]
 
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
