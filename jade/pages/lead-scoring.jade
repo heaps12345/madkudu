@@ -1,0 +1,249 @@
+extends ../components/skeleton.jade
+
+include ../components/index-mixins.jade
+include ../components/how_it_works.jade
+
+block head
+	title MadKudu | Accelerating SaaS sales with predictive analytics
+	meta(name='description' content='Accelerating SaaS sales with predictive analytics')
+
+block neck
+	script analytics.page('Home')
+	script.
+		$(document).ready(function () {
+			$('.mki_landing_demo').click(function (event) {
+				event.preventDefault();
+				analytics.track('Landing Page - Clicked request demo');
+				window.open('/contact','_blank');
+			});
+			$('.mki_landing_trial').click(function (event) {
+				event.preventDefault();
+				analytics.track('Landing Page - Clicked free trial');
+				window.location = 'https://app.madkudu.com/signup?plan=lead_scoring';
+			});
+		});
+
+block body
+
+	//- MONTAZZE NOTE: Should remove this wrapper after changed all your site
+	.body
+
+		include ../components/header_white_new.jade
+
+		header.jumbotron
+			.container
+				h1 MadKudu Lead Scoring
+				p Grow sales 20% by leveraging your customer's in-app behavior
+				p
+					a.btn.btn-trial.btn-lg.btn-primary(class='mki_landing_trial', role='button') Try now
+					a.btn.btn-demo.btn-lg.btn-primary(class='mki_landing_demo', role='button') Get a Demo
+
+		section.sales
+			.container
+				h3 Your sales team is
+					| missing data it needs
+					br
+					| to prioritize leads
+				ol.box-flow
+					li.figure-right
+						.text
+							.centering
+								.centering-inner
+									h4 Your reps waste time on unqualified leads
+									p Some leads don't fit your customer profile.
+									p Others will never close because they won't use your product.
+						.figure
+							+data-box-1(sales1, 0)
+
+					li.connector
+						div.up
+						div.down
+
+					li.figure-left
+						.text
+							.centering
+								.centering-inner
+									h4 Your reps miss high-potential leads
+									p Sales can miss great leads because reps have an incomplete view of the customer.
+
+						.figure
+							+data-box-1(sales1, 1)
+
+		section.alt.sales
+			.container
+				h3 MadKudu identifies your best customers using
+					| in-app behavior &amp; demographic data
+				ol.box-flow
+					li.figure-right
+						.text
+							.centering
+								.centering-inner
+									h4 Identify your best leads
+									p MadKudu analyzes your customers and segments leads based on demographic data like title, industry, and size.
+
+						.figure
+							+data-box-2(sales2, 0)
+
+					li.connector
+						div.up
+						div.down
+
+					li.figure-left
+						.text
+							.centering
+								.centering-inner
+									h4 Close leads faster by knowing who is ready to buy
+									p MadKudu aggregates your customers’ in-app behavior to identify those who are ready to buy.
+						.figure
+							+data-box-2(sales2, 1)
+
+					li.connector.reverse
+						div.up
+						div.down
+
+					li.figure-right
+						.text
+							.centering
+								.centering-inner
+									h4 Target upsell candidates
+									p MadKudu identifies upsell candidates based on customer profile and behavior.
+						.figure
+							+data-box-2(sales2, 2)
+
+					//- li.connector
+					//- 	div.up
+					//- 	div.down
+					//-
+					//- li.figure-left
+					//- 	.text
+					//- 		.centering
+					//- 			.centering-inner
+					//- 				h4 Prevent churn
+					//- 				p Yikes! This customer is getting ready to cancel.
+					//- 				p Your Customer Success team can intervene before she does.
+					//- 	.figure
+					//- 		+data-box-2(sales2, 3)
+
+		section.customers
+			.container
+				h2 Featured Customers
+				+customer-list
+					each item in customer
+						//- true: image as background variable
+						+customer_item(item.name, item.image, item.url, true)
+
+		section.how-it-works.hidden-xs
+			.container
+				h3 Our secret sauce? We build predictive models using in-app behavior.
+				p Other lead scoring approaches don't give your sales team a complete view of the customer
+
+				//- see howitworks.jade file
+				+works-illustration()
+
+		section.alt.testimonials
+			.container
+				+testimony-list
+					each item in testimony
+						//- true: image as background variable
+						+testimony_item(item.name, item.position, item.quote, item.photo, true)
+
+		section.alt.integrations
+			.container
+				h3 Dozens of 1-Click integrations
+				+integration-list
+					each item, index in integration
+						//- true: image as background variable
+						+integration_item(item.name, item.image, index, true)
+				br
+				h4 ... and more ...
+
+		section.comparison.hidden-xs
+			.container
+				h3 Close more sales by giving your reps a complete
+					br
+					| view of your customers.
+				.row
+					.col-sm-6
+						.compare.wo-madkudu
+							h4
+								span.icon-wo-madkudu
+								| Without Madkudu
+							ol
+								li
+									p Your sales team is missing important data about how
+										br
+										| a customer is using your product.
+									.img-container
+										img(src='static/images/comparison/image-crm-without-madkudu@2x.png', alt='CRM Without Madkudu')
+								li
+									p Leads to
+										strong generic emails
+										| and
+										br
+										| conversations.
+								li
+									p Bad! Lacks Context
+									+bad-email()
+					.col-sm-6
+						.compare.w-madkudu
+							h4
+								span.icon-w-madkudu
+								| With Madkudu
+							ol
+									li
+										p MadKudu shows your reps a complete view of how customers
+											| are using your product.
+										.img-container
+											img(src='static/images/comparison/image-crm-with-madkudu@2x.png', alt='CRM With Madkudu')
+									li
+										p Leads to
+											strong relevant emails
+											| and valuable
+											br
+											| conversations.
+									li
+										p Good! Explains
+											strong why
+											| Sales is Contacting The Customer
+										+good-email()
+
+		section.alt.comparison
+			.container.container-narrow
+				h3 No manual lead scoring rules
+				p Rule-based lead scoring is impossible to maintain in SaaS applications where the market and product are constantly evolving.
+				.row
+					.col-sm-6
+						.scoring.wo-madkudu
+							h4 The Old Way
+							p Too hard to maintain. Guesses, not
+								br
+								| based on data.
+							ul
+								each item in oldway
+									+oldway_item(item.param, item.point)
+					.col-sm-6
+						.scoring.w-madkudu
+							h4 The MadKudu way
+							p Setup once. Prediction algorithms automatically
+								br
+								| adapt based on data.
+							ol
+								li
+									div Customer Data
+								li
+									div.blue Madkudu
+									div Predictive Analysis
+								li
+									div Intelligent lead scores &amp; enriched customer profiles
+
+		section.teaser
+			.container
+				h3 Is MadKudu for you?
+				ul
+					li Are you a B2B SaaS company?
+					li Do you have sales team?
+					li Do you get more than 500 Leads/month?
+				.cta
+					p If you answered "yes" to one of these 3 questions MadKudu is for you. Let's talk about how we can work together and accelerate your sales.
+					a(class=['mki_landing_trial','btn', 'btn-trial']) Get started
+					a(class=['mki_landing_demo','btn', 'btn-demo']) Get a demo
