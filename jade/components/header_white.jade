@@ -1,15 +1,24 @@
-nav.navbar.navbar-transparent.navbar-static-top.p-t-md.navbar-madkudu--white
-	.container
-		.navbar-header
-			button.navbar-toggle.collapsed.p-x-0(type='button' data-toggle='collapse' data-target='#navbar-collapse-com')
-				span.sr-only Toggle navigation
-				span.icon-bar
-				span.icon-bar
-				span.icon-bar
-			a.navbar-brand.navbar-brand--logo(href="/")
-				img(src='/static/images/madkudu_rectangle_large_white.svg' alt='MadKudu').hidden-sm
-				img(src='/static/images/madkudu_square_white.svg' alt='MadKudu').visible-sm-block
-		.navbar-collapse.collapse#navbar-collapse-com
-			ul.nav.navbar-nav.navbar-right.text-uppercase.text-center
-				include ./navbar.jade
-				//- a.btn.btn-primary.btn-navbar(href='https://app.madkudu.com/signup') Signup
+include ../bootstrap/bootstrap.jade
+
++navbar-fixed(title,"top","white","/")
+	.header__navbar
+		+nav-list(true)
+			li.dropdown
+				a.header__item.dropdown-toggle(href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+					.header__item Products <i class="fa fa-angle-down" aria-hidden="true"></i>
+				ul.header__dropdown
+					.header__dropdown_item
+						a(href='/smart-form')
+							h3 MadKudu Smart Form
+							p Instantly increase your number of sales calls with qualified leads
+					.header__dropdown_item
+						a(href='/lead-scoring')
+							h3 MadKudu Lead Scoring
+							p Consistently send high quality leads to your sales team
+
+			li
+				a(href="https://app.madkudu.com")
+					.header__item Login
+			li
+				a(href="/contact")
+					.header__demo_btn Get a demo
