@@ -1,4 +1,4 @@
-extends ../../../components/skeleton.jade
+extends ../../components/skeleton.jade
 
 block neck
 	title MadKudu | Predictive model visualization
@@ -8,40 +8,40 @@ block neck
 	script(src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.3.0/d3.min.js")
 
 	style.
-		
+
 		body {
 			background-color: white;
 		}
-		
+
 		//- html{
 		//-     font: 10px sans-serif;
 		//- }
 
-		svg{
+		svg {
 		    border: 1px solid silver;
 			background-color: #f2f2f2;
 		}
 
-		.node{
+		.node {
 		    cursor: pointer;
 		}
 
-		.node circle{
+		.node circle {
 		    stroke: steelblue;
 		    stroke-width: 1.5px;
 		}
 
-		.link{
+		.link {
 		    fill: none;
 		    stroke: lightgray;
 		    stroke-width: 1.5px;
-		}		
+		}
 
 	script.
-		
+
 		$( document ).ready(function() {
 
-		var json = 
+		var json =
 			 {
 				"name": " mk_employee_count<= 200.0 ",
 				"children": [{
@@ -235,14 +235,14 @@ block neck
 					}]
 				}]
 			};
-		
-		
+
+
 		var width = 2000;
 		var height = 650;
 		var maxLabel = 210;
 		var duration = 500;
 		var radius = 1;
-		    
+
 		var i = 0;
 		var root;
 
@@ -264,10 +264,10 @@ block neck
 
 		root.children.forEach(collapse);
 
-		function update(source) 
+		function update(source)
 		{
 			console.log(source);
-		
+
 		    // Compute the new tree layout.
 		    var nodes = tree.nodes(root).reverse();
 		    var links = tree.links(nodes);
@@ -277,8 +277,8 @@ block neck
 
 		    // Update the nodes…
 		    var node = svg.selectAll("g.node")
-		        .data(nodes, function(d){ 
-		            return d.id || (d.id = ++i); 
+		        .data(nodes, function(d){
+		            return d.id || (d.id = ++i);
 		        });
 
 		    // Enter any new nodes at the parent's previous position.
@@ -290,14 +290,14 @@ block neck
 
 		    nodeEnter.append("circle")
 		        .attr("r", 0)
-		        .style("fill", function(d){ 
-		            return d._children ? "lightsteelblue" : "white"; 
+		        .style("fill", function(d){
+		            return d._children ? "lightsteelblue" : "white";
 		        });
 
 		    nodeEnter.append("text")
-		        .attr("x", function(d){ 
+		        .attr("x", function(d){
 		            var spacing = computeRadius(d) + 5;
-		            return d.children || d._children ? -spacing : spacing; 
+		            return d.children || d._children ? -spacing : spacing;
 		        })
 		        .attr("dy", "3")
 		        .attr("text-anchor", function(d){ return d.children || d._children ? "end" : "start"; })
@@ -367,19 +367,19 @@ block neck
 
 		function nbEndNodes(n)
 		{
-		    nb = 0;    
+		    nb = 0;
 		    if(n.children){
-		        n.children.forEach(function(c){ 
-		            nb += nbEndNodes(c); 
+		        n.children.forEach(function(c){
+		            nb += nbEndNodes(c);
 		        });
 		    }
 		    else if(n._children){
-		        n._children.forEach(function(c){ 
-		            nb += nbEndNodes(c); 
+		        n._children.forEach(function(c){
+		            nb += nbEndNodes(c);
 		        });
 		    }
 		    else nb++;
-		    
+
 		    return nb;
 		}
 
@@ -388,7 +388,7 @@ block neck
 		    if (d.children){
 		        d._children = d.children;
 		        d.children = null;
-		    } 
+		    }
 		    else{
 		        d.children = d._children;
 		        d._children = null;
@@ -404,26 +404,22 @@ block neck
 		    }
 		}
 
-		update(root);	
-		
+		update(root);
+
 
 		});
 
-	
+
 
 
 block body
 
 	.background-white
 
-		include ../../../components/header_black.jade
-
 		.block
 
 			.container
-				
-				h1(style="margin-bottom: 50px;") Customer fit model visualization (Experimental)
-				
-				div#tree
 
-				
+				h1(style="margin-bottom: 50px;") Customer fit model visualization (Experimental)
+
+				div#tree
