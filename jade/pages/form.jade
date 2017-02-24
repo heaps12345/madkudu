@@ -19,12 +19,12 @@ block neck
 			$('.mki_landing_trial').click(function (event) {
 				event.preventDefault();
 				analytics.track('Landing Page - Clicked free trial');
-				window.location = 'https://app.madkudu.com/signup?plan=smart_form';
+				window.location = 'https://app.madkudu.com/signup?plan=madkudu_form';
 			});
 			$('.mki_get_started_now_bottom_button').click(function (event) {
 				event.preventDefault();
 				analytics.track('Landing Page - Clicked free trial');
-				window.location = 'https://app.madkudu.com/signup?plan=smart_form&email=' + $('#signup_trial_email_input').val();
+				window.location = 'https://app.madkudu.com/signup?plan=madkudu_form&email=' + $('#signup_trial_email_input').val();
 			});
 			$('#signup_trial_email_input').keypress(function (e) {
 			  if (e.which == 13) {
@@ -73,7 +73,7 @@ block body
 					.col-md-6.landing_page__sub_block_column_image
 						.landing_page__block_vertically_centered
 							.landing_page__block_feature_image
-								img(src='static/images/smart-form/smart_form_api_response.png')
+								img(src='static/images/smart-form/madkudu_form_api_response.png')
 					.col-md-6.landing_page__sub_block_column_text
 						.landing_page__block_vertically_centered
 							.landing_page__block_feature_text MadKudu qualifies them in real-time
@@ -87,13 +87,13 @@ block body
 					.col-md-6.landing_page__sub_block_column_image
 						.landing_page__block_vertically_centered
 							.landing_page__block_feature_image
-								img(src='static/images/smart-form/smart_form_popup_example.png')
+								img(src='static/images/smart-form/madkudu_form_popup_example.png')
 
 				.row.landing_page__subblock
 					.col-md-6.landing_page__sub_block_column_image
 						.landing_page__block_vertically_centered
 							.landing_page__block_feature_image
-								img(src='static/images/smart-form/smart_form_calendar_icon.png')
+								img(src='static/images/smart-form/madkudu_form_calendar_icon.png')
 					.col-md-6.landing_page__sub_block_column_text
 						.landing_page__block_vertically_centered
 							.landing_page__block_feature_text Your sales team see new meetings in their calendar!
@@ -114,16 +114,16 @@ block body
 					.test_form#test_form
 						input#test_form_email(type="email" name="email" placeholder="Try an email and press enter...")
 
-					.smart_form
+					.madkudu_form
 							h3 Sample Form
 
 							form
 								.form-group
 									label(for="email") <strong>Email</strong>
-									input#smart_form_email(class="item" type="email" placeholder="bob@bigco.com" readonly="true")
+									input#madkudu_form_email(class="item" type="email" placeholder="bob@bigco.com" readonly="true")
 								.form-group
 									label(for="password") <strong>Password</strong>
-									input#smart_form_password(type="password" placeholder="" readonly="false" value="1234567890")
+									input#madkudu_form_password(type="password" placeholder="" readonly="false" value="1234567890")
 								.form-group
 									#demo_empty.demo_empty(style="display: none;")
 									#demo.demo(style="display: none;")
@@ -135,25 +135,25 @@ block body
 								.form-group
 									button(disabled) SIGNUP
 
-		.block.text-center.landing_page__block_blue.smart_form__in_action.p-t-md
+		.block.text-center.landing_page__block_blue.madkudu_form__in_action.p-t-md
 			h1.m-t MadKudu Form in action
 
 			.container
 				.row.m-t-lg.m-b-lg
 					.col-md-6
-						#smart_form__pingboard_demo.cropped(style='background-image: url("static/images/smart-form/smart_form_demo_geckoboard.gif");)')
+						#madkudu_form__pingboard_demo.cropped(style='background-image: url("static/images/smart-form/madkudu_form_demo_geckoboard.gif");)')
 					.col-md-6
-						#smart_form__segment_demo.cropped(style='background-image: url("static/images/smart-form/smart_form_demo_segment.gif");)')
+						#madkudu_form__segment_demo.cropped(style='background-image: url("static/images/smart-form/madkudu_form_demo_segment.gif");)')
 				.row
 					.col-md-6
-						#smart_form__mention_demo.cropped(style='background-image: url("static/images/smart-form/smart_form_demo_mention.gif");)')
+						#madkudu_form__mention_demo.cropped(style='background-image: url("static/images/smart-form/madkudu_form_demo_mention.gif");)')
 					.col-md-6
 						.cropped
-							#smart_form__you_demo
-							.smart_form_demo_vcenter You ?
+							#madkudu_form__you_demo
+							.madkudu_form_demo_vcenter You ?
 
 
-		.block.text-center.p-t-md.smart_form__easy_setup
+		.block.text-center.p-t-md.madkudu_form__easy_setup
 			h1.m-t Easy to set up
 			.container
 				.three_steps.text-left.m-t
@@ -168,7 +168,7 @@ block body
 						.text Pick an option to personalize your form
 			.thatsit That's it!
 
-		.block.text-center.landing_page__block_blue.smart_form__try_now
+		.block.text-center.landing_page__block_blue.madkudu_form__try_now
 			h1 Try FREE for 14 days
 			p No Credit Card Required. Cancel Anytime.
 
