@@ -8,7 +8,7 @@ block head
 	meta(name='description' content='Accelerating SaaS sales with predictive analytics')
 
 block neck
-	script analytics.page('Home - Smart Form')
+	script analytics.page('Home - MadKudu Form')
 	script.
 		$(document).ready(function () {
 			$('.mki_landing_demo').click(function (event) {
@@ -29,7 +29,7 @@ block neck
 			$('#signup_trial_email_input').keypress(function (e) {
 			  if (e.which == 13) {
 			    $('.mki_get_started_now_bottom_button').click();
-			    return false;    //<---- Add this line
+			    return false;
 			  }
 			});
 		});
@@ -42,7 +42,7 @@ block body
 
 		header.jumbotron
 			.container
-				h1 MadKudu Smart Form
+				h1 MadKudu Form
 				p Instantly increase your number of sales calls with qualified leads
 				p
 					a.btn.btn-trial.btn-lg.btn-primary(class='mki_landing_trial', role='button') Try Now
@@ -136,7 +136,7 @@ block body
 									button(disabled) SIGNUP
 
 		.block.text-center.landing_page__block_blue.smart_form__in_action.p-t-md
-			h1.m-t Smart Form in action
+			h1.m-t MadKudu Form in action
 
 			.container
 				.row.m-t-lg.m-b-lg
