@@ -1,0 +1,25 @@
+extends ../../components/skeleton.jade
+
+include ../../components/mixins.jade
+
+block head
+
+  include ../../components/zendesk.jade
+
+block neck
+  title MadKudu | Zendesk
+
+  script analytics.page('Zendesk')
+
+block body
+
+  .background-white
+
+    include ../../components/header_white.jade
+
+    section
+      .container
+
+        p If this were a real app, this would be the first page!
+
+        p#zendesk_onboarding_text Our algorithm is currently scoring you up. If you're qualified, the chat on the bottom right will open up with a personalized error message.

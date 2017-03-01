@@ -16,6 +16,7 @@ var livereload = require('gulp-livereload');
 var gutil = require('gutil');
 var ftp = require('vinyl-ftp');
 var clean = require('gulp-clean');
+var newer = require('gulp-newer');
 
 var source = require('vinyl-source-stream');
 
@@ -149,6 +150,7 @@ gulp.task('markdown', function () {
 
 gulp.task('jade', ['markdown'], function () {
 	gulp.src(Paths.JADE)
+    .pipe(newer(Paths.DIST))
 		.pipe(jade())
 		.pipe(gulp.dest(Paths.DIST))
 		.pipe(livereload());
