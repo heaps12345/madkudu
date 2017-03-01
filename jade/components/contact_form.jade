@@ -1,6 +1,0 @@
-mixin input-field(type,id,placeholder_text,label,name,required)
-	- classes = (!required ? 'form-group' : 'form-group required')
-	- required_attr = (!required ? '' : 'required')
-	div(class=classes)
-		label(for="#{id}") #{label}
-		input.form-control(type="#{type}",id="#{id}",placeholder=placeholder_text,name="#{name}",required=required_attr)
