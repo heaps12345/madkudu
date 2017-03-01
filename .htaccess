@@ -21,7 +21,8 @@ Redirect 301 /newsletter /blog/newsletter
 
 # Remove the .html
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([^\.]+)$ $1.html [NC,L]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)\.html$ /$1 [NC,L]
 
 
 RewriteRule ^smart-form/?$ form.html [NC,L]
@@ -36,11 +37,12 @@ RewriteRule ^opportunity_scoring/?$ features/oppscoring.html [NC,L]
 RewriteRule ^opportunity-scoring$ http://try.madkudu.com/opportunity-scoring [NC,L]
 
 # BEGIN WordPress
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-RewriteRule . /index.php [L]
-</IfModule>
-
+# <IfModule mod_rewrite.c>
+# RewriteEngine On
+# RewriteBase /
+# RewriteRule ^index\.php$ - [L]
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule . /index.php [L]
+# </IfModule>
 # END WordPress
