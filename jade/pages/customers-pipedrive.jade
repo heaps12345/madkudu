@@ -1,0 +1,61 @@
+extends ../components/skeleton.jade
+
+block neck
+
+	title MadKudu | Turn trial users into paying customers | Pipedrive Case Study
+
+	script analytics.page('Case study')
+
+block body
+
+	.block.block-fill-height.block-case-study
+
+		include ../components/header_white.jade
+
+		.container
+
+			.row.text-center
+				h1.m-b Pipedrive increases its sales team efficiency by 33% with MadKudu Customer Fit
+				a(href='http://www.pipedrive.com' target='_blank').customer-logo.m-b
+					img(src='/static/images/customers/pipedrive_logo.png')
+
+			.row.m-t-lg
+				p
+					| <a href='http://www.pipedrive.com' target='_blank'>Pipedrive</a> is a CRM platform that helps small- to medium-sized businesses sell more. The software is used by high growth companies such as Postmates, Fortumo, Blippar and Falcon Social as well as SMBs like 360 Services and Richland Source. Pipedrive is used by over 30,000 companies in 100+ countries worldwide.
+
+				h4.m-t-md.m-b The business challenge
+
+				p
+					| Pipedrive is an extremely popular CRM solution that attracts multiple tens of thousands of signups per month. With a price per seat of $12/month, the distribution of signups contains a large portion of vSMBs along with some large enterprises. It has been crucial for the Pipedrive sales and marketing team to identify at the time of signup which leads had the potential to generate an ACV of at least $3,000. 
+
+				p
+					| Before using MadKudu, Pipedrive relied on self-input company size information to route leads towards Sales. This was a great start and helped identify early on large enterprises. Unfortunately there were also lots of false positives, companies that were inflating their team size. More importantly, MadKudu uncovered a large number of false negatives, these leads were inputting small team size, and yet they were purchasing 20+ seats.
+
+				h4.m-t-md.m-b How MadKudu helped
+
+				p
+					| Under a few minutes, the Pipedrive team connected their Pipedrive and <a href='http://www.segment.com' target='_blank'>Segment</a> accounts to MadKudu.
+				p
+					| MadKudu automatically started enriching leads, deriving features (aka potential predictors) to predict conversion at 20+ seats. Using our advanced machine learning, we found which combinations of features were highly predictive of the potential of a lead and an account. The results were staggering and showed that MadKudu could identify the best 6% of leads that accounted for 56% of the 20+ seats conversions. Even more interestingly, of those 6% classified as ‘Very Good’ more than 50% had indicated a team size of 5 or less (which is not surprising since this is the first value in the drop down list).
+				p
+					| Thanks to this information, Pipedrive was able to more accurately route leads towards the appropriate onboarding channel: self-service, low-touch high-velocity sales and high-touch lower-velocity.
+				p
+					| Pipedrive was further able to refine the routing by incorporating MadKudu’s behavioural enrichment and predictions to throttle the number of sales touches accordingly.
+
+				h4.m-t-md.m-b The results
+
+				p
+					| Pipedrive improved the efficiency of their sales team by over 33% by engaging and focusing on the true high potential leads that were signing up for a trial. 
+
+			.row.text-center
+				img(src='/static/images/madkudu-pipedrive-customer-fit-prediction.png')
+
+			.row.m-t-lg
+				blockquote.m-t-lg.testimony-item.reason__testimony
+					p
+						| Using MadKudu’s predictive Customer Fit for lead routing was a no brainer. It increased our ability to send the right leads to Sales dramatically
+					footer
+						div(class=["image-bg", "image-testimony", "kair-kasper"])
+						div
+							strong Kair Käsper
+							span Customer Life Cycle Manager at Pipedrive
