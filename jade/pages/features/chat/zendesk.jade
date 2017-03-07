@@ -1,0 +1,34 @@
+extends ../../../components/skeleton.jade
+
+include ../../../components/mixins.jade
+
+block head
+
+  include ../../../components/zendesk.jade
+
+block neck
+  title MadKudu | Zendesk
+
+  script analytics.page('Zendesk')
+
+block body
+
+  .background-white
+
+    include ../../../components/header_white.jade
+
+    section
+      .container
+
+        .block.m-b-0
+
+          h2.landing_page__block_title Chat with your best customers
+          .landing_page__block_subtitle Automatically qualify your signups and reach out to the most promising ones with personalized content.
+
+          .row.m-t-md.text-center
+            .col-md-6.col-md-offset-3
+              h3 See it in action
+            .col-md-6.col-md-offset-3.m-t-md
+              form.form#form_zendesk(action="zendesk-chat.html", method="get")
+                +input-field('email', 'email', 'Email', 'Enter your email', 'email', true)
+                button.btn.btn-primary(type='submit') Try now!
