@@ -45,9 +45,9 @@ block body
 						form(id="fcontact",class=["form", "form-contact"],action="contact.html?s=sent",method="get")
 							legend Schedule a call with us
 							fieldset
-								+input-field('text','firstname',null,'First Name','firstname','required')
-								+input-field('text','lastname',null,'Last Name','lastname','required')
 								+input-field('email','email',null,'Email','email', 'required')
+								+input-field('text','firstname',null,'First Name','firstname','required')
+								+input-field('text','lastname',null,'Last Name','lastname','required')								
 								+input-field('tel','phone',null,'Phone Number','phone','required')
 								+input-field('text','company',null,'Company Name or URL','company','required')
 								+input-field('text','timecall',null,'When Are You Available for a call?','timecall',null)
