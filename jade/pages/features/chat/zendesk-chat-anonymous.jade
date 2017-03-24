@@ -1,0 +1,31 @@
+extends ../../../components/skeleton.jade
+
+include ../../../components/mixins.jade
+
+block head
+
+  include ../../../components/zendesk.jade
+
+block neck
+  title MadKudu | Zendesk
+
+  script analytics.page('Zendesk')
+
+block body
+
+  .background-white
+
+    include ../../../components/header_white.jade
+
+    section
+      .container
+
+        .block.m-b-0
+
+          .row.m-t-lg
+
+            h4 Based on the IP address of your visitors, we automatically qualify them and pass on that information to the Zendesk chat.
+
+            h4 Our algorithm is currently scoring you up. If you're qualified, the chat on the bottom right will open up with a personalized welcome message.
+
+            p#zendesk_onboarding_text
