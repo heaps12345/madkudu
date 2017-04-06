@@ -15,7 +15,18 @@ include ../bootstrap/bootstrap.jade
 						a(href='/lead-scoring')
 							h3 MadKudu Lead Scoring
 							p Consistently send high quality leads to your sales team
-
+			li.dropdown
+				a.header__item.dropdown-toggle(href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
+					.header__item Ressources <i class="fa fa-angle-down" aria-hidden="true"></i>
+				ul.header__dropdown
+					.header__dropdown_item
+						a(href="http://www.madkudu.com/blog")
+							h3 Blog
+							p Stay up to date with our latest analyses
+					.header__dropdown_item
+						a(href="/simulator") 
+							h3 MRR Simulator
+							p Evaluate the impact of churn on your growth
 			li
 				a(href="https://app.madkudu.com")
 					.header__item Login
