@@ -6,6 +6,7 @@ include ../components/how_it_works.jade
 block head
 	title MadKudu | Accelerating SaaS sales with predictive analytics
 	meta(name='description' content='Accelerating SaaS sales with predictive analytics')
+	meta(name="keywords" content="Lead Scoring, Statups, Segment.io, Segment, Guillaume Cabane, Sales, B2B, SaaS, Salesforce, Trial, Software SDR, Conversion Rate")
 
 block neck
 	script analytics.page('Segment landing page')
@@ -19,7 +20,7 @@ block neck
 			$('.mki_landing_trial').click(function (event) {
 				event.preventDefault();
 				analytics.track('Segment Landing Page - Clicked free trial');
-				window.location = 'https://app.madkudu.com/signup';
+				window.location = 'https://app.madkudu.com/signup?plan=lead_scoring&source=segment';
 			});
 		});
 
