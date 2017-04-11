@@ -6,7 +6,7 @@ include ../components/how_it_works.jade
 block head
 	title MadKudu | Accelerating SaaS sales with predictive analytics
 	meta(name='description' content='Accelerating SaaS sales with predictive analytics')
-	meta(name="keywords" content="Lead Scoring, Close.io, Closeio, Steli Efti, Sales, B2B, SaaS, Salesforce, Trial, Software SDR, Conversion Rate")
+	meta(name="keywords" content="Lead Scoring, Statups, Close.io, Closeio, Steli Efti, Sales, B2B, SaaS, Salesforce, Trial, Software SDR, Conversion Rate")
 
 block neck
 	script analytics.page('Segment landing page')
@@ -15,12 +15,12 @@ block neck
 			$('.mki_landing_demo').click(function (event) {
 				event.preventDefault();
 				analytics.track('Closeio Landing Page - Clicked request demo');
-				window.open('/contact','_blank');
+				window.open('/contact?source=closeio','_blank');
 			});
 			$('.mki_landing_trial').click(function (event) {
 				event.preventDefault();
 				analytics.track('Closeio Landing Page - Clicked free trial');
-				window.location = 'https://app.madkudu.com/signup';
+				window.location = 'https://app.madkudu.com/signup?plan=lead_scoring&source=closeio';
 			});
 		});
 
