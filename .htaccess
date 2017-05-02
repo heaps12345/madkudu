@@ -21,6 +21,7 @@ Redirect 301 /newsletter /blog/newsletter
 
 # Remove the .html
 RewriteRule ^lead-scoring/?$ lead-scoring.html [NC,L]
+RewriteRule ^software-sdr/?$ software-sdr.html [NC,L]
 RewriteRule ^form/?$ form.html [NC,L]
 RewriteRule ^smart-form/?$ form.html [NC,L]
 RewriteRule ^about/?$ team.html [NC,L]
