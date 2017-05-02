@@ -1,0 +1,116 @@
+extends ../components/skeleton.jade
+
+include ../components/index-mixins.jade
+include ../components/how_it_works.jade
+
+block head
+    title MadKudu | Accelerating SaaS sales with predictive analytics
+    meta(name='description' content='Accelerating SaaS sales with predictive analytics')
+    meta(name="keywords" content="Lead Scoring, Qualification, Segment, Sales, B2B, SaaS, Salesforce, Trial, Software SDR, Conversion Rate")
+
+block neck
+    script analytics.page('Home - MadKudu SDR')
+    script.
+        $(document).ready(function () {
+            $('.mki_landing_demo').click(function (event) {
+                event.preventDefault();
+                analytics.track('Landing Page - Clicked request demo');
+                window.open('/contact','_blank');
+            });
+            $('.mki_landing_trial').click(function (event) {
+                event.preventDefault();
+                analytics.track('Landing Page - Clicked free trial');
+                window.location = 'https://app.madkudu.com/signup?plan=madkudu_sdr';
+            });
+            $('.mki_get_started_now_bottom_button').click(function (event) {
+                event.preventDefault();
+                analytics.track('Landing Page - Clicked free trial');
+                window.location = 'https://app.madkudu.com/signup?plan=madkudu_sdr&email=' + $('#signup_trial_email_input').val();
+            });
+            $('#signup_trial_email_input').keypress(function (e) {
+              if (e.which == 13) {
+                $('.mki_get_started_now_bottom_button').click();
+                return false;
+              }
+            });
+        });
+
+block body
+
+    .body
+
+        include ../components/header_white.jade
+
+        header.jumbotron
+            .container
+                h1 MadKudu Software SDR
+                p Your SDRs are spending 90% of their time reaching out to leads which will never engage
+                p
+                    a.btn.btn-demo.btn-lg.btn-primary(class='mki_landing_demo', role='button') Get a Demo
+
+        .block.text-center.landing_page__quote_block.landing_page__block_light_grey
+            blockquote.pull-quote
+                img.rounded-circle(src="static/images/people/scott-smith@2x.png")
+                p "MadKudu helped us scale our inbound pipeline dramatically without the need for hiring additional SDRs"
+                cite Scott Smith, VP Sales, CloudApp
+
+        .block.m-b-0
+            h2.landing_page__block_title Research, Qualify and engage automatically your leads
+            .landing_page__block_subtitle Drive more qualified sales conversations while spending less time on outreach
+
+            .container.m-t
+
+                .row.landing_page__subblock
+                    .col-md-6.landing_page__sub_block_column_text
+                        .landing_page__block_vertically_centered
+                            .landing_page__block_feature_text Leads engage with your CTA
+                    .col-md-6.landing_page__sub_block_column_image
+                        .landing_page__block_vertically_centered
+                            .landing_page__block_feature_image
+                                img(src='static/images/sdr/signup_form_example.png')
+
+                .row.landing_page__subblock
+                    .col-md-6.landing_page__sub_block_column_image
+                        .landing_page__block_vertically_centered
+                            .landing_page__block_feature_image
+                                img(src='static/images/sdr/madkudu_lead_intelligence.png')
+                    .col-md-6.landing_page__sub_block_column_text
+                        .landing_page__block_vertically_centered
+                            .landing_page__block_feature_text MadKudu researches and qualifies the leads in real-time
+                            .landing_page__block_feature_subtext  - MadKudu uses behavioral and 3rd party data to predict whether or not they should be contacted on behalf of the sales team
+                            .landing_page__block_feature_subtext  - MadKudu analyzes your leads' websites to identify the meaningful topics to bring up in the outreach
+
+                .row.landing_page__subblock
+                    .col-md-6.landing_page__sub_block_column_text
+                        .landing_page__block_vertically_centered
+                            .landing_page__block_feature_text MadKudu computes the most relevant messaging to engage the leads
+                            .landing_page__block_feature_subtext Leads are automatically engaged with the appropriate value proposition and follow up cadence:
+                            .landing_page__block_feature_subtext - MadKudu leverages its persona classification to make the outreach personal and relevant
+                            .landing_page__block_feature_subtext - MadKudu uses behavioral account level data to further increase relevance
+                    .col-md-6.landing_page__sub_block_column_image
+                        .landing_page__block_vertically_centered
+                            .landing_page__block_feature_image
+                                img(src='static/images/sdr/bob_email.png')
+
+                .row.landing_page__subblock
+                    .col-md-6.landing_page__sub_block_column_image
+                        .landing_page__block_vertically_centered
+                            .landing_page__block_feature_image
+                                img(src='static/images/sdr/madkudu_form_calendar_icon.png')
+                    .col-md-6.landing_page__sub_block_column_text
+                        .landing_page__block_vertically_centered
+                            .landing_page__block_feature_text Your sales team only deals with hot, qualified leads!
+
+
+        .block.block-inverse.text-center.landing_page__quote_block
+            blockquote.pull-quote
+                img.rounded-circle(src="static/images/people/simon-whittick@2x.png")
+                p "MadKudu solves a huge problem by ensuring a consistent, relevant and timely outreach to every single one of our sales leads"
+                cite Simon Whittick, VP Marketing, Geckoboard
+
+
+        .block.text-center.landing_page__block_blue.madkudu_form__try_now
+            h1 Want to learn more?!
+            p We'd love to show you how to fill your team's calendar
+            p
+                    a.btn.btn-demo.btn-lg.btn-primary(class='mki_landing_demo', role='button') Get a Demo
