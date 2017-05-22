@@ -4,7 +4,7 @@ Our customers trust us with access to sensitive and valuable data to do our jobs
 
 Please send any question or comments to **[security@madkudu.com](mailto:security@madkudu.com)**.
 
-Last update: * March 31st, 2017 *.
+Last update: * May 22, 2017 *.
 
 ## Our security philosophy
 
@@ -22,8 +22,8 @@ The overwhelming majority of security issues can be avoided by following industr
 
 We review and update this security policy every quarter to ensure we are current with best practices.
 
-Our last review was in **March 2017**.
-The next one will be in **June 2017**.
+Our last review was in **May 2017**.
+The next one will be in **August 2017**.
 
 ## Policy details
 
@@ -58,10 +58,6 @@ We do not ask for Social Security Numbers, Credit Card informations, user passwo
 Data is immediately deleted when a customer cancels.
 
 Customer data will be deleted upon request to [security@madkudu.com](mailto:security@madkudu.com).
-
-### Background checks
-
-We perform background checks on all employees hired after 5/1/2016.
 
 ### Security training
 
