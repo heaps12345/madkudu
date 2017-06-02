@@ -1,0 +1,61 @@
+extends ../components/skeleton.jade
+
+block neck
+
+	title MadKudu | Turn trial users into paying customers | Instapage Case Study
+
+	script analytics.page('Case study')
+
+block body
+
+	.block.block-fill-height.block-case-study
+
+		include ../components/header_white.jade
+
+		.container
+
+			.row.text-center
+				h1.m-b Instapage increases its conversion rate by 45% with MadKudu Customer Fit
+				a(href='http://www.instapage.com' target='_blank').customer-logo.m-b
+					img(src='/static/images/customers/instapage_logo.png')
+
+			.row.m-t-lg
+				p
+					| <a href='http://www.instapage.com' target='_blank'>Instapage</a> provides an end-to-end solution that empowers marketers to quickly build, integrate, and A/B split test landing pages for every unique campaign. With Instapage, paid advertising is more relevant and effective for everyone. Established in 2012, Instapage employs more than 100 people worldwide, across central locations in San Francisco (headquarters), Romania and Poland.
+
+				h4.m-t-md.m-b The business challenge
+
+				p
+					| Instapage offers a free trial and attracts a high volume of signups per month. With a starting price at $29/month and a premium price at $127/month, there is a wide variety of signups including a large portion of vSMBs along with some large enterprises. It has been crucial for the Instapage sales and marketing team to focus on offering the rigth level of support during the onboarding process. Therefore identifying high potential leads was crucial to ensure onboarding consultation were offered to leads with the potential to purchase the premium plan.
+
+				p
+					| Before using MadKudu, Instapage relied on the onboarding team to manually identify leads that would be deemed worth reaching out to. This was a great start and helped identify early some larger companies. Unfortunately there were many of false positives as too large companies were converting at a lower velocity (see <a href='http://www.madkudu.com/blog/kill-deers-faster-quickest-win-increasing-saas-mrr/' target='_blank'>here</a> for definition). More importantly, MadKudu uncovered a large number of false negatives, leads that were non-obvious great fits and converted at a much higher rate.
+
+				h4.m-t-md.m-b How MadKudu helped
+
+				p
+					| Under a few minutes, the Instapage team activated the MadKudu <a href='http://www.segment.com' target='_blank'>Segment</a> integration and connected their <a href='http://www.salesforce.com' target='_blank'>Salesforce</a> instance to MadKudu.
+				p
+					| MadKudu automatically started enriching leads, deriving features (aka potential predictors) to predict conversion and the plan at which the lead would convert. Using our advanced machine learning, we found which combinations of features were highly predictive of the potential velocity (conversion probability and optimal plan) of a lead and an account. The results showed that MadKudu was able to identify the best 10% of leads that accounted for 66% of the top line.
+				p
+					| Armed with this newly gained understanding of their signups, Instapage designed new <a href='http://www.autopilot.com' target='_blank'>Autopilot</a> campaigns to offer a white-glove onboarding for those high quality leads. Since MadKudu and Autopilot are native Segment integratiosn, instapage was instantly able to more accurately route leads towards the appropriate onboarding flow: self-service, low-touch high-velocity sales and high-touch lower-velocity based on the MadKudu scores
+				p
+					| Instapage was further able to refines the onboarding campaigns by incorporating MadKudu’s behavioural enrichment and predictions to increase the relevance of the messaging.
+
+				h4.m-t-md.m-b The results
+
+				p
+					| Instapage improved the efficiency of their onboarding consultations team which has resulted in a 45% increase in overall conversion rate.
+
+			.row.text-center
+				img(src='/static/images/madkudu-instapage-customer-fit-prediction.png')
+
+			.row.m-t-lg
+				blockquote.m-t-lg.testimony-item.reason__testimony
+					p
+						| MadKudu is the essential intelligence layer that powers our execution tools. 
+					footer
+						div(class=["image-bg", "image-testimony", "stefano-mazzalai"])
+						div
+							strong Stefano Mazzalai
+							span Marketing Operations at Instapage
