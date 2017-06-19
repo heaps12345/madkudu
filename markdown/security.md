@@ -45,7 +45,7 @@ We don't share customer data with 3rd parties without a written agreement, with 
 - Our app 
 - We send email address and domain (separate from any other information) to [Clearbit](http://www.clearbit.com) for data enrichment
 
-### Personal Identifiable Information (PII)
+### Personally Identifiable Information (PII)
 
 We only store the data we need and that is already available in other systems (analytics, CRM...).
 
