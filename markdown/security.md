@@ -4,7 +4,7 @@ Our customers trust us with access to sensitive and valuable data to do our jobs
 
 Please send any question or comments to **[security@madkudu.com](mailto:security@madkudu.com)**.
 
-Last update: * June 19, 2017 *.
+Last update: *June 19, 2017*.
 
 ## Our security philosophy
 
