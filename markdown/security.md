@@ -1,4 +1,3 @@
-# Security policy
 
 Our customers trust us with access to sensitive and valuable data to do our jobs. We take this responsibility <strong>very</strong> seriously. This document outlines our policies for being responsible stewards of this data.
 
@@ -42,7 +41,7 @@ All third-party credentials are encrypted at rest.
 We don't share customer data with 3rd parties without a written agreement, with the exception of:
 
 - We store and process data on Amazon Web Services and IBM Compose.io.
-- Our app 
+- Our app
 - We send email address and domain (separate from any other information) to [Clearbit](http://www.clearbit.com) for data enrichment
 
 ### Personally Identifiable Information (PII)
