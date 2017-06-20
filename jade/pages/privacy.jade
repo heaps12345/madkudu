@@ -1,20 +1,18 @@
 extends ../components/skeleton.jade
 
 block neck
-	title MadKudu | Privacy Policy
+  title MadKudu | Privacy Policy
 
-	script analytics.page('Privacy Policy')
+  script analytics.page('Privacy Policy')
 
 block body
 
-	.background-white
+  .background-white
 
-		include ../components/header_white.jade
+    include ../components/header_white.jade
 
-		.block.block-security
+    .block
 
-			.container
+      .container
 
-        h1.page-title Privacy Policy
-
-				include ../../markdown/html/privacy.html
+        include ../../markdown/html/privacy.html

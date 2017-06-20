@@ -1,4 +1,4 @@
-
+# Terms of Service
 
 *Last updated: June 20, 2017*
 

@@ -1,20 +1,18 @@
 extends ../components/skeleton.jade
 
 block neck
-	title MadKudu | Terms of Service
+  title MadKudu | Terms of Service
 
-	script analytics.page('Terms of Service')
+  script analytics.page('Terms of Service')
 
 block body
 
-	.background-white
+  .background-white
 
-		include ../components/header_white.jade
+    include ../components/header_white.jade
 
-		.block
+    .block
 
-			.container
-
-				h1.page-title Terms of Service
+      .container
 
         include ../../markdown/html/terms.html
