@@ -1,0 +1,59 @@
+extends ../components/skeleton.jade
+
+block neck
+
+	title MadKudu | Turn more leads into paying customers | Outreach Case Study
+
+	script analytics.page('Case study')
+
+block body
+
+	.block.block-fill-height.block-case-study
+
+		include ../components/header_white.jade
+
+		.container
+
+			.row.text-center
+				h1.m-b Outreach boosts conversion rates by 45% with MadKudu
+				a(href='http://www.outreach.io' target='_blank').customer-logo.m-b
+					img(src='/static/images/customers/outreachio_logo.png')
+
+			.row.m-t-lg
+				p
+					| <a href='http://www.outreach.io' target='_blank'>Outreach</a> is an enterprise communication platform for sales. Their mission is to empower sales organizations with repeatable and scalable communication processes – to help them close business faster and more efficiently than ever before.
+
+				h4.m-t-md.m-b The business challenge
+
+				p
+					| Outreach had until recently built its pipeline mainly through outbound. As outreach's popularity as a sales automation solution grew, the marketing team started investing into inbound. Their high quality content attracts a high volume of visitors per month and drives a significant number of downloads. 				
+
+				p
+					| Before using MadKudu, Outreach required leads to input several information points (company name, team size...). These self-input attributes were used for basic qualification and lead routing in Salesforce. Dan who runs growth for Outreach knew this was a suboptimal user experience imposed by an internal need for information. He turned to MadKudu to not only dynamically pre-populate the required information but create a differentiated experience for his top leads.
+
+				h4.m-t-md.m-b How MadKudu helped
+
+				p
+					| Dan started by connecting Outreach's <a href='http://www.segment.com' target='_blank'>Segment</a> account to MadKudu. Since MadKudu is a native Segment integration, madkudu.js was now being loaded on all of Outreach's pages. This enabled MadKudu to dynamically interact with the Marketo forms.
+				p
+					| Once the forms were configured, MadKudu used the lead's email to automatically enrich it with firmographic and derived features (such as "predicted number of sales people") in order to score it in real time. Whenever there was any missing information, the required fields were displayed. For leads that were a great fit for Outreach, an additional checkbox was added to the form to offer leads to opt-in for a demo.
+				p
+					| Dan ran an A/B test with <a href='http://www.optimizely.com' target='_blank'>Optimizely</a> to measure the impact of the tailored experience and results were quick to be gathered.
+
+				h4.m-t-md.m-b The results
+
+				p
+					| MadKudu improved the efficiency of Outreach's content by increasing converion rates by 45%. Adding intelligence to the forms created a differenciated, frictionless experience for its qualified leads.
+
+			.row.text-center
+				img(src='/static/images/customers/outreach-madkudu-form-lift.jpg')
+
+			.row.m-t-lg
+				blockquote.m-t-lg.testimony-item.reason__testimony
+					p
+						| Adding MadKudu to our online forms was a immediate success. We've drastically increased conversion rates and created a better experience for our qualified leads.
+					footer
+						div(class=["image-bg", "image-testimony", "dan-ahmadi"])
+						div
+							strong Dan Ahmadi
+							span Growth at Outreach.io
