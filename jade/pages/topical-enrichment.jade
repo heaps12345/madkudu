@@ -1,0 +1,132 @@
+extends ../components/skeleton.jade
+
+include ../components/index-mixins.jade
+include ../components/how_it_works.jade
+
+block head
+	title MadKudu | Accelerating SaaS sales with predictive analytics
+	meta(name='description' content='Accelerating SaaS sales with predictive analytics')
+
+block neck
+	script analytics.page('Home - MadKudu Topical')
+	script.
+		$(document).ready(function () {
+			$('.mki_landing_demo').click(function (event) {
+				event.preventDefault();
+				analytics.track('Landing Page - Clicked request demo');
+				window.open('/contact?plan=madkudu_topical_enrichment','_blank');
+			});
+			$('.mki_landing_trial').click(function (event) {
+				event.preventDefault();
+				analytics.track('Landing Page - Clicked free trial');
+				window.location = 'https://app.madkudu.com/signup?plan=madkudu_topical_enrichment';
+			});
+			$('.mki_get_started_now_bottom_button').click(function (event) {
+				event.preventDefault();
+				analytics.track('Landing Page - Clicked free trial');
+				window.location = 'https://app.madkudu.com/signup?plan=madkudu_topical_enrichment&email=' + $('#signup_trial_email_input').val();
+			});
+			$('#signup_trial_email_input').keypress(function (e) {
+			  if (e.which == 13) {
+			    $('.mki_get_started_now_bottom_button').click();
+			    return false;
+			  }
+			});
+		});
+
+block body
+
+	.body.primary_landing_page
+
+		include ../components/header_white.jade
+
+		header.jumbotron
+			.container
+				h1 MadKudu Topical Enrichment
+				p Enrich your leads with the relevant information your sales team needs to close more
+				p
+					a.btn.btn-demo.btn-lg.btn-primary(class='mki_landing_demo', role='button') Request access
+
+		.block.text-center.landing_page__quote_block.landing_page__block_light_grey
+			blockquote.pull-quote
+				img.rounded-circle(src="static/images/people/guillaume-cabane@2x.png")
+				p "MadKudu's topical enrichment are the eyes of our sales team. It tells us all we need to know about our leads in order to sell prescriptively"
+				cite Guillaume Cabane, VP Growth, Segment
+
+		.block.m-b-0
+			h2.landing_page__block_title Delight your prospects with a relevant sales process
+			.landing_page__block_subtitle Give your reps the intel they need to succeed
+
+			.container.m-t
+
+				.row.landing_page__subblock
+					.col-md-6.landing_page__sub_block_column_text
+						.landing_page__block_vertically_centered
+							.landing_page__block_feature_text MadKudu researches all of your B2B leads
+							.landing_page__block_feature_subtext If they have a website, MadKudu will find them. MadKudu automates the hard work of manually researching company websites to understand how to pitch them.
+					.col-md-6.landing_page__sub_block_column_image
+						.landing_page__block_vertically_centered
+							.landing_page__block_feature_image
+								img(src='static/images/topical_enrichment/topical_enrichment_research.jpg')
+
+				.row.landing_page__subblock
+					.col-md-6.landing_page__sub_block_column_image
+						.landing_page__block_vertically_centered
+							.landing_page__block_feature_image
+								img(src='static/images/topical_enrichment/madkudu_intelligence.jpg')
+					.col-md-6.landing_page__sub_block_column_text
+						.landing_page__block_vertically_centered
+							.landing_page__block_feature_text MadKudu enriches your leads in your CRM
+							.landing_page__block_feature_subtext MadKudu is not yet another firmo/technographics enrichment tool. MadKudu extracts insightful information from the web properties of your leads to augment them consistently and increase your coverage:
+							br
+							|- enrich all leads regardless of their size and geography
+							br
+							|- make the most of your CRM by ensuring consistent levels of information
+							br
+							|- don't miss opportunities for lack of enrichment provider coverage
+
+				.row.landing_page__subblock
+					.col-md-6.landing_page__sub_block_column_text
+						.landing_page__block_vertically_centered
+							.landing_page__block_feature_text Run highly targetted outbound campaigns
+							.landing_page__block_feature_subtext MadKudu provides a relevant classification of your leads against your core use-cases. Your teams can now run highly relevant campaigns that focus less on the firmographic segmentation of your leads but rather on the value they'd get from your product:
+							br
+							|- no more generic emails, increase your brand recognition
+							br
+							|- pitch a specific value propositions to increase response rates
+							br
+							|- introduce relevant personalization to show you care
+					.col-md-6.landing_page__sub_block_column_image
+						.landing_page__block_vertically_centered
+							.landing_page__block_feature_image
+								img(src='static/images/topical_enrichment/topical_enrichment_emails.jpg')
+
+				.row.landing_page__subblock
+					.col-md-6.landing_page__sub_block_column_image
+						.landing_page__block_vertically_centered
+							.landing_page__block_feature_image
+								img(src='static/images/topical_enrichment/topical_enrichment_api.jpg')
+					.col-md-6.landing_page__sub_block_column_text
+						.landing_page__block_vertically_centered
+							.landing_page__block_feature_text Enterprise-grade insights for your teams
+							.landing_page__block_feature_subtext MadKudu provides a highly configurable enrichment engine that can help your sales, marketing, product and even data-science team.
+							br
+							|- enable consultative selling
+							br
+							|- better understand the DNA of your customer base
+							br
+							|- available as a standalone API
+
+
+		.block.block-inverse.text-center.landing_page__quote_block
+			blockquote.pull-quote
+				img.rounded-circle(src="static/images/people/hiten-shah@2x.png")
+				p "By enabling true relevance at scale, MadKudu puts the customer back at the core of sales and marketing efforts"
+				cite Hiten Shah, Entrepreneur
+
+
+		.block.text-center.landing_page__block_blue.madkudu_form__try_now
+			h1 Make the most out of your leads
+			p The leading Sales and Marketing teams are achieving high coverage of their financial plans with MadKudu. Learn how.
+
+			a.btn.btn-demo.btn-lg.btn-primary(class='mki_landing_demo', role='button') Contact us
