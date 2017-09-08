@@ -1,0 +1,62 @@
+extends ../components/skeleton.jade
+
+block neck
+
+    title MadKudu | Turn more leads into paying customers | Segment Fastlane Case Study
+
+    script analytics.page('Case study')
+
+block body
+
+    .block.block-fill-height.block-case-study
+
+        include ../components/header_white.jade
+
+        .container
+
+            .row.text-center
+                h1.m-b Segment books 60% more qualified demos with MadKudu Fastlane
+                a(href='http://www.segment.com' target='_blank').customer-logo.m-b
+                    img(src='/static/images/customers/segment-logo.png')
+
+            .row.m-t-lg
+                p
+                    | <a href='http://www.segment.com' target='_blank'>Segment</a> is a
+
+                h4.m-t-md.m-b The business challenge
+
+                p
+                    | Segment had been using MadKudu all across their sales process. Mark, Guillaume and the rest of the growth team had been using MadKudu to ensure qualified leads were treated as VIPs across the board. By giving their top leads a relevant and personlized experience they had been able to drastically increase the amount of pipeline generated. There was however still one sacred place that Mark had not been able to convince sales to think about changing: the demo request page.
+                p
+                    | Before implementing MadKudu Fastlane, Segment had an flow to speak to sales common to the B2B industry. Prospects were required to head to a contact-us form, fill in their information and wait to be contacted by a rep. Segment, being the sophisticated company they are, had already automated the outreach of the sales team to the leads based on the MadKudu lead score that was propagated from Segment to customer.io and Salesforce. This means they were able to respect an industry leading SLA of XX minutes.
+                p
+                    | However, Mark knew the team should look to improve the conversion rate from "demo requested" to "demo held" especially for qualified leads. This seemed like a low hanging fruit and a natural progression from the other experiments they had successfuly run with MadKudu.
+
+                h4.m-t-md.m-b How MadKudu helped
+
+                p
+                    | As a native Segment integration, MadKudu was already live on the marketing website. Mark configured a Fastlane instance for the request-a-demo and contact-sales pages. He then connected it with <a href="http://www.Chilipiper.com/?madkudu-fastlane">Chilipiper</a>, a great calendar tool that can run round robin in real time in order to surface the appropriate calendar to a prospect.
+                p
+                    | Once the forms were configured, MadKudu used the lead's email to automatically score it in real time. Once the form was submitted by a qualified lead, MadKudu displayed a pop-up modal that offered the lead to book time with the team directly, mentioning the lead qualified for the "fast lane", a differentiated treatment. The lead could then book a time on the spot and not have to worry about going back and forth over email to find a time.
+                p
+                    | Mark ran an A/B test on Segment's contact-sales and request-a-demo forms to measure the impact of the tailored experience and results were quick to show.
+
+                h4.m-t-md.m-b The results
+
+                p
+                    | After a thorough 2 months of A/B testing, Mark was able to show his team that the initiative had yielded an astounding 60% lift in qualified pipeline creation from demo requests.
+                p
+                    | The benefits of Fastlane were two-fold. It enabled qualified leads to book a demo at peak intent, hitting the iron while it's hot. It also created an explicitely differentiated experience for Segment's high value prospect. Too many companies create a cumbersome process for getting in touch simply because they want to be able to isolate low value leads. By creating a simplified, straightforward flow for high value leads, Segment keeps on winning!
+
+            .row.text-center
+                img(src='/static/images/customers/outreach-madkudu-form-lift.png')
+
+            .row.m-t-lg
+                blockquote.m-t-lg.testimony-item.reason__testimony
+                    p
+                        | Turning on MadKudu Fastlane was a tremendous win for me and Segment. I was able to generate significant business impact without disrupting the existing flow.
+                    footer
+                        div(class=["image-bg", "image-testimony", "mark-miller"])
+                        div
+                            strong Mark Miller
+                            span Growth at Segment
