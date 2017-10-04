@@ -1,8 +1,8 @@
 var segment_keys = {
 	// dev: 'LLqFrriuh56FxHp8IK2z4tllrjxqF40X',
 	// prod: 'LLqFrriuh56FxHp8IK2z4tllrjxqF40X'
-	dev: 'U2gPGmLgd9q3xq8iSYcwSpCV48glOaMl',
-	prod: 'Gr7DJYrd6qzqArwk047D0iKxHuGbfGWI'
+	dev: 'mefjEhCC8lSTM7DN4LIXDTCNOEqou9Mr',
+	prod: 'XwaXKb8j4pq4Oc0g4UBk4oer3FEBrQVC'
 };
 
 var hotjar_ids = {
