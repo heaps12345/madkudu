@@ -6,7 +6,7 @@ include ../components/how_it_works.jade
 block head
 	title MadKudu | Accelerating SaaS sales with predictive analytics
 	meta(name='description' content='Accelerating SaaS sales with predictive analytics')
-	meta(name="keywords" content="Predictive, Lead Scoring, Predictive Lead Scoring, Statups, Close.io, Closeio, Steli Efti, Sales, B2B, SaaS, Salesforce, Trial, Software SDR, Conversion Rate, MadKudu, Freemium, Trial")
+	meta(name="keywords" content="Predictive, Lead Scoring, Predictive Lead Scoring, Statups, Drift, David Cancel, Chat, Bot, Intercom, Sales, B2B, SaaS, Salesforce, Trial, Software SDR, Conversion Rate, MadKudu, Freemium, Trial")
 
 block neck
 	script analytics.page('Segment landing page')
@@ -14,13 +14,13 @@ block neck
 		$(document).ready(function () {
 			$('.mki_landing_demo').click(function (event) {
 				event.preventDefault();
-				analytics.track('Closeio Landing Page - Clicked request demo');
-				window.open('/contact?source=closeio','_blank');
+				analytics.track('Drift Landing Page - Clicked request demo');
+				window.open('/contact?source=drift','_blank');
 			});
 			$('.mki_landing_trial').click(function (event) {
 				event.preventDefault();
-				analytics.track('Closeio Landing Page - Clicked free trial');
-				window.location = 'https://app.madkudu.com/signup?plan=lead_scoring&source=closeio';
+				analytics.track('Drift Landing Page - Clicked free trial');
+				window.location = 'https://app.madkudu.com/signup?plan=lead_scoring&source=drift';
 			});
 		});
 
@@ -37,8 +37,8 @@ block body
 					br 
 					| scoring for 
 					br
-					| your leads in Close.io
-				p Accelerate your growth by being focused on driving relevant interactions with your best prospects
+					| your leads in Drift
+				p Accelerate your growth by focusing your team on your highest potential conversations
 				p 
 					a.btn.btn-trial.btn-lg.btn-primary.m-r-md(class='mki_landing_trial', role='button') Get started
 					a.btn.btn-demo.btn-lg.btn-primary(class='mki_landing_demo', role='button') Get a Demo
@@ -48,14 +48,14 @@ block body
 				.row.p-b-md
 					
 					.col-md-6.cta-box
-						h3 Using Close.io?
+						h3 Using Drift?
 						h4.m-t-md Just two steps to get advanced lead scoring from MadKudu.
 						
 						ol
 							li Sign up for MadKudu
-							li Connect Close.io
+							li Connect MadKudu in Drift
 							
-						p.m-t-md We'll look at your historical leads and conversions from Close.io and contact you to schedule a lead scoring review.
+						p.m-t-md We'll learn from your historical leads and CQLs to train our lead scoring to your business model.
 						
 						div.text-center.m-t-md
 							a.btn.btn-primary.btn-lg.btn-left.m-r-md(class='mki_landing_trial') 
@@ -64,13 +64,13 @@ block body
 								| GET A DEMO
 								
 					.col-md-5.col-md-offset-1.partner-box
-						h3.m-b-md Not using Close.io? 
+						h3.m-b-md Not using Drift? 
 						
-						p Close.io enables you to contact your leads through all relevant channels directly from within the CRM
+						p Drift turns your website traffic into qualified sales meetings.
 						
-						p Instead of having to deal with complex workflow and APEX, Close.io will help you focus on Selling not Sales OPS.
+						p  Instead of traditional marketing and sales platforms that rely on forms and follow-ups, Drift connects your business with the best leads in real-time.
 
-						p <a href="https://close.io/?utm_source=madkudu.com&utm_medium=landingpage&utm_campaign=partners">Sign up for Close.io</a> to easily send your data to MadKudu and accelerate your growth.
+						p <a href="https://www.drift.com/?utm_source=madkudu.com&utm_medium=landingpage&utm_campaign=partners">Sign up for Drift</a> to leverage your MadKudu scoring to get more qualified meetings from your website.
 
 				.row.m-t-lg
 					h4.text-center Learn more about MadKudu below
@@ -80,13 +80,13 @@ block body
 				h3 Your sales team is 
 					| missing data it needs 
 					br
-					| to prioritize leads
+					| to prioritize conversations
 				ol.box-flow
 					li.figure-right
 						.text
 							.centering
 								.centering-inner
-									h4 Your reps waste time on unqualified leads
+									h4 Your reps waste time on conversations with unqualified leads
 									p Some leads don't fit your customer profile. 
 									p Others will never close because they won't use your product.
 						.figure
@@ -116,7 +116,7 @@ block body
 							.centering
 								.centering-inner
 									h4 Identify your best leads
-									p MadKudu analyzes your customers and segments leads based on demographic data like title, industry, and size. 
+									p MadKudu analyzes your customers and segments leads based on demographic predictions like predicted revenue, traffic and budget.
 
 						.figure
 							+data-box-2(sales2, 0)
@@ -204,13 +204,12 @@ block body
 										img(src='static/images/comparison/image-crm-without-madkudu@2x.png', alt='CRM Without Madkudu')
 								li
 									p Leads to 
-										strong generic emails 
-										| and
+										strong generic 										
 										br  
 										| conversations.
-								li
-									p Bad! Lacks Context
-									+bad-email()
+								//- li
+								//- 	p Bad! Lacks Context
+								//- 	+bad-email()
 					.col-sm-6
 						.compare.w-madkudu
 							h4 
@@ -221,18 +220,18 @@ block body
 										p MadKudu shows your reps a complete view of how customers
 											| are using your product.
 										.img-container
-											img(src='static/images/closeio/madkudu_closeio@2x.png', alt='CRM With Madkudu')
+											img(src='static/images/drift/madkudu_drift.jpg', alt='CRM With Madkudu')
 									li
 										p Leads to  
-											strong relevant emails 
+											strong relevant 
 											| and valuable
 											br 
 											| conversations.
-									li
-										p Good! Explains 
-											strong why 
-											| Sales is Contacting The Customer
-										+good-email()
+									//- li
+									//- 	p Good! Explains 
+									//- 		strong why 
+									//- 		| Sales is Contacting The Customer
+									//- 	+good-email()
 										
 		section.alt.comparison
 			.container.container-narrow
