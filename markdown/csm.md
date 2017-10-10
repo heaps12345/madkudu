@@ -17,18 +17,18 @@ If you're looking for your big break - an opportunity to build a world-class cus
 Like every fast-growing startup we have our strengths and weaknesses. To reach our short-term goal of $1M in ARR we need someone who can fill in the gaps.
 
 Where we are:
-- Our product creates TONS of value for our customers. We’re not a vitamin, we’re a pain killer. We have numerous [case studies](http://www.madkudu.com/customers-segment-fastlane) to prove it.
-- We have a very very strong engineering team who ships new features at blazing speed against a visionary roadmap.
-- We have an amazing group of early customer advocates. Today, We don’t do any marketing or outbound sales. Our new revenue come from recommendations from existing customers who saw the value of MadKudu.
+- Our **product creates TONS of value** for our customers. We’re not a vitamin, we’re a pain killer. We have numerous [case studies](http://www.madkudu.com/customers-segment-fastlane) to prove it.
+- We have a **very strong engineering team** who ships new features at blazing speed against a visionary roadmap.
+- We have an **amazing group of customer advocates**. Today, We don’t do any marketing or outbound sales. Our new revenue come from recommendations from existing customers who saw the value of MadKudu.
 
 Where we need your help now:
-* Maximize each client’s potential for success by becoming the trusted advisor and the coach they’re looking for.
-* Build a customer success machine that can onboard customers at scale. For example, this means creating and testing a customer playbook, and soon, hiring, leading and growing new CS team members.
-* Develop thought leadership by pushing the boundaries of what can be done in the sales and marketing world.
+* Maximize each client’s potential for success by **becoming the trusted advisor and the coach** they’re looking for.
+* Build a customer success **machine that can onboard customers at scale**. For example, this means creating and testing a customer playbook, and soon, hiring, leading and growing new CS team members.
+* Develop **thought leadership** by pushing the boundaries of what can be done in the sales and marketing world.
 
 
 ### Where? How Much?
-The company is located in Mountain View, CA but you don't have to. If you're the perfect candidate but prefer working remotely, let's talk!
+The company is located in Mountain View, CA but you don't have to. If you want to work remotely, let's talk!
 
 Competitive salary + equity + 100% paid health care and dental coverage for you and your dependents
 
