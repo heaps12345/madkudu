@@ -4,7 +4,7 @@ Our customers trust us with access to sensitive and valuable data to do our jobs
 
 Please send any question or comments to **[security@madkudu.com](mailto:security@madkudu.com)**.
 
-Last update: *June 19, 2017*.
+Last update: *October 10, 2017*.
 
 ## Our security philosophy
 
@@ -22,8 +22,8 @@ The overwhelming majority of security issues can be avoided by following industr
 
 We review and update this security policy every quarter to ensure we are current with best practices.
 
-Our last review was in **June 2017**.
-The next one will be in **September 2017**.
+Our last review was in **October 2017**.
+The next one will be in **December 2017**.
 
 ## Policy details
 
