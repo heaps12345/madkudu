@@ -34,12 +34,10 @@ Missions are wonderful but startups come down to good execution - and that's whe
 
 MadKudu isn't an idea - it is a real business with real customers. Here is some data (we know you like data!).
 
-As of April 1, 2016:
-
-+ We have world-class customers you've heard of like [Segment](https://segment.com/), [Codeship](https://codeship.com/), and [Contactually](https://www.contactually.com/).
-+ We're growing annual revenue **by 50% every month**.
-+ We manage more than **10 million** user profiles for our customers
-+ We process more than **500 million events every day**.
++ We have world-class customers you've heard of like [Segment](https://segment.com/), [Gusto](https://gusto.com/), [Algolia](https://www.algolia.com/).
++ We're growing annual revenue **by 20% every month**.
++ We manage more than **50 million** user profiles for our customers
++ We process more than **1 billion events every day**.
 
 ### We're a Techstars company
 
