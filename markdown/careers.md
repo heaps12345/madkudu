@@ -1,5 +1,3 @@
-We're hiring! Our [current openings](#openings).
-
 ## You're here! And we're so flattered.
 
 Thank you, thank you, thank you! Thank you for taking the time to read about MadKudu.
