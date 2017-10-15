@@ -24,8 +24,6 @@ To switch to that branch: `git checkout mybranchname`
 
 ## Deployment
 
-Managed via codeship
-
 Every push to the master branch automatically deploys the new version.
 
 Common git flow is:
@@ -82,4 +80,3 @@ Segment's `analytics.js` is automatically loaded on all pages. You can use `anal
 [Bootstrap components](http://getbootstrap.com/css/)
 [Bootstrap components](http://getbootstrap.com/components/)
 [Bootstrap javascript](http://getbootstrap.com/javascript/)
-
