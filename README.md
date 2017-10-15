@@ -24,6 +24,7 @@ To switch to that branch: `git checkout mybranchname`
 
 ## Deployment
 
+We use [Netlify](https://www.netlify.com/docs) for deploying / hosting the site
 Every push to the master branch automatically deploys the new version.
 
 Common git flow is:

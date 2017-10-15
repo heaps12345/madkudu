@@ -1,26 +1,26 @@
-var gulp = require('gulp');
-var path = require('path');
-var jade = require('gulp-jade');
-var less = require('gulp-less');
-var autoprefixer = require('gulp-autoprefixer');
-var sourcemaps = require('gulp-sourcemaps');
-var minifyCSS = require('gulp-clean-css');
-var markdown = require('gulp-markdown');
-var rename = require('gulp-rename');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var connect = require('gulp-connect');
-var open = require('gulp-open');
-var browserify = require('browserify');
-var livereload = require('gulp-livereload');
-var gutil = require('gutil');
-var ftp = require('vinyl-ftp');
-var clean = require('gulp-clean');
-var newer = require('gulp-newer');
+const gulp = require('gulp');
+const path = require('path');
+const jade = require('gulp-jade');
+const less = require('gulp-less');
+const autoprefixer = require('gulp-autoprefixer');
+const sourcemaps = require('gulp-sourcemaps');
+const minifyCSS = require('gulp-clean-css');
+const markdown = require('gulp-markdown');
+const rename = require('gulp-rename');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const connect = require('gulp-connect');
+const open = require('gulp-open');
+const browserify = require('browserify');
+const livereload = require('gulp-livereload');
+const gutil = require('gutil');
+const ftp = require('vinyl-ftp');
+const clean = require('gulp-clean');
+const newer = require('gulp-newer');
 
-var source = require('vinyl-source-stream');
+const source = require('vinyl-source-stream');
 
-var Paths = {
+const Paths = {
 	HERE: './',
 	DEPLOY: [
 		'dist/**',
@@ -71,7 +71,8 @@ var Paths = {
 		'./robots.txt',
 		'./madkudu_ico.png',
 		'./sitemap.xml',
-		'./.htaccess'
+		'./.htaccess',
+    './_redirects'
 	]
 };
 
@@ -180,7 +181,7 @@ gulp.task('simulator', function () {
 });
 
 gulp.task('deploy', function () {
-	var conn = ftp.create({
+	const conn = ftp.create({
 		host: 'server40.web-hosting.com',
 		user: 'madkkqbe',
 		password:'CRennucNnUSuD',
