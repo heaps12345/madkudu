@@ -1,6 +1,6 @@
 # Redirects from what the browser requests to what we serve
-/blog            http://blog.madkudu.com/
-/blog/*            http://blog.madkudu.com/:splat 200
+/blog            https://blog.madkudu.com/
+/blog/*          https://blog.madkudu.com/:splat 200
 
 # Old pages and proxies
 /smart-form         /form
