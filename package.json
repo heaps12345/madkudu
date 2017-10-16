@@ -1,16 +1,26 @@
 {
   "private": true,
   "name": "@madkudu/website",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A bootstrap toolkit.",
   "main": "gulpfile.js",
   "author": "MadKudu",
   "engines": {
-    "node": "4.4.6",
-    "npm": "2.15.5"
+    "node": "8.4.0",
+    "npm": "5.5.1"
+  },
+  "scripts": {
+    "build": "gulp build",
+    "lint": "./node_modules/eslint/bin/eslint.js js/ --fix"
   },
   "devDependencies": {
     "browserify": "14.4.0",
+    "eslint": "4.8.0",
+    "eslint-config-standard": "10.2.1",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-node": "5.2.0",
+    "eslint-plugin-promise": "3.5.0",
+    "eslint-plugin-standard": "3.0.1",
     "gulp": "3.9.1",
     "gulp-autoprefixer": "4.0.0",
     "gulp-clean": "0.3.2",
