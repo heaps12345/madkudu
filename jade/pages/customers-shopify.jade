@@ -1,0 +1,82 @@
+extends ../components/skeleton.jade
+
+block neck
+
+    title MadKudu | Turn more leads into paying customers | Shopify Lead Scoring Case Study
+
+    script analytics.page('Case study')
+
+block body
+
+    .block.block-fill-height.block-case-study
+
+        include ../components/header_white.jade
+
+        .container
+
+            .row.text-center
+                h1.m-b Shopify generates 30% more sales with predictive lead scoring
+                a(href='https://www.shopify.com/plus' target='_blank').customer-logo.m-b
+                    img(src='/static/images/customers/shopify-logo.png' width="50%")
+
+            .row.m-t-lg
+                p
+                    | <a href='https://www.shopify.com/plus' target='_blank'>Shopify</a> is the leading cloud-based, multi-channel commerce platform designed for small and medium-sized businesses. Merchants can use the software to design, set up, and manage their stores across multiple sales channels, including web, mobile, social media, marketplaces, brick-and-mortar locations, and pop-up shops. The platform also provides merchants with a powerful back-office and a single view of their business. The Shopify platform was engineered for reliability and scale, making enterprise-level technology available to businesses of all sizes. Shopify currently powers over 377,500 businesses in approximately 175 countries and is trusted by brands such as Tesla, Red Bull, Nestle, GE, Kylie Cosmetics, and many more.
+
+                h4.m-t-md.m-b The business challenge
+
+                p
+                    | Shopify is a very popular commerce platform and attracts a high volume of leads. However Shopify offers a wide variety of plans starting at $9/month. This results in a range of commerces going from very small businesses to multi-million dollars enterprises such as Nestle. The sales team at Shopify Plus offers Enterprise-grade solutions for high volume merchants, and large businesses.
+                p
+                    | Before implementing MadKudu, Adam worked with his data science team at Shopify to build a predictive lead scoring. The project, named "gold rush", was meant to help the Sales team focus on leads that had the highest potential for the plans they offered. Using firmographic data along with marketing data extracted from Hubspot, they build a model that accurately identified the top 10% of leads that would generate a third of the revenue.
+                p
+                    | However, Adam had heard about other companies implementing MadKudu and their success prioritizing leads based on the MadKudu scores. He set up to run a blind A/B test where 50% of the leads would be scored and prioritized based on his team's score and 50% would be scored by MadKudu. The reps wouldn't know where the scores originated from.
+
+                h4.m-t-md.m-b How MadKudu helped
+
+                p
+                    | As a Hubspot integration, MadKudu was already live on the marketing website. Mark configured a Fastlane instance for the request-a-demo and contact-sales pages. He then connected it with <a href="http://www.Chilipiper.com/?madkudu-fastlane">Chilipiper</a>, a great calendar tool that can run round robin in real time in order to surface the appropriate calendar to a prospect.
+                p
+                    | Once the forms were configured, MadKudu used the lead's email to automatically score it in real time. Once the form was submitted by a qualified lead, MadKudu displayed a pop-up modal that offered the lead to book time with the team directly, mentioning the lead qualified for the "fast lane", a differentiated treatment. The lead could then book a time on the spot and not have to worry about going back and forth over email to find a time.
+                p
+                    | Mark ran an A/B test on Segment's contact-sales and request-a-demo forms to measure the impact of the tailored experience and results were quick to show.
+
+                .container.m-t
+
+                  .row.landing_page__subblock
+                    .col-md-6.landing_page__sub_block_column_text
+                      .landing_page__block_vertically_centered
+                        .landing_page__block_feature_text MadKudu Fastlane in action
+                        .landing_page__block_feature_subtext After a qualified lead requests a demo on Segment's form, MadKudu prompts the prospect to book a time directly with the rep that has been assigned. The seemless experience enables a dynamic call to action at the time the lead is the hottest.
+                    .col-md-6.landing_page__sub_block_column_image
+                      .landing_page__block_vertically_centered
+                        .landing_page__block_feature_image
+                          img(src='/static/images/customers/segment-fastlane.gif' width='400')
+
+                h4.m-t-md.m-b The results
+
+                p
+                    | After a thorough 2 months of A/B testing, Mark was able to show his team that the initiative had yielded an astounding <strong>60% lift in qualified pipeline</strong> creation from demo requests.
+                p
+                    | The benefits of Fastlane were two-fold. It enabled qualified leads to book a demo at peak intent, hitting the iron while it's hot. It also created an explicitely differentiated experience for Segment's high value prospect. Too many companies create a cumbersome process for getting in touch simply because they want to be able to isolate low value leads. By creating a simplified, straightforward flow for high value leads, Segment keeps on winning!
+                .container.m-t
+
+                  .row.landing_page__subblock
+                    .col-md-6.landing_page__sub_block_column_text
+                      .landing_page__block_vertically_centered
+                        .landing_page__block_feature_text 60% increase in qualified demos
+                        .landing_page__block_feature_subtext MadKudu and Segment evaluated the statistical significance of the lift generated with Fastlane using a one-sided chi-test.
+                    .col-md-6.landing_page__sub_block_column_image
+                      .landing_page__block_vertically_centered
+                        .landing_page__block_feature_image
+                          img(src='/static/images/customers/segment-madkudu-fastlane-lift.jpg' width='400')
+
+            .row.m-t-lg
+                blockquote.m-t-lg.testimony-item.reason__testimony
+                    p
+                        | Turning on MadKudu Fastlane was a tremendous win for me and Segment. I was able to generate significant business impact without disrupting the existing flow.
+                    footer
+                        div(class=["image-bg", "image-testimony", "adam-mccabe"])
+                        div
+                            strong Adam McCabe
+                            span Revenue Operations, Shopify Plus
