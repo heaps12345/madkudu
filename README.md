@@ -14,6 +14,11 @@ then, build, serve and watch the site with
 gulp
 ```
 
+the first time you might need to run (if gulp command is not found)
+```shell
+npm install --global gulp
+```
+
 ## Version control
 
 Write your changes on a branch
