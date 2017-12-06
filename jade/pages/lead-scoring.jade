@@ -14,7 +14,7 @@ block neck
 			$('.mki_landing_demo').click(function (event) {
 				event.preventDefault();
 				analytics.track('Landing Page - Clicked request demo');
-				window.open('/contact','_blank');
+				window.open('/contact');
 			});
 			$('.mki_landing_trial').click(function (event) {
 				event.preventDefault();
@@ -35,8 +35,8 @@ block body
 				h1 MadKudu Lead Scoring
 				p Grow sales 20% by leveraging your customer's in-app behavior
 				p
-					a.btn.btn-trial.btn-lg.btn-primary(class='mki_landing_trial', role='button') Try now
-					a.btn.btn-demo.btn-lg.btn-primary(class='mki_landing_demo', role='button') Get a Demo
+					a#trial_btn.btn.btn-trial.btn-lg.btn-primary(class='mki_landing_trial', role='button') Try now
+					a#demo_btn.btn.btn-demo.btn-lg.btn-primary(class='mki_landing_demo', role='button') Get a Demo
 
 		section.sales
 			.container
