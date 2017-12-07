@@ -19,7 +19,7 @@ block neck
 			$('.mki_landing_trial').click(function (event) {
 				event.preventDefault();
 				analytics.track('Landing Page - Clicked free trial');
-				window.location = 'https://app.madkudu.com/signup?plan=madkudu_form';
+				window.open('/contact?plan=madkudu_form'); //window.location = 'https://app.madkudu.com/signup?plan=madkudu_form';
 			});
 			$('.mki_get_started_now_bottom_button').click(function (event) {
 				event.preventDefault();
