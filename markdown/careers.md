@@ -1,8 +1,6 @@
-## You're here! And we're so flattered.
+## You're here!
 
-Thank you, thank you, thank you! Thank you for taking the time to read about MadKudu.
-
-Why are we so thankful?
+Thank you for taking the time to read about MadKudu! Why are we so thankful?
 
 Because you have choices.<br>
 Because you're one of the best.<br>
@@ -43,7 +41,7 @@ We're proud to have been part of [Techstars](http://www.techstars.com) Boulder 2
 
 ### We're funded and on track for growth
 
-Even in this tough funding environment MadKudu was able to **raise a $1.4M seed round** from world-class investors.
+Even in this tough funding environment MadKudu was able to **raise a $3.5M seed round** from world-class investors.
 
 We're also hitting our milestones and on track to raise our next round of funding - in fact, investors are contacting us.
 
