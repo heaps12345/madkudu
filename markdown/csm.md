@@ -1,4 +1,4 @@
-# Want to be our Head of Customer Success?
+# Want to be our first Customer Success Manager?
 
 Companies like Amazon and Capital One build their own data-science tools to drive their businesses. Unfortunately few other businesses have $$ and expertise to do this. MadKudu is solving this problem by bringing the powers of data science to every business in the world.
 
@@ -28,7 +28,7 @@ Where we need your help now:
 
 
 ### Where? How Much?
-The company is located in Mountain View, CA but you don't have to. If you want to work remotely, let's talk!
+The company is located in Mountain View, CA, on Castro St, right by the Caltrain station.
 
 Competitive salary + equity + 100% paid health care and dental coverage for you and your dependents
 
